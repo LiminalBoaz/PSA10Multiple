@@ -1,0 +1,196 @@
+{
+ "version": 1,
+ "generatedAt": "2026-10-16T12:00:00Z",
+ "fx": {
+  "usdToEur": 0.9,
+  "date": "2026-10-16"
+ },
+ "defaults": {
+  "gradingFeeUsd": 25
+ },
+ "cards": [
+  {
+   "id": "sample-1",
+   "name": "Charizard ex (sample)",
+   "set": "Sample Set A",
+   "number": "199",
+   "image": null,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+   },
+   "usd": {
+    "raw": 120,
+    "psa8": 160,
+    "psa9": 210,
+    "psa10": 520
+   },
+   "cm": {
+    "avg10": 105.0,
+    "median": 105.0,
+    "min": 89.25,
+    "max": 126.0,
+    "n": 10,
+    "nl": {
+     "avg": 112.0,
+     "n": 4
+    },
+    "fetchedAt": "2026-10-16T12:00:00Z"
+   }
+  },
+  {
+   "id": "sample-2",
+   "name": "Umbreon VMAX (sample)",
+   "set": "Sample Set B",
+   "number": "215",
+   "image": null,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+   },
+   "usd": {
+    "raw": 30,
+    "psa8": 45,
+    "psa9": 70,
+    "psa10": 260
+   },
+   "cm": {
+    "avg10": 18.5,
+    "median": 18.5,
+    "min": 15.72,
+    "max": 22.2,
+    "n": 10,
+    "nl": {
+     "avg": 21.0,
+     "n": 2
+    },
+    "fetchedAt": "2026-10-16T12:00:00Z"
+   }
+  },
+  {
+   "id": "sample-3",
+   "name": "Pikachu (sample)",
+   "set": "Sample Set C",
+   "number": "25",
+   "image": null,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+   },
+   "usd": {
+    "raw": 6,
+    "psa8": 12,
+    "psa9": 24,
+    "psa10": 95
+   },
+   "cm": {
+    "avg10": 4.2,
+    "median": 4.2,
+    "min": 3.57,
+    "max": 5.04,
+    "n": 10,
+    "nl": null,
+    "fetchedAt": "2026-10-16T12:00:00Z"
+   }
+  },
+  {
+   "id": "sample-4",
+   "name": "Gengar (sample)",
+   "set": "Sample Set D",
+   "number": "94",
+   "image": null,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+   },
+   "usd": {
+    "raw": 40,
+    "psa8": 50,
+    "psa9": 60,
+    "psa10": 140
+   },
+   "cm": {
+    "avg10": 38.0,
+    "median": 38.0,
+    "min": 32.3,
+    "max": 45.6,
+    "n": 10,
+    "nl": null,
+    "fetchedAt": "2026-10-16T12:00:00Z"
+   }
+  },
+  {
+   "id": "sample-5",
+   "name": "Mew ex (sample)",
+   "set": "Sample Set E",
+   "number": "232",
+   "image": null,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+   },
+   "usd": {
+    "raw": 70,
+    "psa8": 80,
+    "psa9": 110,
+    "psa10": 300
+   },
+   "cm": {
+    "avg10": 64.0,
+    "median": 64.0,
+    "min": 54.4,
+    "max": 76.8,
+    "n": 10,
+    "nl": null,
+    "fetchedAt": "2026-10-16T12:00:00Z"
+   }
+  },
+  {
+   "id": "sample-6",
+   "name": "Charizard (sample)",
+   "set": "Sample Set F",
+   "number": "4",
+   "image": null,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+   },
+   "usd": {
+    "raw": 300,
+    "psa8": 450,
+    "psa9": 700,
+    "psa10": 2500
+   },
+   "cm": {
+    "avg10": 280.0,
+    "median": 280.0,
+    "min": 238.0,
+    "max": 336.0,
+    "n": 10,
+    "nl": {
+     "avg": 299.0,
+     "n": 3
+    },
+    "fetchedAt": "2026-10-16T12:00:00Z"
+   }
+  },
+  {
+   "id": "sample-7",
+   "name": "Lugia V (sample)",
+   "set": "Sample Set G",
+   "number": "186",
+   "image": null,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+   },
+   "usd": {
+    "raw": 90,
+    "psa8": null,
+    "psa9": 150,
+    "psa10": 400
+   },
+   "cm": null
+  }
+ ]
+}
