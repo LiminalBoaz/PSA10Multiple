@@ -9,6 +9,8 @@ import { usdToEur } from './lib/fx.ts';
 import { pace } from './lib/http.ts';
 import { cheapestStats, type Listing } from './lib/stats.ts';
 import { MAX_MISMATCH } from './pricecharting.ts';
+import { CmProductsFile, type CmProduct } from './cmproducts.ts';
+import { sameNumber } from './lib/files.ts';
 
 const GRADING_FEE_USD = 25; // PokeViews' assumption; adjustable in the app
 /** Cardmarket's trend stands in for the listings only when it is this close to the US raw price. */
@@ -55,18 +57,40 @@ export function listingsPlausible(avg: number, usRawEur: number | null): boolean
 
 const suspicious: string[] = [];
 
-function cardmarketPart(t: TcgdexEntry | undefined, m: CmEntry | undefined, usRawEur: number | null, label: string): Card['cm'] {
-  if (!t) return null;
+/** The scraper reports the card as e.g. "Lugia V SIT #138"; its number must be the card's number. */
+export function scrapedNumberMatches(cardName: string | null | undefined, number: string | null): boolean {
+  if (!cardName || !number) return true;
+  const m = cardName.match(/#\s*([A-Za-z]*\d+)\s*$/);
+  return !m || sameNumber(m[1]!, number) || sameNumber(m[1]!.replace(/^[A-Za-z]+/, ''), number.replace(/^[A-Za-z]+/, ''));
+}
+
+function cardmarketPart(
+  prod: CmProduct | undefined,
+  t: TcgdexEntry | undefined,
+  m: CmEntry | undefined,
+  usRawEur: number | null,
+  label: string,
+  number: string | null,
+): Card['cm'] {
+  if (!prod?.url && !t) return null;
   let eu = m ? cheapestStats(rawOnly(m.listings).map((l) => l.price)) : null;
-  if (eu && !listingsPlausible(eu.avg, usRawEur)) {
+  if (eu && m && !scrapedNumberMatches(m.cardName, number)) {
+    suspicious.push(`${label} (page shows "${m.cardName}")`);
+    eu = null;
+  } else if (eu && !listingsPlausible(eu.avg, usRawEur)) {
     suspicious.push(`${label} (listings €${eu.avg} vs US €${usRawEur?.toFixed(0)})`);
     eu = null;
   }
-  const nl = m ? cheapestStats(rawOnly(m.nlListings).map((l) => l.price)) : null;
+  const nl = m && eu ? cheapestStats(rawOnly(m.nlListings).map((l) => l.price)) : null;
+  const idProduct = prod?.idProduct ?? null;
+  const guide = t?.guide && idProduct != null && idProduct === t.idProduct ? { ...t.guide, trusted: trendTrusted(t.guide.trend, usRawEur) } : null;
   return {
-    idProduct: t.idProduct,
-    guide: t.guide ? { ...t.guide, trusted: trendTrusted(t.guide.trend, usRawEur) } : null,
-    listings: eu && m ? { avg10: eu.avg, median: eu.median, min: eu.min, max: eu.max, n: eu.n, nl: nl ? { avg: nl.avg, n: nl.n } : null, fetchedAt: m.fetchedAt } : null,
+    idProduct,
+    guide,
+    listings:
+      eu && m
+        ? { avg10: eu.avg, median: eu.median, min: eu.min, max: eu.max, n: eu.n, nl: nl ? { avg: nl.avg, n: nl.n } : null, nlChecked: Boolean(m.nlFetchedAt), fetchedAt: m.fetchedAt }
+        : null,
   };
 }
 
@@ -75,6 +99,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const pc = await readJson(PATHS.pricecharting, PriceChartingFile, {});
   const td = await readJson(PATHS.tcgdex, TcgdexFile, {});
   const cm = await readJson(PATHS.cardmarket, CardmarketFile, {});
+  const products = await readJson('data/cmproducts.json', CmProductsFile, {});
   const fx = await usdToEur();
   await mkdir(PATHS.img, { recursive: true });
 
@@ -87,12 +112,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const usd = p?.usd ?? { raw: c.pv.raw, g8: null, g9: null, psa10: c.pv.psa10 };
     if (!p) report.pcFallback.push(c.id);
     const usRawEur = usd.raw == null ? null : usd.raw * fx.usdToEur;
-    const cmPart = cardmarketPart(td[c.id], cm[c.id], usRawEur, c.fullName);
-    if (!cmPart) report.noCm.push(c.fullName);
-    else if (cmPart.listings) {
+    const cmPart = cardmarketPart(products[c.id], td[c.id], cm[c.id], usRawEur, c.fullName, c.number);
+    if (!products[c.id]?.url) report.noCm.push(c.fullName);
+    if (cmPart?.listings) {
       report.listings++;
-      if (cmPart.listings.n < 10) report.thin.push(`${c.id} (${cmPart.listings.n})`);
-    } else if (!cmPart.guide?.trusted) report.untrusted.push(`${c.fullName} (trend €${cmPart.guide?.trend ?? '—'} vs US €${usRawEur?.toFixed(0)})`);
+      if (cmPart.listings.n < 10) report.thin.push(`${c.fullName} (${cmPart.listings.n})`);
+    } else if (!cmPart?.guide?.trusted) report.untrusted.push(`${c.fullName} (trend €${cmPart?.guide?.trend ?? '—'} vs US €${usRawEur?.toFixed(0)})`);
 
     const image = await thumbnail(c.id, c.imageUrl);
     if (!image) report.noImage.push(c.id);
@@ -106,9 +131,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       salesPerYear: c.pv.salesPerYear,
       links: {
         pricecharting: p?.url ?? null,
-        cardmarket: cmPart
-          ? `https://www.cardmarket.com/en/Pokemon/Products?idProduct=${cmPart.idProduct}`
-          : `https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=${encodeURIComponent(c.name)}`,
+        cardmarket: products[c.id]?.url ?? `https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=${encodeURIComponent(c.name)}`,
       },
       usd,
       cm: cmPart,
@@ -128,7 +151,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   console.log(`  NM English listings fetched:   ${report.listings}/${total}${report.thin.length ? `   fewer than 10: ${report.thin.join(', ')}` : ''}`);
   console.log(`  Raw baseline available:        ${withBaseline}/${total}`);
   if (suspicious.length) console.log(`  Listings dropped as likely wrong product: ${suspicious.join('; ')}`);
-  console.log(`  Trend not trusted (no listings): ${report.untrusted.length}`);
+  console.log(`  No listings and no usable trend: ${report.untrusted.length}`);
   for (const u of report.untrusted) console.log(`    · ${u}`);
   console.log(`  Images: ${total - report.noImage.length}/${total}   $1 = €${fx.usdToEur} (${fx.date}) → ${PATHS.out}`);
 

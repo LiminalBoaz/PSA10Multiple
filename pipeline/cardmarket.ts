@@ -1,15 +1,27 @@
-// Step 4: the cheapest Near Mint English listings per card on Cardmarket, EU-wide and Netherlands-only.
-// Cardmarket blocks cloud servers, so this runs Apify's "Cardmarket listings scraper" actor, which reads
-// the live offer table through residential proxies. Needs APIFY_TOKEN.
-import { CardmarketFile, ContendersFile, PATHS, readJson, TcgdexFile, writeJson, type CmEntry, type Contender } from './lib/files.ts';
+// Step 4: the cheapest Near Mint English listings per card on Cardmarket.
+// Cardmarket blocks cloud servers, so this runs Apify's "Cardmarket listings scraper" actor
+// (phantom_coder/cardmarket-listings-scraper), which reads the live offer table. Needs APIFY_TOKEN.
+//
+//   npm run data:cardmarket                 EU-wide, every card not fetched in the last 20 h
+//   npm run data:cardmarket -- --nl         also Netherlands-only (one extra paid run per card)
+//   npm run data:cardmarket -- <card-id …>  just these cards
+import { CardmarketFile, ContendersFile, PATHS, PriceChartingFile, readJson, writeJson, type CmEntry, type Contender } from './lib/files.ts';
+import { CmProductsFile } from './cmproducts.ts';
 
 const ACTOR = 'phantom_coder~cardmarket-listings-scraper';
+const API = 'https://api.apify.com/v2';
 const MAX_AGE_H = 20;
-const CONCURRENCY = 4;
-/** Fetch more than 10 so listings dropped as slabs (from seller comments) still leave 10. */
-const MAX_RESULTS = 20;
+const CONCURRENCY = 3;
+const MAX_RESULTS = 10;
+/** Listings above this multiple of the US raw price are almost always graded slabs; not fetching them saves credit. */
+const PRICE_CAP_X = 3.5;
+/** Stop before the account's monthly limit is hit. */
+const STOP_AT_USD = Number(process.env.APIFY_STOP_AT_USD ?? 4.9);
+/** The actor's free-plan price per returned listing; Apify's usage figure lags, so we also count locally. */
+const USD_PER_LISTING = 0.005;
 
 interface ApifyListing {
+  cardName?: string;
   price?: number;
   condition?: string;
   language?: string;
@@ -17,7 +29,7 @@ interface ApifyListing {
   productUrl?: string;
 }
 
-export function actorInput(productUrl: string, c: Pick<Contender, 'variant'>, sellerCountry?: string): Record<string, unknown> {
+export function actorInput(productUrl: string, c: Pick<Contender, 'variant'>, opts: { sellerCountry?: string; maxPrice?: number } = {}): Record<string, unknown> {
   const v = c.variant?.toLowerCase() ?? '';
   return {
     productUrl,
@@ -26,15 +38,32 @@ export function actorInput(productUrl: string, c: Pick<Contender, 'variant'>, se
     maxResults: MAX_RESULTS,
     enableFairValue: false,
     ...(v.includes('1st') ? { isFirstEd: true } : {}),
-    ...(sellerCountry ? { sellerCountry } : {}),
+    ...(opts.sellerCountry ? { sellerCountry: opts.sellerCountry } : {}),
+    ...(opts.maxPrice ? { maxPrice: Math.ceil(opts.maxPrice) } : {}),
   };
 }
 
-async function runActor(input: Record<string, unknown>): Promise<ApifyListing[]> {
+const auth = () => {
   const token = process.env.APIFY_TOKEN;
-  const url = `https://api.apify.com/v2/acts/${ACTOR}/run-sync-get-dataset-items?timeout=240${token ? `&token=${token}` : ''}`;
-  const res = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(input) });
-  if (res.status === 401 || res.status === 403) throw Object.assign(new Error('Apify rejected the request: set APIFY_TOKEN'), { fatal: true });
+  if (!token) throw Object.assign(new Error('Set APIFY_TOKEN to fetch Cardmarket listings'), { fatal: true });
+  return { authorization: `Bearer ${token}` };
+};
+
+export async function usageUsd(): Promise<{ used: number; limit: number }> {
+  const r = await fetch(`${API}/users/me/limits`, { headers: auth() });
+  const d = ((await r.json()) as { data: { limits: { maxMonthlyUsageUsd: number }; current: { monthlyUsageUsd: number } } }).data;
+  return { used: d.current.monthlyUsageUsd, limit: d.limits.maxMonthlyUsageUsd };
+}
+
+async function runActor(input: Record<string, unknown>): Promise<ApifyListing[]> {
+  const res = await fetch(`${API}/acts/${ACTOR}/run-sync-get-dataset-items?timeout=280`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', ...auth() },
+    body: JSON.stringify(input),
+  });
+  if (res.status === 401 || res.status === 403 || res.status === 402) {
+    throw Object.assign(new Error(`Apify refused the run (HTTP ${res.status}): ${(await res.text()).slice(0, 200)}`), { fatal: true });
+  }
   if (!res.ok) throw new Error(`Apify HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
   return (await res.json()) as ApifyListing[];
 }
@@ -47,30 +76,60 @@ function toListings(rows: ApifyListing[], country: string | null): CmEntry['list
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const only = process.argv.slice(2);
+  const args = process.argv.slice(2);
+  const withNl = args.includes('--nl');
+  const only = args.filter((a) => !a.startsWith('--'));
   const { cards } = await readJson(PATHS.contenders, ContendersFile);
-  const td = await readJson(PATHS.tcgdex, TcgdexFile, {});
+  const products = await readJson('data/cmproducts.json', CmProductsFile, {});
+  const pc = await readJson(PATHS.pricecharting, PriceChartingFile, {});
   const out = await readJson(PATHS.cardmarket, CardmarketFile, {});
   const fresh = (id: string) => out[id] && Date.now() - Date.parse(out[id]!.fetchedAt) < MAX_AGE_H * 3600_000;
-  const todo = cards.filter((c) => td[c.id] && (only.length ? only.includes(c.id) : !fresh(c.id)));
-  console.log(`${todo.length} cards to fetch (${cards.length - todo.length} skipped: fresh or not on Cardmarket)`);
+  // Biggest PSA 10 upside first, so a tight budget covers the cards worth hunting.
+  const todo = cards
+    .filter((c) => products[c.id]?.url && (only.length ? only.includes(c.id) : !fresh(c.id)))
+    .sort((a, b) => b.pv.psa10 - b.pv.raw - (a.pv.psa10 - a.pv.raw));
+  const start = await usageUsd();
+  console.log(`${todo.length} cards to fetch${withNl ? ' (EU + NL)' : ' (EU)'}; Apify usage $${start.used.toFixed(2)} of $${start.limit}`);
 
   let next = 0;
   let done = 0;
+  let stop = false;
+  let spent = 0;
   async function worker() {
-    while (next < todo.length) {
+    while (!stop && next < todo.length) {
       const c = todo[next++]!;
-      const url = `https://www.cardmarket.com/en/Pokemon/Products?idProduct=${td[c.id]!.idProduct}`;
+      const projected = Math.max(start.used + spent, done % 6 === 0 ? (await usageUsd()).used : 0) + MAX_RESULTS * USD_PER_LISTING * (withNl ? 2 : 1);
+      if (projected >= STOP_AT_USD) {
+        stop = true;
+        console.warn(`Stopping: Apify spend would pass $${STOP_AT_USD} (≈ $${(start.used + spent).toFixed(2)} so far).`);
+        break;
+      }
+      const url = products[c.id]!.url!;
+      const usRaw = pc[c.id]?.usd.raw ?? c.pv.raw;
+      const maxPrice = usRaw * PRICE_CAP_X; // EUR cap; USD→EUR is < 1, so this errs on the generous side
       try {
-        const [eu, nl] = await Promise.all([runActor(actorInput(url, c)), runActor(actorInput(url, c, 'NL'))]);
-        out[c.id] = { productUrl: eu[0]?.productUrl ?? url, listings: toListings(eu, null), nlListings: toListings(nl, 'Netherlands'), fetchedAt: new Date().toISOString() };
-        console.log(`${++done}/${todo.length} ${c.fullName}: ${eu.length} EU / ${nl.length} NL, cheapest €${out[c.id]!.listings[0]?.price ?? '—'}`);
+        const eu = await runActor(actorInput(url, c, { maxPrice }));
+        const nl = withNl ? await runActor(actorInput(url, c, { maxPrice, sellerCountry: 'NL' })) : [];
+        spent += (eu.length + nl.length) * USD_PER_LISTING;
+        const prev = out[c.id];
+        out[c.id] = {
+          productUrl: url,
+          listings: toListings(eu, null),
+          nlListings: withNl ? toListings(nl, 'Netherlands') : prev?.nlListings ?? [],
+          nlFetchedAt: withNl ? new Date().toISOString() : prev?.nlFetchedAt ?? null,
+          fetchedAt: new Date().toISOString(),
+          cardName: eu[0]?.cardName ?? null,
+        };
+        const l = out[c.id]!.listings;
+        console.log(`${++done}/${todo.length} ${c.fullName} [${eu[0]?.cardName ?? 'no listings'}]: ${l.length} NM EN ≤ €${maxPrice.toFixed(0)}, cheapest €${l[0]?.price ?? '—'}`);
       } catch (e) {
         console.warn(`${++done}/${todo.length} ${c.fullName}: ${(e as Error).message}`);
-        if ((e as { fatal?: boolean }).fatal) process.exit(1);
+        if ((e as { fatal?: boolean }).fatal) stop = true;
       }
       await writeJson(PATHS.cardmarket, out);
     }
   }
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
+  const end = await usageUsd();
+  console.log(`Apify usage now $${end.used.toFixed(2)} (this run ≈ $${(end.used - start.used).toFixed(2)})`);
 }

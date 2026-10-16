@@ -1,0 +1,49 @@
+name: Refresh prices
+
+# Pulls fresh prices for the PokeViews list and redeploys. Start it from the Actions tab
+# (or the GitHub phone app). Cardmarket listings need the APIFY_TOKEN repository secret;
+# a full EU run costs about $3-5 of Apify credit.
+on:
+  workflow_dispatch:
+    inputs:
+      netherlands:
+        description: Also fetch Netherlands-only listings (doubles the Apify cost)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run data:contenders
+      - run: npm run data:pricecharting
+      - run: npm run data:tcgdex
+      - run: npm run data:cmproducts
+      - name: Cardmarket listings (Apify)
+        if: ${{ env.APIFY_TOKEN != '' }}
+        run: npm run data:cardmarket -- ${{ inputs.netherlands && '--nl' || '' }}
+      - run: npm run data:build
+      - name: Commit new prices
+        run: |
+          git add data public
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Refresh prices $(date -u +%F)" || echo "No changes"
+          git push -q
+
+  deploy:
+    needs: refresh
+    uses: ./.github/workflows/deploy.yml

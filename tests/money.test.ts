@@ -6,7 +6,7 @@ import { eur, signedEur, times } from '../src/lib/format.ts';
 // Test fixtures only. These are not market prices.
 type Listings = NonNullable<NonNullable<Card['cm']>['listings']>;
 function listings(avg10: number, over: Partial<Listings> = {}): NonNullable<Card['cm']> {
-  return { idProduct: 1, guide: null, listings: { avg10, median: avg10, min: avg10 * 0.8, max: avg10 * 1.2, n: 10, nl: null, fetchedAt: '2026-10-16T00:00:00Z', ...over } };
+  return { idProduct: 1, guide: null, listings: { avg10, median: avg10, min: avg10 * 0.8, max: avg10 * 1.2, n: 10, nl: null, nlChecked: true, fetchedAt: '2026-10-16T00:00:00Z', ...over } };
 }
 function card(over: Partial<Card> & { id: string }): Card {
   return {

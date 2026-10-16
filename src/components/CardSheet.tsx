@@ -140,7 +140,7 @@ export function CardSheet({ row, data, feeUsd, onClose }: Props) {
               </div>
               <div>
                 <dt>Netherlands</dt>
-                <dd>{a.nl ? `avg ${eur(a.nl.avg)} (${a.nl.n})` : 'Fewer than 3 listings'}</dd>
+                <dd>{a.nl ? `avg ${eur(a.nl.avg)} (${a.nl.n})` : cm.listings.nlChecked ? 'Fewer than 3 listings' : 'Not checked yet'}</dd>
               </div>
             </dl>
           ) : (

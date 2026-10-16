@@ -34,6 +34,7 @@ export function CardGrid({ rows, onOpen }: Props) {
                 <span class="raw">
                   {a.raw == null ? <span class="muted small">Check CM</span> : eur(a.raw)}
                   {a.rawSource === 'trend' && <span class="src">trend</span>}
+                  {a.rawSource === 'listings' && card.cm?.listings && card.cm.listings.n < 10 && <span class="src">{card.cm.listings.n} listed</span>}
                 </span>
                 {a.net10 != null && <span class={a.net10 >= 0 ? 'pill up' : 'pill down'}>{signedEur(a.net10)}</span>}
               </span>

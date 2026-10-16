@@ -45,7 +45,8 @@
       "avg": 112.0,
       "n": 4
      },
-     "fetchedAt": "2026-10-16T12:00:00Z"
+     "fetchedAt": "2026-10-16T12:00:00Z",
+     "nlChecked": true
     }
    }
   },
@@ -80,7 +81,8 @@
       "avg": 21.0,
       "n": 2
      },
-     "fetchedAt": "2026-10-16T12:00:00Z"
+     "fetchedAt": "2026-10-16T12:00:00Z",
+     "nlChecked": true
     }
    }
   },
@@ -112,7 +114,8 @@
      "max": 5.04,
      "n": 10,
      "nl": null,
-     "fetchedAt": "2026-10-16T12:00:00Z"
+     "fetchedAt": "2026-10-16T12:00:00Z",
+     "nlChecked": true
     }
    }
   },
@@ -173,7 +176,8 @@
      "max": 76.8,
      "n": 10,
      "nl": null,
-     "fetchedAt": "2026-10-16T12:00:00Z"
+     "fetchedAt": "2026-10-16T12:00:00Z",
+     "nlChecked": true
     }
    }
   },
@@ -208,7 +212,8 @@
       "avg": 299.0,
       "n": 3
      },
-     "fetchedAt": "2026-10-16T12:00:00Z"
+     "fetchedAt": "2026-10-16T12:00:00Z",
+     "nlChecked": true
     }
    }
   },

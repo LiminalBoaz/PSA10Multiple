@@ -23,11 +23,14 @@ export const CmListings = z.object({
   n: z.number().int().positive(),
   /** Same method, sellers located in the Netherlands only. */
   nl: z.object({ avg: Money, n: z.number().int().positive() }).nullable(),
+  /** Whether Netherlands-only listings were fetched at all (they cost an extra scraper run). */
+  nlChecked: z.boolean(),
   fetchedAt: z.string(),
 });
 
 export const Cardmarket = z.object({
-  idProduct: z.number().int().positive(),
+  /** Cardmarket product id, when two sources confirm it. Only used for the trend price. */
+  idProduct: z.number().int().positive().nullable(),
   guide: CmGuideChecked.nullable(),
   listings: CmListings.nullable(),
 });

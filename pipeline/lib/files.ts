@@ -54,6 +54,10 @@ export const CmEntry = z.object({
   /** Same filter, sellers in the Netherlands only. */
   nlListings: z.array(CmListing),
   fetchedAt: z.string(),
+  /** When the Netherlands-only listings were fetched; absent if never. */
+  nlFetchedAt: z.string().nullable().optional(),
+  /** Card name and number as the scraper read them from the page, e.g. "Vaporeon SKH #31". */
+  cardName: z.string().nullable().optional(),
 });
 export const CardmarketFile = z.record(z.string(), CmEntry);
 

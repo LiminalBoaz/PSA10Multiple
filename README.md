@@ -10,25 +10,36 @@ The site works offline after the first visit and can be added to the home screen
 
 ## Refresh prices
 
+**From GitHub (easiest):** Actions → **Refresh prices** → Run workflow. It pulls everything, commits the new prices and redeploys. Cardmarket listings need an `APIFY_TOKEN` repository secret (Settings → Secrets and variables → Actions); without it the run keeps the last listings and uses Cardmarket's trend for the rest.
+
+**Locally:**
+
 ```sh
 npm ci
-export NODE_USE_ENV_PROXY=1      # only needed behind a proxy
-export APIFY_TOKEN=…             # for live Cardmarket listings; without it the build falls back to Cardmarket's trend
-npm run data                     # PokeViews → PriceCharting → TCGdex → Cardmarket listings → public/cards.json
-git add data public && git commit -m "Refresh prices" && git push   # GitHub Pages redeploys
+export APIFY_TOKEN=…             # Cardmarket listings via Apify
+export NODE_USE_ENV_PROXY=1      # only behind a proxy
+npm run data
+git add data public && git commit -m "Refresh prices" && git push
 ```
 
 | Step | Command | What it does |
 | --- | --- | --- |
 | Card list | `npm run data:contenders` | PokeViews' grading list (96 cards) → `data/contenders.json` |
-| Graded prices | `npm run data:pricecharting` | Finds each card on PriceCharting, keeps the product whose raw and PSA 10 match PokeViews and whose set matches → `data/pricecharting.json` |
-| Cardmarket match | `npm run data:tcgdex` | TCGdex links each card to its Cardmarket product id and Cardmarket's daily trend → `data/tcgdex.json` |
-| Cardmarket listings | `npm run data:cardmarket [card-id …]` | Apify actor `phantom_coder/cardmarket-listings-scraper`: cheapest NM English listings, EU-wide and NL → `data/cardmarket.json` |
-| Merge and check | `npm run data:build` | `public/cards.json`, thumbnails in `public/img/`, quality report |
+| Graded prices | `npm run data:pricecharting` | Finds each card on PriceCharting; keeps the product whose raw and PSA 10 match PokeViews and whose set matches → `data/pricecharting.json` |
+| Cardmarket id + trend | `npm run data:tcgdex` | TCGdex links cards to Cardmarket product ids and Cardmarket's daily trend → `data/tcgdex.json` |
+| Cardmarket page | `npm run data:cmproducts` | The exact Cardmarket product URL (`/Singles/<Set>/<Card>-V<n>-<CODE><NUMBER>`), from pokemontcg.io or `data/cm-urls.json`, with the card number checked → `data/cmproducts.json` |
+| Cardmarket listings | `npm run data:cardmarket [-- --nl] [card-id …]` | Apify `phantom_coder/cardmarket-listings-scraper`: up to 10 cheapest Near Mint English listings (EU-wide; `--nl` adds Netherlands-only) → `data/cardmarket.json` |
+| Merge and check | `npm run data:build` | `public/cards.json`, thumbnails, quality report |
 
-Cardmarket blocks requests from cloud servers, which is why listings go through Apify (about $5–10 per full refresh).
+How the raw baseline is decided, per card:
 
-The build only uses Cardmarket's trend when it is within 0.5–2× the US raw price, and drops listings more than 3× away from it (usually a sign the wrong version of the card was matched). It stops if fewer than 95% of cards have graded prices or fewer than 80% match a Cardmarket product.
+1. **Cardmarket listings**: the mean of the 10 cheapest Near Mint English listings. Listings whose seller comment mentions a grade or slab (PSA, BGS, CGC, …) or damage are dropped. Listings are also dropped when the page's card number doesn't match the card or their mean is more than 3× away from the US raw price, which usually means the wrong version of the card.
+2. Otherwise **Cardmarket's trend**, but only when two sources agree on the product and the trend is within 0.5–2× the US raw price. These cards are marked "trend" in the app.
+3. Otherwise no baseline ("Check CM").
+
+Apify cost: about $0.005 per listing on the free plan. The scraper skips listings priced above 3.5× the US raw price (almost always slabs), and stops before the account's monthly limit.
+
+If a card points at the wrong Cardmarket page, add the right URL to `data/cm-urls.json` and rerun from `data:cmproducts`.
 
 ## Develop
 

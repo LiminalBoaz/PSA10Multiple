@@ -33,6 +33,19 @@ describe('actorInput', () => {
   it('asks for Near Mint English, and 1st Edition when the card is one', () => {
     expect(actorInput('u', { variant: null })).toMatchObject({ productUrl: 'u', minCondition: 'NM', language: 'English' });
     expect(actorInput('u', { variant: '1st Edition' })).toMatchObject({ isFirstEd: true });
-    expect(actorInput('u', { variant: null }, 'NL')).toMatchObject({ sellerCountry: 'NL' });
+    expect(actorInput('u', { variant: null }, { sellerCountry: 'NL', maxPrice: 99.2 })).toMatchObject({ sellerCountry: 'NL', maxPrice: 100 });
+  });
+});
+
+describe('scrapedNumberMatches', () => {
+  it('checks the number the scraper read off the page', async () => {
+    const { scrapedNumberMatches } = await import('../pipeline/build.ts');
+    expect(scrapedNumberMatches('Lugia V SIT #138', '138')).toBe(true);
+    expect(scrapedNumberMatches('Vaporeon SKH #31', 'H31')).toBe(true);
+    expect(scrapedNumberMatches('Rayquaza VMAX SIT #TG29', 'TG29')).toBe(true);
+    expect(scrapedNumberMatches('Mew ex SVP #053', '53')).toBe(true);
+    expect(scrapedNumberMatches('Mewtwo GX SLG #39', '78')).toBe(false);
+    expect(scrapedNumberMatches('Blastoise', '2')).toBe(true);
+    expect(scrapedNumberMatches(null, '2')).toBe(true);
   });
 });
