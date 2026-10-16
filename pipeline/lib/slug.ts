@@ -28,5 +28,6 @@ export function codeHasNumber(code: string, number: string | null): boolean {
   const c = code.toUpperCase();
   const digits = n.match(/\d+$/)?.[0] ?? n;
   const prefix = n.slice(0, n.length - digits.length);
-  return new RegExp(`${prefix}0*${digits}$`).test(c);
+  // The number must follow the set code's letters, so "SIT1138" is not card 138.
+  return new RegExp(`(^|[A-Z])${prefix}0*${digits}$`).test(c);
 }

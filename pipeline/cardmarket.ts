@@ -11,7 +11,7 @@ import { CmProductsFile } from './cmproducts.ts';
 const ACTOR = 'phantom_coder~cardmarket-listings-scraper';
 const API = 'https://api.apify.com/v2';
 const MAX_AGE_H = 20;
-const CONCURRENCY = 3;
+const CONCURRENCY = 6;
 const MAX_RESULTS = 10;
 /** Listings above this multiple of the US raw price are almost always graded slabs; not fetching them saves credit. */
 const PRICE_CAP_X = 3.5;
@@ -50,22 +50,61 @@ const auth = () => {
 };
 
 export async function usageUsd(): Promise<{ used: number; limit: number }> {
-  const r = await fetch(`${API}/users/me/limits`, { headers: auth() });
-  const d = ((await r.json()) as { data: { limits: { maxMonthlyUsageUsd: number }; current: { monthlyUsageUsd: number } } }).data;
+  const d = (await api<{ data: { limits: { maxMonthlyUsageUsd: number }; current: { monthlyUsageUsd: number } } }>('/users/me/limits')).data;
   return { used: d.current.monthlyUsageUsd, limit: d.limits.maxMonthlyUsageUsd };
 }
 
-async function runActor(input: Record<string, unknown>): Promise<ApifyListing[]> {
-  const res = await fetch(`${API}/acts/${ACTOR}/run-sync-get-dataset-items?timeout=280`, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json', ...auth() },
-    body: JSON.stringify(input),
-  });
-  if (res.status === 401 || res.status === 403 || res.status === 402) {
-    throw Object.assign(new Error(`Apify refused the run (HTTP ${res.status}): ${(await res.text()).slice(0, 200)}`), { fatal: true });
+async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      const res = await fetch(`${API}${path}`, { ...init, headers: { 'content-type': 'application/json', ...auth(), ...(init.headers ?? {}) } });
+      if (res.status === 401 || res.status === 402 || res.status === 403) {
+        throw Object.assign(new Error(`Apify refused the request (HTTP ${res.status}): ${(await res.text()).slice(0, 200)}`), { fatal: true });
+      }
+      if (!res.ok) throw new Error(`Apify HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+      return (await res.json()) as T;
+    } catch (e) {
+      if ((e as { fatal?: boolean }).fatal || attempt >= 4) throw e;
+      await new Promise((r) => setTimeout(r, 3000 * (attempt + 1)));
+    }
   }
-  if (!res.ok) throw new Error(`Apify HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-  return (await res.json()) as ApifyListing[];
+}
+
+const runKey = (input: Record<string, unknown>) => `${input.productUrl}|${input.sellerCountry ?? ''}|${input.isFirstEd ? '1st' : ''}`;
+
+/**
+ * Finished runs from the last MAX_AGE_H hours, keyed by product URL and filters. Results are reused
+ * instead of paying for the same page twice (e.g. after a dropped connection).
+ */
+export async function recentRuns(): Promise<Map<string, string>> {
+  const since = Date.now() - MAX_AGE_H * 3600_000;
+  const runs = await api<{ data: { items: { id: string; status: string; startedAt: string; defaultDatasetId: string; defaultKeyValueStoreId: string }[] } }>(
+    `/acts/${ACTOR}/runs?desc=1&limit=300`,
+  );
+  const found = new Map<string, string>();
+  for (const r of runs.data.items) {
+    if (r.status !== 'SUCCEEDED' || Date.parse(r.startedAt) < since) continue;
+    const res = await fetch(`${API}/key-value-stores/${r.defaultKeyValueStoreId}/records/INPUT`, { headers: auth() }).catch(() => null);
+    if (!res?.ok) continue;
+    const input = (await res.json()) as Record<string, unknown>;
+    const k = runKey(input);
+    if (!found.has(k)) found.set(k, r.defaultDatasetId);
+  }
+  return found;
+}
+
+/** Starts a run and polls it, so a slow page never holds one long HTTP request open. */
+async function runActor(input: Record<string, unknown>, reuse: Map<string, string>): Promise<{ items: ApifyListing[]; reused: boolean }> {
+  const cached = reuse.get(runKey(input));
+  if (cached) return { items: await api<ApifyListing[]>(`/datasets/${cached}/items?clean=true`), reused: true };
+  const run = await api<{ data: { id: string; defaultDatasetId: string } }>(`/acts/${ACTOR}/runs`, { method: 'POST', body: JSON.stringify(input) });
+  for (;;) {
+    await new Promise((r) => setTimeout(r, 8000));
+    const st = await api<{ data: { status: string } }>(`/actor-runs/${run.data.id}`);
+    if (st.data.status === 'SUCCEEDED') break;
+    if (['FAILED', 'ABORTED', 'TIMED-OUT'].includes(st.data.status)) throw new Error(`Apify run ${st.data.status}`);
+  }
+  return { items: await api<ApifyListing[]>(`/datasets/${run.data.defaultDatasetId}/items?clean=true`), reused: false };
 }
 
 function toListings(rows: ApifyListing[], country: string | null): CmEntry['listings'] {
@@ -89,6 +128,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     .filter((c) => products[c.id]?.url && (only.length ? only.includes(c.id) : !fresh(c.id)))
     .sort((a, b) => b.pv.psa10 - b.pv.raw - (a.pv.psa10 - a.pv.raw));
   const start = await usageUsd();
+  const reuse = await recentRuns();
+  console.log(`${reuse.size} finished runs from the last ${MAX_AGE_H} h can be reused`);
   console.log(`${todo.length} cards to fetch${withNl ? ' (EU + NL)' : ' (EU)'}; Apify usage $${start.used.toFixed(2)} of $${start.limit}`);
 
   let next = 0;
@@ -108,9 +149,11 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const usRaw = pc[c.id]?.usd.raw ?? c.pv.raw;
       const maxPrice = usRaw * PRICE_CAP_X; // EUR cap; USD→EUR is < 1, so this errs on the generous side
       try {
-        const eu = await runActor(actorInput(url, c, { maxPrice }));
-        const nl = withNl ? await runActor(actorInput(url, c, { maxPrice, sellerCountry: 'NL' })) : [];
-        spent += (eu.length + nl.length) * USD_PER_LISTING;
+        const euRun = await runActor(actorInput(url, c, { maxPrice }), reuse);
+        const nlRun = withNl ? await runActor(actorInput(url, c, { maxPrice, sellerCountry: 'NL' }), reuse) : { items: [], reused: true };
+        const eu = euRun.items;
+        const nl = nlRun.items;
+        spent += ((euRun.reused ? 0 : eu.length) + (nlRun.reused ? 0 : nl.length)) * USD_PER_LISTING;
         const prev = out[c.id];
         out[c.id] = {
           productUrl: url,
@@ -121,7 +164,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
           cardName: eu[0]?.cardName ?? null,
         };
         const l = out[c.id]!.listings;
-        console.log(`${++done}/${todo.length} ${c.fullName} [${eu[0]?.cardName ?? 'no listings'}]: ${l.length} NM EN ≤ €${maxPrice.toFixed(0)}, cheapest €${l[0]?.price ?? '—'}`);
+        console.log(`${++done}/${todo.length} ${c.fullName} [${eu[0]?.cardName ?? 'no listings'}]${euRun.reused ? ' (reused)' : ''}: ${l.length} NM EN ≤ €${maxPrice.toFixed(0)}, cheapest €${l[0]?.price ?? '—'}`);
       } catch (e) {
         console.warn(`${++done}/${todo.length} ${c.fullName}: ${(e as Error).message}`);
         if ((e as { fatal?: boolean }).fatal) stop = true;
