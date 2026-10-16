@@ -11,7 +11,7 @@ import { CmProductsFile } from './cmproducts.ts';
 const ACTOR = 'phantom_coder~cardmarket-listings-scraper';
 const API = 'https://api.apify.com/v2';
 const MAX_AGE_H = 20;
-const CONCURRENCY = 6;
+const CONCURRENCY = 3; // the free plan allows 5 concurrent runs
 const MAX_RESULTS = 10;
 /** Listings above this multiple of the US raw price are almost always graded slabs; not fetching them saves credit. */
 const PRICE_CAP_X = 3.5;
@@ -58,14 +58,20 @@ async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   for (let attempt = 0; ; attempt++) {
     try {
       const res = await fetch(`${API}${path}`, { ...init, headers: { 'content-type': 'application/json', ...auth(), ...(init.headers ?? {}) } });
-      if (res.status === 401 || res.status === 402 || res.status === 403) {
+      if (res.status === 402) {
+        const body = await res.text();
+        // Too many runs at once is temporary; running out of monthly credit is not.
+        if (/concurrent|memory/i.test(body)) throw new Error(`Apify busy: ${body.slice(0, 120)}`);
+        throw Object.assign(new Error(`Apify refused the run (HTTP 402): ${body.slice(0, 200)}`), { fatal: true });
+      }
+      if (res.status === 401 || res.status === 403) {
         throw Object.assign(new Error(`Apify refused the request (HTTP ${res.status}): ${(await res.text()).slice(0, 200)}`), { fatal: true });
       }
       if (!res.ok) throw new Error(`Apify HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
       return (await res.json()) as T;
     } catch (e) {
-      if ((e as { fatal?: boolean }).fatal || attempt >= 4) throw e;
-      await new Promise((r) => setTimeout(r, 3000 * (attempt + 1)));
+      if ((e as { fatal?: boolean }).fatal || attempt >= 8) throw e;
+      await new Promise((r) => setTimeout(r, 5000 * (attempt + 1)));
     }
   }
 }

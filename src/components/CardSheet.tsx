@@ -144,7 +144,9 @@ export function CardSheet({ row, data, feeUsd, onClose }: Props) {
               </div>
             </dl>
           ) : (
-            <p class="muted">Cheapest NM English listings not fetched yet.</p>
+            <p class="muted">
+              {cm?.checkedAt ? 'No raw Near Mint English copy listed right now (graded slabs excluded).' : 'Cheapest NM English listings not fetched yet.'}
+            </p>
           )}
           {cm?.guide && (
             <dl class="facts">
@@ -164,6 +166,7 @@ export function CardSheet({ row, data, feeUsd, onClose }: Props) {
             <p class="muted small">Trend is far from the US raw price, so it isn't used. Check the live listings.</p>
           )}
           {!cm && <p class="muted small">No Cardmarket product matched. Search Cardmarket directly.</p>}
+          {card.cmNote && <p class="warn small">{card.cmNote}</p>}
           <dl class="facts">
             <div>
               <dt>US raw (PriceCharting)</dt>

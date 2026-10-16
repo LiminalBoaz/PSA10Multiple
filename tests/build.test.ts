@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { listingsPlausible, rawOnly, trendTrusted } from '../pipeline/build.ts';
+import { listingsPlausible, notRaw, rawOnly, trendTrusted } from '../pipeline/build.ts';
 import { actorInput } from '../pipeline/cardmarket.ts';
 
 describe('trendTrusted', () => {
@@ -21,11 +21,20 @@ describe('listingsPlausible', () => {
   });
 });
 
-describe('rawOnly', () => {
-  it('drops slabs and damaged copies based on the seller comment', () => {
-    const l = (price: number, comment: string | null) => ({ price, country: null, comment });
-    const kept = rawOnly([l(1, null), l(2, 'PSA 9 slab'), l(3, 'mint, fast shipping'), l(4, 'Graded by CGC'), l(5, 'small crease')]);
-    expect(kept.map((x) => x.price)).toEqual([1, 3]);
+describe('notRaw (real Cardmarket seller comments)', () => {
+  it('spots graded slabs', () => {
+    for (const c of ['PSA 7', 'CGC NM/M+ 8.5', 'PSA 6.', 'GSG 9', 'PSA1', 'bgs 8,5', '15804, PSA 8', '14530, CGC9', 'PCA 9.5 - All inquiries', 'Psa 8 173370394 only issue the white spikes', 'graded "GG"/Global grade 9. Is defo PSA 9 worthy', 'GRADED BGS 8.5', 'PSA 9, fresh cert. lots of box toppers!', 'Bgs 9.5, very low pop']) {
+      expect(notRaw(c), c).toBe(true);
+    }
+  });
+  it('keeps raw copies, including ones that mention grading', () => {
+    for (const c of [null, 'NM-  No PSA 10 candidate', 'PSA 10 candidate!', 'AI Grading 4.5 (If the surface is cleaned, potential grade 9)', 'Sleeved and in top loader', 'Front NM // Back EXC', 'ask for pic 2 white dots', 'Gengar & Mimikyu Tag Team GX, mint']) {
+      expect(notRaw(c), String(c)).toBe(false);
+    }
+  });
+  it('drops damaged copies', () => {
+    expect(notRaw('small crease on the back')).toBe(true);
+    expect(rawOnly([{ price: 1, country: null, comment: 'PSA 9' }, { price: 2, country: null, comment: null }]).map((l) => l.price)).toEqual([2]);
   });
 });
 
@@ -47,5 +56,14 @@ describe('scrapedNumberMatches', () => {
     expect(scrapedNumberMatches('Mewtwo GX SLG #39', '78')).toBe(false);
     expect(scrapedNumberMatches('Blastoise', '2')).toBe(true);
     expect(scrapedNumberMatches(null, '2')).toBe(true);
+  });
+});
+
+describe('farFromUs', () => {
+  it('notes EU prices far from the US raw price', async () => {
+    const { farFromUs } = await import('../pipeline/build.ts');
+    expect(farFromUs(2249, 730)).toMatch(/3\.1× the US raw price/);
+    expect(farFromUs(100, 100)).toBeNull();
+    expect(farFromUs(null, 100)).toBeNull();
   });
 });

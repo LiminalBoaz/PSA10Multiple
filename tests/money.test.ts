@@ -6,7 +6,7 @@ import { eur, signedEur, times } from '../src/lib/format.ts';
 // Test fixtures only. These are not market prices.
 type Listings = NonNullable<NonNullable<Card['cm']>['listings']>;
 function listings(avg10: number, over: Partial<Listings> = {}): NonNullable<Card['cm']> {
-  return { idProduct: 1, guide: null, listings: { avg10, median: avg10, min: avg10 * 0.8, max: avg10 * 1.2, n: 10, nl: null, nlChecked: true, fetchedAt: '2026-10-16T00:00:00Z', ...over } };
+  return { idProduct: 1, checkedAt: '2026-10-16T00:00:00Z', guide: null, listings: { avg10, median: avg10, min: avg10 * 0.8, max: avg10 * 1.2, n: 10, nl: null, nlChecked: true, fetchedAt: '2026-10-16T00:00:00Z', ...over } };
 }
 function card(over: Partial<Card> & { id: string }): Card {
   return {
@@ -19,6 +19,7 @@ function card(over: Partial<Card> & { id: string }): Card {
     links: { pricecharting: 'https://www.pricecharting.com/game/x/y', cardmarket: 'https://www.cardmarket.com/en/Pokemon/Products?idProduct=1' },
     usd: { raw: 10, g8: 20, g9: 40, psa10: 100 },
     cm: listings(10),
+    cmNote: null,
     ...over,
   };
 }
@@ -99,12 +100,12 @@ describe('raw baseline source', () => {
     expect(a.rawSource).toBe('listings');
   });
   it('falls back to a trusted Cardmarket trend', () => {
-    const a = analyze(card({ id: 'a', cm: { idProduct: 1, guide: guide(true), listings: null } }), FX, FEE_USD);
+    const a = analyze(card({ id: 'a', cm: { idProduct: 1, checkedAt: null, guide: guide(true), listings: null } }), FX, FEE_USD);
     expect(a.raw).toBe(30);
     expect(a.rawSource).toBe('trend');
   });
   it('ignores an untrusted trend', () => {
-    const a = analyze(card({ id: 'a', cm: { idProduct: 1, guide: guide(false), listings: null } }), FX, FEE_USD);
+    const a = analyze(card({ id: 'a', cm: { idProduct: 1, checkedAt: null, guide: guide(false), listings: null } }), FX, FEE_USD);
     expect(a.raw).toBeNull();
     expect(a.rawSource).toBeNull();
     expect(a.net10).toBeNull();

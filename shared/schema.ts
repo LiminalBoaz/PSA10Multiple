@@ -31,6 +31,8 @@ export const CmListings = z.object({
 export const Cardmarket = z.object({
   /** Cardmarket product id, when two sources confirm it. Only used for the trend price. */
   idProduct: z.number().int().positive().nullable(),
+  /** When the live listings were last checked; null if never (then the trend is the only Cardmarket number). */
+  checkedAt: z.string().nullable(),
   guide: CmGuideChecked.nullable(),
   listings: CmListings.nullable(),
 });
@@ -57,6 +59,8 @@ export const Card = z.object({
   links: z.object({ pricecharting: z.url().nullable(), cardmarket: z.url() }),
   usd: UsdPrices,
   cm: Cardmarket.nullable(),
+  /** Caveat about the Cardmarket numbers for this card, e.g. a printing Cardmarket can't filter. */
+  cmNote: z.string().nullable(),
 });
 
 export const DataFile = z.object({

@@ -47,8 +47,10 @@
      },
      "fetchedAt": "2026-10-16T12:00:00Z",
      "nlChecked": true
-    }
-   }
+    },
+    "checkedAt": "2026-10-16T12:00:00Z"
+   },
+   "cmNote": null
   },
   {
    "id": "sample-2",
@@ -83,8 +85,10 @@
      },
      "fetchedAt": "2026-10-16T12:00:00Z",
      "nlChecked": true
-    }
-   }
+    },
+    "checkedAt": "2026-10-16T12:00:00Z"
+   },
+   "cmNote": null
   },
   {
    "id": "sample-3",
@@ -116,8 +120,10 @@
      "nl": null,
      "fetchedAt": "2026-10-16T12:00:00Z",
      "nlChecked": true
-    }
-   }
+    },
+    "checkedAt": "2026-10-16T12:00:00Z"
+   },
+   "cmNote": null
   },
   {
    "id": "sample-4",
@@ -145,8 +151,10 @@
      "avg30": 38.0,
      "trusted": true
     },
-    "listings": null
-   }
+    "listings": null,
+    "checkedAt": null
+   },
+   "cmNote": null
   },
   {
    "id": "sample-5",
@@ -178,8 +186,10 @@
      "nl": null,
      "fetchedAt": "2026-10-16T12:00:00Z",
      "nlChecked": true
-    }
-   }
+    },
+    "checkedAt": "2026-10-16T12:00:00Z"
+   },
+   "cmNote": null
   },
   {
    "id": "sample-6",
@@ -214,8 +224,10 @@
      },
      "fetchedAt": "2026-10-16T12:00:00Z",
      "nlChecked": true
-    }
-   }
+    },
+    "checkedAt": "2026-10-16T12:00:00Z"
+   },
+   "cmNote": null
   },
   {
    "id": "sample-7",
@@ -243,8 +255,10 @@
      "avg30": 900,
      "trusted": false
     },
-    "listings": null
-   }
+    "listings": null,
+    "checkedAt": null
+   },
+   "cmNote": null
   }
  ]
 }

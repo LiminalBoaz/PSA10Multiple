@@ -2,7 +2,7 @@
 // print a quality report, and refuse to publish data that is too thin to trust.
 import sharp from 'sharp';
 import { existsSync } from 'node:fs';
-import { mkdir } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { DataFile, type Card } from '../shared/schema.ts';
 import { CardmarketFile, ContendersFile, PATHS, PriceChartingFile, readJson, TcgdexFile, writeJson, type CmEntry, type TcgdexEntry } from './lib/files.ts';
 import { usdToEur } from './lib/fx.ts';
@@ -20,10 +20,36 @@ export const LISTINGS_BAND = [0.33, 3] as const;
 const MIN_GRADED_SHARE = 0.95;
 const MIN_CM_SHARE = 0.8;
 
-/** Listings that are slabs or otherwise not a plain raw copy, judged from the seller's comment. */
-const NOT_RAW = /\b(psa|bgs|cgc|beckett|graded|slab|tag|ace|sgc)\b|\b(proxy|damaged|crease|custom)\b/i;
+/** A grading company followed by a grade ("PSA 7", "bgs 8,5", "CGC NM/M+ 8.5", "PSA1"), unless it is "PSA 10 candidate". */
+const GRADED = /\b(psa|bgs|cgc|sgc|gsg|pca|tag|ace|ags|beckett|gma|mnt)\s*[-:]?\s*(?:nm\/m\+?\s*|gem\s*mint\s*|mint\s*)?(?:10|[1-9])(?:[.,]5)?\b(?!\s*(?:candidate|worthy|potential|ready|material|quality))/i;
+const SLAB_WORDS = /\b(graded|slabbed|slab|new cert|fresh cert)\b/i;
+const DAMAGED = /\b(proxy|damaged|creased?|custom|fake|replica)\b/i;
+
+/** True when the seller's comment says the copy is a graded slab or damaged, so not a plain raw card. */
+export function notRaw(comment: string | null | undefined): boolean {
+  const c = comment ?? '';
+  return GRADED.test(c) || SLAB_WORDS.test(c) || DAMAGED.test(c);
+}
+
 export function rawOnly(listings: (Listing & { comment?: string | null })[]): Listing[] {
-  return listings.filter((l) => !NOT_RAW.test(l.comment ?? ''));
+  return listings.filter((l) => !notRaw(l.comment));
+}
+
+/** Printings that share a Cardmarket page with other printings and can't be filtered there. */
+export function variantNote(variant: string | null): string | null {
+  const v = variant?.toLowerCase() ?? '';
+  if (v.includes('shadowless')) return 'Cardmarket lists this card on one page for all Base Set printings, so these listings may include unlimited copies.';
+  if (v.includes('reverse')) return 'Cardmarket can’t filter reverse holos here, so these listings may include the regular holo.';
+  return null;
+}
+
+/** Flags EU prices far from the US raw price: usually a thin EU market, worth knowing at the booth. */
+export function farFromUs(euAvg: number | null, usRawEur: number | null): string | null {
+  if (!euAvg || !usRawEur) return null;
+  const r = euAvg / usRawEur;
+  if (r > LISTINGS_BAND[1]) return `EU listings are ${r.toFixed(1)}× the US raw price; few copies are listed in Europe.`;
+  if (r < LISTINGS_BAND[0]) return `EU listings are well below the US raw price (${r.toFixed(2)}×); check the copies.`;
+  return null;
 }
 
 export function trendTrusted(trend: number | null, usRawEur: number | null): boolean {
@@ -74,11 +100,13 @@ function cardmarketPart(
 ): Card['cm'] {
   if (!prod?.url && !t) return null;
   let eu = m ? cheapestStats(rawOnly(m.listings).map((l) => l.price)) : null;
+  // A page whose title carries the card number is the right product even when EU prices are far from US ones.
+  const numberConfirmed = Boolean(m?.cardName && /#\s*[A-Za-z]*\d+\s*$/.test(m.cardName));
   if (eu && m && !scrapedNumberMatches(m.cardName, number)) {
     suspicious.push(`${label} (page shows "${m.cardName}")`);
     eu = null;
-  } else if (eu && !listingsPlausible(eu.avg, usRawEur)) {
-    suspicious.push(`${label} (listings €${eu.avg} vs US €${usRawEur?.toFixed(0)})`);
+  } else if (eu && !numberConfirmed && !listingsPlausible(eu.avg, usRawEur)) {
+    suspicious.push(`${label} (listings €${eu.avg} vs US €${usRawEur?.toFixed(0)}, page has no card number)`);
     eu = null;
   }
   const nl = m && eu ? cheapestStats(rawOnly(m.nlListings).map((l) => l.price)) : null;
@@ -86,6 +114,7 @@ function cardmarketPart(
   const guide = t?.guide && idProduct != null && idProduct === t.idProduct ? { ...t.guide, trusted: trendTrusted(t.guide.trend, usRawEur) } : null;
   return {
     idProduct,
+    checkedAt: m?.fetchedAt ?? null,
     guide,
     listings:
       eu && m
@@ -135,8 +164,29 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       },
       usd,
       cm: cmPart,
+      cmNote: [variantNote(c.variant), farFromUs(cmPart?.listings?.avg10 ?? null, usRawEur)].filter(Boolean).join(' ') || null,
     });
   }
+
+  const md = [
+    `# Data quality (${new Date().toISOString().slice(0, 10)})`,
+    '',
+    'Raw = mean of up to 10 cheapest Near Mint English Cardmarket listings (slabs and damaged copies removed). Ratio = raw ÷ US raw (PriceCharting, converted to EUR).',
+    '',
+    '| Card | Set | # | Raw € | Source | Listings | US raw € | Ratio | Grade 9 € | PSA 10 € | Note |',
+    '| --- | --- | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |',
+    ...cards.map((c) => {
+      const raw = c.cm?.listings?.avg10 ?? (c.cm?.guide?.trusted ? c.cm.guide.trend : null);
+      const src = c.cm?.listings ? 'listings' : raw ? 'CM trend' : '—';
+      const us = c.usd.raw ? c.usd.raw * fx.usdToEur : null;
+      const f = (n: number | null | undefined) => (n == null ? '—' : n.toFixed(2));
+      const name = `[${c.variant ? `${c.name} (${c.variant})` : c.name}](${c.links.cardmarket})`;
+      return `| ${name} | ${c.set} | ${c.number ?? ''} | ${f(raw)} | ${src} | ${c.cm?.listings?.n ?? 0} | ${f(us)} | ${raw && us ? (raw / us).toFixed(2) : '—'} | ${f(c.usd.g9 ? c.usd.g9 * fx.usdToEur : null)} | ${f(c.usd.psa10 ? c.usd.psa10 * fx.usdToEur : null)} | ${c.cmNote ?? ''} |`;
+    }),
+    '',
+    suspicious.length ? `Listings dropped as a likely wrong product: ${suspicious.join('; ')}` : '',
+  ].join('\n');
+  await writeFile('data/quality.md', `${md}\n`);
 
   const data = DataFile.parse({ version: 2, generatedAt: new Date().toISOString(), fx, defaults: { gradingFeeUsd: GRADING_FEE_USD }, cards });
   await writeJson(PATHS.out, data);
