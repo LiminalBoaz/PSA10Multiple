@@ -111,8 +111,9 @@ export function App() {
         {data && (
           <p class="foot">
             {data.cards.length} cards from the PokeViews grading list. Raw = average of the 10 cheapest Near Mint English
-            listings on Cardmarket (EU sellers). PSA prices are PriceCharting US sales, converted at $1 = €
-            {data.fx.usdToEur.toFixed(3)} ({data.fx.date}). Grading fee ${fee}.
+            listings on Cardmarket; cards marked “trend” use Cardmarket’s trend price until listings are fetched. Graded
+            prices are PriceCharting US sales, converted at $1 = €{data.fx.usdToEur.toFixed(3)} ({data.fx.date}). Grading
+            fee ${fee}.
           </p>
         )}
       </main>

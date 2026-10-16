@@ -1,5 +1,5 @@
 {
- "version": 1,
+ "version": 2,
  "generatedAt": "2026-10-16T12:00:00Z",
  "fx": {
   "usdToEur": 0.9,
@@ -14,28 +14,39 @@
    "name": "Charizard ex (sample)",
    "set": "Sample Set A",
    "number": "199",
+   "variant": null,
    "image": null,
+   "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
    },
    "usd": {
     "raw": 120,
-    "psa8": 160,
-    "psa9": 210,
+    "g8": 160,
+    "g9": 210,
     "psa10": 520
    },
    "cm": {
-    "avg10": 105.0,
-    "median": 105.0,
-    "min": 89.25,
-    "max": 126.0,
-    "n": 10,
-    "nl": {
-     "avg": 112.0,
-     "n": 4
+    "idProduct": 1,
+    "guide": {
+     "trend": 110,
+     "low": 55.0,
+     "avg30": 110,
+     "trusted": true
     },
-    "fetchedAt": "2026-10-16T12:00:00Z"
+    "listings": {
+     "avg10": 105.0,
+     "median": 105.0,
+     "min": 89.25,
+     "max": 126.0,
+     "n": 10,
+     "nl": {
+      "avg": 112.0,
+      "n": 4
+     },
+     "fetchedAt": "2026-10-16T12:00:00Z"
+    }
    }
   },
   {
@@ -43,28 +54,34 @@
    "name": "Umbreon VMAX (sample)",
    "set": "Sample Set B",
    "number": "215",
+   "variant": null,
    "image": null,
+   "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
    },
    "usd": {
     "raw": 30,
-    "psa8": 45,
-    "psa9": 70,
+    "g8": 45,
+    "g9": 70,
     "psa10": 260
    },
    "cm": {
-    "avg10": 18.5,
-    "median": 18.5,
-    "min": 15.72,
-    "max": 22.2,
-    "n": 10,
-    "nl": {
-     "avg": 21.0,
-     "n": 2
-    },
-    "fetchedAt": "2026-10-16T12:00:00Z"
+    "idProduct": 1,
+    "guide": null,
+    "listings": {
+     "avg10": 18.5,
+     "median": 18.5,
+     "min": 15.72,
+     "max": 22.2,
+     "n": 10,
+     "nl": {
+      "avg": 21.0,
+      "n": 2
+     },
+     "fetchedAt": "2026-10-16T12:00:00Z"
+    }
    }
   },
   {
@@ -72,25 +89,31 @@
    "name": "Pikachu (sample)",
    "set": "Sample Set C",
    "number": "25",
+   "variant": null,
    "image": null,
+   "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
    },
    "usd": {
     "raw": 6,
-    "psa8": 12,
-    "psa9": 24,
+    "g8": 12,
+    "g9": 24,
     "psa10": 95
    },
    "cm": {
-    "avg10": 4.2,
-    "median": 4.2,
-    "min": 3.57,
-    "max": 5.04,
-    "n": 10,
-    "nl": null,
-    "fetchedAt": "2026-10-16T12:00:00Z"
+    "idProduct": 1,
+    "guide": null,
+    "listings": {
+     "avg10": 4.2,
+     "median": 4.2,
+     "min": 3.57,
+     "max": 5.04,
+     "n": 10,
+     "nl": null,
+     "fetchedAt": "2026-10-16T12:00:00Z"
+    }
    }
   },
   {
@@ -98,25 +121,28 @@
    "name": "Gengar (sample)",
    "set": "Sample Set D",
    "number": "94",
+   "variant": null,
    "image": null,
+   "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
    },
    "usd": {
     "raw": 40,
-    "psa8": 50,
-    "psa9": 60,
+    "g8": 50,
+    "g9": 60,
     "psa10": 140
    },
    "cm": {
-    "avg10": 38.0,
-    "median": 38.0,
-    "min": 32.3,
-    "max": 45.6,
-    "n": 10,
-    "nl": null,
-    "fetchedAt": "2026-10-16T12:00:00Z"
+    "idProduct": 1,
+    "guide": {
+     "trend": 38.0,
+     "low": 19.0,
+     "avg30": 38.0,
+     "trusted": true
+    },
+    "listings": null
    }
   },
   {
@@ -124,25 +150,31 @@
    "name": "Mew ex (sample)",
    "set": "Sample Set E",
    "number": "232",
+   "variant": null,
    "image": null,
+   "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
    },
    "usd": {
     "raw": 70,
-    "psa8": 80,
-    "psa9": 110,
+    "g8": 80,
+    "g9": 110,
     "psa10": 300
    },
    "cm": {
-    "avg10": 64.0,
-    "median": 64.0,
-    "min": 54.4,
-    "max": 76.8,
-    "n": 10,
-    "nl": null,
-    "fetchedAt": "2026-10-16T12:00:00Z"
+    "idProduct": 1,
+    "guide": null,
+    "listings": {
+     "avg10": 64.0,
+     "median": 64.0,
+     "min": 54.4,
+     "max": 76.8,
+     "n": 10,
+     "nl": null,
+     "fetchedAt": "2026-10-16T12:00:00Z"
+    }
    }
   },
   {
@@ -150,28 +182,34 @@
    "name": "Charizard (sample)",
    "set": "Sample Set F",
    "number": "4",
+   "variant": "1st Edition",
    "image": null,
+   "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
    },
    "usd": {
     "raw": 300,
-    "psa8": 450,
-    "psa9": 700,
+    "g8": 450,
+    "g9": 700,
     "psa10": 2500
    },
    "cm": {
-    "avg10": 280.0,
-    "median": 280.0,
-    "min": 238.0,
-    "max": 336.0,
-    "n": 10,
-    "nl": {
-     "avg": 299.0,
-     "n": 3
-    },
-    "fetchedAt": "2026-10-16T12:00:00Z"
+    "idProduct": 1,
+    "guide": null,
+    "listings": {
+     "avg10": 280.0,
+     "median": 280.0,
+     "min": 238.0,
+     "max": 336.0,
+     "n": 10,
+     "nl": {
+      "avg": 299.0,
+      "n": 3
+     },
+     "fetchedAt": "2026-10-16T12:00:00Z"
+    }
    }
   },
   {
@@ -179,18 +217,29 @@
    "name": "Lugia V (sample)",
    "set": "Sample Set G",
    "number": "186",
+   "variant": null,
    "image": null,
+   "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
    },
    "usd": {
     "raw": 90,
-    "psa8": null,
-    "psa9": 150,
+    "g8": null,
+    "g9": 150,
     "psa10": 400
    },
-   "cm": null
+   "cm": {
+    "idProduct": 1,
+    "guide": {
+     "trend": 900,
+     "low": 450.0,
+     "avg30": 900,
+     "trusted": false
+    },
+    "listings": null
+   }
   }
  ]
 }

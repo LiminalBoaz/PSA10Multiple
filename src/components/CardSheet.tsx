@@ -11,9 +11,11 @@ interface Props {
   onClose: () => void;
 }
 
-function withFilters(url: string): string {
-  // English, Near Mint or better: the same filter the baseline was computed with.
-  return `${url}${url.includes('?') ? '&' : '?'}language=1&minCondition=2`;
+/** English, Near Mint or better: the same filter the baseline is computed with. */
+function withFilters(url: string, variant: string | null): string {
+  const v = variant?.toLowerCase() ?? '';
+  const extra = v.includes('1st') ? '&isFirstEd=Y' : v.includes('reverse') ? '&isReverseHolo=Y' : '';
+  return `${url}${url.includes('?') ? '&' : '?'}language=1&minCondition=2${extra}`;
 }
 
 function Net({ v }: { v: number | null }) {
@@ -33,10 +35,11 @@ export function CardSheet({ row, data, feeUsd, onClose }: Props) {
   }, []);
 
   const grades = [
-    { label: 'PSA 8', eur: a.psa8, usd: card.usd.psa8, net: a.net8 },
-    { label: 'PSA 9', eur: a.psa9, usd: card.usd.psa9, net: a.net9 },
+    { label: 'Grade 8', eur: a.g8, usd: card.usd.g8, net: a.net8 },
+    { label: 'Grade 9', eur: a.g9, usd: card.usd.g9, net: a.net9 },
     { label: 'PSA 10', eur: a.psa10, usd: card.usd.psa10, net: a.net10 },
   ];
+  const rawLabel = a.rawSource === 'listings' ? `${cm?.listings?.n} cheapest NM EN` : a.rawSource === 'trend' ? 'CM trend' : 'not available';
 
   return (
     <dialog
@@ -59,14 +62,15 @@ export function CardSheet({ row, data, feeUsd, onClose }: Props) {
           <div class="sheet-title">
             <h2 id="sheet-title">{card.name}</h2>
             <p class="sheet-set">
+              {card.variant ? `${card.variant} · ` : ''}
               {card.set}
-              {card.number ? ` · #${card.number}` : ''}
+              {card.number ? ` #${card.number}` : ''}
             </p>
             <div class="maxbuy">
-              <span class="label">Max buy · PSA 9 safe</span>
+              <span class="label">Max buy · grade 9 safe</span>
               <span class="big">{eur(a.maxBuy9)}</span>
             </div>
-            <p class="hint">Pay up to this and a PSA 9 still breaks even after the {eur(a.fee)} grading fee.</p>
+            <p class="hint">Pay up to this and a grade 9 still breaks even after the {eur(a.fee)} grading fee.</p>
           </div>
         </div>
 
@@ -81,7 +85,7 @@ export function CardSheet({ row, data, feeUsd, onClose }: Props) {
           <tbody>
             <tr class="raw-row">
               <th scope="row">
-                Raw <small>Cardmarket</small>
+                Raw <small>{rawLabel}</small>
               </th>
               <td class="num">{eur(a.raw)}</td>
               <td class="num muted">you pay</td>
@@ -110,54 +114,81 @@ export function CardSheet({ row, data, feeUsd, onClose }: Props) {
             <dt>Break-even if PSA 10</dt>
             <dd>{eur(a.maxBuy10)}</dd>
           </div>
+          {card.salesPerYear != null && (
+            <div>
+              <dt>Sold per year (US)</dt>
+              <dd>{card.salesPerYear}</dd>
+            </div>
+          )}
         </dl>
 
         <section class="cm" aria-labelledby="cm-h">
           <h3 id="cm-h">Cardmarket · Near Mint English</h3>
-          {cm ? (
+          {cm?.listings ? (
             <dl class="facts">
               <div>
-                <dt>EU, {cm.n} cheapest</dt>
+                <dt>EU, {cm.listings.n} cheapest</dt>
                 <dd>
-                  avg {eur(cm.avg10)} · median {eur(cm.median)}
+                  avg {eur(cm.listings.avg10)} · median {eur(cm.listings.median)}
                 </dd>
               </div>
               <div>
                 <dt>Range</dt>
                 <dd>
-                  {eur(cm.min)} – {eur(cm.max)}
+                  {eur(cm.listings.min)} – {eur(cm.listings.max)}
                 </dd>
               </div>
               <div>
                 <dt>Netherlands</dt>
                 <dd>{a.nl ? `avg ${eur(a.nl.avg)} (${a.nl.n})` : 'Fewer than 3 listings'}</dd>
               </div>
+            </dl>
+          ) : (
+            <p class="muted">Cheapest NM English listings not fetched yet.</p>
+          )}
+          {cm?.guide && (
+            <dl class="facts">
               <div>
-                <dt>US raw (PriceCharting)</dt>
+                <dt>CM trend · all languages</dt>
+                <dd>{eur(cm.guide.trend)}</dd>
+              </div>
+              <div>
+                <dt>Lowest · 30-day avg</dt>
                 <dd>
-                  {usd(card.usd.raw)} <small>≈ {eur(card.usd.raw == null ? null : card.usd.raw * rate)}</small>
+                  {eur(cm.guide.low)} · {eur(cm.guide.avg30)}
                 </dd>
               </div>
             </dl>
-          ) : (
-            <p class="muted">No Near Mint English listings found on Cardmarket.</p>
           )}
+          {cm?.guide && !cm.guide.trusted && !cm.listings && (
+            <p class="muted small">Trend is far from the US raw price, so it isn't used. Check the live listings.</p>
+          )}
+          {!cm && <p class="muted small">No Cardmarket product matched. Search Cardmarket directly.</p>}
+          <dl class="facts">
+            <div>
+              <dt>US raw (PriceCharting)</dt>
+              <dd>
+                {usd(card.usd.raw)} <small>≈ {eur(card.usd.raw == null ? null : card.usd.raw * rate)}</small>
+              </dd>
+            </div>
+          </dl>
         </section>
 
         <div class="links">
-          {card.links.cardmarket && (
-            <a href={withFilters(card.links.cardmarket)} target="_blank" rel="noopener noreferrer">
-              Cardmarket ↗
+          <a href={withFilters(card.links.cardmarket, card.variant)} target="_blank" rel="noopener noreferrer">
+            Cardmarket ↗
+          </a>
+          {card.links.pricecharting && (
+            <a href={card.links.pricecharting} target="_blank" rel="noopener noreferrer">
+              PriceCharting ↗
             </a>
           )}
-          <a href={card.links.pricecharting} target="_blank" rel="noopener noreferrer">
-            PriceCharting ↗
-          </a>
         </div>
 
         <p class="fine">
-          Fee ${feeUsd} ≈ {eur(a.fee)}. $1 = €{rate.toFixed(3)} ({data.fx.date}).
-          {cm ? ` Cardmarket checked ${new Date(cm.fetchedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}.` : ''}
+          Grade 8 and 9 are PriceCharting sales across graders (mostly PSA); PSA 10 is PSA only. Fee ${feeUsd} ≈ {eur(a.fee)}. $1 = €
+          {rate.toFixed(3)} ({data.fx.date}).
+          {cm?.listings ? ` Listings checked ${new Date(cm.listings.fetchedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}.` : ''}
         </p>
 
         <button type="button" class="close" onClick={onClose}>

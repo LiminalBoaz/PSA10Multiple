@@ -1,0 +1,1106 @@
+{
+ "ho-oh-reverse-holo-skyridge-149": {
+  "tcgdexId": "ecard3-149",
+  "setName": "Skyridge",
+  "setCode": "SK",
+  "idProduct": 362907,
+  "guide": {
+   "trend": 43.61,
+   "low": null,
+   "avg30": 37.49
+  },
+  "tcgplayerMarket": 900,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "mew-ex-promo-53": {
+  "tcgdexId": "svp-053",
+  "setName": "SVP Black Star Promos",
+  "setCode": "SVP",
+  "idProduct": 720950,
+  "guide": {
+   "trend": 77.3,
+   "low": 49.39,
+   "avg30": 92.98
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "lugia-v-silver-tempest-138": {
+  "tcgdexId": "swsh12-138",
+  "setName": "Silver Tempest",
+  "setCode": "SIT",
+  "idProduct": 682185,
+  "guide": {
+   "trend": 21.55,
+   "low": 7.5,
+   "avg30": 18.38
+  },
+  "tcgplayerMarket": 12.89,
+  "matchedBy": "tcgplayer id"
+ },
+ "ditto-1st-edition-fossil-3": {
+  "tcgdexId": "base3-3",
+  "setName": "Fossil",
+  "setCode": "FO",
+  "idProduct": 273864,
+  "guide": null,
+  "tcgplayerMarket": 135.44,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "mewtwo-v-go-72": {
+  "tcgdexId": "swsh10.5-072",
+  "setName": "Pokémon GO",
+  "setCode": "PGO",
+  "idProduct": 665290,
+  "guide": {
+   "trend": 49.12,
+   "low": 22.14,
+   "avg30": 54.75
+  },
+  "tcgplayerMarket": 54.81,
+  "matchedBy": "tcgplayer id"
+ },
+ "rayquaza-vmax-silver-tempest-tg29": {
+  "tcgdexId": "swsh12tg-TG29",
+  "setName": "Silver Tempest Trainer Gallery",
+  "setCode": "SIT:TG",
+  "idProduct": 682293,
+  "guide": {
+   "trend": 17.94,
+   "low": 11.89,
+   "avg30": 20.36
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "blastoise-celebrations-2": {
+  "tcgdexId": "cel25cc-CC001",
+  "setName": "Celebrations Classic Collection",
+  "setCode": "CEL:CC",
+  "idProduct": 576771,
+  "guide": {
+   "trend": 23.74,
+   "low": 9.9,
+   "avg30": 21.41
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id (renumbered set)"
+ },
+ "mew-celebrations-25": {
+  "tcgdexId": "cel25-25",
+  "setName": "Celebrations",
+  "setCode": "CEL",
+  "idProduct": 576770,
+  "guide": {
+   "trend": 71.32,
+   "low": 39.99,
+   "avg30": 83.26
+  },
+  "tcgplayerMarket": 64.09,
+  "matchedBy": "tcgplayer id"
+ },
+ "umbreon-celebrations-17": {
+  "tcgdexId": "cel25cc-CC015",
+  "setName": "Celebrations Classic Collection",
+  "setCode": "CEL:CC",
+  "idProduct": 576785,
+  "guide": {
+   "trend": 137.3,
+   "low": 93,
+   "avg30": 144.82
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id (renumbered set)"
+ },
+ "mega-charizard-x-ex-phantasmal-flames-130": {
+  "tcgdexId": "me02-130",
+  "setName": "Phantasmal Flames",
+  "setCode": "PFL",
+  "idProduct": 857705,
+  "guide": {
+   "trend": 205.48,
+   "low": 159.99,
+   "avg30": 257.93
+  },
+  "tcgplayerMarket": 205.11,
+  "matchedBy": "tcgplayer id"
+ },
+ "shining-raichu-1st-edition-neo-destiny-111": {
+  "tcgdexId": "neo4-111",
+  "setName": "Neo Destiny",
+  "setCode": "N4",
+  "idProduct": 274763,
+  "guide": null,
+  "tcgplayerMarket": 548.7,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "articuno-journey-together-161": {
+  "tcgdexId": "sv09-161",
+  "setName": "Journey Together",
+  "setCode": "JTG",
+  "idProduct": 817313,
+  "guide": {
+   "trend": 19.85,
+   "low": 9,
+   "avg30": 21.45
+  },
+  "tcgplayerMarket": 15.31,
+  "matchedBy": "tcgplayer id"
+ },
+ "snorlax-promo-51": {
+  "tcgdexId": "svp-051",
+  "setName": "SVP Black Star Promos",
+  "setCode": "SVP",
+  "idProduct": 720390,
+  "guide": {
+   "trend": 20.63,
+   "low": 5.51,
+   "avg30": 21.24
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "charmander-promo-44": {
+  "tcgdexId": "svp-044",
+  "setName": "SVP Black Star Promos",
+  "setCode": "SVP",
+  "idProduct": 715758,
+  "guide": {
+   "trend": 45.49,
+   "low": 19.99,
+   "avg30": 47.9
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "mewtwo-promo-52": {
+  "tcgdexId": "svp-052",
+  "setName": "SVP Black Star Promos",
+  "setCode": "SVP",
+  "idProduct": 720949,
+  "guide": {
+   "trend": 62.11,
+   "low": 24.99,
+   "avg30": 71.21
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "magikarp-paldea-evolved-203": {
+  "tcgdexId": "sv02-203",
+  "setName": "Paldea Evolved",
+  "setCode": "PAL",
+  "idProduct": 715678,
+  "guide": {
+   "trend": 295.08,
+   "low": 99.9,
+   "avg30": 384.07
+  },
+  "tcgplayerMarket": 352.72,
+  "matchedBy": "tcgplayer id"
+ },
+ "sylveon-gx-guardians-rising-140": {
+  "tcgdexId": "sm2-140",
+  "setName": "Guardians Rising",
+  "setCode": "GRI",
+  "idProduct": 297592,
+  "guide": {
+   "trend": 41.21,
+   "low": 6.25,
+   "avg30": 38.74
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "mewtwo-gx-shining-legends-78": {
+  "tcgdexId": "sm3.5-78",
+  "setName": "Shining Legends",
+  "setCode": "SLG",
+  "idProduct": 301167,
+  "guide": {
+   "trend": 6.99,
+   "low": 3,
+   "avg30": 7.46
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "pikachu-cosmic-eclipse-241": {
+  "tcgdexId": "sm12-241",
+  "setName": "Cosmic Eclipse",
+  "setCode": "CEC",
+  "idProduct": 398534,
+  "guide": {
+   "trend": 144.08,
+   "low": 39.98,
+   "avg30": 140.98
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "celebi-venusaur-gx-promo-sm167": {
+  "tcgdexId": "smp-SM167",
+  "setName": "SM Black Star Promos",
+  "setCode": "SMP",
+  "idProduct": 369467,
+  "guide": {
+   "trend": 146.05,
+   "low": 19.9,
+   "avg30": 210.82
+  },
+  "tcgplayerMarket": 92.66,
+  "matchedBy": "tcgplayer id"
+ },
+ "pikachu-zekrom-gx-team-up-33": {
+  "tcgdexId": "sm9-33",
+  "setName": "Team Up",
+  "setCode": "TEU",
+  "idProduct": 366888,
+  "guide": {
+   "trend": 52.84,
+   "low": 14.6,
+   "avg30": 52.43
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "shining-tyranitar-neo-destiny-113": {
+  "tcgdexId": "neo4-113",
+  "setName": "Neo Destiny",
+  "setCode": "N4",
+  "idProduct": 274765,
+  "guide": {
+   "trend": 676.51,
+   "low": 190,
+   "avg30": 831.76
+  },
+  "tcgplayerMarket": 345,
+  "matchedBy": "tcgplayer id"
+ },
+ "drowzee-scarlet-violet-210": {
+  "tcgdexId": "sv01-210",
+  "setName": "Scarlet & Violet",
+  "setCode": "SVI",
+  "idProduct": 702506,
+  "guide": {
+   "trend": 67.85,
+   "low": 18.9,
+   "avg30": 46.3
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "charizard-gx-burning-shadows-20": {
+  "tcgdexId": "sm3-20",
+  "setName": "Burning Shadows",
+  "setCode": "BUS",
+  "idProduct": 299426,
+  "guide": {
+   "trend": 7.79,
+   "low": 2,
+   "avg30": 21.68
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "mew-crown-zenith-gg10": {
+  "tcgdexId": "swsh12.5gg-GG10",
+  "setName": "Crown Zenith Galarian Gallery",
+  "setCode": "CRZ:GG",
+  "idProduct": 691889,
+  "guide": {
+   "trend": 88.03,
+   "low": 30,
+   "avg30": 74.26
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "pikachu-lost-origin-tg05": {
+  "tcgdexId": "swsh11tg-TG05",
+  "setName": "Lost Origin Trainer Gallery",
+  "setCode": "LOR:TG",
+  "idProduct": 674225,
+  "guide": {
+   "trend": 34.15,
+   "low": 15,
+   "avg30": 34.42
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "mewtwo-ex-evolutions-103": {
+  "tcgdexId": "xy12-103",
+  "setName": "Evolutions",
+  "setCode": "EVO",
+  "idProduct": 293476,
+  "guide": {
+   "trend": 61.78,
+   "low": 9,
+   "avg30": 53.48
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "gengar-ex-phantom-forces-34": {
+  "tcgdexId": "xy4-34",
+  "setName": "Phantom Forces",
+  "setCode": "PHF",
+  "idProduct": 281840,
+  "guide": {
+   "trend": 416.32,
+   "low": 9.98,
+   "avg30": 76.95
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "m-rayquaza-ex-ancient-origins-98": {
+  "tcgdexId": "xy7-98",
+  "setName": "Ancient Origins",
+  "setCode": "AOR",
+  "idProduct": 284279,
+  "guide": {
+   "trend": 1037.78,
+   "low": 110,
+   "avg30": 1121.71
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "mega-absol-ex-mega-evolution-180": {
+  "tcgdexId": "me01-180",
+  "setName": "Mega Evolution",
+  "setCode": "MEG",
+  "idProduct": 851251,
+  "guide": {
+   "trend": 69.03,
+   "low": 40,
+   "avg30": 63.33
+  },
+  "tcgplayerMarket": 48.73,
+  "matchedBy": "tcgplayer id"
+ },
+ "vulpix-mega-evolution-138": {
+  "tcgdexId": "me01-138",
+  "setName": "Mega Evolution",
+  "setCode": "MEG",
+  "idProduct": 851209,
+  "guide": {
+   "trend": 17.68,
+   "low": 6.9,
+   "avg30": 17.65
+  },
+  "tcgplayerMarket": 18.01,
+  "matchedBy": "tcgplayer id"
+ },
+ "mega-charizard-x-ex-phantasmal-flames-125": {
+  "tcgdexId": "me02-125",
+  "setName": "Phantasmal Flames",
+  "setCode": "PFL",
+  "idProduct": 857700,
+  "guide": {
+   "trend": 642.41,
+   "low": 350,
+   "avg30": 731.09
+  },
+  "tcgplayerMarket": 623.2,
+  "matchedBy": "tcgplayer id"
+ },
+ "pikachu-with-grey-felt-hat-promo-85": {
+  "tcgdexId": "svp-085",
+  "setName": "SVP Black Star Promos",
+  "setCode": "SVP",
+  "idProduct": 735302,
+  "guide": {
+   "trend": 848.7,
+   "low": 500,
+   "avg30": 751.45
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "kyurem-ex-black-bolt-165": {
+  "tcgdexId": "sv10.5b-165",
+  "setName": "Black Bolt",
+  "setCode": "BLK",
+  "idProduct": 836239,
+  "guide": {
+   "trend": 70.68,
+   "low": 40,
+   "avg30": 69.19
+  },
+  "tcgplayerMarket": 69.05,
+  "matchedBy": "tcgplayer id"
+ },
+ "charizard-ex-paldean-fates-234": {
+  "tcgdexId": "sv04.5-234",
+  "setName": "Paldean Fates",
+  "setCode": "PAF",
+  "idProduct": 751781,
+  "guide": {
+   "trend": 343.17,
+   "low": 139.81,
+   "avg30": 262.12
+  },
+  "tcgplayerMarket": 256.92,
+  "matchedBy": "tcgplayer id"
+ },
+ "jessie-james-hidden-fates-68": {
+  "tcgdexId": "sm115-68",
+  "setName": "Hidden Fates",
+  "setCode": "HIF",
+  "idProduct": 396682,
+  "guide": {
+   "trend": 72.68,
+   "low": 44.9,
+   "avg30": 73.63
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "moltres-zapdos-articuno-gx-promo-sm210": {
+  "tcgdexId": "smp-SM210",
+  "setName": "SM Black Star Promos",
+  "setCode": "SMP",
+  "idProduct": 381219,
+  "guide": {
+   "trend": 116.56,
+   "low": 70,
+   "avg30": 116
+  },
+  "tcgplayerMarket": 156.58,
+  "matchedBy": "tcgplayer id"
+ },
+ "umbreon-vmax-brilliant-stars-tg23": {
+  "tcgdexId": "swsh9tg-TG23",
+  "setName": "Brilliant Stars Trainer Gallery",
+  "setCode": "BRS:TG",
+  "idProduct": 608755,
+  "guide": {
+   "trend": 64.82,
+   "low": 23,
+   "avg30": 78.99
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "umbreon-v-evolving-skies-189": {
+  "tcgdexId": "swsh7-189",
+  "setName": "Evolving Skies",
+  "setCode": "EVS",
+  "idProduct": 574247,
+  "guide": {
+   "trend": 279.62,
+   "low": 85,
+   "avg30": 305.77
+  },
+  "tcgplayerMarket": 378.95,
+  "matchedBy": "tcgplayer id"
+ },
+ "zeraora-vmax-crown-zenith-gg42": {
+  "tcgdexId": "swsh12.5gg-GG42",
+  "setName": "Crown Zenith Galarian Gallery",
+  "setCode": "CRZ:GG",
+  "idProduct": 691922,
+  "guide": {
+   "trend": 45.3,
+   "low": 14.9,
+   "avg30": 42.15
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "dragonite-v-evolving-skies-192": {
+  "tcgdexId": "swsh7-192",
+  "setName": "Evolving Skies",
+  "setCode": "EVS",
+  "idProduct": 574250,
+  "guide": {
+   "trend": 402.28,
+   "low": 130,
+   "avg30": 422.13
+  },
+  "tcgplayerMarket": 505.93,
+  "matchedBy": "tcgplayer id"
+ },
+ "leafeon-vstar-crown-zenith-gg35": {
+  "tcgdexId": "swsh12.5gg-GG35",
+  "setName": "Crown Zenith Galarian Gallery",
+  "setCode": "CRZ:GG",
+  "idProduct": 691915,
+  "guide": {
+   "trend": 81.57,
+   "low": 45,
+   "avg30": 78.13
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "charizard-vmax-darkness-ablaze-20": {
+  "tcgdexId": "swsh3-20",
+  "setName": "Darkness Ablaze",
+  "setCode": "DAA",
+  "idProduct": 482974,
+  "guide": {
+   "trend": 53.7,
+   "low": 9.99,
+   "avg30": 49.56
+  },
+  "tcgplayerMarket": 38.55,
+  "matchedBy": "tcgplayer id"
+ },
+ "vaporeon-skyridge-h31": {
+  "tcgdexId": "ecard3-H31",
+  "setName": "Skyridge",
+  "setCode": "SK",
+  "idProduct": 275252,
+  "guide": {
+   "trend": 1026.27,
+   "low": 88,
+   "avg30": 549.8
+  },
+  "tcgplayerMarket": 423,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "kabutops-skyridge-150": {
+  "tcgdexId": "ecard3-150",
+  "setName": "Skyridge",
+  "setCode": "SK",
+  "idProduct": 275272,
+  "guide": {
+   "trend": 21.72,
+   "low": 5,
+   "avg30": 17.83
+  },
+  "tcgplayerMarket": 1000,
+  "matchedBy": "tcgplayer id"
+ },
+ "umbreon-skyridge-h30": {
+  "tcgdexId": "ecard3-H30",
+  "setName": "Skyridge",
+  "setCode": "SK",
+  "idProduct": 275290,
+  "guide": {
+   "trend": 222.74,
+   "low": 32,
+   "avg30": 148.31
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "mew-triumphant-97": {
+  "tcgdexId": "hgss4-97",
+  "setName": "Triumphant",
+  "setCode": "TRI",
+  "idProduct": 279627,
+  "guide": {
+   "trend": 249.17,
+   "low": 34.9,
+   "avg30": 162.68
+  },
+  "tcgplayerMarket": 394.47,
+  "matchedBy": "tcgplayer id"
+ },
+ "haunter-1st-edition-fossil-6": {
+  "tcgdexId": "base3-6",
+  "setName": "Fossil",
+  "setCode": "FO",
+  "idProduct": 273867,
+  "guide": null,
+  "tcgplayerMarket": 175.73,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "pikachu-shadowless-red-cheeks-base-set-58": {
+  "tcgdexId": "base1-58",
+  "setName": "Base Set",
+  "setCode": "BS",
+  "idProduct": 660170,
+  "guide": null,
+  "tcgplayerMarket": null,
+  "matchedBy": "tcgplayer id"
+ },
+ "dark-charizard-1st-edition-team-rocket-4": {
+  "tcgdexId": "base5-4",
+  "setName": "Team Rocket",
+  "setCode": "RO",
+  "idProduct": 274057,
+  "guide": null,
+  "tcgplayerMarket": 62.35,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "bulbasaur-stamped-mega-evolution-133": {
+  "tcgdexId": "me01-133",
+  "setName": "Mega Evolution",
+  "setCode": "MEG",
+  "idProduct": 851204,
+  "guide": {
+   "trend": 21.58,
+   "low": 11.99,
+   "avg30": 24.32
+  },
+  "tcgplayerMarket": 17.19,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "umbreon-darkrai-gx-promo-sm241": {
+  "tcgdexId": "smp-SM241",
+  "setName": "SM Black Star Promos",
+  "setCode": "SMP",
+  "idProduct": 449108,
+  "guide": {
+   "trend": 229.99,
+   "low": 65,
+   "avg30": 257
+  },
+  "tcgplayerMarket": 237.24,
+  "matchedBy": "tcgplayer id"
+ },
+ "rayquaza-gx-celestial-storm-109": {
+  "tcgdexId": "sm7-109",
+  "setName": "Celestial Storm",
+  "setCode": "CES",
+  "idProduct": 361348,
+  "guide": {
+   "trend": 24.14,
+   "low": 5,
+   "avg30": 18.22
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "alakazam-ex-fates-collide-125": {
+  "tcgdexId": "xy10-125",
+  "setName": "Fates Collide",
+  "setCode": "FCO",
+  "idProduct": 289945,
+  "guide": {
+   "trend": 254.83,
+   "low": 25,
+   "avg30": 188.71
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "espeon-ex-breakpoint-117": {
+  "tcgdexId": "xy9-117",
+  "setName": "BREAKpoint",
+  "setCode": "BKP",
+  "idProduct": 288292,
+  "guide": {
+   "trend": 166.03,
+   "low": 12,
+   "avg30": 134.72
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "umbreon-ex-fates-collide-119": {
+  "tcgdexId": "xy10-119",
+  "setName": "Fates Collide",
+  "setCode": "FCO",
+  "idProduct": 289939,
+  "guide": {
+   "trend": 224.19,
+   "low": 32.99,
+   "avg30": 150.34
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "mega-charizard-x-ex-promo-23": {
+  "tcgdexId": "mep-023",
+  "setName": "MEP Black Star Promos",
+  "setCode": "MEP",
+  "idProduct": 859033,
+  "guide": {
+   "trend": 40.13,
+   "low": 24.3,
+   "avg30": 47.35
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "zapdos-ex-scarlet-violet-151-202": {
+  "tcgdexId": "sv03.5-202",
+  "setName": "151",
+  "setCode": "MEW",
+  "idProduct": 733797,
+  "guide": {
+   "trend": 98.19,
+   "low": 45,
+   "avg30": 120.39
+  },
+  "tcgplayerMarket": 82.74,
+  "matchedBy": "tcgplayer id"
+ },
+ "blastoise-ex-scarlet-violet-151-200": {
+  "tcgdexId": "sv03.5-200",
+  "setName": "151",
+  "setCode": "MEW",
+  "idProduct": 733795,
+  "guide": {
+   "trend": 130.31,
+   "low": 69.99,
+   "avg30": 141.91
+  },
+  "tcgplayerMarket": 114,
+  "matchedBy": "tcgplayer id"
+ },
+ "espeon-ex-promo-175": {
+  "tcgdexId": "svp-175",
+  "setName": "SVP Black Star Promos",
+  "setCode": "SVP",
+  "idProduct": 850982,
+  "guide": {
+   "trend": 14.51,
+   "low": 6.95,
+   "avg30": 16.16
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "vaporeon-ex-prismatic-evolutions-149": {
+  "tcgdexId": "sv08.5-149",
+  "setName": "Prismatic Evolutions",
+  "setCode": "PRE",
+  "idProduct": 805543,
+  "guide": {
+   "trend": 187.66,
+   "low": 99,
+   "avg30": 186.23
+  },
+  "tcgplayerMarket": 254.24,
+  "matchedBy": "tcgplayer id"
+ },
+ "alakazam-ex-scarlet-violet-151-201": {
+  "tcgdexId": "sv03.5-201",
+  "setName": "151",
+  "setCode": "MEW",
+  "idProduct": 733796,
+  "guide": {
+   "trend": 71.28,
+   "low": 28,
+   "avg30": 73.6
+  },
+  "tcgplayerMarket": 58.08,
+  "matchedBy": "tcgplayer id"
+ },
+ "mewtwo-mew-gx-promo-sm191": {
+  "tcgdexId": "smp-SM191",
+  "setName": "SM Black Star Promos",
+  "setCode": "SMP",
+  "idProduct": 397954,
+  "guide": {
+   "trend": 232.98,
+   "low": 80,
+   "avg30": 381.28
+  },
+  "tcgplayerMarket": 356.82,
+  "matchedBy": "tcgplayer id"
+ },
+ "reshiram-charizard-gx-unbroken-bonds-20": {
+  "tcgdexId": "sm10-20",
+  "setName": "Unbroken Bonds",
+  "setCode": "UNB",
+  "idProduct": 370729,
+  "guide": {
+   "trend": 68.93,
+   "low": 13.95,
+   "avg30": 62.8
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "gengar-mimikyu-gx-team-up-186": {
+  "tcgdexId": "sm9-186",
+  "setName": "Team Up",
+  "setCode": "TEU",
+  "idProduct": 369111,
+  "guide": {
+   "trend": 57.18,
+   "low": 40,
+   "avg30": 196.87
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "magikarp-wailord-gx-team-up-161": {
+  "tcgdexId": "sm9-161",
+  "setName": "Team Up",
+  "setCode": "TEU",
+  "idProduct": 369086,
+  "guide": {
+   "trend": 900.79,
+   "low": 110,
+   "avg30": 840.61
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "latias-latios-gx-team-up-170": {
+  "tcgdexId": "sm9-170",
+  "setName": "Team Up",
+  "setCode": "TEU",
+  "idProduct": 369095,
+  "guide": {
+   "trend": 3041.81,
+   "low": 420,
+   "avg30": 2467.57
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "giratina-v-lost-origin-186": {
+  "tcgdexId": "swsh11-186",
+  "setName": "Lost Origin",
+  "setCode": "LOR",
+  "idProduct": 674192,
+  "guide": {
+   "trend": 1415.22,
+   "low": 300,
+   "avg30": 1311.77
+  },
+  "tcgplayerMarket": 851.13,
+  "matchedBy": "tcgplayer id"
+ },
+ "mew-v-fusion-strike-251": {
+  "tcgdexId": "swsh8-251",
+  "setName": "Fusion Strike",
+  "setCode": "FST",
+  "idProduct": 582987,
+  "guide": {
+   "trend": 134.71,
+   "low": 44,
+   "avg30": 114.35
+  },
+  "tcgplayerMarket": 102.81,
+  "matchedBy": "tcgplayer id"
+ },
+ "shining-noctowl-1st-edition-neo-destiny-110": {
+  "tcgdexId": "neo4-110",
+  "setName": "Neo Destiny",
+  "setCode": "N4",
+  "idProduct": 274762,
+  "guide": null,
+  "tcgplayerMarket": 474.97,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "misty-s-psyduck-destined-rivals-193": {
+  "tcgdexId": "sv10-193",
+  "setName": "Destined Rivals",
+  "setCode": "DRI",
+  "idProduct": 826067,
+  "guide": {
+   "trend": 37.49,
+   "low": 10,
+   "avg30": 46.56
+  },
+  "tcgplayerMarket": 47.22,
+  "matchedBy": "tcgplayer id"
+ },
+ "latios-surging-sparks-203": {
+  "tcgdexId": "sv08-203",
+  "setName": "Surging Sparks",
+  "setCode": "SSP",
+  "idProduct": 794576,
+  "guide": {
+   "trend": 30.49,
+   "low": 10.99,
+   "avg30": 32.62
+  },
+  "tcgplayerMarket": 28.68,
+  "matchedBy": "tcgplayer id"
+ },
+ "pikachu-scarlet-violet-151-173": {
+  "tcgdexId": "sv03.5-173",
+  "setName": "151",
+  "setCode": "MEW",
+  "idProduct": 733768,
+  "guide": {
+   "trend": 71.93,
+   "low": 40,
+   "avg30": 75
+  },
+  "tcgplayerMarket": 65.99,
+  "matchedBy": "tcgplayer id"
+ },
+ "gengar-ex-temporal-forces-193": {
+  "tcgdexId": "sv05-193",
+  "setName": "Temporal Forces",
+  "setCode": "TEF",
+  "idProduct": 760823,
+  "guide": {
+   "trend": 27.53,
+   "low": 15.99,
+   "avg30": 29.49
+  },
+  "tcgplayerMarket": 50.39,
+  "matchedBy": "tcgplayer id"
+ },
+ "charizard-ex-obsidian-flames-223": {
+  "tcgdexId": "sv03-223",
+  "setName": "Obsidian Flames",
+  "setCode": "OBF",
+  "idProduct": 725303,
+  "guide": {
+   "trend": 75.52,
+   "low": 47.94,
+   "avg30": 83.97
+  },
+  "tcgplayerMarket": 93.92,
+  "matchedBy": "tcgplayer id"
+ },
+ "gengar-mimikyu-gx-team-up-165": {
+  "tcgdexId": "sm9-165",
+  "setName": "Team Up",
+  "setCode": "TEU",
+  "idProduct": 369090,
+  "guide": {
+   "trend": 516.98,
+   "low": 200,
+   "avg30": 958.83
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "arceus-dialga-palkia-gx-cosmic-eclipse-221": {
+  "tcgdexId": "sm12-221",
+  "setName": "Cosmic Eclipse",
+  "setCode": "CEC",
+  "idProduct": 408699,
+  "guide": {
+   "trend": 234.69,
+   "low": 99.99,
+   "avg30": 468.51
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "latias-latios-gx-team-up-169": {
+  "tcgdexId": "sm9-169",
+  "setName": "Team Up",
+  "setCode": "TEU",
+  "idProduct": 369094,
+  "guide": {
+   "trend": 157.94,
+   "low": 16.89,
+   "avg30": 167.71
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "garchomp-giratina-gx-promo-sm193": {
+  "tcgdexId": "smp-SM193",
+  "setName": "SM Black Star Promos",
+  "setCode": "SMP",
+  "idProduct": 397964,
+  "guide": {
+   "trend": 156.88,
+   "low": 40,
+   "avg30": 208.98
+  },
+  "tcgplayerMarket": 108.08,
+  "matchedBy": "tcgplayer id"
+ },
+ "gengar-mimikyu-gx-team-up-53": {
+  "tcgdexId": "sm9-53",
+  "setName": "Team Up",
+  "setCode": "TEU",
+  "idProduct": 367141,
+  "guide": {
+   "trend": 390.88,
+   "low": 35,
+   "avg30": 218.9
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "pikachu-zekrom-gx-promo-sm168": {
+  "tcgdexId": "smp-SM168",
+  "setName": "SM Black Star Promos",
+  "setCode": "SMP",
+  "idProduct": 369468,
+  "guide": {
+   "trend": 159.44,
+   "low": 58.5,
+   "avg30": 476.74
+  },
+  "tcgplayerMarket": 219.86,
+  "matchedBy": "tcgplayer id"
+ },
+ "solgaleo-lunala-gx-cosmic-eclipse-216": {
+  "tcgdexId": "sm12-216",
+  "setName": "Cosmic Eclipse",
+  "setCode": "CEC",
+  "idProduct": 408674,
+  "guide": {
+   "trend": 202.68,
+   "low": 99.99,
+   "avg30": 331.35
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "blastoise-piplup-gx-cosmic-eclipse-215": {
+  "tcgdexId": "sm12-215",
+  "setName": "Cosmic Eclipse",
+  "setCode": "CEC",
+  "idProduct": 408669,
+  "guide": {
+   "trend": 304.41,
+   "low": 50,
+   "avg30": 311.16
+  },
+  "tcgplayerMarket": null,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "rayquaza-vivid-voltage-138": {
+  "tcgdexId": "swsh4-138",
+  "setName": "Vivid Voltage",
+  "setCode": "VIV",
+  "idProduct": 512400,
+  "guide": {
+   "trend": 32.9,
+   "low": 14.9,
+   "avg30": 34.03
+  },
+  "tcgplayerMarket": 21.99,
+  "matchedBy": "tcgplayer id"
+ },
+ "giovanni-1st-edition-gym-challenge-18": {
+  "tcgdexId": "gym2-18",
+  "setName": "Gym Challenge",
+  "setCode": "G2",
+  "idProduct": 274286,
+  "guide": null,
+  "tcgplayerMarket": 125,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "blaine-s-charizard-1st-edition-gym-challenge-2": {
+  "tcgdexId": "gym2-2",
+  "setName": "Gym Challenge",
+  "setCode": "G2",
+  "idProduct": 274270,
+  "guide": null,
+  "tcgplayerMarket": 699.99,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "rocket-s-zapdos-1st-edition-gym-challenge-15": {
+  "tcgdexId": "gym2-15",
+  "setName": "Gym Challenge",
+  "setCode": "G2",
+  "idProduct": 274283,
+  "guide": null,
+  "tcgplayerMarket": 226.11,
+  "matchedBy": "set + number (1 candidate)"
+ },
+ "misty-s-gyarados-1st-edition-gym-challenge-13": {
+  "tcgdexId": "gym2-13",
+  "setName": "Gym Challenge",
+  "setCode": "G2",
+  "idProduct": 274281,
+  "guide": null,
+  "tcgplayerMarket": 425,
+  "matchedBy": "set + number (1 candidate)"
+ }
+}

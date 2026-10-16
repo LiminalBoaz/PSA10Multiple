@@ -1,0 +1,2675 @@
+{
+ "version": 2,
+ "generatedAt": "2026-10-16T21:55:56.531Z",
+ "fx": {
+  "usdToEur": 0.88865,
+  "date": "2026-10-16"
+ },
+ "defaults": {
+  "gradingFeeUsd": 25
+ },
+ "cards": [
+  {
+   "id": "ho-oh-reverse-holo-skyridge-149",
+   "name": "Ho-Oh",
+   "set": "Skyridge",
+   "number": "149",
+   "variant": "Reverse Holo",
+   "image": "img/ho-oh-reverse-holo-skyridge-149.webp",
+   "salesPerYear": 4,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-skyridge/ho-oh-reverse-holo-149",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=362907"
+   },
+   "usd": {
+    "raw": 410.38,
+    "g8": 1052.3,
+    "g9": 1594.25,
+    "psa10": 4445.75
+   },
+   "cm": {
+    "idProduct": 362907,
+    "guide": {
+     "trend": 43.61,
+     "low": null,
+     "avg30": 37.49,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "entei-gold-star-unseen-forces-113",
+   "name": "Entei",
+   "set": "Unseen Forces",
+   "number": "113",
+   "variant": "Gold Star",
+   "image": "img/entei-gold-star-unseen-forces-113.webp",
+   "salesPerYear": 24,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-unseen-forces/entei-gold-star-113",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Entei"
+   },
+   "usd": {
+    "raw": 1124.03,
+    "g8": 3032.23,
+    "g9": 4272.83,
+    "psa10": 22368.06
+   },
+   "cm": null
+  },
+  {
+   "id": "mega-charizard-x-ex-phantasmal-flames-130",
+   "name": "Mega Charizard X ex",
+   "set": "Phantasmal Flames",
+   "number": "130",
+   "variant": null,
+   "image": "img/mega-charizard-x-ex-phantasmal-flames-130.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-phantasmal-flames/mega-charizard-x-ex-130",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=857705"
+   },
+   "usd": {
+    "raw": 201.79,
+    "g8": 204.5,
+    "g9": 255.5,
+    "psa10": 2050.37
+   },
+   "cm": {
+    "idProduct": 857705,
+    "guide": {
+     "trend": 205.48,
+     "low": 159.99,
+     "avg30": 257.93,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "shining-raichu-1st-edition-neo-destiny-111",
+   "name": "Shining Raichu",
+   "set": "Neo Destiny",
+   "number": "111",
+   "variant": "1st Edition",
+   "image": "img/shining-raichu-1st-edition-neo-destiny-111.webp",
+   "salesPerYear": 12,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-neo-destiny/shining-raichu-1st-edition-111",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=274763"
+   },
+   "usd": {
+    "raw": 808.23,
+    "g8": 2058.83,
+    "g9": 3099,
+    "psa10": 13300
+   },
+   "cm": {
+    "idProduct": 274763,
+    "guide": null,
+    "listings": null
+   }
+  },
+  {
+   "id": "giovanni-1st-edition-gym-challenge-18",
+   "name": "Giovanni",
+   "set": "Gym Challenge",
+   "number": "18",
+   "variant": "1st Edition",
+   "image": "img/giovanni-1st-edition-gym-challenge-18.webp",
+   "salesPerYear": 52,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-gym-challenge/giovanni-1st-edition-18",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=274286"
+   },
+   "usd": {
+    "raw": 94.44,
+    "g8": 129.97,
+    "g9": 234.89,
+    "psa10": 1016.36
+   },
+   "cm": {
+    "idProduct": 274286,
+    "guide": null,
+    "listings": null
+   }
+  },
+  {
+   "id": "articuno-journey-together-161",
+   "name": "Articuno",
+   "set": "Journey Together",
+   "number": "161",
+   "variant": null,
+   "image": "img/articuno-journey-together-161.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-journey-together/articuno-161",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=817313"
+   },
+   "usd": {
+    "raw": 18.31,
+    "g8": 21.99,
+    "g9": 36.42,
+    "psa10": 196.25
+   },
+   "cm": {
+    "idProduct": 817313,
+    "guide": {
+     "trend": 19.85,
+     "low": 9,
+     "avg30": 21.45,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "snorlax-promo-51",
+   "name": "Snorlax",
+   "set": "Promo",
+   "number": "51",
+   "variant": null,
+   "image": "img/snorlax-promo-51.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/snorlax-51",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=720390"
+   },
+   "usd": {
+    "raw": 22.5,
+    "g8": 30,
+    "g9": 41.5,
+    "psa10": 250
+   },
+   "cm": {
+    "idProduct": 720390,
+    "guide": {
+     "trend": 20.63,
+     "low": 5.51,
+     "avg30": 21.24,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "charmander-promo-44",
+   "name": "Charmander",
+   "set": "Promo",
+   "number": "44",
+   "variant": null,
+   "image": "img/charmander-promo-44.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/charmander-44",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=715758"
+   },
+   "usd": {
+    "raw": 56,
+    "g8": 62.49,
+    "g9": 100,
+    "psa10": 586.17
+   },
+   "cm": {
+    "idProduct": 715758,
+    "guide": {
+     "trend": 45.49,
+     "low": 19.99,
+     "avg30": 47.9,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mewtwo-promo-52",
+   "name": "Mewtwo",
+   "set": "Promo",
+   "number": "52",
+   "variant": null,
+   "image": "img/mewtwo-promo-52.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/mewtwo-52",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=720949"
+   },
+   "usd": {
+    "raw": 40.99,
+    "g8": 55,
+    "g9": 78.38,
+    "psa10": 602.55
+   },
+   "cm": {
+    "idProduct": 720949,
+    "guide": {
+     "trend": 62.11,
+     "low": 24.99,
+     "avg30": 71.21,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mew-ex-promo-53",
+   "name": "Mew ex",
+   "set": "Promo",
+   "number": "53",
+   "variant": null,
+   "image": "img/mew-ex-promo-53.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/mew-ex-53",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=720950"
+   },
+   "usd": {
+    "raw": 70,
+    "g8": 69.67,
+    "g9": 99.24,
+    "psa10": 737.84
+   },
+   "cm": {
+    "idProduct": 720950,
+    "guide": {
+     "trend": 77.3,
+     "low": 49.39,
+     "avg30": 92.98,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "magikarp-paldea-evolved-203",
+   "name": "Magikarp",
+   "set": "Paldea Evolved",
+   "number": "203",
+   "variant": null,
+   "image": "img/magikarp-paldea-evolved-203.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-paldea-evolved/magikarp-203",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=715678"
+   },
+   "usd": {
+    "raw": 297.17,
+    "g8": 343,
+    "g9": 409.5,
+    "psa10": 3689.68
+   },
+   "cm": {
+    "idProduct": 715678,
+    "guide": {
+     "trend": 295.08,
+     "low": 99.9,
+     "avg30": 384.07,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "sylveon-gx-guardians-rising-140",
+   "name": "Sylveon GX",
+   "set": "Guardians Rising",
+   "number": "140",
+   "variant": null,
+   "image": "img/sylveon-gx-guardians-rising-140.webp",
+   "salesPerYear": 52,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-guardians-rising/sylveon-gx-140",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=297592"
+   },
+   "usd": {
+    "raw": 57.15,
+    "g8": 52.71,
+    "g9": 114.71,
+    "psa10": 755
+   },
+   "cm": {
+    "idProduct": 297592,
+    "guide": {
+     "trend": 41.21,
+     "low": 6.25,
+     "avg30": 38.74,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mewtwo-gx-shining-legends-78",
+   "name": "Mewtwo GX",
+   "set": "Shining Legends",
+   "number": "78",
+   "variant": null,
+   "image": "img/mewtwo-gx-shining-legends-78.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-shining-legends/mewtwo-gx-78",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=301167"
+   },
+   "usd": {
+    "raw": 648.42,
+    "g8": 820,
+    "g9": 1512.5,
+    "psa10": 8213.99
+   },
+   "cm": {
+    "idProduct": 301167,
+    "guide": {
+     "trend": 6.99,
+     "low": 3,
+     "avg30": 7.46,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "pikachu-cosmic-eclipse-241",
+   "name": "Pikachu",
+   "set": "Cosmic Eclipse",
+   "number": "241",
+   "variant": null,
+   "image": "img/pikachu-cosmic-eclipse-241.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-cosmic-eclipse/pikachu-241",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=398534"
+   },
+   "usd": {
+    "raw": 174,
+    "g8": 194.25,
+    "g9": 278.46,
+    "psa10": 1899
+   },
+   "cm": {
+    "idProduct": 398534,
+    "guide": {
+     "trend": 144.08,
+     "low": 39.98,
+     "avg30": 140.98,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "celebi-venusaur-gx-promo-sm167",
+   "name": "Celebi & Venusaur GX",
+   "set": "Promo",
+   "number": "SM167",
+   "variant": null,
+   "image": "img/celebi-venusaur-gx-promo-sm167.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/celebi-&-venusaur-gx-sm167",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=369467"
+   },
+   "usd": {
+    "raw": 84.99,
+    "g8": 88,
+    "g9": 140,
+    "psa10": 1149.99
+   },
+   "cm": {
+    "idProduct": 369467,
+    "guide": {
+     "trend": 146.05,
+     "low": 19.9,
+     "avg30": 210.82,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "pikachu-zekrom-gx-team-up-33",
+   "name": "Pikachu & Zekrom GX",
+   "set": "Team Up",
+   "number": "33",
+   "variant": null,
+   "image": "img/pikachu-zekrom-gx-team-up-33.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/pikachu-&-zekrom-gx-33",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=366888"
+   },
+   "usd": {
+    "raw": 34.27,
+    "g8": 66.1,
+    "g9": 99.5,
+    "psa10": 519.33
+   },
+   "cm": {
+    "idProduct": 366888,
+    "guide": {
+     "trend": 52.84,
+     "low": 14.6,
+     "avg30": 52.43,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "raikou-gold-star-unseen-forces-114",
+   "name": "Raikou",
+   "set": "Unseen Forces",
+   "number": "114",
+   "variant": "Gold Star",
+   "image": "img/raikou-gold-star-unseen-forces-114.webp",
+   "salesPerYear": 52,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-unseen-forces/raikou-gold-star-114",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Raikou"
+   },
+   "usd": {
+    "raw": 1137.5,
+    "g8": 3424.63,
+    "g9": 4050,
+    "psa10": 22529.43
+   },
+   "cm": null
+  },
+  {
+   "id": "shining-tyranitar-neo-destiny-113",
+   "name": "Shining Tyranitar",
+   "set": "Neo Destiny",
+   "number": "113",
+   "variant": null,
+   "image": "img/shining-tyranitar-neo-destiny-113.webp",
+   "salesPerYear": 24,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-neo-destiny/shining-tyranitar-113",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=274765"
+   },
+   "usd": {
+    "raw": 500,
+    "g8": 1861.72,
+    "g9": 3075.15,
+    "psa10": 11700
+   },
+   "cm": {
+    "idProduct": 274765,
+    "guide": {
+     "trend": 676.51,
+     "low": 190,
+     "avg30": 831.76,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "blaine-s-charizard-1st-edition-gym-challenge-2",
+   "name": "Blaine's Charizard",
+   "set": "Gym Challenge",
+   "number": "2",
+   "variant": "1st Edition",
+   "image": "img/blaine-s-charizard-1st-edition-gym-challenge-2.webp",
+   "salesPerYear": 52,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-gym-challenge/blaine%27s-charizard-1st-edition-2",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=274270"
+   },
+   "usd": {
+    "raw": 847.6,
+    "g8": 2112,
+    "g9": 4088.69,
+    "psa10": 20813.1
+   },
+   "cm": {
+    "idProduct": 274270,
+    "guide": null,
+    "listings": null
+   }
+  },
+  {
+   "id": "rocket-s-zapdos-1st-edition-gym-challenge-15",
+   "name": "Rocket's Zapdos",
+   "set": "Gym Challenge",
+   "number": "15",
+   "variant": "1st Edition",
+   "image": "img/rocket-s-zapdos-1st-edition-gym-challenge-15.webp",
+   "salesPerYear": 52,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-gym-challenge/rocket%27s-zapdos-1st-edition-15",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=274283"
+   },
+   "usd": {
+    "raw": 224.32,
+    "g8": 344.95,
+    "g9": 813.88,
+    "psa10": 3792.86
+   },
+   "cm": {
+    "idProduct": 274283,
+    "guide": null,
+    "listings": null
+   }
+  },
+  {
+   "id": "misty-s-gyarados-1st-edition-gym-challenge-13",
+   "name": "Misty's Gyarados",
+   "set": "Gym Challenge",
+   "number": "13",
+   "variant": "1st Edition",
+   "image": "img/misty-s-gyarados-1st-edition-gym-challenge-13.webp",
+   "salesPerYear": 52,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-gym-challenge/misty%27s-gyarados-1st-edition-13",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=274281"
+   },
+   "usd": {
+    "raw": 331,
+    "g8": 638,
+    "g9": 1114.43,
+    "psa10": 7737.5
+   },
+   "cm": {
+    "idProduct": 274281,
+    "guide": null,
+    "listings": null
+   }
+  },
+  {
+   "id": "ancient-mew-promo",
+   "name": "Ancient Mew",
+   "set": "Promo",
+   "number": null,
+   "variant": null,
+   "image": "img/ancient-mew-promo.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/ancient-mew",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Ancient%20Mew"
+   },
+   "usd": {
+    "raw": 109.25,
+    "g8": 135.95,
+    "g9": 216.5,
+    "psa10": 2939.33
+   },
+   "cm": null
+  },
+  {
+   "id": "drowzee-scarlet-violet-210",
+   "name": "Drowzee",
+   "set": "Scarlet & Violet",
+   "number": "210",
+   "variant": null,
+   "image": "img/drowzee-scarlet-violet-210.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-scarlet-&-violet/drowzee-210",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=702506"
+   },
+   "usd": {
+    "raw": 50.99,
+    "g8": 51.75,
+    "g9": 78,
+    "psa10": 1000
+   },
+   "cm": {
+    "idProduct": 702506,
+    "guide": {
+     "trend": 67.85,
+     "low": 18.9,
+     "avg30": 46.3,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "charizard-gx-burning-shadows-20",
+   "name": "Charizard GX",
+   "set": "Burning Shadows",
+   "number": "20",
+   "variant": null,
+   "image": "img/charizard-gx-burning-shadows-20.webp",
+   "salesPerYear": 156,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-burning-shadows/charizard-gx-20",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=299426"
+   },
+   "usd": {
+    "raw": 20.99,
+    "g8": 29,
+    "g9": 63,
+    "psa10": 356.24
+   },
+   "cm": {
+    "idProduct": 299426,
+    "guide": {
+     "trend": 7.79,
+     "low": 2,
+     "avg30": 21.68,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "lugia-v-silver-tempest-138",
+   "name": "Lugia V",
+   "set": "Silver Tempest",
+   "number": "138",
+   "variant": null,
+   "image": "img/lugia-v-silver-tempest-138.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-silver-tempest/lugia-v-138",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=682185"
+   },
+   "usd": {
+    "raw": 14.96,
+    "g8": 20,
+    "g9": 36.55,
+    "psa10": 229.02
+   },
+   "cm": {
+    "idProduct": 682185,
+    "guide": {
+     "trend": 21.55,
+     "low": 7.5,
+     "avg30": 18.38,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mew-crown-zenith-gg10",
+   "name": "Mew",
+   "set": "Crown Zenith",
+   "number": "GG10",
+   "variant": null,
+   "image": "img/mew-crown-zenith-gg10.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-crown-zenith/mew-gg10",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=691889"
+   },
+   "usd": {
+    "raw": 61.88,
+    "g8": 60.39,
+    "g9": 105.3,
+    "psa10": 1000
+   },
+   "cm": {
+    "idProduct": 691889,
+    "guide": {
+     "trend": 88.03,
+     "low": 30,
+     "avg30": 74.26,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "pikachu-lost-origin-tg05",
+   "name": "Pikachu",
+   "set": "Lost Origin",
+   "number": "TG05",
+   "variant": null,
+   "image": "img/pikachu-lost-origin-tg05.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-lost-origin/pikachu-tg05",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=674225"
+   },
+   "usd": {
+    "raw": 44.24,
+    "g8": 48.59,
+    "g9": 77,
+    "psa10": 779.62
+   },
+   "cm": {
+    "idProduct": 674225,
+    "guide": {
+     "trend": 34.15,
+     "low": 15,
+     "avg30": 34.42,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "m-gyarados-ex-breakpoint-115",
+   "name": "M Gyarados EX",
+   "set": "BREAKpoint",
+   "number": "115",
+   "variant": null,
+   "image": "img/m-gyarados-ex-breakpoint-115.webp",
+   "salesPerYear": 156,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-breakpoint/m-gyarados-ex-115",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=M%20Gyarados%20EX"
+   },
+   "usd": {
+    "raw": 84.65,
+    "g8": 135,
+    "g9": 245.41,
+    "psa10": 2035
+   },
+   "cm": null
+  },
+  {
+   "id": "mewtwo-ex-evolutions-103",
+   "name": "Mewtwo EX",
+   "set": "Evolutions",
+   "number": "103",
+   "variant": null,
+   "image": "img/mewtwo-ex-evolutions-103.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-evolutions/mewtwo-ex-103",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=293476"
+   },
+   "usd": {
+    "raw": 41.72,
+    "g8": 46.99,
+    "g9": 99.53,
+    "psa10": 649.92
+   },
+   "cm": {
+    "idProduct": 293476,
+    "guide": {
+     "trend": 61.78,
+     "low": 9,
+     "avg30": 53.48,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "gengar-ex-phantom-forces-34",
+   "name": "Gengar EX",
+   "set": "Phantom Forces",
+   "number": "34",
+   "variant": null,
+   "image": "img/gengar-ex-phantom-forces-34.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-phantom-forces/gengar-ex-34",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=281840"
+   },
+   "usd": {
+    "raw": 81,
+    "g8": 95.99,
+    "g9": 194.5,
+    "psa10": 1800
+   },
+   "cm": {
+    "idProduct": 281840,
+    "guide": {
+     "trend": 416.32,
+     "low": 9.98,
+     "avg30": 76.95,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "m-charizard-ex-flashfire-69",
+   "name": "M Charizard EX",
+   "set": "Flashfire",
+   "number": "69",
+   "variant": null,
+   "image": "img/m-charizard-ex-flashfire-69.webp",
+   "salesPerYear": 104,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-flashfire/m-charizard-ex-69",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=M%20Charizard%20EX"
+   },
+   "usd": {
+    "raw": 90.51,
+    "g8": 276.51,
+    "g9": 405,
+    "psa10": 2243.5
+   },
+   "cm": null
+  },
+  {
+   "id": "m-rayquaza-ex-ancient-origins-98",
+   "name": "M Rayquaza EX",
+   "set": "Ancient Origins",
+   "number": "98",
+   "variant": null,
+   "image": "img/m-rayquaza-ex-ancient-origins-98.webp",
+   "salesPerYear": 156,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-ancient-origins/m-rayquaza-ex-98",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=284279"
+   },
+   "usd": {
+    "raw": 528.35,
+    "g8": 1200,
+    "g9": 2521.19,
+    "psa10": 11701.23
+   },
+   "cm": {
+    "idProduct": 284279,
+    "guide": {
+     "trend": 1037.78,
+     "low": 110,
+     "avg30": 1121.71,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mega-absol-ex-mega-evolution-180",
+   "name": "Mega Absol Ex",
+   "set": "Mega Evolution",
+   "number": "180",
+   "variant": null,
+   "image": "img/mega-absol-ex-mega-evolution-180.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-mega-evolution/mega-absol-ex-180",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=851251"
+   },
+   "usd": {
+    "raw": 49.49,
+    "g8": 41.35,
+    "g9": 48,
+    "psa10": 108.22
+   },
+   "cm": {
+    "idProduct": 851251,
+    "guide": {
+     "trend": 69.03,
+     "low": 40,
+     "avg30": 63.33,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "vulpix-mega-evolution-138",
+   "name": "Vulpix",
+   "set": "Mega Evolution",
+   "number": "138",
+   "variant": null,
+   "image": "img/vulpix-mega-evolution-138.webp",
+   "salesPerYear": 1460,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-mega-evolution/vulpix-138",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=851209"
+   },
+   "usd": {
+    "raw": 17.99,
+    "g8": 19.42,
+    "g9": 25.09,
+    "psa10": 70.59
+   },
+   "cm": {
+    "idProduct": 851209,
+    "guide": {
+     "trend": 17.68,
+     "low": 6.9,
+     "avg30": 17.65,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mega-charizard-x-ex-phantasmal-flames-125",
+   "name": "Mega Charizard X ex",
+   "set": "Phantasmal Flames",
+   "number": "125",
+   "variant": null,
+   "image": "img/mega-charizard-x-ex-phantasmal-flames-125.webp",
+   "salesPerYear": 1460,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-phantasmal-flames/mega-charizard-x-ex-125",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=857700"
+   },
+   "usd": {
+    "raw": 621.91,
+    "g8": 603,
+    "g9": 632.07,
+    "psa10": 1470.36
+   },
+   "cm": {
+    "idProduct": 857700,
+    "guide": {
+     "trend": 642.41,
+     "low": 350,
+     "avg30": 731.09,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "pokemon-center-promo-40",
+   "name": "Pokemon Center",
+   "set": "Promo",
+   "number": "40",
+   "variant": null,
+   "image": "img/pokemon-center-promo-40.webp",
+   "salesPerYear": 12,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/pokemon-center-40",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Pokemon%20Center"
+   },
+   "usd": {
+    "raw": 1525,
+    "g8": 1700,
+    "g9": 2186.02,
+    "psa10": 3782
+   },
+   "cm": null
+  },
+  {
+   "id": "pikachu-with-grey-felt-hat-promo-85",
+   "name": "Pikachu with Grey Felt Hat",
+   "set": "Promo",
+   "number": "85",
+   "variant": null,
+   "image": "img/pikachu-with-grey-felt-hat-promo-85.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/pikachu-with-grey-felt-hat-85",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=735302"
+   },
+   "usd": {
+    "raw": 976.23,
+    "g8": 825,
+    "g9": 900,
+    "psa10": 2421.43
+   },
+   "cm": {
+    "idProduct": 735302,
+    "guide": {
+     "trend": 848.7,
+     "low": 500,
+     "avg30": 751.45,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "kyurem-ex-black-bolt-165",
+   "name": "Kyurem ex",
+   "set": "Black Bolt",
+   "number": "165",
+   "variant": null,
+   "image": "img/kyurem-ex-black-bolt-165.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-black-bolt/kyurem-ex-165",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=836239"
+   },
+   "usd": {
+    "raw": 65.09,
+    "g8": 61.36,
+    "g9": 66.36,
+    "psa10": 142
+   },
+   "cm": {
+    "idProduct": 836239,
+    "guide": {
+     "trend": 70.68,
+     "low": 40,
+     "avg30": 69.19,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "charizard-ex-paldean-fates-234",
+   "name": "Charizard ex",
+   "set": "Paldean Fates",
+   "number": "234",
+   "variant": null,
+   "image": "img/charizard-ex-paldean-fates-234.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-paldean-fates/charizard-ex-234",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=751781"
+   },
+   "usd": {
+    "raw": 233.05,
+    "g8": 237.5,
+    "g9": 261,
+    "psa10": 725
+   },
+   "cm": {
+    "idProduct": 751781,
+    "guide": {
+     "trend": 343.17,
+     "low": 139.81,
+     "avg30": 262.12,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "jessie-james-hidden-fates-68",
+   "name": "Jessie & James",
+   "set": "Hidden Fates",
+   "number": "68",
+   "variant": null,
+   "image": "img/jessie-james-hidden-fates-68.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-hidden-fates/jessie-&-james-68",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=396682"
+   },
+   "usd": {
+    "raw": 70,
+    "g8": 63.41,
+    "g9": 80,
+    "psa10": 182.24
+   },
+   "cm": {
+    "idProduct": 396682,
+    "guide": {
+     "trend": 72.68,
+     "low": 44.9,
+     "avg30": 73.63,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "moltres-zapdos-articuno-gx-promo-sm210",
+   "name": "Moltres & Zapdos & Articuno GX",
+   "set": "Promo",
+   "number": "SM210",
+   "variant": null,
+   "image": "img/moltres-zapdos-articuno-gx-promo-sm210.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/moltres-&-zapdos-&-articuno-gx-sm210",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=381219"
+   },
+   "usd": {
+    "raw": 150,
+    "g8": 135.25,
+    "g9": 152.56,
+    "psa10": 395
+   },
+   "cm": {
+    "idProduct": 381219,
+    "guide": {
+     "trend": 116.56,
+     "low": 70,
+     "avg30": 116,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "umbreon-vmax-brilliant-stars-tg23",
+   "name": "Umbreon VMAX",
+   "set": "Brilliant Stars",
+   "number": "TG23",
+   "variant": null,
+   "image": "img/umbreon-vmax-brilliant-stars-tg23.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-brilliant-stars/umbreon-vmax-tg23",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=608755"
+   },
+   "usd": {
+    "raw": 90.15,
+    "g8": 76,
+    "g9": 96.9,
+    "psa10": 206.37
+   },
+   "cm": {
+    "idProduct": 608755,
+    "guide": {
+     "trend": 64.82,
+     "low": 23,
+     "avg30": 78.99,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "umbreon-v-evolving-skies-189",
+   "name": "Umbreon V",
+   "set": "Evolving Skies",
+   "number": "189",
+   "variant": null,
+   "image": "img/umbreon-v-evolving-skies-189.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-evolving-skies/umbreon-v-189",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=574247"
+   },
+   "usd": {
+    "raw": 340.5,
+    "g8": 302.51,
+    "g9": 320,
+    "psa10": 986.33
+   },
+   "cm": {
+    "idProduct": 574247,
+    "guide": {
+     "trend": 279.62,
+     "low": 85,
+     "avg30": 305.77,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "zeraora-vmax-crown-zenith-gg42",
+   "name": "Zeraora VMAX",
+   "set": "Crown Zenith",
+   "number": "GG42",
+   "variant": null,
+   "image": "img/zeraora-vmax-crown-zenith-gg42.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-crown-zenith/zeraora-vmax-gg42",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=691922"
+   },
+   "usd": {
+    "raw": 24.5,
+    "g8": 19.77,
+    "g9": 30.51,
+    "psa10": 95.99
+   },
+   "cm": {
+    "idProduct": 691922,
+    "guide": {
+     "trend": 45.3,
+     "low": 14.9,
+     "avg30": 42.15,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "dragonite-v-evolving-skies-192",
+   "name": "Dragonite V",
+   "set": "Evolving Skies",
+   "number": "192",
+   "variant": null,
+   "image": "img/dragonite-v-evolving-skies-192.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-evolving-skies/dragonite-v-192",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=574250"
+   },
+   "usd": {
+    "raw": 400.51,
+    "g8": 412.35,
+    "g9": 455.06,
+    "psa10": 1000
+   },
+   "cm": {
+    "idProduct": 574250,
+    "guide": {
+     "trend": 402.28,
+     "low": 130,
+     "avg30": 422.13,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "leafeon-vstar-crown-zenith-gg35",
+   "name": "Leafeon VSTAR",
+   "set": "Crown Zenith",
+   "number": "GG35",
+   "variant": null,
+   "image": "img/leafeon-vstar-crown-zenith-gg35.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-crown-zenith/leafeon-vstar-gg35",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=691915"
+   },
+   "usd": {
+    "raw": 83,
+    "g8": 68.87,
+    "g9": 90,
+    "psa10": 183.25
+   },
+   "cm": {
+    "idProduct": 691915,
+    "guide": {
+     "trend": 81.57,
+     "low": 45,
+     "avg30": 78.13,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "charizard-vmax-darkness-ablaze-20",
+   "name": "Charizard VMAX",
+   "set": "Darkness Ablaze",
+   "number": "20",
+   "variant": null,
+   "image": "img/charizard-vmax-darkness-ablaze-20.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-darkness-ablaze/charizard-vmax-20",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=482974"
+   },
+   "usd": {
+    "raw": 36.9,
+    "g8": 43.21,
+    "g9": 53.5,
+    "psa10": 139
+   },
+   "cm": {
+    "idProduct": 482974,
+    "guide": {
+     "trend": 53.7,
+     "low": 9.99,
+     "avg30": 49.56,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mew-celebrations-25",
+   "name": "Mew",
+   "set": "Celebrations",
+   "number": "25",
+   "variant": null,
+   "image": "img/mew-celebrations-25.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-celebrations/mew-25",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=576770"
+   },
+   "usd": {
+    "raw": 54.34,
+    "g8": 44,
+    "g9": 68,
+    "psa10": 183.5
+   },
+   "cm": {
+    "idProduct": 576770,
+    "guide": {
+     "trend": 71.32,
+     "low": 39.99,
+     "avg30": 83.26,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "rayquaza-ex-dragons-exalted-85",
+   "name": "Rayquaza EX",
+   "set": "Dragons Exalted",
+   "number": "85",
+   "variant": null,
+   "image": "img/rayquaza-ex-dragons-exalted-85.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-dragons-exalted/rayquaza-ex-85",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Rayquaza%20EX"
+   },
+   "usd": {
+    "raw": 27.25,
+    "g8": 107.48,
+    "g9": 250,
+    "psa10": 3412.5
+   },
+   "cm": null
+  },
+  {
+   "id": "vaporeon-skyridge-h31",
+   "name": "Vaporeon",
+   "set": "Skyridge",
+   "number": "H31",
+   "variant": null,
+   "image": "img/vaporeon-skyridge-h31.webp",
+   "salesPerYear": 12,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-skyridge/vaporeon-h31",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=275252"
+   },
+   "usd": {
+    "raw": 433.09,
+    "g8": 1545.2,
+    "g9": 2136.17,
+    "psa10": 17731.42
+   },
+   "cm": {
+    "idProduct": 275252,
+    "guide": {
+     "trend": 1026.27,
+     "low": 88,
+     "avg30": 549.8,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "kabutops-skyridge-150",
+   "name": "Kabutops",
+   "set": "Skyridge",
+   "number": "150",
+   "variant": null,
+   "image": "img/kabutops-skyridge-150.webp",
+   "salesPerYear": 24,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-skyridge/kabutops-150",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=275272"
+   },
+   "usd": {
+    "raw": 578.38,
+    "g8": 2150,
+    "g9": 3550,
+    "psa10": 19538.86
+   },
+   "cm": {
+    "idProduct": 275272,
+    "guide": {
+     "trend": 21.72,
+     "low": 5,
+     "avg30": 17.83,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "umbreon-skyridge-h30",
+   "name": "Umbreon",
+   "set": "Skyridge",
+   "number": "H30",
+   "variant": null,
+   "image": "img/umbreon-skyridge-h30.webp",
+   "salesPerYear": 12,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-skyridge/umbreon-h30",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=275290"
+   },
+   "usd": {
+    "raw": 1744.91,
+    "g8": 5509.37,
+    "g9": 12056.73,
+    "psa10": 56915.27
+   },
+   "cm": {
+    "idProduct": 275290,
+    "guide": {
+     "trend": 222.74,
+     "low": 32,
+     "avg30": 148.31,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mew-triumphant-97",
+   "name": "Mew",
+   "set": "Triumphant",
+   "number": "97",
+   "variant": null,
+   "image": "img/mew-triumphant-97.webp",
+   "salesPerYear": 24,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-triumphant/mew-97",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=279627"
+   },
+   "usd": {
+    "raw": 326.17,
+    "g8": 1555,
+    "g9": 2208.38,
+    "psa10": 16825.98
+   },
+   "cm": {
+    "idProduct": 279627,
+    "guide": {
+     "trend": 249.17,
+     "low": 34.9,
+     "avg30": 162.68,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "dragonite-promo-5",
+   "name": "Dragonite",
+   "set": "Promo",
+   "number": "5",
+   "variant": null,
+   "image": "img/dragonite-promo-5.webp",
+   "salesPerYear": 104,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/dragonite-5",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=Dragonite"
+   },
+   "usd": {
+    "raw": 40,
+    "g8": 106.29,
+    "g9": 202.5,
+    "psa10": 1805.76
+   },
+   "cm": null
+  },
+  {
+   "id": "haunter-1st-edition-fossil-6",
+   "name": "Haunter",
+   "set": "Fossil",
+   "number": "6",
+   "variant": "1st Edition",
+   "image": "img/haunter-1st-edition-fossil-6.webp",
+   "salesPerYear": 52,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-fossil/haunter-1st-edition-6",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=273867"
+   },
+   "usd": {
+    "raw": 85.21,
+    "g8": 215,
+    "g9": 500,
+    "psa10": 3900
+   },
+   "cm": {
+    "idProduct": 273867,
+    "guide": null,
+    "listings": null
+   }
+  },
+  {
+   "id": "ditto-1st-edition-fossil-3",
+   "name": "Ditto",
+   "set": "Fossil",
+   "number": "3",
+   "variant": "1st Edition",
+   "image": "img/ditto-1st-edition-fossil-3.webp",
+   "salesPerYear": 52,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-fossil/ditto-1st-edition-3",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=273864"
+   },
+   "usd": {
+    "raw": 75.86,
+    "g8": 220.91,
+    "g9": 553.06,
+    "psa10": 4325.3
+   },
+   "cm": {
+    "idProduct": 273864,
+    "guide": null,
+    "listings": null
+   }
+  },
+  {
+   "id": "pikachu-shadowless-red-cheeks-base-set-58",
+   "name": "Pikachu",
+   "set": "Base Set",
+   "number": "58",
+   "variant": "Shadowless Red Cheeks",
+   "image": "img/pikachu-shadowless-red-cheeks-base-set-58.webp",
+   "salesPerYear": 52,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-base-set/pikachu-shadowless-red-cheeks-58",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=660170"
+   },
+   "usd": {
+    "raw": 53.17,
+    "g8": 181.97,
+    "g9": 450,
+    "psa10": 2801.85
+   },
+   "cm": {
+    "idProduct": 660170,
+    "guide": null,
+    "listings": null
+   }
+  },
+  {
+   "id": "dark-charizard-1st-edition-team-rocket-4",
+   "name": "Dark Charizard",
+   "set": "Team Rocket",
+   "number": "4",
+   "variant": "1st Edition",
+   "image": "img/dark-charizard-1st-edition-team-rocket-4.webp",
+   "salesPerYear": 52,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-team-rocket/dark-charizard-1st-edition-4",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=274057"
+   },
+   "usd": {
+    "raw": 821,
+    "g8": 1250.7,
+    "g9": 3033.03,
+    "psa10": 25553.13
+   },
+   "cm": {
+    "idProduct": 274057,
+    "guide": null,
+    "listings": null
+   }
+  },
+  {
+   "id": "bulbasaur-stamped-mega-evolution-133",
+   "name": "Bulbasaur",
+   "set": "Mega Evolution",
+   "number": "133",
+   "variant": "Stamped",
+   "image": "img/bulbasaur-stamped-mega-evolution-133.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-mega-evolution/bulbasaur-stamped-133",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=851204"
+   },
+   "usd": {
+    "raw": 23.23,
+    "g8": 19.84,
+    "g9": 27.85,
+    "psa10": 652.24
+   },
+   "cm": {
+    "idProduct": 851204,
+    "guide": {
+     "trend": 21.58,
+     "low": 11.99,
+     "avg30": 24.32,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "umbreon-darkrai-gx-promo-sm241",
+   "name": "Umbreon & Darkrai GX",
+   "set": "Promo",
+   "number": "SM241",
+   "variant": null,
+   "image": "img/umbreon-darkrai-gx-promo-sm241.webp",
+   "salesPerYear": 156,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/umbreon-&-darkrai-gx-sm241",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=449108"
+   },
+   "usd": {
+    "raw": 205.63,
+    "g8": 215.81,
+    "g9": 402.2,
+    "psa10": 7500
+   },
+   "cm": {
+    "idProduct": 449108,
+    "guide": {
+     "trend": 229.99,
+     "low": 65,
+     "avg30": 257,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "rayquaza-gx-celestial-storm-109",
+   "name": "Rayquaza GX",
+   "set": "Celestial Storm",
+   "number": "109",
+   "variant": null,
+   "image": "img/rayquaza-gx-celestial-storm-109.webp",
+   "salesPerYear": 156,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-celestial-storm/rayquaza-gx-109",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=361348"
+   },
+   "usd": {
+    "raw": 31.6,
+    "g8": 62.77,
+    "g9": 112,
+    "psa10": 1200.69
+   },
+   "cm": {
+    "idProduct": 361348,
+    "guide": {
+     "trend": 24.14,
+     "low": 5,
+     "avg30": 18.22,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "alakazam-ex-fates-collide-125",
+   "name": "Alakazam EX",
+   "set": "Fates Collide",
+   "number": "125",
+   "variant": null,
+   "image": "img/alakazam-ex-fates-collide-125.webp",
+   "salesPerYear": 156,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-fates-collide/alakazam-ex-125",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=289945"
+   },
+   "usd": {
+    "raw": 114.91,
+    "g8": 267,
+    "g9": 725,
+    "psa10": 7403
+   },
+   "cm": {
+    "idProduct": 289945,
+    "guide": {
+     "trend": 254.83,
+     "low": 25,
+     "avg30": 188.71,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "espeon-ex-breakpoint-117",
+   "name": "Espeon EX",
+   "set": "BREAKpoint",
+   "number": "117",
+   "variant": null,
+   "image": "img/espeon-ex-breakpoint-117.webp",
+   "salesPerYear": 104,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-breakpoint/espeon-ex-117",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=288292"
+   },
+   "usd": {
+    "raw": 78,
+    "g8": 132.77,
+    "g9": 423.49,
+    "psa10": 2442.9
+   },
+   "cm": {
+    "idProduct": 288292,
+    "guide": {
+     "trend": 166.03,
+     "low": 12,
+     "avg30": 134.72,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "umbreon-ex-fates-collide-119",
+   "name": "Umbreon EX",
+   "set": "Fates Collide",
+   "number": "119",
+   "variant": null,
+   "image": "img/umbreon-ex-fates-collide-119.webp",
+   "salesPerYear": 104,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-fates-collide/umbreon-ex-119",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=289939"
+   },
+   "usd": {
+    "raw": 109.99,
+    "g8": 182.08,
+    "g9": 700,
+    "psa10": 5455
+   },
+   "cm": {
+    "idProduct": 289939,
+    "guide": {
+     "trend": 224.19,
+     "low": 32.99,
+     "avg30": 150.34,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mega-charizard-x-ex-promo-23",
+   "name": "Mega Charizard X EX",
+   "set": "Promo",
+   "number": "23",
+   "variant": null,
+   "image": "img/mega-charizard-x-ex-promo-23.webp",
+   "salesPerYear": 2190,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/mega-charizard-x-ex-23",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=859033"
+   },
+   "usd": {
+    "raw": 30.03,
+    "g8": 36.8,
+    "g9": 40.5,
+    "psa10": 139.99
+   },
+   "cm": {
+    "idProduct": 859033,
+    "guide": {
+     "trend": 40.13,
+     "low": 24.3,
+     "avg30": 47.35,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "zapdos-ex-scarlet-violet-151-202",
+   "name": "Zapdos ex",
+   "set": "Scarlet & Violet 151",
+   "number": "202",
+   "variant": null,
+   "image": "img/zapdos-ex-scarlet-violet-151-202.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-scarlet-&-violet-151/zapdos-ex-202",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=733797"
+   },
+   "usd": {
+    "raw": 80,
+    "g8": 73,
+    "g9": 93.01,
+    "psa10": 350
+   },
+   "cm": {
+    "idProduct": 733797,
+    "guide": {
+     "trend": 98.19,
+     "low": 45,
+     "avg30": 120.39,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "blastoise-ex-scarlet-violet-151-200",
+   "name": "Blastoise ex",
+   "set": "Scarlet & Violet 151",
+   "number": "200",
+   "variant": null,
+   "image": "img/blastoise-ex-scarlet-violet-151-200.webp",
+   "salesPerYear": 1460,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-scarlet-&-violet-151/blastoise-ex-200",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=733795"
+   },
+   "usd": {
+    "raw": 115,
+    "g8": 116.59,
+    "g9": 135.96,
+    "psa10": 511.41
+   },
+   "cm": {
+    "idProduct": 733795,
+    "guide": {
+     "trend": 130.31,
+     "low": 69.99,
+     "avg30": 141.91,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "espeon-ex-promo-175",
+   "name": "Espeon Ex",
+   "set": "Promo",
+   "number": "175",
+   "variant": null,
+   "image": "img/espeon-ex-promo-175.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/espeon-ex-175",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=850982"
+   },
+   "usd": {
+    "raw": 18.41,
+    "g8": 22.16,
+    "g9": 33.67,
+    "psa10": 86.61
+   },
+   "cm": {
+    "idProduct": 850982,
+    "guide": {
+     "trend": 14.51,
+     "low": 6.95,
+     "avg30": 16.16,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "vaporeon-ex-prismatic-evolutions-149",
+   "name": "Vaporeon ex",
+   "set": "Prismatic Evolutions",
+   "number": "149",
+   "variant": null,
+   "image": "img/vaporeon-ex-prismatic-evolutions-149.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-prismatic-evolutions/vaporeon-ex-149",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=805543"
+   },
+   "usd": {
+    "raw": 225.28,
+    "g8": 220,
+    "g9": 228.23,
+    "psa10": 935
+   },
+   "cm": {
+    "idProduct": 805543,
+    "guide": {
+     "trend": 187.66,
+     "low": 99,
+     "avg30": 186.23,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "alakazam-ex-scarlet-violet-151-201",
+   "name": "Alakazam ex",
+   "set": "Scarlet & Violet 151",
+   "number": "201",
+   "variant": null,
+   "image": "img/alakazam-ex-scarlet-violet-151-201.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-scarlet-&-violet-151/alakazam-ex-201",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=733796"
+   },
+   "usd": {
+    "raw": 59.19,
+    "g8": 60.55,
+    "g9": 69.5,
+    "psa10": 297.82
+   },
+   "cm": {
+    "idProduct": 733796,
+    "guide": {
+     "trend": 71.28,
+     "low": 28,
+     "avg30": 73.6,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mewtwo-mew-gx-promo-sm191",
+   "name": "Mewtwo & Mew GX",
+   "set": "Promo",
+   "number": "SM191",
+   "variant": null,
+   "image": "img/mewtwo-mew-gx-promo-sm191.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/mewtwo-&-mew-gx-sm191",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=397954"
+   },
+   "usd": {
+    "raw": 348.95,
+    "g8": 338,
+    "g9": 500,
+    "psa10": 1850
+   },
+   "cm": {
+    "idProduct": 397954,
+    "guide": {
+     "trend": 232.98,
+     "low": 80,
+     "avg30": 381.28,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "reshiram-charizard-gx-unbroken-bonds-20",
+   "name": "Reshiram & Charizard GX",
+   "set": "Unbroken Bonds",
+   "number": "20",
+   "variant": null,
+   "image": "img/reshiram-charizard-gx-unbroken-bonds-20.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-unbroken-bonds/reshiram-&-charizard-gx-20",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=370729"
+   },
+   "usd": {
+    "raw": 47.38,
+    "g8": 55.87,
+    "g9": 70.52,
+    "psa10": 270
+   },
+   "cm": {
+    "idProduct": 370729,
+    "guide": {
+     "trend": 68.93,
+     "low": 13.95,
+     "avg30": 62.8,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "gengar-mimikyu-gx-team-up-186",
+   "name": "Gengar & Mimikyu GX",
+   "set": "Team Up",
+   "number": "186",
+   "variant": null,
+   "image": "img/gengar-mimikyu-gx-team-up-186.webp",
+   "salesPerYear": 104,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/gengar-&-mimikyu-gx-186",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=369111"
+   },
+   "usd": {
+    "raw": 430,
+    "g8": 370,
+    "g9": 685.56,
+    "psa10": 2325
+   },
+   "cm": {
+    "idProduct": 369111,
+    "guide": {
+     "trend": 57.18,
+     "low": 40,
+     "avg30": 196.87,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "magikarp-wailord-gx-team-up-161",
+   "name": "Magikarp & Wailord GX",
+   "set": "Team Up",
+   "number": "161",
+   "variant": null,
+   "image": "img/magikarp-wailord-gx-team-up-161.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/magikarp-&-wailord-gx-161",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=369086"
+   },
+   "usd": {
+    "raw": 799.83,
+    "g8": 924.95,
+    "g9": 1504.61,
+    "psa10": 4010.74
+   },
+   "cm": {
+    "idProduct": 369086,
+    "guide": {
+     "trend": 900.79,
+     "low": 110,
+     "avg30": 840.61,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "latias-latios-gx-team-up-170",
+   "name": "Latias & Latios GX",
+   "set": "Team Up",
+   "number": "170",
+   "variant": null,
+   "image": "img/latias-latios-gx-team-up-170.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/latias-&-latios-gx-170",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=369095"
+   },
+   "usd": {
+    "raw": 2594.65,
+    "g8": 3927.05,
+    "g9": 5199,
+    "psa10": 15290.84
+   },
+   "cm": {
+    "idProduct": 369095,
+    "guide": {
+     "trend": 3041.81,
+     "low": 420,
+     "avg30": 2467.57,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "giratina-v-lost-origin-186",
+   "name": "Giratina V",
+   "set": "Lost Origin",
+   "number": "186",
+   "variant": null,
+   "image": "img/giratina-v-lost-origin-186.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-lost-origin/giratina-v-186",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=674192"
+   },
+   "usd": {
+    "raw": 750,
+    "g8": 752.5,
+    "g9": 899.99,
+    "psa10": 3140
+   },
+   "cm": {
+    "idProduct": 674192,
+    "guide": {
+     "trend": 1415.22,
+     "low": 300,
+     "avg30": 1311.77,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mewtwo-v-go-72",
+   "name": "Mewtwo V",
+   "set": "Go",
+   "number": "72",
+   "variant": null,
+   "image": "img/mewtwo-v-go-72.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-go/mewtwo-v-72",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=665290"
+   },
+   "usd": {
+    "raw": 57.04,
+    "g8": 60,
+    "g9": 71.05,
+    "psa10": 292.78
+   },
+   "cm": {
+    "idProduct": 665290,
+    "guide": {
+     "trend": 49.12,
+     "low": 22.14,
+     "avg30": 54.75,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "rayquaza-vmax-silver-tempest-tg29",
+   "name": "Rayquaza VMAX",
+   "set": "Silver Tempest",
+   "number": "TG29",
+   "variant": null,
+   "image": "img/rayquaza-vmax-silver-tempest-tg29.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-silver-tempest/rayquaza-vmax-tg29",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=682293"
+   },
+   "usd": {
+    "raw": 27,
+    "g8": 38.99,
+    "g9": 48.14,
+    "psa10": 148
+   },
+   "cm": {
+    "idProduct": 682293,
+    "guide": {
+     "trend": 17.94,
+     "low": 11.89,
+     "avg30": 20.36,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "umbreon-celebrations-17",
+   "name": "Umbreon",
+   "set": "Celebrations",
+   "number": "17",
+   "variant": null,
+   "image": "img/umbreon-celebrations-17.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-celebrations/umbreon-17",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=576785"
+   },
+   "usd": {
+    "raw": 78.28,
+    "g8": 88,
+    "g9": 101.24,
+    "psa10": 341.21
+   },
+   "cm": {
+    "idProduct": 576785,
+    "guide": {
+     "trend": 137.3,
+     "low": 93,
+     "avg30": 144.82,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "mew-v-fusion-strike-251",
+   "name": "Mew V",
+   "set": "Fusion Strike",
+   "number": "251",
+   "variant": null,
+   "image": "img/mew-v-fusion-strike-251.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-fusion-strike/mew-v-251",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=582987"
+   },
+   "usd": {
+    "raw": 87.22,
+    "g8": 92.84,
+    "g9": 117,
+    "psa10": 413.54
+   },
+   "cm": {
+    "idProduct": 582987,
+    "guide": {
+     "trend": 134.71,
+     "low": 44,
+     "avg30": 114.35,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "shining-noctowl-1st-edition-neo-destiny-110",
+   "name": "Shining Noctowl",
+   "set": "Neo Destiny",
+   "number": "110",
+   "variant": "1st Edition",
+   "image": "img/shining-noctowl-1st-edition-neo-destiny-110.webp",
+   "salesPerYear": 12,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-neo-destiny/shining-noctowl-1st-edition-110",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=274762"
+   },
+   "usd": {
+    "raw": 805,
+    "g8": 1079.87,
+    "g9": 2096.09,
+    "psa10": 6953.23
+   },
+   "cm": {
+    "idProduct": 274762,
+    "guide": null,
+    "listings": null
+   }
+  },
+  {
+   "id": "misty-s-psyduck-destined-rivals-193",
+   "name": "Misty's Psyduck",
+   "set": "Destined Rivals",
+   "number": "193",
+   "variant": null,
+   "image": "img/misty-s-psyduck-destined-rivals-193.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-destined-rivals/misty%27s-psyduck-193",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=826067"
+   },
+   "usd": {
+    "raw": 47,
+    "g8": 52.45,
+    "g9": 62,
+    "psa10": 320
+   },
+   "cm": {
+    "idProduct": 826067,
+    "guide": {
+     "trend": 37.49,
+     "low": 10,
+     "avg30": 46.56,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "latios-surging-sparks-203",
+   "name": "Latios",
+   "set": "Surging Sparks",
+   "number": "203",
+   "variant": null,
+   "image": "img/latios-surging-sparks-203.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-surging-sparks/latios-203",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=794576"
+   },
+   "usd": {
+    "raw": 31.16,
+    "g8": 32.09,
+    "g9": 40,
+    "psa10": 226.86
+   },
+   "cm": {
+    "idProduct": 794576,
+    "guide": {
+     "trend": 30.49,
+     "low": 10.99,
+     "avg30": 32.62,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "pikachu-scarlet-violet-151-173",
+   "name": "Pikachu",
+   "set": "Scarlet & Violet 151",
+   "number": "173",
+   "variant": null,
+   "image": "img/pikachu-scarlet-violet-151-173.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-scarlet-&-violet-151/pikachu-173",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=733768"
+   },
+   "usd": {
+    "raw": 71.49,
+    "g8": 70,
+    "g9": 92.15,
+    "psa10": 479.02
+   },
+   "cm": {
+    "idProduct": 733768,
+    "guide": {
+     "trend": 71.93,
+     "low": 40,
+     "avg30": 75,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "gengar-ex-temporal-forces-193",
+   "name": "Gengar ex",
+   "set": "Temporal Forces",
+   "number": "193",
+   "variant": null,
+   "image": "img/gengar-ex-temporal-forces-193.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-temporal-forces/gengar-ex-193",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=760823"
+   },
+   "usd": {
+    "raw": 52.62,
+    "g8": 47.17,
+    "g9": 72.12,
+    "psa10": 339
+   },
+   "cm": {
+    "idProduct": 760823,
+    "guide": {
+     "trend": 27.53,
+     "low": 15.99,
+     "avg30": 29.49,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "charizard-ex-obsidian-flames-223",
+   "name": "Charizard ex",
+   "set": "Obsidian Flames",
+   "number": "223",
+   "variant": null,
+   "image": "img/charizard-ex-obsidian-flames-223.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-obsidian-flames/charizard-ex-223",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=725303"
+   },
+   "usd": {
+    "raw": 92.03,
+    "g8": 91.62,
+    "g9": 121.75,
+    "psa10": 665.5
+   },
+   "cm": {
+    "idProduct": 725303,
+    "guide": {
+     "trend": 75.52,
+     "low": 47.94,
+     "avg30": 83.97,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "gengar-mimikyu-gx-team-up-165",
+   "name": "Gengar & Mimikyu GX",
+   "set": "Team Up",
+   "number": "165",
+   "variant": null,
+   "image": "img/gengar-mimikyu-gx-team-up-165.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/gengar-&-mimikyu-gx-165",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=369090"
+   },
+   "usd": {
+    "raw": 1457.87,
+    "g8": 1556.42,
+    "g9": 2725,
+    "psa10": 7401.12
+   },
+   "cm": {
+    "idProduct": 369090,
+    "guide": {
+     "trend": 516.98,
+     "low": 200,
+     "avg30": 958.83,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "arceus-dialga-palkia-gx-cosmic-eclipse-221",
+   "name": "Arceus & Dialga & Palkia GX",
+   "set": "Cosmic Eclipse",
+   "number": "221",
+   "variant": null,
+   "image": "img/arceus-dialga-palkia-gx-cosmic-eclipse-221.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-cosmic-eclipse/arceus-&-dialga-&-palkia-gx-221",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=408699"
+   },
+   "usd": {
+    "raw": 500,
+    "g8": 514.19,
+    "g9": 847.5,
+    "psa10": 3850
+   },
+   "cm": {
+    "idProduct": 408699,
+    "guide": {
+     "trend": 234.69,
+     "low": 99.99,
+     "avg30": 468.51,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "latias-latios-gx-team-up-169",
+   "name": "Latias & Latios GX",
+   "set": "Team Up",
+   "number": "169",
+   "variant": null,
+   "image": "img/latias-latios-gx-team-up-169.webp",
+   "salesPerYear": 104,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/latias-&-latios-gx-169",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=369094"
+   },
+   "usd": {
+    "raw": 85,
+    "g8": 125,
+    "g9": 153.9,
+    "psa10": 709.36
+   },
+   "cm": {
+    "idProduct": 369094,
+    "guide": {
+     "trend": 157.94,
+     "low": 16.89,
+     "avg30": 167.71,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "garchomp-giratina-gx-promo-sm193",
+   "name": "Garchomp & Giratina GX",
+   "set": "Promo",
+   "number": "SM193",
+   "variant": null,
+   "image": "img/garchomp-giratina-gx-promo-sm193.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/garchomp-&-giratina-gx-sm193",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=397964"
+   },
+   "usd": {
+    "raw": 87.51,
+    "g8": 114.13,
+    "g9": 137.93,
+    "psa10": 674.17
+   },
+   "cm": {
+    "idProduct": 397964,
+    "guide": {
+     "trend": 156.88,
+     "low": 40,
+     "avg30": 208.98,
+     "trusted": false
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "gengar-mimikyu-gx-team-up-53",
+   "name": "Gengar & Mimikyu GX",
+   "set": "Team Up",
+   "number": "53",
+   "variant": null,
+   "image": "img/gengar-mimikyu-gx-team-up-53.webp",
+   "salesPerYear": 365,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/gengar-&-mimikyu-gx-53",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=367141"
+   },
+   "usd": {
+    "raw": 343.57,
+    "g8": 343.86,
+    "g9": 537.5,
+    "psa10": 2600
+   },
+   "cm": {
+    "idProduct": 367141,
+    "guide": {
+     "trend": 390.88,
+     "low": 35,
+     "avg30": 218.9,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "pikachu-zekrom-gx-promo-sm168",
+   "name": "Pikachu & Zekrom GX",
+   "set": "Promo",
+   "number": "SM168",
+   "variant": null,
+   "image": "img/pikachu-zekrom-gx-promo-sm168.webp",
+   "salesPerYear": 730,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/pikachu-&-zekrom-gx-sm168",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=369468"
+   },
+   "usd": {
+    "raw": 210,
+    "g8": 224.19,
+    "g9": 327.5,
+    "psa10": 1819.34
+   },
+   "cm": {
+    "idProduct": 369468,
+    "guide": {
+     "trend": 159.44,
+     "low": 58.5,
+     "avg30": 476.74,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "solgaleo-lunala-gx-cosmic-eclipse-216",
+   "name": "Solgaleo & Lunala GX",
+   "set": "Cosmic Eclipse",
+   "number": "216",
+   "variant": null,
+   "image": "img/solgaleo-lunala-gx-cosmic-eclipse-216.webp",
+   "salesPerYear": 156,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-cosmic-eclipse/solgaleo-&-lunala-gx-216",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=408674"
+   },
+   "usd": {
+    "raw": 285,
+    "g8": 283.87,
+    "g9": 335.42,
+    "psa10": 2100
+   },
+   "cm": {
+    "idProduct": 408674,
+    "guide": {
+     "trend": 202.68,
+     "low": 99.99,
+     "avg30": 331.35,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "blastoise-piplup-gx-cosmic-eclipse-215",
+   "name": "Blastoise & Piplup GX",
+   "set": "Cosmic Eclipse",
+   "number": "215",
+   "variant": null,
+   "image": "img/blastoise-piplup-gx-cosmic-eclipse-215.webp",
+   "salesPerYear": 156,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-cosmic-eclipse/blastoise-&-piplup-gx-215",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=408669"
+   },
+   "usd": {
+    "raw": 377.5,
+    "g8": 375.26,
+    "g9": 506.01,
+    "psa10": 2932.86
+   },
+   "cm": {
+    "idProduct": 408669,
+    "guide": {
+     "trend": 304.41,
+     "low": 50,
+     "avg30": 311.16,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "blastoise-celebrations-2",
+   "name": "Blastoise",
+   "set": "Celebrations",
+   "number": "2",
+   "variant": null,
+   "image": "img/blastoise-celebrations-2.webp",
+   "salesPerYear": 1825,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-celebrations/blastoise-2",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=576771"
+   },
+   "usd": {
+    "raw": 15.64,
+    "g8": 30,
+    "g9": 40.5,
+    "psa10": 113.39
+   },
+   "cm": {
+    "idProduct": 576771,
+    "guide": {
+     "trend": 23.74,
+     "low": 9.9,
+     "avg30": 21.41,
+     "trusted": true
+    },
+    "listings": null
+   }
+  },
+  {
+   "id": "rayquaza-vivid-voltage-138",
+   "name": "Rayquaza",
+   "set": "Vivid Voltage",
+   "number": "138",
+   "variant": null,
+   "image": "img/rayquaza-vivid-voltage-138.webp",
+   "salesPerYear": 1095,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-vivid-voltage/rayquaza-138",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=512400"
+   },
+   "usd": {
+    "raw": 23,
+    "g8": 28.54,
+    "g9": 46.18,
+    "psa10": 175.25
+   },
+   "cm": {
+    "idProduct": 512400,
+    "guide": {
+     "trend": 32.9,
+     "low": 14.9,
+     "avg30": 34.03,
+     "trusted": true
+    },
+    "listings": null
+   }
+  }
+ ]
+}

@@ -4,15 +4,21 @@ import { analyze, bucketOf, matchesQuery, sortRows, toEur, type Row } from '../s
 import { eur, signedEur, times } from '../src/lib/format.ts';
 
 // Test fixtures only. These are not market prices.
+type Listings = NonNullable<NonNullable<Card['cm']>['listings']>;
+function listings(avg10: number, over: Partial<Listings> = {}): NonNullable<Card['cm']> {
+  return { idProduct: 1, guide: null, listings: { avg10, median: avg10, min: avg10 * 0.8, max: avg10 * 1.2, n: 10, nl: null, fetchedAt: '2026-10-16T00:00:00Z', ...over } };
+}
 function card(over: Partial<Card> & { id: string }): Card {
   return {
     name: 'Test Card',
     set: 'Test Set',
     number: '1',
+    variant: null,
     image: null,
-    links: { pricecharting: 'https://www.pricecharting.com/game/x/y', cardmarket: null },
-    usd: { raw: 10, psa8: 20, psa9: 40, psa10: 100 },
-    cm: { avg10: 10, median: 10, min: 8, max: 12, n: 10, nl: null, fetchedAt: '2026-10-16T00:00:00Z' },
+    salesPerYear: 100,
+    links: { pricecharting: 'https://www.pricecharting.com/game/x/y', cardmarket: 'https://www.cardmarket.com/en/Pokemon/Products?idProduct=1' },
+    usd: { raw: 10, g8: 20, g9: 40, psa10: 100 },
+    cm: listings(10),
     ...over,
   };
 }
@@ -32,8 +38,8 @@ describe('analyze', () => {
     const a = analyze(card({ id: 'a' }), FX, FEE_USD);
     expect(a.fee).toBe(10);
     expect(a.raw).toBe(10);
-    expect(a.psa8).toBe(10);
-    expect(a.psa9).toBe(20);
+    expect(a.g8).toBe(10);
+    expect(a.g9).toBe(20);
     expect(a.psa10).toBe(50);
     expect(a.net8).toBe(-10); // 10 − 10 − 10
     expect(a.net9).toBe(0); // 20 − 10 − 10
@@ -48,7 +54,7 @@ describe('analyze', () => {
 
   it('a PSA 9 that only breaks even is not "safe"', () => {
     expect(analyze(card({ id: 'a' }), FX, FEE_USD).nineSafe).toBe(false);
-    const b = card({ id: 'b', usd: { raw: 10, psa8: 20, psa9: 60, psa10: 100 } });
+    const b = card({ id: 'b', usd: { raw: 10, g8: 20, g9: 60, psa10: 100 } });
     expect(analyze(b, FX, FEE_USD).nineSafe).toBe(true);
   });
 
@@ -57,8 +63,8 @@ describe('analyze', () => {
   });
 
   it('handles a missing PSA 8 without breaking the other grades', () => {
-    const a = analyze(card({ id: 'a', usd: { raw: 10, psa8: null, psa9: 40, psa10: 100 } }), FX, FEE_USD);
-    expect(a.psa8).toBeNull();
+    const a = analyze(card({ id: 'a', usd: { raw: 10, g8: null, g9: 40, psa10: 100 } }), FX, FEE_USD);
+    expect(a.g8).toBeNull();
     expect(a.net8).toBeNull();
     expect(a.net10).toBe(30);
   });
@@ -74,15 +80,34 @@ describe('analyze', () => {
   });
 
   it('uses fewer than 10 listings when that is all there is', () => {
-    const c = card({ id: 'a', cm: { avg10: 30, median: 30, min: 25, max: 35, n: 4, nl: null, fetchedAt: 'x' } });
+    const c = card({ id: 'a', cm: listings(30, { n: 4 }) });
     expect(analyze(c, FX, FEE_USD).raw).toBe(30);
   });
 
   it('shows the NL average only with at least 3 NL listings', () => {
-    const base = card({ id: 'a' });
-    const withNl = (n: number): Card => ({ ...base, cm: { ...base.cm!, nl: { avg: 11, n } } });
+    const withNl = (n: number): Card => card({ id: 'a', cm: listings(10, { nl: { avg: 11, n } }) });
     expect(analyze(withNl(2), FX, FEE_USD).nl).toBeNull();
     expect(analyze(withNl(3), FX, FEE_USD).nl).toEqual({ avg: 11, n: 3 });
+  });
+});
+
+describe('raw baseline source', () => {
+  const guide = (trusted: boolean) => ({ trend: 30, low: 5, avg30: 28, trusted });
+  it('prefers the 10 cheapest NM English listings', () => {
+    const a = analyze(card({ id: 'a', cm: { ...listings(12), guide: guide(true) } }), FX, FEE_USD);
+    expect(a.raw).toBe(12);
+    expect(a.rawSource).toBe('listings');
+  });
+  it('falls back to a trusted Cardmarket trend', () => {
+    const a = analyze(card({ id: 'a', cm: { idProduct: 1, guide: guide(true), listings: null } }), FX, FEE_USD);
+    expect(a.raw).toBe(30);
+    expect(a.rawSource).toBe('trend');
+  });
+  it('ignores an untrusted trend', () => {
+    const a = analyze(card({ id: 'a', cm: { idProduct: 1, guide: guide(false), listings: null } }), FX, FEE_USD);
+    expect(a.raw).toBeNull();
+    expect(a.rawSource).toBeNull();
+    expect(a.net10).toBeNull();
   });
 });
 
@@ -104,7 +129,7 @@ describe('bucketOf', () => {
 
 describe('sortRows', () => {
   const rows: Row[] = [
-    card({ id: 'cheap', name: 'A', cm: { avg10: 5, median: 5, min: 5, max: 5, n: 10, nl: null, fetchedAt: 'x' } }),
+    card({ id: 'cheap', name: 'A', cm: listings(5) }),
     card({ id: 'mid', name: 'B' }),
     card({ id: 'none', name: 'C', cm: null }),
   ].map((c) => ({ card: c, a: analyze(c, FX, FEE_USD) }));

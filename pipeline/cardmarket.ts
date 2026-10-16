@@ -1,64 +1,76 @@
-// Step 3: the cheapest Near Mint English listings per card on Cardmarket, EU-wide and Netherlands-only.
-// Uses a real browser (Cardmarket sits behind Cloudflare). If Cloudflare blocks this, the Apify adapter takes over.
-import { chromium, type Page } from '@playwright/test';
-import { CardmarketFile, ContendersFile, PATHS, readJson, writeJson, type CmEntry } from './lib/files.ts';
-import { cardmarketUrl } from './map.ts';
-import { pace } from './lib/http.ts';
-import { parseEuro, type Listing } from './lib/stats.ts';
+// Step 4: the cheapest Near Mint English listings per card on Cardmarket, EU-wide and Netherlands-only.
+// Cardmarket blocks cloud servers, so this runs Apify's "Cardmarket listings scraper" actor, which reads
+// the live offer table through residential proxies. Needs APIFY_TOKEN.
+import { CardmarketFile, ContendersFile, PATHS, readJson, TcgdexFile, writeJson, type CmEntry, type Contender } from './lib/files.ts';
 
-const FILTER = 'language=1&minCondition=2'; // English, Near Mint or better
-const NL_SELLER_COUNTRY = 23; // Cardmarket's id for the Netherlands
+const ACTOR = 'phantom_coder~cardmarket-listings-scraper';
 const MAX_AGE_H = 20;
+const CONCURRENCY = 4;
+/** Fetch more than 10 so listings dropped as slabs (from seller comments) still leave 10. */
+const MAX_RESULTS = 20;
 
-async function listings(page: Page, url: string): Promise<Listing[]> {
-  await pace(5000);
-  const res = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45_000 });
-  if (res?.status() === 403 || (await page.title()).toLowerCase().includes('just a moment')) {
-    throw Object.assign(new Error('Blocked by Cloudflare'), { blocked: true });
-  }
-  await page.waitForSelector('.article-row, .table-body .row, .noResults', { timeout: 20_000 }).catch(() => {});
-  return page.$$eval('.article-row', (rows) =>
-    rows.map((row) => {
-      const price = row.querySelector('.price-container .color-primary, .price-container span')?.textContent ?? '';
-      const loc = row.querySelector('[aria-label^="Item location"], [data-bs-original-title^="Item location"], [title^="Item location"]');
-      const label = loc?.getAttribute('aria-label') ?? loc?.getAttribute('data-bs-original-title') ?? loc?.getAttribute('title') ?? '';
-      return { priceText: price, country: label.replace(/^Item location:\s*/, '') || null };
-    }),
-  ).then((rows) => rows.flatMap((r) => (parseEuro(r.priceText) ? [{ price: parseEuro(r.priceText)!, country: r.country }] : [])));
+interface ApifyListing {
+  price?: number;
+  condition?: string;
+  language?: string;
+  sellerComment?: string | null;
+  productUrl?: string;
+}
+
+export function actorInput(productUrl: string, c: Pick<Contender, 'variant'>, sellerCountry?: string): Record<string, unknown> {
+  const v = c.variant?.toLowerCase() ?? '';
+  return {
+    productUrl,
+    minCondition: 'NM',
+    language: 'English',
+    maxResults: MAX_RESULTS,
+    enableFairValue: false,
+    ...(v.includes('1st') ? { isFirstEd: true } : {}),
+    ...(sellerCountry ? { sellerCountry } : {}),
+  };
+}
+
+async function runActor(input: Record<string, unknown>): Promise<ApifyListing[]> {
+  const token = process.env.APIFY_TOKEN;
+  const url = `https://api.apify.com/v2/acts/${ACTOR}/run-sync-get-dataset-items?timeout=240${token ? `&token=${token}` : ''}`;
+  const res = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(input) });
+  if (res.status === 401 || res.status === 403) throw Object.assign(new Error('Apify rejected the request: set APIFY_TOKEN'), { fatal: true });
+  if (!res.ok) throw new Error(`Apify HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+  return (await res.json()) as ApifyListing[];
+}
+
+function toListings(rows: ApifyListing[], country: string | null): CmEntry['listings'] {
+  return rows
+    .filter((r) => typeof r.price === 'number' && r.price > 0 && (r.language ?? 'English') === 'English')
+    .map((r) => ({ price: r.price!, country, comment: r.sellerComment ?? null }))
+    .sort((a, b) => a.price - b.price);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const only = process.argv.slice(2); // optional card ids, e.g. for the 3-card spike
+  const only = process.argv.slice(2);
   const { cards } = await readJson(PATHS.contenders, ContendersFile);
+  const td = await readJson(PATHS.tcgdex, TcgdexFile, {});
   const out = await readJson(PATHS.cardmarket, CardmarketFile, {});
-  const browser = await chromium.launch({ executablePath: process.env.PW_CHROMIUM ?? '/opt/pw-browsers/chromium' });
-  const page = await (await browser.newContext({ locale: 'en-GB' })).newPage();
-  const todo = cards.filter((c) => (only.length ? only.includes(c.id) : true));
-  try {
-    for (const [i, c] of todo.entries()) {
-      const prev = out[c.id];
-      if (!only.length && prev && Date.now() - Date.parse(prev.fetchedAt) < MAX_AGE_H * 3600_000) continue;
-      const tag = `${i + 1}/${todo.length} ${c.id}`;
+  const fresh = (id: string) => out[id] && Date.now() - Date.parse(out[id]!.fetchedAt) < MAX_AGE_H * 3600_000;
+  const todo = cards.filter((c) => td[c.id] && (only.length ? only.includes(c.id) : !fresh(c.id)));
+  console.log(`${todo.length} cards to fetch (${cards.length - todo.length} skipped: fresh or not on Cardmarket)`);
+
+  let next = 0;
+  let done = 0;
+  async function worker() {
+    while (next < todo.length) {
+      const c = todo[next++]!;
+      const url = `https://www.cardmarket.com/en/Pokemon/Products?idProduct=${td[c.id]!.idProduct}`;
       try {
-        const { url, via } = await cardmarketUrl(c);
-        if (!url) {
-          out[c.id] = { productUrl: null, listings: [], nlListings: [], fetchedAt: new Date().toISOString(), note: via };
-          console.warn(`${tag}: not mapped (${via})`);
-          continue;
-        }
-        const eu = await listings(page, `${url}?${FILTER}`);
-        const nl = await listings(page, `${url}?${FILTER}&sellerCountry=${NL_SELLER_COUNTRY}`);
-        const entry: CmEntry = { productUrl: url, listings: eu.slice(0, 20), nlListings: nl.slice(0, 20), fetchedAt: new Date().toISOString(), note: via };
-        out[c.id] = entry;
-        console.log(`${tag}: ${eu.length} EU / ${nl.length} NL listings, cheapest €${eu[0]?.price ?? '—'}`);
+        const [eu, nl] = await Promise.all([runActor(actorInput(url, c)), runActor(actorInput(url, c, 'NL'))]);
+        out[c.id] = { productUrl: eu[0]?.productUrl ?? url, listings: toListings(eu, null), nlListings: toListings(nl, 'Netherlands'), fetchedAt: new Date().toISOString() };
+        console.log(`${++done}/${todo.length} ${c.fullName}: ${eu.length} EU / ${nl.length} NL, cheapest €${out[c.id]!.listings[0]?.price ?? '—'}`);
       } catch (e) {
-        console.warn(`${tag}: ${(e as Error).message}`);
-        if ((e as { blocked?: boolean }).blocked) throw e;
-      } finally {
-        await writeJson(PATHS.cardmarket, out);
+        console.warn(`${++done}/${todo.length} ${c.fullName}: ${(e as Error).message}`);
+        if ((e as { fatal?: boolean }).fatal) process.exit(1);
       }
+      await writeJson(PATHS.cardmarket, out);
     }
-  } finally {
-    await browser.close();
   }
+  await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 }

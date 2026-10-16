@@ -1,55 +1,52 @@
-// Step 1: the card list from PokeViews' grading-opportunity page.
-// PokeViews builds its grid from PriceCharting data; each cell links a card's PriceCharting page.
-import * as cheerio from 'cheerio';
-import { PATHS, slug, writeJson, type Contender } from './lib/files.ts';
+// Step 1: the card list behind PokeViews' grading-opportunity heatmap.
+import { z } from 'zod';
+import { PATHS, slug, splitVariant, writeJson, type Contender } from './lib/files.ts';
 import { getText } from './lib/http.ts';
 
-const SOURCE = 'https://www.pokeviews.com/grading_opportunity';
-const NON_ENGLISH = /\b(japanese|chinese|korean|german|french|italian|spanish|portuguese)\b/i;
+const SOURCE = 'https://storage.googleapis.com/pokeviews-prod/grading/grading_opportunity.json.gz';
 
-/** "Umbreon VMAX #215" → { name: "Umbreon VMAX", number: "215" } */
-export function splitTitle(title: string): { name: string; number: string | null } {
-  const m = title.trim().match(/^(.*?)\s*#\s*([A-Za-z0-9-]+)\s*$/);
-  return m ? { name: m[1]!.trim(), number: m[2]! } : { name: title.trim(), number: null };
+const PvRow = z.object({
+  card_name: z.string(),
+  set_name: z.string(),
+  card_number: z.string().nullable(),
+  series_name: z.string(),
+  ungraded_price: z.number(),
+  psa_10_price: z.number(),
+  annual_sales_volume: z.number().nullable(),
+  image_url: z.string().nullable(),
+  date: z.string(),
+});
+
+/** PokeViews names images after the source product: "450289.webp" (TCGplayer) or "pc_2252747.webp" (PriceCharting). */
+export function idsFromImage(url: string | null): { tcgplayerId: number | null; pricechartingId: number | null } {
+  const file = url?.split('/').pop() ?? '';
+  const pc = file.match(/^pc_(\d+)\./);
+  const tp = file.match(/^(\d+)(?:_\d+w)?\./);
+  return { tcgplayerId: tp ? Number(tp[1]) : null, pricechartingId: pc ? Number(pc[1]) : null };
 }
 
-/** PriceCharting product URL: /game/pokemon-evolving-skies/umbreon-vmax-215 → set "Evolving Skies". */
-export function setFromUrl(url: string): string {
-  const seg = new URL(url).pathname.split('/')[2] ?? '';
-  return seg
-    .replace(/^pokemon-/, '')
-    .split('-')
-    .map((w) => (w.length <= 2 && w !== 'ex' ? w.toUpperCase() : w[0]!.toUpperCase() + w.slice(1)))
-    .join(' ');
-}
-
-export function parseContenders(html: string): { cards: Contender[]; skipped: string[] } {
-  const $ = cheerio.load(html);
-  const seen = new Map<string, Contender>();
-  const skipped: string[] = [];
-  $('a[href*="pricecharting.com/game/"]').each((_, a) => {
-    const href = $(a).attr('href')!;
-    const url = new URL(href, SOURCE).toString();
-    const set = setFromUrl(url);
-    const title = $(a).attr('title') || $(a).find('img').attr('alt') || $(a).text();
-    const { name, number } = splitTitle(title);
-    if (!name) return;
-    if (NON_ENGLISH.test(set) || NON_ENGLISH.test(url)) {
-      skipped.push(`${name} (${set})`);
-      return;
-    }
-    const id = slug(name, number);
-    if (!seen.has(id)) seen.set(id, { id, name, set, number, pricechartingUrl: url });
-  });
-  return { cards: [...seen.values()], skipped };
+export function toContender(r: z.infer<typeof PvRow>): Contender {
+  const { name, variant } = splitVariant(r.card_name);
+  const number = r.card_number && r.card_number !== 'None' ? r.card_number : null;
+  return {
+    id: slug(r.card_name, r.set_name, number),
+    name,
+    fullName: r.card_name,
+    variant,
+    set: r.set_name,
+    series: r.series_name,
+    number,
+    imageUrl: r.image_url,
+    ...idsFromImage(r.image_url),
+    pv: { raw: r.ungraded_price, psa10: r.psa_10_price, salesPerYear: r.annual_sales_volume, date: r.date },
+  };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const html = await getText(SOURCE, { maxAgeH: 6 });
-  const { cards, skipped } = parseContenders(html);
-  if (cards.length === 0) {
-    throw new Error('No PriceCharting links found on PokeViews. The page may load its grid with JavaScript; check data/cache for the saved HTML.');
-  }
-  await writeJson(PATHS.contenders, { fetchedAt: new Date().toISOString(), source: SOURCE, skipped, cards });
-  console.log(`${cards.length} English contenders, ${skipped.length} non-English skipped → ${PATHS.contenders}`);
+  const rows = z.array(PvRow).parse(JSON.parse(await getText(SOURCE, { maxAgeH: 6 })));
+  const cards = rows.map(toContender);
+  const dupes = cards.length - new Set(cards.map((c) => c.id)).size;
+  if (dupes) throw new Error(`${dupes} duplicate card ids`);
+  await writeJson(PATHS.contenders, { fetchedAt: new Date().toISOString(), source: SOURCE, cards });
+  console.log(`${cards.length} contenders (PokeViews data of ${rows[0]?.date}) → ${PATHS.contenders}`);
 }

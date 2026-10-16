@@ -1,0 +1,1734 @@
+{
+ "fetchedAt": "2026-10-16T21:47:57.952Z",
+ "source": "https://storage.googleapis.com/pokeviews-prod/grading/grading_opportunity.json.gz",
+ "cards": [
+  {
+   "id": "ho-oh-reverse-holo-skyridge-149",
+   "name": "Ho-Oh",
+   "fullName": "Ho-Oh (Reverse Holo)",
+   "variant": "Reverse Holo",
+   "set": "Skyridge",
+   "series": "E-Card",
+   "number": "149",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/pc_2252747.webp",
+   "tcgplayerId": null,
+   "pricechartingId": 2252747,
+   "pv": {
+    "raw": 410.38,
+    "psa10": 4550,
+    "salesPerYear": 4,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "entei-gold-star-unseen-forces-113",
+   "name": "Entei",
+   "fullName": "Entei (Gold Star)",
+   "variant": "Gold Star",
+   "set": "Unseen Forces",
+   "series": "EX",
+   "number": "113",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/85275.webp",
+   "tcgplayerId": 85275,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 1081.3,
+    "psa10": 12349.28,
+    "salesPerYear": 24,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mega-charizard-x-ex-phantasmal-flames-130",
+   "name": "Mega Charizard X ex",
+   "fullName": "Mega Charizard X ex",
+   "variant": null,
+   "set": "Phantasmal Flames",
+   "series": "Mega Evolution",
+   "number": "130",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/662185.webp",
+   "tcgplayerId": 662185,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 201.79,
+    "psa10": 2050.37,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "shining-raichu-1st-edition-neo-destiny-111",
+   "name": "Shining Raichu",
+   "fullName": "Shining Raichu (1st Edition)",
+   "variant": "1st Edition",
+   "set": "Neo Destiny",
+   "series": "Neo",
+   "number": "111",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/8fcfa89dd6c2.webp",
+   "tcgplayerId": null,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 809.1,
+    "psa10": 11782.24,
+    "salesPerYear": 12,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "giovanni-1st-edition-gym-challenge-18",
+   "name": "Giovanni",
+   "fullName": "Giovanni (1st Edition)",
+   "variant": "1st Edition",
+   "set": "Gym Challenge",
+   "series": "Original",
+   "number": "18",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/fa12b6b3e82c.webp",
+   "tcgplayerId": null,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 92.5,
+    "psa10": 939.04,
+    "salesPerYear": 52,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "articuno-journey-together-161",
+   "name": "Articuno",
+   "fullName": "Articuno",
+   "variant": null,
+   "set": "Journey Together",
+   "series": "Scarlet & Violet",
+   "number": "161",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/623588.webp",
+   "tcgplayerId": 623588,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 16.9,
+    "psa10": 201.76,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "snorlax-promo-51",
+   "name": "Snorlax",
+   "fullName": "Snorlax",
+   "variant": null,
+   "set": "Promo",
+   "series": "Scarlet & Violet",
+   "number": "51",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/517175.webp",
+   "tcgplayerId": 517175,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 22.5,
+    "psa10": 250,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "charmander-promo-44",
+   "name": "Charmander",
+   "fullName": "Charmander",
+   "variant": null,
+   "set": "Promo",
+   "series": "Scarlet & Violet",
+   "number": "44",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/512035.webp",
+   "tcgplayerId": 512035,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 55,
+    "psa10": 567.04,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mewtwo-promo-52",
+   "name": "Mewtwo",
+   "fullName": "Mewtwo",
+   "variant": null,
+   "set": "Promo",
+   "series": "Scarlet & Violet",
+   "number": "52",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/518872.webp",
+   "tcgplayerId": 518872,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 40.47,
+    "psa10": 605.45,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mew-ex-promo-53",
+   "name": "Mew ex",
+   "fullName": "Mew ex",
+   "variant": null,
+   "set": "Promo",
+   "series": "Scarlet & Violet",
+   "number": "53",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/518871.webp",
+   "tcgplayerId": 518871,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 71.43,
+    "psa10": 738.68,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "magikarp-paldea-evolved-203",
+   "name": "Magikarp",
+   "fullName": "Magikarp",
+   "variant": null,
+   "set": "Paldea Evolved",
+   "series": "Scarlet & Violet",
+   "number": "203",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/497606.webp",
+   "tcgplayerId": 497606,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 302.14,
+    "psa10": 3538.75,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "sylveon-gx-guardians-rising-140",
+   "name": "Sylveon GX",
+   "fullName": "Sylveon GX",
+   "variant": null,
+   "set": "Guardians Rising",
+   "series": "Sun & Moon",
+   "number": "140",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/131007.webp",
+   "tcgplayerId": 131007,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 64,
+    "psa10": 668.8,
+    "salesPerYear": 52,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mewtwo-gx-shining-legends-78",
+   "name": "Mewtwo GX",
+   "fullName": "Mewtwo GX",
+   "variant": null,
+   "set": "Shining Legends",
+   "series": "Sun & Moon",
+   "number": "78",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/146698.webp",
+   "tcgplayerId": 146698,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 607.5,
+    "psa10": 8212.34,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "pikachu-cosmic-eclipse-241",
+   "name": "Pikachu",
+   "fullName": "Pikachu",
+   "variant": null,
+   "set": "Cosmic Eclipse",
+   "series": "Sun & Moon",
+   "number": "241",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/201352.webp",
+   "tcgplayerId": 201352,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 174,
+    "psa10": 1899,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "celebi-venusaur-gx-promo-sm167",
+   "name": "Celebi & Venusaur GX",
+   "fullName": "Celebi & Venusaur GX",
+   "variant": null,
+   "set": "Promo",
+   "series": "Sun & Moon",
+   "number": "SM167",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/185984.webp",
+   "tcgplayerId": 185984,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 83.6,
+    "psa10": 1182.72,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "pikachu-zekrom-gx-team-up-33",
+   "name": "Pikachu & Zekrom GX",
+   "fullName": "Pikachu & Zekrom GX",
+   "variant": null,
+   "set": "Team Up",
+   "series": "Sun & Moon",
+   "number": "33",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/183804.webp",
+   "tcgplayerId": 183804,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 35.39,
+    "psa10": 519.33,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "raikou-gold-star-unseen-forces-114",
+   "name": "Raikou",
+   "fullName": "Raikou (Gold Star)",
+   "variant": "Gold Star",
+   "set": "Unseen Forces",
+   "series": "EX",
+   "number": "114",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/88537.webp",
+   "tcgplayerId": 88537,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 1137.5,
+    "psa10": 17446.86,
+    "salesPerYear": 52,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "shining-tyranitar-neo-destiny-113",
+   "name": "Shining Tyranitar",
+   "fullName": "Shining Tyranitar",
+   "variant": null,
+   "set": "Neo Destiny",
+   "series": "Neo",
+   "number": "113",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/89171.webp",
+   "tcgplayerId": 89171,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 545.62,
+    "psa10": 11700,
+    "salesPerYear": 24,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "blaine-s-charizard-1st-edition-gym-challenge-2",
+   "name": "Blaine's Charizard",
+   "fullName": "Blaine's Charizard (1st Edition)",
+   "variant": "1st Edition",
+   "set": "Gym Challenge",
+   "series": "Original",
+   "number": "2",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/6c41780e8f9e.webp",
+   "tcgplayerId": null,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 847.6,
+    "psa10": 20813.1,
+    "salesPerYear": 52,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "rocket-s-zapdos-1st-edition-gym-challenge-15",
+   "name": "Rocket's Zapdos",
+   "fullName": "Rocket's Zapdos (1st Edition)",
+   "variant": "1st Edition",
+   "set": "Gym Challenge",
+   "series": "Original",
+   "number": "15",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/55a1d76b0084.webp",
+   "tcgplayerId": null,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 224.32,
+    "psa10": 3792.86,
+    "salesPerYear": 52,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "misty-s-gyarados-1st-edition-gym-challenge-13",
+   "name": "Misty's Gyarados",
+   "fullName": "Misty's Gyarados (1st Edition)",
+   "variant": "1st Edition",
+   "set": "Gym Challenge",
+   "series": "Original",
+   "number": "13",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/cd5947f4a886.webp",
+   "tcgplayerId": null,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 331,
+    "psa10": 7737.5,
+    "salesPerYear": 52,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "ancient-mew-promo",
+   "name": "Ancient Mew",
+   "fullName": "Ancient Mew",
+   "variant": null,
+   "set": "Promo",
+   "series": "Other",
+   "number": null,
+   "imageUrl": "https://tcgplayer-cdn.tcgplayer.com/product/108589_200w.jpg",
+   "tcgplayerId": 108589,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 109.25,
+    "psa10": 2939.33,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "drowzee-scarlet-violet-210",
+   "name": "Drowzee",
+   "fullName": "Drowzee",
+   "variant": null,
+   "set": "Scarlet & Violet",
+   "series": "Scarlet & Violet",
+   "number": "210",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/490070.webp",
+   "tcgplayerId": 490070,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 53.32,
+    "psa10": 905,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "charizard-gx-burning-shadows-20",
+   "name": "Charizard GX",
+   "fullName": "Charizard GX",
+   "variant": null,
+   "set": "Burning Shadows",
+   "series": "Sun & Moon",
+   "number": "20",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/138496.webp",
+   "tcgplayerId": 138496,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 20.99,
+    "psa10": 356.24,
+    "salesPerYear": 156,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "lugia-v-silver-tempest-138",
+   "name": "Lugia V",
+   "fullName": "Lugia V",
+   "variant": null,
+   "set": "Silver Tempest",
+   "series": "Sword & Shield",
+   "number": "138",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/450289.webp",
+   "tcgplayerId": 450289,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 14.56,
+    "psa10": 229.02,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mew-crown-zenith-gg10",
+   "name": "Mew",
+   "fullName": "Mew",
+   "variant": null,
+   "set": "Crown Zenith",
+   "series": "Sword & Shield",
+   "number": "GG10",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/478027.webp",
+   "tcgplayerId": 478027,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 61.88,
+    "psa10": 1000,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "pikachu-lost-origin-tg05",
+   "name": "Pikachu",
+   "fullName": "Pikachu",
+   "variant": null,
+   "set": "Lost Origin",
+   "series": "Sword & Shield",
+   "number": "TG05",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/284258.webp",
+   "tcgplayerId": 284258,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 40.75,
+    "psa10": 772.23,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "m-gyarados-ex-breakpoint-115",
+   "name": "M Gyarados EX",
+   "fullName": "M Gyarados EX",
+   "variant": null,
+   "set": "BREAKpoint",
+   "series": "XY",
+   "number": "115",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/111533.webp",
+   "tcgplayerId": 111533,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 90,
+    "psa10": 2035,
+    "salesPerYear": 156,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mewtwo-ex-evolutions-103",
+   "name": "Mewtwo EX",
+   "fullName": "Mewtwo EX",
+   "variant": null,
+   "set": "Evolutions",
+   "series": "XY",
+   "number": "103",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/124116.webp",
+   "tcgplayerId": 124116,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 36.45,
+    "psa10": 626.32,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "gengar-ex-phantom-forces-34",
+   "name": "Gengar EX",
+   "fullName": "Gengar EX",
+   "variant": null,
+   "set": "Phantom Forces",
+   "series": "XY",
+   "number": "34",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/94167.webp",
+   "tcgplayerId": 94167,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 75.15,
+    "psa10": 1612.5,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "m-charizard-ex-flashfire-69",
+   "name": "M Charizard EX",
+   "fullName": "M Charizard EX",
+   "variant": null,
+   "set": "Flashfire",
+   "series": "XY",
+   "number": "69",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/91206.webp",
+   "tcgplayerId": 91206,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 85.01,
+    "psa10": 2243.5,
+    "salesPerYear": 104,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "m-rayquaza-ex-ancient-origins-98",
+   "name": "M Rayquaza EX",
+   "fullName": "M Rayquaza EX",
+   "variant": null,
+   "set": "Ancient Origins",
+   "series": "XY",
+   "number": "98",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/101520.webp",
+   "tcgplayerId": 101520,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 497.29,
+    "psa10": 12050,
+    "salesPerYear": 156,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mega-absol-ex-mega-evolution-180",
+   "name": "Mega Absol Ex",
+   "fullName": "Mega Absol Ex",
+   "variant": null,
+   "set": "Mega Evolution",
+   "series": "Mega Evolution",
+   "number": "180",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/654519.webp",
+   "tcgplayerId": 654519,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 49.33,
+    "psa10": 108.22,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "vulpix-mega-evolution-138",
+   "name": "Vulpix",
+   "fullName": "Vulpix",
+   "variant": null,
+   "set": "Mega Evolution",
+   "series": "Mega Evolution",
+   "number": "138",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/654477.webp",
+   "tcgplayerId": 654477,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 17.76,
+    "psa10": 71,
+    "salesPerYear": 1460,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mega-charizard-x-ex-phantasmal-flames-125",
+   "name": "Mega Charizard X ex",
+   "fullName": "Mega Charizard X ex",
+   "variant": null,
+   "set": "Phantasmal Flames",
+   "series": "Mega Evolution",
+   "number": "125",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/662184.webp",
+   "tcgplayerId": 662184,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 621.91,
+    "psa10": 1470.36,
+    "salesPerYear": 1460,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "pokemon-center-promo-40",
+   "name": "Pokemon Center",
+   "fullName": "Pokemon Center",
+   "variant": null,
+   "set": "Promo",
+   "series": "Original",
+   "number": "40",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/88213.webp",
+   "tcgplayerId": 88213,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 1525,
+    "psa10": 3782,
+    "salesPerYear": 12,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "pikachu-with-grey-felt-hat-promo-85",
+   "name": "Pikachu with Grey Felt Hat",
+   "fullName": "Pikachu with Grey Felt Hat",
+   "variant": null,
+   "set": "Promo",
+   "series": "Scarlet & Violet",
+   "number": "85",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/518861.webp",
+   "tcgplayerId": 518861,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 783.9,
+    "psa10": 2453.38,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "kyurem-ex-black-bolt-165",
+   "name": "Kyurem ex",
+   "fullName": "Kyurem ex",
+   "variant": null,
+   "set": "Black Bolt",
+   "series": "Scarlet & Violet",
+   "number": "165",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/642617.webp",
+   "tcgplayerId": 642617,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 61.5,
+    "psa10": 147.85,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "charizard-ex-paldean-fates-234",
+   "name": "Charizard ex",
+   "fullName": "Charizard ex",
+   "variant": null,
+   "set": "Paldean Fates",
+   "series": "Scarlet & Violet",
+   "number": "234",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/535090.webp",
+   "tcgplayerId": 535090,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 233.05,
+    "psa10": 725,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "jessie-james-hidden-fates-68",
+   "name": "Jessie & James",
+   "fullName": "Jessie & James",
+   "variant": null,
+   "set": "Hidden Fates",
+   "series": "Sun & Moon",
+   "number": "68",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/197732.webp",
+   "tcgplayerId": 197732,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 70,
+    "psa10": 182.24,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "moltres-zapdos-articuno-gx-promo-sm210",
+   "name": "Moltres & Zapdos & Articuno GX",
+   "fullName": "Moltres & Zapdos & Articuno GX",
+   "variant": null,
+   "set": "Promo",
+   "series": "Sun & Moon",
+   "number": "SM210",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/189659.webp",
+   "tcgplayerId": 189659,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 152.11,
+    "psa10": 382.93,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "umbreon-vmax-brilliant-stars-tg23",
+   "name": "Umbreon VMAX",
+   "fullName": "Umbreon VMAX",
+   "variant": null,
+   "set": "Brilliant Stars",
+   "series": "Sword & Shield",
+   "number": "TG23",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/264206.webp",
+   "tcgplayerId": 264206,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 90.15,
+    "psa10": 206.37,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "umbreon-v-evolving-skies-189",
+   "name": "Umbreon V",
+   "fullName": "Umbreon V",
+   "variant": null,
+   "set": "Evolving Skies",
+   "series": "Sword & Shield",
+   "number": "189",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/246719.webp",
+   "tcgplayerId": 246719,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 340.5,
+    "psa10": 986.33,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "zeraora-vmax-crown-zenith-gg42",
+   "name": "Zeraora VMAX",
+   "fullName": "Zeraora VMAX",
+   "variant": null,
+   "set": "Crown Zenith",
+   "series": "Sword & Shield",
+   "number": "GG42",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/477062.webp",
+   "tcgplayerId": 477062,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 26.87,
+    "psa10": 95,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "dragonite-v-evolving-skies-192",
+   "name": "Dragonite V",
+   "fullName": "Dragonite V",
+   "variant": null,
+   "set": "Evolving Skies",
+   "series": "Sword & Shield",
+   "number": "192",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/246758.webp",
+   "tcgplayerId": 246758,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 400.51,
+    "psa10": 1000,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "leafeon-vstar-crown-zenith-gg35",
+   "name": "Leafeon VSTAR",
+   "fullName": "Leafeon VSTAR",
+   "variant": null,
+   "set": "Crown Zenith",
+   "series": "Sword & Shield",
+   "number": "GG35",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/477060.webp",
+   "tcgplayerId": 477060,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 82.75,
+    "psa10": 185.99,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "charizard-vmax-darkness-ablaze-20",
+   "name": "Charizard VMAX",
+   "fullName": "Charizard VMAX",
+   "variant": null,
+   "set": "Darkness Ablaze",
+   "series": "Sword & Shield",
+   "number": "20",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/219233.webp",
+   "tcgplayerId": 219233,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 35.31,
+    "psa10": 139.81,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mew-celebrations-25",
+   "name": "Mew",
+   "fullName": "Mew",
+   "variant": null,
+   "set": "Celebrations",
+   "series": "Sword & Shield",
+   "number": "25",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/250295.webp",
+   "tcgplayerId": 250295,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 54.34,
+    "psa10": 183.5,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "rayquaza-ex-dragons-exalted-85",
+   "name": "Rayquaza EX",
+   "fullName": "Rayquaza EX",
+   "variant": null,
+   "set": "Dragons Exalted",
+   "series": "Black & White",
+   "number": "85",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/88645.webp",
+   "tcgplayerId": 88645,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 26,
+    "psa10": 3512.5,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "vaporeon-skyridge-h31",
+   "name": "Vaporeon",
+   "fullName": "Vaporeon",
+   "variant": null,
+   "set": "Skyridge",
+   "series": "E-Card",
+   "number": "H31",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/pc_888014.webp",
+   "tcgplayerId": null,
+   "pricechartingId": 888014,
+   "pv": {
+    "raw": 433.09,
+    "psa10": 17731.42,
+    "salesPerYear": 12,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "kabutops-skyridge-150",
+   "name": "Kabutops",
+   "fullName": "Kabutops",
+   "variant": null,
+   "set": "Skyridge",
+   "series": "E-Card",
+   "number": "150",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/86396.webp",
+   "tcgplayerId": 86396,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 578.38,
+    "psa10": 19538.86,
+    "salesPerYear": 24,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "umbreon-skyridge-h30",
+   "name": "Umbreon",
+   "fullName": "Umbreon",
+   "variant": null,
+   "set": "Skyridge",
+   "series": "E-Card",
+   "number": "H30",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/90140.webp",
+   "tcgplayerId": 90140,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 1744.91,
+    "psa10": 56915.27,
+    "salesPerYear": 12,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mew-triumphant-97",
+   "name": "Mew",
+   "fullName": "Mew",
+   "variant": null,
+   "set": "Triumphant",
+   "series": "HeartGold & SoulSilver",
+   "number": "97",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/87405.webp",
+   "tcgplayerId": 87405,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 328.25,
+    "psa10": 17430,
+    "salesPerYear": 24,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "dragonite-promo-5",
+   "name": "Dragonite",
+   "fullName": "Dragonite",
+   "variant": null,
+   "set": "Promo",
+   "series": "Original",
+   "number": "5",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/84909.webp",
+   "tcgplayerId": 84909,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 40,
+    "psa10": 1805.76,
+    "salesPerYear": 104,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "haunter-1st-edition-fossil-6",
+   "name": "Haunter",
+   "fullName": "Haunter (1st Edition)",
+   "variant": "1st Edition",
+   "set": "Fossil",
+   "series": "Original",
+   "number": "6",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/66c32a9ba3fb.webp",
+   "tcgplayerId": null,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 86.92,
+    "psa10": 3900,
+    "salesPerYear": 52,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "ditto-1st-edition-fossil-3",
+   "name": "Ditto",
+   "fullName": "Ditto (1st Edition)",
+   "variant": "1st Edition",
+   "set": "Fossil",
+   "series": "Original",
+   "number": "3",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/ef2af1d8ab62.webp",
+   "tcgplayerId": null,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 66,
+    "psa10": 4344.88,
+    "salesPerYear": 52,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "pikachu-shadowless-red-cheeks-base-set-58",
+   "name": "Pikachu",
+   "fullName": "Pikachu (Shadowless Red Cheeks)",
+   "variant": "Shadowless Red Cheeks",
+   "set": "Base Set",
+   "series": "Original",
+   "number": "58",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/147229.webp",
+   "tcgplayerId": 147229,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 54.29,
+    "psa10": 2825,
+    "salesPerYear": 52,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "dark-charizard-1st-edition-team-rocket-4",
+   "name": "Dark Charizard",
+   "fullName": "Dark Charizard (1st Edition)",
+   "variant": "1st Edition",
+   "set": "Team Rocket",
+   "series": "Original",
+   "number": "4",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/09f3d27c3b3f.webp",
+   "tcgplayerId": null,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 821,
+    "psa10": 25553.13,
+    "salesPerYear": 52,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "bulbasaur-stamped-mega-evolution-133",
+   "name": "Bulbasaur",
+   "fullName": "Bulbasaur (Stamped)",
+   "variant": "Stamped",
+   "set": "Mega Evolution",
+   "series": "Other",
+   "number": "133",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/654703.webp",
+   "tcgplayerId": 654703,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 19.99,
+    "psa10": 675,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "umbreon-darkrai-gx-promo-sm241",
+   "name": "Umbreon & Darkrai GX",
+   "fullName": "Umbreon & Darkrai GX",
+   "variant": null,
+   "set": "Promo",
+   "series": "Sun & Moon",
+   "number": "SM241",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/211452.webp",
+   "tcgplayerId": 211452,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 205.63,
+    "psa10": 7500,
+    "salesPerYear": 156,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "rayquaza-gx-celestial-storm-109",
+   "name": "Rayquaza GX",
+   "fullName": "Rayquaza GX",
+   "variant": null,
+   "set": "Celestial Storm",
+   "series": "Sun & Moon",
+   "number": "109",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/170936.webp",
+   "tcgplayerId": 170936,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 31.24,
+    "psa10": 1114.5,
+    "salesPerYear": 156,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "alakazam-ex-fates-collide-125",
+   "name": "Alakazam EX",
+   "fullName": "Alakazam EX",
+   "variant": null,
+   "set": "Fates Collide",
+   "series": "XY",
+   "number": "125",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/117896.webp",
+   "tcgplayerId": 117896,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 105.32,
+    "psa10": 7350,
+    "salesPerYear": 156,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "espeon-ex-breakpoint-117",
+   "name": "Espeon EX",
+   "fullName": "Espeon EX",
+   "variant": null,
+   "set": "BREAKpoint",
+   "series": "XY",
+   "number": "117",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/111558.webp",
+   "tcgplayerId": 111558,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 70.01,
+    "psa10": 2250,
+    "salesPerYear": 104,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "umbreon-ex-fates-collide-119",
+   "name": "Umbreon EX",
+   "fullName": "Umbreon EX",
+   "variant": null,
+   "set": "Fates Collide",
+   "series": "XY",
+   "number": "119",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/117891.webp",
+   "tcgplayerId": 117891,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 93.6,
+    "psa10": 5147.28,
+    "salesPerYear": 104,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mega-charizard-x-ex-promo-23",
+   "name": "Mega Charizard X EX",
+   "fullName": "Mega Charizard X EX",
+   "variant": null,
+   "set": "Promo",
+   "series": "Mega Evolution",
+   "number": "23",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/386aefa5c7cd.webp",
+   "tcgplayerId": null,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 30.18,
+    "psa10": 139.99,
+    "salesPerYear": 2190,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "zapdos-ex-scarlet-violet-151-202",
+   "name": "Zapdos ex",
+   "fullName": "Zapdos ex",
+   "variant": null,
+   "set": "Scarlet & Violet 151",
+   "series": "Scarlet & Violet",
+   "number": "202",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/517048.webp",
+   "tcgplayerId": 517048,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 80,
+    "psa10": 350,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "blastoise-ex-scarlet-violet-151-200",
+   "name": "Blastoise ex",
+   "fullName": "Blastoise ex",
+   "variant": null,
+   "set": "Scarlet & Violet 151",
+   "series": "Scarlet & Violet",
+   "number": "200",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/517046.webp",
+   "tcgplayerId": 517046,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 116.06,
+    "psa10": 520.16,
+    "salesPerYear": 1460,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "espeon-ex-promo-175",
+   "name": "Espeon Ex",
+   "fullName": "Espeon Ex",
+   "variant": null,
+   "set": "Promo",
+   "series": "Scarlet & Violet",
+   "number": "175",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/pc_10796040.webp",
+   "tcgplayerId": null,
+   "pricechartingId": 10796040,
+   "pv": {
+    "raw": 18.38,
+    "psa10": 87.5,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "vaporeon-ex-prismatic-evolutions-149",
+   "name": "Vaporeon ex",
+   "fullName": "Vaporeon ex",
+   "variant": null,
+   "set": "Prismatic Evolutions",
+   "series": "Scarlet & Violet",
+   "number": "149",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/610504.webp",
+   "tcgplayerId": 610504,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 225,
+    "psa10": 942.5,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "alakazam-ex-scarlet-violet-151-201",
+   "name": "Alakazam ex",
+   "fullName": "Alakazam ex",
+   "variant": null,
+   "set": "Scarlet & Violet 151",
+   "series": "Scarlet & Violet",
+   "number": "201",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/517047.webp",
+   "tcgplayerId": 517047,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 68.1,
+    "psa10": 322.09,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mewtwo-mew-gx-promo-sm191",
+   "name": "Mewtwo & Mew GX",
+   "fullName": "Mewtwo & Mew GX",
+   "variant": null,
+   "set": "Promo",
+   "series": "Sun & Moon",
+   "number": "SM191",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/197856.webp",
+   "tcgplayerId": 197856,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 342.29,
+    "psa10": 1858.02,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "reshiram-charizard-gx-unbroken-bonds-20",
+   "name": "Reshiram & Charizard GX",
+   "fullName": "Reshiram & Charizard GX",
+   "variant": null,
+   "set": "Unbroken Bonds",
+   "series": "Sun & Moon",
+   "number": "20",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/188409.webp",
+   "tcgplayerId": 188409,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 49.98,
+    "psa10": 264,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "gengar-mimikyu-gx-team-up-186",
+   "name": "Gengar & Mimikyu GX",
+   "fullName": "Gengar & Mimikyu GX",
+   "variant": null,
+   "set": "Team Up",
+   "series": "Sun & Moon",
+   "number": "186",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/183831.webp",
+   "tcgplayerId": 183831,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 411,
+    "psa10": 2300,
+    "salesPerYear": 104,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "magikarp-wailord-gx-team-up-161",
+   "name": "Magikarp & Wailord GX",
+   "fullName": "Magikarp & Wailord GX",
+   "variant": null,
+   "set": "Team Up",
+   "series": "Sun & Moon",
+   "number": "161",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/183964.webp",
+   "tcgplayerId": 183964,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 739.84,
+    "psa10": 4010.74,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "latias-latios-gx-team-up-170",
+   "name": "Latias & Latios GX",
+   "fullName": "Latias & Latios GX",
+   "variant": null,
+   "set": "Team Up",
+   "series": "Sun & Moon",
+   "number": "170",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/183899.webp",
+   "tcgplayerId": 183899,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 2671.09,
+    "psa10": 15206,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "giratina-v-lost-origin-186",
+   "name": "Giratina V",
+   "fullName": "Giratina V",
+   "variant": null,
+   "set": "Lost Origin",
+   "series": "Sword & Shield",
+   "number": "186",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/284137.webp",
+   "tcgplayerId": 284137,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 776.31,
+    "psa10": 3500,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mewtwo-v-go-72",
+   "name": "Mewtwo V",
+   "fullName": "Mewtwo V",
+   "variant": null,
+   "set": "Go",
+   "series": "Sword & Shield",
+   "number": "72",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/274470.webp",
+   "tcgplayerId": 274470,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 57.04,
+    "psa10": 292.78,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "rayquaza-vmax-silver-tempest-tg29",
+   "name": "Rayquaza VMAX",
+   "fullName": "Rayquaza VMAX",
+   "variant": null,
+   "set": "Silver Tempest",
+   "series": "Sword & Shield",
+   "number": "TG29",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/452048.webp",
+   "tcgplayerId": 452048,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 24.3,
+    "psa10": 144.01,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "umbreon-celebrations-17",
+   "name": "Umbreon",
+   "fullName": "Umbreon",
+   "variant": null,
+   "set": "Celebrations",
+   "series": "Sword & Shield",
+   "number": "17",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/250332.webp",
+   "tcgplayerId": 250332,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 78.28,
+    "psa10": 341.21,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "mew-v-fusion-strike-251",
+   "name": "Mew V",
+   "fullName": "Mew V",
+   "variant": null,
+   "set": "Fusion Strike",
+   "series": "Sword & Shield",
+   "number": "251",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/253147.webp",
+   "tcgplayerId": 253147,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 90,
+    "psa10": 415,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "shining-noctowl-1st-edition-neo-destiny-110",
+   "name": "Shining Noctowl",
+   "fullName": "Shining Noctowl (1st Edition)",
+   "variant": "1st Edition",
+   "set": "Neo Destiny",
+   "series": "Neo",
+   "number": "110",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/pc_2183381.webp",
+   "tcgplayerId": null,
+   "pricechartingId": 2183381,
+   "pv": {
+    "raw": 805,
+    "psa10": 6953.23,
+    "salesPerYear": 12,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "misty-s-psyduck-destined-rivals-193",
+   "name": "Misty's Psyduck",
+   "fullName": "Misty's Psyduck",
+   "variant": null,
+   "set": "Destined Rivals",
+   "series": "Scarlet & Violet",
+   "number": "193",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/632993.webp",
+   "tcgplayerId": 632993,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 48.61,
+    "psa10": 320,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "latios-surging-sparks-203",
+   "name": "Latios",
+   "fullName": "Latios",
+   "variant": null,
+   "set": "Surging Sparks",
+   "series": "Scarlet & Violet",
+   "number": "203",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/589987.webp",
+   "tcgplayerId": 589987,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 31.55,
+    "psa10": 238.23,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "pikachu-scarlet-violet-151-173",
+   "name": "Pikachu",
+   "fullName": "Pikachu",
+   "variant": null,
+   "set": "Scarlet & Violet 151",
+   "series": "Scarlet & Violet",
+   "number": "173",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/513721.webp",
+   "tcgplayerId": 513721,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 66.24,
+    "psa10": 479.02,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "gengar-ex-temporal-forces-193",
+   "name": "Gengar ex",
+   "fullName": "Gengar ex",
+   "variant": null,
+   "set": "Temporal Forces",
+   "series": "Scarlet & Violet",
+   "number": "193",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/542914.webp",
+   "tcgplayerId": 542914,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 53.11,
+    "psa10": 340.15,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "charizard-ex-obsidian-flames-223",
+   "name": "Charizard ex",
+   "fullName": "Charizard ex",
+   "variant": null,
+   "set": "Obsidian Flames",
+   "series": "Scarlet & Violet",
+   "number": "223",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/509980.webp",
+   "tcgplayerId": 509980,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 92.03,
+    "psa10": 665.5,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "gengar-mimikyu-gx-team-up-165",
+   "name": "Gengar & Mimikyu GX",
+   "fullName": "Gengar & Mimikyu GX",
+   "variant": null,
+   "set": "Team Up",
+   "series": "Sun & Moon",
+   "number": "165",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/183830.webp",
+   "tcgplayerId": 183830,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 1150,
+    "psa10": 7545.5,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "arceus-dialga-palkia-gx-cosmic-eclipse-221",
+   "name": "Arceus & Dialga & Palkia GX",
+   "fullName": "Arceus & Dialga & Palkia GX",
+   "variant": null,
+   "set": "Cosmic Eclipse",
+   "series": "Sun & Moon",
+   "number": "221",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/201338.webp",
+   "tcgplayerId": 201338,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 529.99,
+    "psa10": 3852.51,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "latias-latios-gx-team-up-169",
+   "name": "Latias & Latios GX",
+   "fullName": "Latias & Latios GX",
+   "variant": null,
+   "set": "Team Up",
+   "series": "Sun & Moon",
+   "number": "169",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/183898.webp",
+   "tcgplayerId": 183898,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 77.45,
+    "psa10": 675,
+    "salesPerYear": 104,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "garchomp-giratina-gx-promo-sm193",
+   "name": "Garchomp & Giratina GX",
+   "fullName": "Garchomp & Giratina GX",
+   "variant": null,
+   "set": "Promo",
+   "series": "Sun & Moon",
+   "number": "SM193",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/197873.webp",
+   "tcgplayerId": 197873,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 85.65,
+    "psa10": 691.71,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "gengar-mimikyu-gx-team-up-53",
+   "name": "Gengar & Mimikyu GX",
+   "fullName": "Gengar & Mimikyu GX",
+   "variant": null,
+   "set": "Team Up",
+   "series": "Sun & Moon",
+   "number": "53",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/183828.webp",
+   "tcgplayerId": 183828,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 312.21,
+    "psa10": 2636,
+    "salesPerYear": 365,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "pikachu-zekrom-gx-promo-sm168",
+   "name": "Pikachu & Zekrom GX",
+   "fullName": "Pikachu & Zekrom GX",
+   "variant": null,
+   "set": "Promo",
+   "series": "Sun & Moon",
+   "number": "SM168",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/185985.webp",
+   "tcgplayerId": 185985,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 199.38,
+    "psa10": 1838.86,
+    "salesPerYear": 730,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "solgaleo-lunala-gx-cosmic-eclipse-216",
+   "name": "Solgaleo & Lunala GX",
+   "fullName": "Solgaleo & Lunala GX",
+   "variant": null,
+   "set": "Cosmic Eclipse",
+   "series": "Sun & Moon",
+   "number": "216",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/201250.webp",
+   "tcgplayerId": 201250,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 286.97,
+    "psa10": 2100,
+    "salesPerYear": 156,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "blastoise-piplup-gx-cosmic-eclipse-215",
+   "name": "Blastoise & Piplup GX",
+   "fullName": "Blastoise & Piplup GX",
+   "variant": null,
+   "set": "Cosmic Eclipse",
+   "series": "Sun & Moon",
+   "number": "215",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/201334.webp",
+   "tcgplayerId": 201334,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 419.38,
+    "psa10": 2974.5,
+    "salesPerYear": 156,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "blastoise-celebrations-2",
+   "name": "Blastoise",
+   "fullName": "Blastoise",
+   "variant": null,
+   "set": "Celebrations",
+   "series": "Sword & Shield",
+   "number": "2",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/250319.webp",
+   "tcgplayerId": 250319,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 15.64,
+    "psa10": 113.39,
+    "salesPerYear": 1825,
+    "date": "2026-10-15"
+   }
+  },
+  {
+   "id": "rayquaza-vivid-voltage-138",
+   "name": "Rayquaza",
+   "fullName": "Rayquaza",
+   "variant": null,
+   "set": "Vivid Voltage",
+   "series": "Sword & Shield",
+   "number": "138",
+   "imageUrl": "https://storage.googleapis.com/pokeviews-prod/img/800/226594.webp",
+   "tcgplayerId": 226594,
+   "pricechartingId": null,
+   "pv": {
+    "raw": 22,
+    "psa10": 173.3,
+    "salesPerYear": 1095,
+    "date": "2026-10-15"
+   }
+  }
+ ]
+}

@@ -8,7 +8,7 @@ interface Props {
 
 export function CardImage({ src, name, eager }: { src: string | null; name: string; eager?: boolean }) {
   return src ? (
-    <img src={`${import.meta.env.BASE_URL}${src}`} alt={name} width={200} height={279} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+    <img src={`${import.meta.env.BASE_URL}${src}`} alt={name} width={300} height={418} loading={eager ? 'eager' : 'lazy'} decoding="async" />
   ) : (
     <div class="noimg" aria-hidden="true">{name}</div>
   );
@@ -26,20 +26,18 @@ export function CardGrid({ rows, onOpen }: Props) {
             <div class="tile-meta">
               <span class="tile-name">{card.name}</span>
               <span class="tile-set">
+                {card.variant ? `${card.variant} · ` : ''}
                 {card.set}
-                {card.number ? ` · #${card.number}` : ''}
+                {card.number ? ` #${card.number}` : ''}
               </span>
               <span class="tile-prices">
-                <span class="raw" title="Cardmarket: average of 10 cheapest NM English">
-                  {a.raw == null ? 'No EU price' : eur(a.raw)}
+                <span class="raw">
+                  {a.raw == null ? <span class="muted small">Check CM</span> : eur(a.raw)}
+                  {a.rawSource === 'trend' && <span class="src">trend</span>}
                 </span>
-                {a.net10 != null && (
-                  <span class={a.net10 >= 0 ? 'pill up' : 'pill down'} title="Profit if it grades PSA 10, after fee">
-                    {signedEur(a.net10)}
-                  </span>
-                )}
+                {a.net10 != null && <span class={a.net10 >= 0 ? 'pill up' : 'pill down'}>{signedEur(a.net10)}</span>}
               </span>
-              {a.nineSafe && <span class="nine" title="A PSA 9 still makes a profit">9 ✓</span>}
+              {a.nineSafe && <span class="nine" title="A grade 9 still makes a profit">9 ✓</span>}
             </div>
           </button>
         </li>

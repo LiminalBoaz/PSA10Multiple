@@ -14,11 +14,12 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "e2e": "playwright test",
+    "data": "npm run data:contenders && npm run data:pricecharting && npm run data:tcgdex && (npm run data:cardmarket || echo \"Cardmarket listings skipped\") && npm run data:build",
     "data:contenders": "tsx pipeline/contenders.ts",
     "data:pricecharting": "tsx pipeline/pricecharting.ts",
+    "data:tcgdex": "tsx pipeline/tcgdex.ts",
     "data:cardmarket": "tsx pipeline/cardmarket.ts",
     "data:build": "tsx pipeline/build.ts",
-    "data": "npm run data:contenders && npm run data:pricecharting && npm run data:cardmarket && npm run data:build",
     "icons": "tsx pipeline/icons.ts"
   },
   "dependencies": {

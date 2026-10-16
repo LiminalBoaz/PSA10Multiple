@@ -1,17 +1,34 @@
-// Step 4: merge contenders + PriceCharting + Cardmarket into public/cards.json, fetch thumbnails,
-// and fail loudly if the data is too thin to trust.
+// Step 5: merge PokeViews + PriceCharting + TCGdex/Cardmarket into public/cards.json, make thumbnails,
+// print a quality report, and refuse to publish data that is too thin to trust.
 import sharp from 'sharp';
 import { existsSync } from 'node:fs';
 import { mkdir } from 'node:fs/promises';
 import { DataFile, type Card } from '../shared/schema.ts';
-import { CardmarketFile, ContendersFile, PATHS, PriceChartingFile, readJson, writeJson } from './lib/files.ts';
+import { CardmarketFile, ContendersFile, PATHS, PriceChartingFile, readJson, TcgdexFile, writeJson, type CmEntry, type TcgdexEntry } from './lib/files.ts';
 import { usdToEur } from './lib/fx.ts';
 import { pace } from './lib/http.ts';
-import { cheapestStats } from './lib/stats.ts';
+import { cheapestStats, type Listing } from './lib/stats.ts';
+import { MAX_MISMATCH } from './pricecharting.ts';
 
 const GRADING_FEE_USD = 25; // PokeViews' assumption; adjustable in the app
-const MIN_PC_SHARE = 0.9;
+/** Cardmarket's trend stands in for the listings only when it is this close to the US raw price. */
+export const TREND_BAND = [0.5, 2] as const;
+/** Listings this far from the US raw price suggest the wrong Cardmarket product (another version of the card). */
+export const LISTINGS_BAND = [0.33, 3] as const;
+const MIN_GRADED_SHARE = 0.95;
 const MIN_CM_SHARE = 0.8;
+
+/** Listings that are slabs or otherwise not a plain raw copy, judged from the seller's comment. */
+const NOT_RAW = /\b(psa|bgs|cgc|beckett|graded|slab|tag|ace|sgc)\b|\b(proxy|damaged|crease|custom)\b/i;
+export function rawOnly(listings: (Listing & { comment?: string | null })[]): Listing[] {
+  return listings.filter((l) => !NOT_RAW.test(l.comment ?? ''));
+}
+
+export function trendTrusted(trend: number | null, usRawEur: number | null): boolean {
+  if (!trend || !usRawEur) return false;
+  const r = trend / usRawEur;
+  return r >= TREND_BAND[0] && r <= TREND_BAND[1];
+}
 
 async function thumbnail(id: string, url: string | null): Promise<string | null> {
   if (!url) return null;
@@ -19,11 +36,10 @@ async function thumbnail(id: string, url: string | null): Promise<string | null>
   const out = `public/${rel}`;
   if (existsSync(out)) return rel;
   try {
-    await pace(300);
+    await pace(200);
     const res = await fetch(url);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const buf = Buffer.from(await res.arrayBuffer());
-    await sharp(buf).resize({ width: 300, withoutEnlargement: true }).webp({ quality: 72 }).toFile(out);
+    await sharp(Buffer.from(await res.arrayBuffer())).resize({ width: 300, withoutEnlargement: true }).webp({ quality: 74 }).toFile(out);
     return rel;
   } catch (e) {
     console.warn(`  ! image for ${id}: ${(e as Error).message}`);
@@ -31,51 +47,93 @@ async function thumbnail(id: string, url: string | null): Promise<string | null>
   }
 }
 
-const contenders = await readJson(PATHS.contenders, ContendersFile);
-const pc = await readJson(PATHS.pricecharting, PriceChartingFile);
-const cm = await readJson(PATHS.cardmarket, CardmarketFile, {});
-const fx = await usdToEur();
-await mkdir(PATHS.img, { recursive: true });
-
-const cards: Card[] = [];
-const thin: string[] = [];
-const noCm: string[] = [];
-const noPc: string[] = [];
-
-for (const c of contenders.cards) {
-  const p = pc[c.id];
-  const m = cm[c.id];
-  if (!p?.usd.psa10) noPc.push(c.id);
-  const eu = m ? cheapestStats(m.listings.map((l) => l.price)) : null;
-  const nl = m ? cheapestStats(m.nlListings.map((l) => l.price)) : null;
-  if (!eu) noCm.push(c.id);
-  else if (eu.n < 10) thin.push(`${c.id} (${eu.n})`);
-  cards.push({
-    id: c.id,
-    name: c.name,
-    set: c.set,
-    number: c.number,
-    image: await thumbnail(c.id, p?.imageUrl ?? null),
-    links: { pricecharting: c.pricechartingUrl, cardmarket: m?.productUrl ?? null },
-    usd: p?.usd ?? { raw: null, psa8: null, psa9: null, psa10: null },
-    cm: eu && m ? { avg10: eu.avg, median: eu.median, min: eu.min, max: eu.max, n: eu.n, nl: nl ? { avg: nl.avg, n: nl.n } : null, fetchedAt: m.fetchedAt } : null,
-  });
+export function listingsPlausible(avg: number, usRawEur: number | null): boolean {
+  if (!usRawEur) return true;
+  const r = avg / usRawEur;
+  return r >= LISTINGS_BAND[0] && r <= LISTINGS_BAND[1];
 }
 
-const data = DataFile.parse({ version: 1, generatedAt: new Date().toISOString(), fx, defaults: { gradingFeeUsd: GRADING_FEE_USD }, cards });
-await writeJson(PATHS.out, data);
+const suspicious: string[] = [];
 
-const total = cards.length;
-const pcShare = total ? 1 - noPc.length / total : 0;
-const cmShare = total ? 1 - noCm.length / total : 0;
-console.log(`\nQuality report — ${total} cards (${contenders.skipped.length} non-English skipped)`);
-console.log(`  PriceCharting PSA 10 price: ${(pcShare * 100).toFixed(0)}%  missing: ${noPc.join(', ') || 'none'}`);
-console.log(`  Cardmarket NM English:      ${(cmShare * 100).toFixed(0)}%  missing: ${noCm.join(', ') || 'none'}`);
-console.log(`  Fewer than 10 listings:     ${thin.join(', ') || 'none'}`);
-console.log(`  Images:                     ${cards.filter((c) => c.image).length}/${total}`);
-console.log(`  $1 = €${fx.usdToEur} (${fx.date}) → ${PATHS.out}`);
+function cardmarketPart(t: TcgdexEntry | undefined, m: CmEntry | undefined, usRawEur: number | null, label: string): Card['cm'] {
+  if (!t) return null;
+  let eu = m ? cheapestStats(rawOnly(m.listings).map((l) => l.price)) : null;
+  if (eu && !listingsPlausible(eu.avg, usRawEur)) {
+    suspicious.push(`${label} (listings €${eu.avg} vs US €${usRawEur?.toFixed(0)})`);
+    eu = null;
+  }
+  const nl = m ? cheapestStats(rawOnly(m.nlListings).map((l) => l.price)) : null;
+  return {
+    idProduct: t.idProduct,
+    guide: t.guide ? { ...t.guide, trusted: trendTrusted(t.guide.trend, usRawEur) } : null,
+    listings: eu && m ? { avg10: eu.avg, median: eu.median, min: eu.min, max: eu.max, n: eu.n, nl: nl ? { avg: nl.avg, n: nl.n } : null, fetchedAt: m.fetchedAt } : null,
+  };
+}
 
-if (total === 0 || pcShare < MIN_PC_SHARE || cmShare < MIN_CM_SHARE) {
-  console.error(`\nData quality below threshold (PriceCharting ≥ ${MIN_PC_SHARE * 100}%, Cardmarket ≥ ${MIN_CM_SHARE * 100}%).`);
-  process.exit(1);
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const { cards: contenders } = await readJson(PATHS.contenders, ContendersFile);
+  const pc = await readJson(PATHS.pricecharting, PriceChartingFile, {});
+  const td = await readJson(PATHS.tcgdex, TcgdexFile, {});
+  const cm = await readJson(PATHS.cardmarket, CardmarketFile, {});
+  const fx = await usdToEur();
+  await mkdir(PATHS.img, { recursive: true });
+
+  const cards: Card[] = [];
+  const report = { pcFallback: [] as string[], noCm: [] as string[], untrusted: [] as string[], listings: 0, thin: [] as string[], noImage: [] as string[] };
+
+  for (const c of contenders) {
+    const p = pc[c.id] && pc[c.id]!.mismatch <= MAX_MISMATCH ? pc[c.id]! : null;
+    // Without a PriceCharting match, PokeViews' own raw and PSA 10 (also PriceCharting data) still hold.
+    const usd = p?.usd ?? { raw: c.pv.raw, g8: null, g9: null, psa10: c.pv.psa10 };
+    if (!p) report.pcFallback.push(c.id);
+    const usRawEur = usd.raw == null ? null : usd.raw * fx.usdToEur;
+    const cmPart = cardmarketPart(td[c.id], cm[c.id], usRawEur, c.fullName);
+    if (!cmPart) report.noCm.push(c.fullName);
+    else if (cmPart.listings) {
+      report.listings++;
+      if (cmPart.listings.n < 10) report.thin.push(`${c.id} (${cmPart.listings.n})`);
+    } else if (!cmPart.guide?.trusted) report.untrusted.push(`${c.fullName} (trend €${cmPart.guide?.trend ?? '—'} vs US €${usRawEur?.toFixed(0)})`);
+
+    const image = await thumbnail(c.id, c.imageUrl);
+    if (!image) report.noImage.push(c.id);
+    cards.push({
+      id: c.id,
+      name: c.name,
+      set: c.set,
+      number: c.number,
+      variant: c.variant,
+      image,
+      salesPerYear: c.pv.salesPerYear,
+      links: {
+        pricecharting: p?.url ?? null,
+        cardmarket: cmPart
+          ? `https://www.cardmarket.com/en/Pokemon/Products?idProduct=${cmPart.idProduct}`
+          : `https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=${encodeURIComponent(c.name)}`,
+      },
+      usd,
+      cm: cmPart,
+    });
+  }
+
+  const data = DataFile.parse({ version: 2, generatedAt: new Date().toISOString(), fx, defaults: { gradingFeeUsd: GRADING_FEE_USD }, cards });
+  await writeJson(PATHS.out, data);
+
+  const total = cards.length;
+  const graded = cards.filter((c) => c.usd.psa10 && c.usd.g9).length / total;
+  const mapped = 1 - report.noCm.length / total;
+  const withBaseline = cards.filter((c) => c.cm?.listings || c.cm?.guide?.trusted).length;
+  console.log(`\nQuality report: ${total} cards`);
+  console.log(`  Grade 9 + PSA 10 prices:       ${(graded * 100).toFixed(0)}%   (PokeViews fallback: ${report.pcFallback.join(', ') || 'none'})`);
+  console.log(`  Matched to Cardmarket:         ${(mapped * 100).toFixed(0)}%   missing: ${report.noCm.join(', ') || 'none'}`);
+  console.log(`  NM English listings fetched:   ${report.listings}/${total}${report.thin.length ? `   fewer than 10: ${report.thin.join(', ')}` : ''}`);
+  console.log(`  Raw baseline available:        ${withBaseline}/${total}`);
+  if (suspicious.length) console.log(`  Listings dropped as likely wrong product: ${suspicious.join('; ')}`);
+  console.log(`  Trend not trusted (no listings): ${report.untrusted.length}`);
+  for (const u of report.untrusted) console.log(`    · ${u}`);
+  console.log(`  Images: ${total - report.noImage.length}/${total}   $1 = €${fx.usdToEur} (${fx.date}) → ${PATHS.out}`);
+
+  if (total === 0 || graded < MIN_GRADED_SHARE || mapped < MIN_CM_SHARE) {
+    console.error(`\nData quality below threshold (graded prices ≥ ${MIN_GRADED_SHARE * 100}%, Cardmarket match ≥ ${MIN_CM_SHARE * 100}%).`);
+    process.exit(1);
+  }
 }

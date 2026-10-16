@@ -24,8 +24,8 @@ test('price chip → card → detail in three taps', async ({ page }) => {
   await tiles.first().click();
   const sheet = page.getByRole('dialog');
   await expect(sheet).toBeVisible();
-  await expect(sheet.getByText('Max buy · PSA 9 safe')).toBeVisible();
-  for (const g of ['PSA 8', 'PSA 9', 'PSA 10']) await expect(sheet.getByRole('rowheader', { name: g })).toBeVisible();
+  await expect(sheet.getByText('Max buy · grade 9 safe')).toBeVisible();
+  for (const g of ['Grade 8', 'Grade 9', 'PSA 10']) await expect(sheet.getByRole('rowheader', { name: g })).toBeVisible();
   await expect(sheet.getByText('Netherlands')).toBeVisible();
   // Charizard ex (sample): PSA 9 $210 × 0.9 − $25 × 0.9 = €166.50
   await expect(sheet.locator('.big')).toHaveText('€167');
