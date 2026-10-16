@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: refresh
+  group: data
 
 jobs:
   refresh:

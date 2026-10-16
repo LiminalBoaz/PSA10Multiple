@@ -1,12 +1,15 @@
 # Slab Scout
 
-Phone-first scanner for the PokeViews grading list, built for vendor booths. For every card it shows:
+Phone-first scanner for Pokémon cards worth grading, built for vendor booths. Live at https://liminalboaz.github.io/PSA10Multiple/.
 
-- **Raw (Cardmarket):** the average of the 10 cheapest Near Mint English listings from EU sellers, plus a Netherlands-only average when there are at least 3 NL listings.
-- **PSA 8 / 9 / 10:** PriceCharting US sold prices, converted to euros at the ECB rate.
-- **Max buy (PSA 9 safe):** PSA 9 price minus the grading fee. Pay less than this and even a 9 breaks even.
+- **Raw price:** average of the 10 cheapest Near Mint English copies on Cardmarket. "est." = Cardmarket's own estimate (until live listings are fetched); "yours" = a price you entered.
+- **Graded prices:** PriceCharting (US) Grade 8, Grade 9 and PSA 10, in euros.
+- **Max buy:** the most you can pay and still break even if the card grades 9.
+- **On your phone:** grading fee (in €), removed cards and your own prices are saved on the device. Works offline after the first visit; add it to the home screen.
 
-The site works offline after the first visit and can be added to the home screen.
+## Add a card
+
+Tap **+** in the app, fill in name, set and number (optionally paste the PriceCharting or Cardmarket link) and tap **Fetch prices**. GitHub opens with the card filled in; tap **Create**. The *Add card* workflow fetches PriceCharting, TCGdex and Cardmarket for that card, commits it and redeploys; the app shows it within about 5 minutes. Only the repository owner and collaborators can trigger it. Live Cardmarket listings need the `APIFY_TOKEN` repository secret.
 
 ## Refresh prices
 

@@ -16,6 +16,9 @@ export function parseCmUrl(raw: string): CmSlug | null {
   const m = u.pathname.match(/^\/en\/Pokemon\/Products\/Singles\/([^/]+)\/([^/]+)$/);
   if (!m) return null;
   const last = m[2]!;
+  // Older pages end in the version ("Umbreon-VMAX-V3") and carry no set code or number.
+  const tail = last.match(/-V(\d+)$/);
+  if (tail) return { url: `https://www.cardmarket.com${u.pathname}`, expansion: m[1]!, version: Number(tail[1]), code: '' };
   const code = last.split('-').pop() ?? '';
   const v = last.match(/-V(\d+)-[^-]+$/);
   return { url: `https://www.cardmarket.com${u.pathname}`, expansion: m[1]!, version: v ? Number(v[1]) : null, code };

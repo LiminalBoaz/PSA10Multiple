@@ -21,7 +21,8 @@
     "data:cmproducts": "tsx pipeline/cmproducts.ts",
     "data:cardmarket": "tsx pipeline/cardmarket.ts",
     "data:build": "tsx pipeline/build.ts",
-    "icons": "tsx pipeline/icons.ts"
+    "icons": "tsx pipeline/icons.ts",
+    "data:add": "tsx pipeline/addcard.ts"
   },
   "dependencies": {
     "preact": "10.29.8"

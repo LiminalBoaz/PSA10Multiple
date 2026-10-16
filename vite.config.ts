@@ -29,10 +29,18 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // Precache the data and every thumbnail so the app works with no signal on the show floor.
-        globPatterns: ['**/*.{js,css,html,json,webp,png,svg}'],
+        // App and every thumbnail are stored on the phone so it works with no signal on the show floor.
+        globPatterns: ['**/*.{js,css,html,webp,png,svg,webmanifest}'],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         navigateFallback: 'index.html',
+        // Prices: always try the network first (new cards, refreshes), fall back to the last copy offline.
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.endsWith('/cards.json'),
+            handler: 'NetworkFirst',
+            options: { cacheName: 'slab-data', networkTimeoutSeconds: 4 },
+          },
+        ],
       },
     }),
   ],

@@ -1,12 +1,12 @@
 {
- "version": 2,
- "generatedAt": "2026-10-16T22:45:37.208Z",
+ "version": 3,
+ "generatedAt": "2026-10-16T23:14:13.083Z",
  "fx": {
   "usdToEur": 0.88865,
   "date": "2026-10-16"
  },
  "defaults": {
-  "gradingFeeUsd": 25
+  "gradingFeeEur": 25
  },
  "cards": [
   {
@@ -16,6 +16,7 @@
    "number": "149",
    "variant": "Reverse Holo",
    "image": "img/ho-oh-reverse-holo-skyridge-149.webp",
+   "added": false,
    "salesPerYear": 4,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-skyridge/ho-oh-reverse-holo-149",
@@ -42,6 +43,7 @@
    "number": "113",
    "variant": "Gold Star",
    "image": "img/entei-gold-star-unseen-forces-113.webp",
+   "added": false,
    "salesPerYear": 24,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-unseen-forces/entei-gold-star-113",
@@ -68,6 +70,7 @@
    "number": "130",
    "variant": null,
    "image": "img/mega-charizard-x-ex-phantasmal-flames-130.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-phantasmal-flames/mega-charizard-x-ex-130",
@@ -103,6 +106,7 @@
    "number": "111",
    "variant": "1st Edition",
    "image": "img/shining-raichu-1st-edition-neo-destiny-111.webp",
+   "added": false,
    "salesPerYear": 12,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-neo-destiny/shining-raichu-1st-edition-111",
@@ -129,6 +133,7 @@
    "number": "18",
    "variant": "1st Edition",
    "image": "img/giovanni-1st-edition-gym-challenge-18.webp",
+   "added": false,
    "salesPerYear": 52,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-gym-challenge/giovanni-1st-edition-18",
@@ -164,6 +169,7 @@
    "number": "161",
    "variant": null,
    "image": "img/articuno-journey-together-161.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-journey-together/articuno-161",
@@ -195,6 +201,7 @@
    "number": "51",
    "variant": null,
    "image": "img/snorlax-promo-51.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/snorlax-51",
@@ -226,6 +233,7 @@
    "number": "44",
    "variant": null,
    "image": "img/charmander-promo-44.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/charmander-44",
@@ -266,6 +274,7 @@
    "number": "52",
    "variant": null,
    "image": "img/mewtwo-promo-52.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/mewtwo-52",
@@ -306,6 +315,7 @@
    "number": "53",
    "variant": null,
    "image": "img/mew-ex-promo-53.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/mew-ex-53",
@@ -346,6 +356,7 @@
    "number": "203",
    "variant": null,
    "image": "img/magikarp-paldea-evolved-203.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-paldea-evolved/magikarp-203",
@@ -386,6 +397,7 @@
    "number": "140",
    "variant": null,
    "image": "img/sylveon-gx-guardians-rising-140.webp",
+   "added": false,
    "salesPerYear": 52,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-guardians-rising/sylveon-gx-140",
@@ -426,6 +438,7 @@
    "number": "78",
    "variant": null,
    "image": "img/mewtwo-gx-shining-legends-78.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-shining-legends/mewtwo-gx-78",
@@ -461,6 +474,7 @@
    "number": "241",
    "variant": null,
    "image": "img/pikachu-cosmic-eclipse-241.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-cosmic-eclipse/pikachu-241",
@@ -496,6 +510,7 @@
    "number": "SM167",
    "variant": null,
    "image": "img/celebi-venusaur-gx-promo-sm167.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/celebi-&-venusaur-gx-sm167",
@@ -536,6 +551,7 @@
    "number": "33",
    "variant": null,
    "image": "img/pikachu-zekrom-gx-team-up-33.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/pikachu-&-zekrom-gx-33",
@@ -576,6 +592,7 @@
    "number": "114",
    "variant": "Gold Star",
    "image": "img/raikou-gold-star-unseen-forces-114.webp",
+   "added": false,
    "salesPerYear": 52,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-unseen-forces/raikou-gold-star-114",
@@ -602,6 +619,7 @@
    "number": "113",
    "variant": null,
    "image": "img/shining-tyranitar-neo-destiny-113.webp",
+   "added": false,
    "salesPerYear": 24,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-neo-destiny/shining-tyranitar-113",
@@ -642,6 +660,7 @@
    "number": "2",
    "variant": "1st Edition",
    "image": "img/blaine-s-charizard-1st-edition-gym-challenge-2.webp",
+   "added": false,
    "salesPerYear": 52,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-gym-challenge/blaine%27s-charizard-1st-edition-2",
@@ -668,6 +687,7 @@
    "number": "15",
    "variant": "1st Edition",
    "image": "img/rocket-s-zapdos-1st-edition-gym-challenge-15.webp",
+   "added": false,
    "salesPerYear": 52,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-gym-challenge/rocket%27s-zapdos-1st-edition-15",
@@ -694,6 +714,7 @@
    "number": "13",
    "variant": "1st Edition",
    "image": "img/misty-s-gyarados-1st-edition-gym-challenge-13.webp",
+   "added": false,
    "salesPerYear": 52,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-gym-challenge/misty%27s-gyarados-1st-edition-13",
@@ -729,6 +750,7 @@
    "number": null,
    "variant": null,
    "image": "img/ancient-mew-promo.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/ancient-mew",
@@ -764,6 +786,7 @@
    "number": "210",
    "variant": null,
    "image": "img/drowzee-scarlet-violet-210.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-scarlet-&-violet/drowzee-210",
@@ -804,6 +827,7 @@
    "number": "20",
    "variant": null,
    "image": "img/charizard-gx-burning-shadows-20.webp",
+   "added": false,
    "salesPerYear": 156,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-burning-shadows/charizard-gx-20",
@@ -844,6 +868,7 @@
    "number": "138",
    "variant": null,
    "image": "img/lugia-v-silver-tempest-138.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-silver-tempest/lugia-v-138",
@@ -884,6 +909,7 @@
    "number": "GG10",
    "variant": null,
    "image": "img/mew-crown-zenith-gg10.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-crown-zenith/mew-gg10",
@@ -924,6 +950,7 @@
    "number": "TG05",
    "variant": null,
    "image": "img/pikachu-lost-origin-tg05.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-lost-origin/pikachu-tg05",
@@ -959,6 +986,7 @@
    "number": "115",
    "variant": null,
    "image": "img/m-gyarados-ex-breakpoint-115.webp",
+   "added": false,
    "salesPerYear": 156,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-breakpoint/m-gyarados-ex-115",
@@ -994,6 +1022,7 @@
    "number": "103",
    "variant": null,
    "image": "img/mewtwo-ex-evolutions-103.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-evolutions/mewtwo-ex-103",
@@ -1034,6 +1063,7 @@
    "number": "34",
    "variant": null,
    "image": "img/gengar-ex-phantom-forces-34.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-phantom-forces/gengar-ex-34",
@@ -1069,6 +1099,7 @@
    "number": "69",
    "variant": null,
    "image": "img/m-charizard-ex-flashfire-69.webp",
+   "added": false,
    "salesPerYear": 104,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-flashfire/m-charizard-ex-69",
@@ -1095,7 +1126,7 @@
      "fetchedAt": "2026-10-16T22:33:23.206Z"
     }
    },
-   "cmNote": null
+   "cmNote": "Cardmarket is 2.9× the US raw price: few copies are listed in Europe."
   },
   {
    "id": "m-rayquaza-ex-ancient-origins-98",
@@ -1104,6 +1135,7 @@
    "number": "98",
    "variant": null,
    "image": "img/m-rayquaza-ex-ancient-origins-98.webp",
+   "added": false,
    "salesPerYear": 156,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-ancient-origins/m-rayquaza-ex-98",
@@ -1139,6 +1171,7 @@
    "number": "180",
    "variant": null,
    "image": "img/mega-absol-ex-mega-evolution-180.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-mega-evolution/mega-absol-ex-180",
@@ -1165,6 +1198,7 @@
    "number": "138",
    "variant": null,
    "image": "img/vulpix-mega-evolution-138.webp",
+   "added": false,
    "salesPerYear": 1460,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-mega-evolution/vulpix-138",
@@ -1191,6 +1225,7 @@
    "number": "125",
    "variant": null,
    "image": "img/mega-charizard-x-ex-phantasmal-flames-125.webp",
+   "added": false,
    "salesPerYear": 1460,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-phantasmal-flames/mega-charizard-x-ex-125",
@@ -1226,6 +1261,7 @@
    "number": "40",
    "variant": null,
    "image": "img/pokemon-center-promo-40.webp",
+   "added": false,
    "salesPerYear": 12,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/pokemon-center-40",
@@ -1252,7 +1288,7 @@
      "fetchedAt": "2026-10-16T22:32:57.928Z"
     }
    },
-   "cmNote": "EU listings are 3.7× the US raw price; few copies are listed in Europe."
+   "cmNote": "Cardmarket is 3.7× the US raw price: few copies are listed in Europe."
   },
   {
    "id": "pikachu-with-grey-felt-hat-promo-85",
@@ -1261,6 +1297,7 @@
    "number": "85",
    "variant": null,
    "image": "img/pikachu-with-grey-felt-hat-promo-85.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/pikachu-with-grey-felt-hat-85",
@@ -1301,6 +1338,7 @@
    "number": "165",
    "variant": null,
    "image": "img/kyurem-ex-black-bolt-165.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-black-bolt/kyurem-ex-165",
@@ -1332,6 +1370,7 @@
    "number": "234",
    "variant": null,
    "image": "img/charizard-ex-paldean-fates-234.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-paldean-fates/charizard-ex-234",
@@ -1372,6 +1411,7 @@
    "number": "68",
    "variant": null,
    "image": "img/jessie-james-hidden-fates-68.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-hidden-fates/jessie-&-james-68",
@@ -1403,6 +1443,7 @@
    "number": "SM210",
    "variant": null,
    "image": "img/moltres-zapdos-articuno-gx-promo-sm210.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/moltres-&-zapdos-&-articuno-gx-sm210",
@@ -1434,6 +1475,7 @@
    "number": "TG23",
    "variant": null,
    "image": "img/umbreon-vmax-brilliant-stars-tg23.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-brilliant-stars/umbreon-vmax-tg23",
@@ -1465,6 +1507,7 @@
    "number": "189",
    "variant": null,
    "image": "img/umbreon-v-evolving-skies-189.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-evolving-skies/umbreon-v-189",
@@ -1505,6 +1548,7 @@
    "number": "GG42",
    "variant": null,
    "image": "img/zeraora-vmax-crown-zenith-gg42.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-crown-zenith/zeraora-vmax-gg42",
@@ -1536,6 +1580,7 @@
    "number": "192",
    "variant": null,
    "image": "img/dragonite-v-evolving-skies-192.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-evolving-skies/dragonite-v-192",
@@ -1571,6 +1616,7 @@
    "number": "GG35",
    "variant": null,
    "image": "img/leafeon-vstar-crown-zenith-gg35.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-crown-zenith/leafeon-vstar-gg35",
@@ -1602,6 +1648,7 @@
    "number": "20",
    "variant": null,
    "image": "img/charizard-vmax-darkness-ablaze-20.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-darkness-ablaze/charizard-vmax-20",
@@ -1633,6 +1680,7 @@
    "number": "25",
    "variant": null,
    "image": "img/mew-celebrations-25.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-celebrations/mew-25",
@@ -1659,6 +1707,7 @@
    "number": "85",
    "variant": null,
    "image": "img/rayquaza-ex-dragons-exalted-85.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-dragons-exalted/rayquaza-ex-85",
@@ -1694,6 +1743,7 @@
    "number": "H31",
    "variant": null,
    "image": "img/vaporeon-skyridge-h31.webp",
+   "added": false,
    "salesPerYear": 12,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-skyridge/vaporeon-h31",
@@ -1734,6 +1784,7 @@
    "number": "150",
    "variant": null,
    "image": "img/kabutops-skyridge-150.webp",
+   "added": false,
    "salesPerYear": 24,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-skyridge/kabutops-150",
@@ -1765,7 +1816,7 @@
      "fetchedAt": "2026-10-16T22:28:26.354Z"
     }
    },
-   "cmNote": null
+   "cmNote": "Cardmarket is under half the US raw price: check the copies before buying."
   },
   {
    "id": "umbreon-skyridge-h30",
@@ -1774,6 +1825,7 @@
    "number": "H30",
    "variant": null,
    "image": "img/umbreon-skyridge-h30.webp",
+   "added": false,
    "salesPerYear": 12,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-skyridge/umbreon-h30",
@@ -1800,7 +1852,7 @@
      "fetchedAt": "2026-10-16T22:20:46.280Z"
     }
    },
-   "cmNote": null
+   "cmNote": "Cardmarket is 2.9× the US raw price: few copies are listed in Europe."
   },
   {
    "id": "mew-triumphant-97",
@@ -1809,6 +1861,7 @@
    "number": "97",
    "variant": null,
    "image": "img/mew-triumphant-97.webp",
+   "added": false,
    "salesPerYear": 24,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-triumphant/mew-97",
@@ -1840,7 +1893,7 @@
      "fetchedAt": "2026-10-16T22:21:28.796Z"
     }
    },
-   "cmNote": null
+   "cmNote": "Cardmarket is 2.9× the US raw price: few copies are listed in Europe."
   },
   {
    "id": "dragonite-promo-5",
@@ -1849,6 +1902,7 @@
    "number": "5",
    "variant": null,
    "image": "img/dragonite-promo-5.webp",
+   "added": false,
    "salesPerYear": 104,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/dragonite-5",
@@ -1875,7 +1929,7 @@
      "fetchedAt": "2026-10-16T22:34:55.849Z"
     }
    },
-   "cmNote": null
+   "cmNote": "Cardmarket is 2.7× the US raw price: few copies are listed in Europe."
   },
   {
    "id": "haunter-1st-edition-fossil-6",
@@ -1884,6 +1938,7 @@
    "number": "6",
    "variant": "1st Edition",
    "image": "img/haunter-1st-edition-fossil-6.webp",
+   "added": false,
    "salesPerYear": 52,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-fossil/haunter-1st-edition-6",
@@ -1919,6 +1974,7 @@
    "number": "3",
    "variant": "1st Edition",
    "image": "img/ditto-1st-edition-fossil-3.webp",
+   "added": false,
    "salesPerYear": 52,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-fossil/ditto-1st-edition-3",
@@ -1945,7 +2001,7 @@
      "fetchedAt": "2026-10-16T22:28:01.935Z"
     }
    },
-   "cmNote": null
+   "cmNote": "Cardmarket is 3.0× the US raw price: few copies are listed in Europe."
   },
   {
    "id": "pikachu-shadowless-red-cheeks-base-set-58",
@@ -1954,6 +2010,7 @@
    "number": "58",
    "variant": "Shadowless Red Cheeks",
    "image": "img/pikachu-shadowless-red-cheeks-base-set-58.webp",
+   "added": false,
    "salesPerYear": 52,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-base-set/pikachu-shadowless-red-cheeks-58",
@@ -1989,6 +2046,7 @@
    "number": "4",
    "variant": "1st Edition",
    "image": "img/dark-charizard-1st-edition-team-rocket-4.webp",
+   "added": false,
    "salesPerYear": 52,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-team-rocket/dark-charizard-1st-edition-4",
@@ -2015,7 +2073,7 @@
      "fetchedAt": "2026-10-16T22:20:29.782Z"
     }
    },
-   "cmNote": "EU listings are 3.1× the US raw price; few copies are listed in Europe."
+   "cmNote": "Cardmarket is 3.1× the US raw price: few copies are listed in Europe."
   },
   {
    "id": "bulbasaur-stamped-mega-evolution-133",
@@ -2024,6 +2082,7 @@
    "number": "133",
    "variant": "Stamped",
    "image": "img/bulbasaur-stamped-mega-evolution-133.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-mega-evolution/bulbasaur-stamped-133",
@@ -2059,6 +2118,7 @@
    "number": "SM241",
    "variant": null,
    "image": "img/umbreon-darkrai-gx-promo-sm241.webp",
+   "added": false,
    "salesPerYear": 156,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/umbreon-&-darkrai-gx-sm241",
@@ -2094,6 +2154,7 @@
    "number": "109",
    "variant": null,
    "image": "img/rayquaza-gx-celestial-storm-109.webp",
+   "added": false,
    "salesPerYear": 156,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-celestial-storm/rayquaza-gx-109",
@@ -2134,6 +2195,7 @@
    "number": "125",
    "variant": null,
    "image": "img/alakazam-ex-fates-collide-125.webp",
+   "added": false,
    "salesPerYear": 156,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-fates-collide/alakazam-ex-125",
@@ -2174,6 +2236,7 @@
    "number": "117",
    "variant": null,
    "image": "img/espeon-ex-breakpoint-117.webp",
+   "added": false,
    "salesPerYear": 104,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-breakpoint/espeon-ex-117",
@@ -2209,6 +2272,7 @@
    "number": "119",
    "variant": null,
    "image": "img/umbreon-ex-fates-collide-119.webp",
+   "added": false,
    "salesPerYear": 104,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-fates-collide/umbreon-ex-119",
@@ -2244,6 +2308,7 @@
    "number": "23",
    "variant": null,
    "image": "img/mega-charizard-x-ex-promo-23.webp",
+   "added": false,
    "salesPerYear": 2190,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/mega-charizard-x-ex-23",
@@ -2270,6 +2335,7 @@
    "number": "202",
    "variant": null,
    "image": "img/zapdos-ex-scarlet-violet-151-202.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-scarlet-&-violet-151/zapdos-ex-202",
@@ -2310,6 +2376,7 @@
    "number": "200",
    "variant": null,
    "image": "img/blastoise-ex-scarlet-violet-151-200.webp",
+   "added": false,
    "salesPerYear": 1460,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-scarlet-&-violet-151/blastoise-ex-200",
@@ -2350,6 +2417,7 @@
    "number": "175",
    "variant": null,
    "image": "img/espeon-ex-promo-175.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/espeon-ex-175",
@@ -2381,6 +2449,7 @@
    "number": "149",
    "variant": null,
    "image": "img/vaporeon-ex-prismatic-evolutions-149.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-prismatic-evolutions/vaporeon-ex-149",
@@ -2416,6 +2485,7 @@
    "number": "201",
    "variant": null,
    "image": "img/alakazam-ex-scarlet-violet-151-201.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-scarlet-&-violet-151/alakazam-ex-201",
@@ -2447,6 +2517,7 @@
    "number": "SM191",
    "variant": null,
    "image": "img/mewtwo-mew-gx-promo-sm191.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/mewtwo-&-mew-gx-sm191",
@@ -2487,6 +2558,7 @@
    "number": "20",
    "variant": null,
    "image": "img/reshiram-charizard-gx-unbroken-bonds-20.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-unbroken-bonds/reshiram-&-charizard-gx-20",
@@ -2513,6 +2585,7 @@
    "number": "186",
    "variant": null,
    "image": "img/gengar-mimikyu-gx-team-up-186.webp",
+   "added": false,
    "salesPerYear": 104,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/gengar-&-mimikyu-gx-186",
@@ -2553,6 +2626,7 @@
    "number": "161",
    "variant": null,
    "image": "img/magikarp-wailord-gx-team-up-161.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/magikarp-&-wailord-gx-161",
@@ -2593,6 +2667,7 @@
    "number": "170",
    "variant": null,
    "image": "img/latias-latios-gx-team-up-170.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/latias-&-latios-gx-170",
@@ -2633,6 +2708,7 @@
    "number": "186",
    "variant": null,
    "image": "img/giratina-v-lost-origin-186.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-lost-origin/giratina-v-186",
@@ -2673,6 +2749,7 @@
    "number": "72",
    "variant": null,
    "image": "img/mewtwo-v-go-72.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-go/mewtwo-v-72",
@@ -2704,6 +2781,7 @@
    "number": "TG29",
    "variant": null,
    "image": "img/rayquaza-vmax-silver-tempest-tg29.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-silver-tempest/rayquaza-vmax-tg29",
@@ -2735,6 +2813,7 @@
    "number": "17",
    "variant": null,
    "image": "img/umbreon-celebrations-17.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-celebrations/umbreon-17",
@@ -2766,6 +2845,7 @@
    "number": "251",
    "variant": null,
    "image": "img/mew-v-fusion-strike-251.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-fusion-strike/mew-v-251",
@@ -2801,6 +2881,7 @@
    "number": "110",
    "variant": "1st Edition",
    "image": "img/shining-noctowl-1st-edition-neo-destiny-110.webp",
+   "added": false,
    "salesPerYear": 12,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-neo-destiny/shining-noctowl-1st-edition-110",
@@ -2827,6 +2908,7 @@
    "number": "193",
    "variant": null,
    "image": "img/misty-s-psyduck-destined-rivals-193.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-destined-rivals/misty%27s-psyduck-193",
@@ -2867,6 +2949,7 @@
    "number": "203",
    "variant": null,
    "image": "img/latios-surging-sparks-203.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-surging-sparks/latios-203",
@@ -2898,6 +2981,7 @@
    "number": "173",
    "variant": null,
    "image": "img/pikachu-scarlet-violet-151-173.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-scarlet-&-violet-151/pikachu-173",
@@ -2938,6 +3022,7 @@
    "number": "193",
    "variant": null,
    "image": "img/gengar-ex-temporal-forces-193.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-temporal-forces/gengar-ex-193",
@@ -2978,6 +3063,7 @@
    "number": "223",
    "variant": null,
    "image": "img/charizard-ex-obsidian-flames-223.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-obsidian-flames/charizard-ex-223",
@@ -3018,6 +3104,7 @@
    "number": "165",
    "variant": null,
    "image": "img/gengar-mimikyu-gx-team-up-165.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/gengar-&-mimikyu-gx-165",
@@ -3058,6 +3145,7 @@
    "number": "221",
    "variant": null,
    "image": "img/arceus-dialga-palkia-gx-cosmic-eclipse-221.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-cosmic-eclipse/arceus-&-dialga-&-palkia-gx-221",
@@ -3098,6 +3186,7 @@
    "number": "169",
    "variant": null,
    "image": "img/latias-latios-gx-team-up-169.webp",
+   "added": false,
    "salesPerYear": 104,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/latias-&-latios-gx-169",
@@ -3138,6 +3227,7 @@
    "number": "SM193",
    "variant": null,
    "image": "img/garchomp-giratina-gx-promo-sm193.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/garchomp-&-giratina-gx-sm193",
@@ -3178,6 +3268,7 @@
    "number": "53",
    "variant": null,
    "image": "img/gengar-mimikyu-gx-team-up-53.webp",
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-team-up/gengar-&-mimikyu-gx-53",
@@ -3218,6 +3309,7 @@
    "number": "SM168",
    "variant": null,
    "image": "img/pikachu-zekrom-gx-promo-sm168.webp",
+   "added": false,
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-promo/pikachu-&-zekrom-gx-sm168",
@@ -3258,6 +3350,7 @@
    "number": "216",
    "variant": null,
    "image": "img/solgaleo-lunala-gx-cosmic-eclipse-216.webp",
+   "added": false,
    "salesPerYear": 156,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-cosmic-eclipse/solgaleo-&-lunala-gx-216",
@@ -3298,6 +3391,7 @@
    "number": "215",
    "variant": null,
    "image": "img/blastoise-piplup-gx-cosmic-eclipse-215.webp",
+   "added": false,
    "salesPerYear": 156,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-cosmic-eclipse/blastoise-&-piplup-gx-215",
@@ -3338,6 +3432,7 @@
    "number": "2",
    "variant": null,
    "image": "img/blastoise-celebrations-2.webp",
+   "added": false,
    "salesPerYear": 1825,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-celebrations/blastoise-2",
@@ -3369,6 +3464,7 @@
    "number": "138",
    "variant": null,
    "image": "img/rayquaza-vivid-voltage-138.webp",
+   "added": false,
    "salesPerYear": 1095,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-vivid-voltage/rayquaza-138",

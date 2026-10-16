@@ -12,7 +12,7 @@ import { MAX_MISMATCH } from './pricecharting.ts';
 import { CmProductsFile, type CmProduct } from './cmproducts.ts';
 import { sameNumber } from './lib/files.ts';
 
-const GRADING_FEE_USD = 25; // PokeViews' assumption; adjustable in the app
+const GRADING_FEE_EUR = 25; // default; adjustable in the app
 /** Cardmarket's trend stands in for the listings only when it is this close to the US raw price. */
 export const TREND_BAND = [0.5, 2] as const;
 /** Listings this far from the US raw price suggest the wrong Cardmarket product (another version of the card). */
@@ -47,8 +47,8 @@ export function variantNote(variant: string | null): string | null {
 export function farFromUs(euAvg: number | null, usRawEur: number | null): string | null {
   if (!euAvg || !usRawEur) return null;
   const r = euAvg / usRawEur;
-  if (r > LISTINGS_BAND[1]) return `EU listings are ${r.toFixed(1)}× the US raw price; few copies are listed in Europe.`;
-  if (r < LISTINGS_BAND[0]) return `EU listings are well below the US raw price (${r.toFixed(2)}×); check the copies.`;
+  if (r > 2.5) return `Cardmarket is ${r.toFixed(1)}× the US raw price: few copies are listed in Europe.`;
+  if (r < 0.5) return `Cardmarket is under half the US raw price: check the copies before buying.`;
   return null;
 }
 
@@ -138,7 +138,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   for (const c of contenders) {
     const p = pc[c.id] && pc[c.id]!.mismatch <= MAX_MISMATCH ? pc[c.id]! : null;
     // Without a PriceCharting match, PokeViews' own raw and PSA 10 (also PriceCharting data) still hold.
-    const usd = p?.usd ?? { raw: c.pv.raw, g8: null, g9: null, psa10: c.pv.psa10 };
+    const usd = p?.usd ?? { raw: c.pv?.raw ?? null, g8: null, g9: null, psa10: c.pv?.psa10 ?? null };
     if (!p) report.pcFallback.push(c.id);
     const usRawEur = usd.raw == null ? null : usd.raw * fx.usdToEur;
     const cmPart = cardmarketPart(products[c.id], td[c.id], cm[c.id], usRawEur, c.fullName, c.number);
@@ -148,7 +148,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       if (cmPart.listings.n < 10) report.thin.push(`${c.fullName} (${cmPart.listings.n})`);
     } else if (!cmPart?.guide?.trusted) report.untrusted.push(`${c.fullName} (trend €${cmPart?.guide?.trend ?? '—'} vs US €${usRawEur?.toFixed(0)})`);
 
-    const image = await thumbnail(c.id, c.imageUrl);
+    const tdImage = td[c.id]?.image;
+    const image = await thumbnail(c.id, c.imageUrl ?? (tdImage ? `${tdImage}/high.webp` : null));
     if (!image) report.noImage.push(c.id);
     cards.push({
       id: c.id,
@@ -157,7 +158,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       number: c.number,
       variant: c.variant,
       image,
-      salesPerYear: c.pv.salesPerYear,
+      added: c.added,
+      salesPerYear: c.pv?.salesPerYear ?? null,
       links: {
         pricecharting: p?.url ?? null,
         cardmarket: products[c.id]?.url ?? `https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=${encodeURIComponent(c.name)}`,
@@ -188,7 +190,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   ].join('\n');
   await writeFile('data/quality.md', `${md}\n`);
 
-  const data = DataFile.parse({ version: 2, generatedAt: new Date().toISOString(), fx, defaults: { gradingFeeUsd: GRADING_FEE_USD }, cards });
+  const data = DataFile.parse({ version: 3, generatedAt: new Date().toISOString(), fx, defaults: { gradingFeeEur: GRADING_FEE_EUR }, cards });
   await writeJson(PATHS.out, data);
 
   const total = cards.length;

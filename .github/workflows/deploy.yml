@@ -33,6 +33,7 @@ jobs:
       - run: npm run build
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
+          VITE_REPO: ${{ github.repository }}
       - name: Publish to gh-pages
         run: |
           cd dist

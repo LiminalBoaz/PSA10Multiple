@@ -1,0 +1,73 @@
+name: Add card
+
+# Runs when the repository owner (or a collaborator) opens an "Add card: …" issue from the app.
+# Fetches PriceCharting and Cardmarket prices for that one card, commits them and redeploys.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+jobs:
+  add:
+    if: >-
+      startsWith(github.event.issue.title, 'Add card') &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Read the card from the issue
+        id: card
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: npx tsx pipeline/addcard.ts
+      - name: Fetch prices
+        env:
+          CARD: ${{ steps.card.outputs.id }}
+        run: |
+          npx tsx pipeline/pricecharting.ts "$CARD"
+          npx tsx pipeline/tcgdex.ts "$CARD"
+          npx tsx pipeline/cmproducts.ts "$CARD"
+          if [ -n "$APIFY_TOKEN" ]; then npx tsx pipeline/cardmarket.ts "$CARD"; else echo "No APIFY_TOKEN secret: skipping live Cardmarket listings"; fi
+          npx tsx pipeline/build.ts | tee build.log
+      - name: Commit
+        env:
+          NAME: ${{ steps.card.outputs.name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data public
+          git commit -q -m "Add card: $NAME" || echo "No changes"
+          git pull -q --rebase && git push -q
+      - name: Report back on the issue
+        if: always()
+        env:
+          NAME: ${{ steps.card.outputs.name }}
+          OUTCOME: ${{ job.status }}
+        run: |
+          if [ "$OUTCOME" = "success" ]; then
+            gh issue comment "$ISSUE" --body "Added **$NAME**. Prices will show in the app after the deploy finishes (about a minute)."
+            gh issue close "$ISSUE"
+          else
+            gh issue comment "$ISSUE" --body "Couldn't add this card. Check the card name, set and number, or paste the PriceCharting link, then open a new issue. Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          fi
+
+  deploy:
+    needs: add
+    uses: ./.github/workflows/deploy.yml

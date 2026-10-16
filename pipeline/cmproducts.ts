@@ -82,7 +82,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   for (const [i, c] of cards.filter((c) => !only.length || only.includes(c.id)).entries()) {
     const t = td[c.id];
     const tag = `${i + 1} ${c.fullName} (${c.set} #${c.number})`;
-    const manual = overrides[c.id];
+    const manual = overrides[c.id] ?? (c.hints.cardmarket && parseCmUrl(c.hints.cardmarket)?.url);
     if (manual) {
       // Confirmed by hand. Keep TCGdex's id only for the trend, and only when it is the sole version.
       const single = t && cat.versions(t.idProduct).length === 1;
@@ -94,7 +94,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const p = await findPtcg(c, t?.setName ?? null);
     const loc = p?.cardmarket?.url ? await redirectTarget(p.cardmarket.url) : null;
     const slug = loc ? parseCmUrl(loc) : null;
-    if (slug && !codeHasNumber(slug.code, c.number)) {
+    // A code with digits must carry the card number; pages without one can't be checked from the URL.
+    if (slug && /\d/.test(slug.code) && !codeHasNumber(slug.code, c.number)) {
       out[c.id] = { url: null, idProduct: t?.idProduct ?? null, via: `pokemontcg URL has wrong number (${slug.code})` };
       console.warn(`? ${tag}: ${slug.url} does not carry #${c.number}`);
     } else if (slug) {
@@ -106,7 +107,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       out[c.id] = {
         url: slug.url,
         idProduct: agree || single ? t!.idProduct : null,
-        via: !t ? 'pokemontcg URL (no TCGdex id)' : agree || single ? 'pokemontcg URL + TCGdex agree' : `pokemontcg URL; TCGdex id ${t.idProduct} not confirmed`,
+        via: `${!t ? 'pokemontcg URL (no TCGdex id)' : agree || single ? 'pokemontcg URL + TCGdex agree' : `pokemontcg URL; TCGdex id ${t.idProduct} not confirmed`}${/\d/.test(slug.code) ? '' : '; no card number in URL'}`,
       };
       console.log(`${agree ? '✓' : '~'} ${tag}: ${slug.url} → ${out[c.id]!.idProduct} [${out[c.id]!.via}]`);
     } else {

@@ -9,7 +9,7 @@ interface SetBrief { id: string; name: string }
 interface SetFull extends SetBrief { abbreviation?: { official?: string }; cards: { id: string; localId: string; name: string }[] }
 interface CmPrice { idProduct?: number; trend?: number | null; low?: number | null; avg30?: number | null; 'trend-holo'?: number | null; 'low-holo'?: number | null; 'avg30-holo'?: number | null }
 interface Variant { type: string; thirdParty?: { cardmarket?: number; tcgplayer?: number }; pricing?: { cardmarket?: CmPrice; tcgplayer?: Record<string, { productId?: number; marketPrice?: number | null } | string> } }
-interface CardFull { id: string; localId: string; name: string; set: SetBrief; variants_detailed?: Variant[]; pricing?: { cardmarket?: CmPrice } }
+interface CardFull { id: string; localId: string; name: string; image?: string; set: SetBrief; variants_detailed?: Variant[]; pricing?: { cardmarket?: CmPrice } }
 
 const SET_ALIASES: Record<string, string[]> = {
   promo: ['basep', 'np', 'dpp', 'hgssp', 'bwp', 'xyp', 'smp', 'swshp', 'svp', 'mep', 'miscp', 'wp'],
@@ -79,6 +79,7 @@ async function entryFor(cardId: string, c: Contender): Promise<{ entry: TcgdexEn
       guide: guideFor(v.pricing?.cardmarket ?? card.pricing?.cardmarket, c.variant),
       tcgplayerMarket: tcgplayerMarket(v),
       matchedBy: '',
+      image: card.image ?? null,
     },
   };
 }

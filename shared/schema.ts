@@ -54,6 +54,8 @@ export const Card = z.object({
   variant: z.string().nullable(),
   /** Path relative to the site root, e.g. "img/lugia-v-138.webp". */
   image: z.string().nullable(),
+  /** Added by hand (through the app's "Add card"), not from the PokeViews list. */
+  added: z.boolean(),
   /** PriceCharting sales in the last year, as reported by PokeViews. */
   salesPerYear: z.number().int().nonnegative().nullable(),
   links: z.object({ pricecharting: z.url().nullable(), cardmarket: z.url() }),
@@ -64,10 +66,10 @@ export const Card = z.object({
 });
 
 export const DataFile = z.object({
-  version: z.literal(2),
+  version: z.literal(3),
   generatedAt: z.string(),
   fx: z.object({ usdToEur: z.number().positive(), date: z.string() }),
-  defaults: z.object({ gradingFeeUsd: z.number().nonnegative() }),
+  defaults: z.object({ gradingFeeEur: z.number().nonnegative() }),
   cards: z.array(Card),
 });
 

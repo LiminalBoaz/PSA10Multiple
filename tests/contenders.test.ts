@@ -102,3 +102,60 @@ describe('PriceCharting set check', () => {
     expect(setMatches('Drowzee #210 · Pokemon Scarlet & Violet', { ...entei, set: 'Scarlet & Violet' })).toBe(true);
   });
 });
+
+describe('Add card issue form', () => {
+  const body = `### Card name
+
+Ditto (1st Edition)
+
+### Set
+
+Fossil
+
+### Card number
+
+#3
+
+### PriceCharting link
+
+https://www.pricecharting.com/game/pokemon-fossil/ditto-1st-edition-3
+
+### Cardmarket link
+
+_No response_`;
+
+  it('reads the GitHub issue form', async () => {
+    const { parseIssueForm } = await import('../pipeline/addcard.ts');
+    expect(parseIssueForm(body)).toEqual({
+      'card name': 'Ditto (1st Edition)',
+      set: 'Fossil',
+      'card number': '#3',
+      'pricecharting link': 'https://www.pricecharting.com/game/pokemon-fossil/ditto-1st-edition-3',
+      'cardmarket link': '',
+    });
+  });
+  it('builds a hand-added card with the same id the app expects', async () => {
+    const { contenderFromForm, parseIssueForm } = await import('../pipeline/addcard.ts');
+    const { slug: appSlug } = await import('../shared/slug.ts');
+    const c = contenderFromForm(parseIssueForm(body));
+    expect(c).toMatchObject({ id: 'ditto-1st-edition-fossil-3', name: 'Ditto', variant: '1st Edition', number: '3', added: true, pv: null });
+    expect(c.hints.pricecharting).toContain('pricecharting.com');
+    expect(appSlug('Ditto (1st Edition)', 'Fossil', '3')).toBe(c.id);
+  });
+  it('rejects junk and links to other sites', async () => {
+    const { contenderFromForm } = await import('../pipeline/addcard.ts');
+    expect(() => contenderFromForm({ 'card name': '', set: 'X' })).toThrow();
+    expect(() => contenderFromForm({ 'card name': 'Mew', set: 'X', 'card number': '1; rm -rf' })).toThrow();
+    expect(contenderFromForm({ 'card name': 'Mew', set: 'X', 'pricecharting link': 'https://evil.example/x' }).hints.pricecharting).toBeUndefined();
+  });
+});
+
+describe('titleHasNumber', () => {
+  it('checks the card number in a PriceCharting title', async () => {
+    const { titleHasNumber } = await import('../pipeline/pricecharting.ts');
+    expect(titleHasNumber('Umbreon VMAX #215 · Pokemon Evolving Skies', '215')).toBe(true);
+    expect(titleHasNumber('Mew ex #53 · Pokemon Promo', '053')).toBe(true);
+    expect(titleHasNumber('Pikachu #TG05 · Pokemon Lost Origin', 'TG05')).toBe(true);
+    expect(titleHasNumber('Umbreon VMAX #2150 · X', '215')).toBe(false);
+  });
+});

@@ -132,7 +132,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   // Biggest PSA 10 upside first, so a tight budget covers the cards worth hunting.
   const todo = cards
     .filter((c) => products[c.id]?.url && (only.length ? only.includes(c.id) : !fresh(c.id)))
-    .sort((a, b) => b.pv.psa10 - b.pv.raw - (a.pv.psa10 - a.pv.raw));
+    .sort((a, b) => Number(b.added) - Number(a.added) || (b.pv ? b.pv.psa10 - b.pv.raw : 0) - (a.pv ? a.pv.psa10 - a.pv.raw : 0));
   const start = await usageUsd();
   const reuse = await recentRuns();
   console.log(`${reuse.size} finished runs from the last ${MAX_AGE_H} h can be reused`);
@@ -152,8 +152,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
         break;
       }
       const url = products[c.id]!.url!;
-      const usRaw = pc[c.id]?.usd.raw ?? c.pv.raw;
-      const maxPrice = usRaw * PRICE_CAP_X; // EUR cap; USD→EUR is < 1, so this errs on the generous side
+      const usRaw = pc[c.id]?.usd.raw ?? c.pv?.raw ?? null;
+      const maxPrice = usRaw ? usRaw * PRICE_CAP_X : undefined; // EUR cap; USD→EUR is < 1, so this errs on the generous side
       try {
         const euRun = await runActor(actorInput(url, c, { maxPrice }), reuse);
         const nlRun = withNl ? await runActor(actorInput(url, c, { maxPrice, sellerCountry: 'NL' }), reuse) : { items: [], reused: true };
@@ -170,7 +170,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
           cardName: eu[0]?.cardName ?? null,
         };
         const l = out[c.id]!.listings;
-        console.log(`${++done}/${todo.length} ${c.fullName} [${eu[0]?.cardName ?? 'no listings'}]${euRun.reused ? ' (reused)' : ''}: ${l.length} NM EN ≤ €${maxPrice.toFixed(0)}, cheapest €${l[0]?.price ?? '—'}`);
+        console.log(`${++done}/${todo.length} ${c.fullName} [${eu[0]?.cardName ?? 'no listings'}]${euRun.reused ? ' (reused)' : ''}: ${l.length} NM EN ≤ €${maxPrice?.toFixed(0) ?? '∞'}, cheapest €${l[0]?.price ?? '—'}`);
       } catch (e) {
         console.warn(`${++done}/${todo.length} ${c.fullName}: ${(e as Error).message}`);
         if ((e as { fatal?: boolean }).fatal) stop = true;

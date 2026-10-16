@@ -1,0 +1,34 @@
+name: Add card
+description: Add a card to Slab Scout. Its PriceCharting and Cardmarket prices are fetched automatically.
+title: "Add card: "
+labels: [add-card]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Card name
+      description: As printed, with the printing in brackets if it matters, e.g. "Umbreon VMAX" or "Ditto (1st Edition)".
+    validations:
+      required: true
+  - type: input
+    id: set
+    attributes:
+      label: Set
+      description: e.g. "Evolving Skies". Use "Promo" for black star promos.
+    validations:
+      required: true
+  - type: input
+    id: number
+    attributes:
+      label: Card number
+      description: e.g. 215, TG05, GG10, SVP053.
+  - type: input
+    id: pricecharting
+    attributes:
+      label: PriceCharting link
+      description: Optional. Paste the card's PriceCharting page if the search picks the wrong one.
+  - type: input
+    id: cardmarket
+    attributes:
+      label: Cardmarket link
+      description: Optional. Paste the card's Cardmarket product page.

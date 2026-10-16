@@ -63,6 +63,7 @@ describe('farFromUs', () => {
   it('notes EU prices far from the US raw price', async () => {
     const { farFromUs } = await import('../pipeline/build.ts');
     expect(farFromUs(2249, 730)).toMatch(/3\.1× the US raw price/);
+    expect(farFromUs(173, 514)).toMatch(/under half/);
     expect(farFromUs(100, 100)).toBeNull();
     expect(farFromUs(null, 100)).toBeNull();
   });

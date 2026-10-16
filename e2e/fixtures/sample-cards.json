@@ -1,12 +1,12 @@
 {
- "version": 2,
+ "version": 3,
  "generatedAt": "2026-10-16T12:00:00Z",
  "fx": {
   "usdToEur": 0.9,
   "date": "2026-10-16"
  },
  "defaults": {
-  "gradingFeeUsd": 25
+  "gradingFeeEur": 25
  },
  "cards": [
   {
@@ -16,10 +16,11 @@
    "number": "199",
    "variant": null,
    "image": null,
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Sample/Sample-V1-SMP1"
    },
    "usd": {
     "raw": 120,
@@ -29,6 +30,7 @@
    },
    "cm": {
     "idProduct": 1,
+    "checkedAt": "2026-10-16T12:00:00Z",
     "guide": {
      "trend": 110,
      "low": 55.0,
@@ -45,10 +47,9 @@
       "avg": 112.0,
       "n": 4
      },
-     "fetchedAt": "2026-10-16T12:00:00Z",
-     "nlChecked": true
-    },
-    "checkedAt": "2026-10-16T12:00:00Z"
+     "nlChecked": false,
+     "fetchedAt": "2026-10-16T12:00:00Z"
+    }
    },
    "cmNote": null
   },
@@ -59,10 +60,11 @@
    "number": "215",
    "variant": null,
    "image": null,
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Sample/Sample-V1-SMP1"
    },
    "usd": {
     "raw": 30,
@@ -72,6 +74,7 @@
    },
    "cm": {
     "idProduct": 1,
+    "checkedAt": "2026-10-16T12:00:00Z",
     "guide": null,
     "listings": {
      "avg10": 18.5,
@@ -79,14 +82,10 @@
      "min": 15.72,
      "max": 22.2,
      "n": 10,
-     "nl": {
-      "avg": 21.0,
-      "n": 2
-     },
-     "fetchedAt": "2026-10-16T12:00:00Z",
-     "nlChecked": true
-    },
-    "checkedAt": "2026-10-16T12:00:00Z"
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-16T12:00:00Z"
+    }
    },
    "cmNote": null
   },
@@ -97,10 +96,11 @@
    "number": "25",
    "variant": null,
    "image": null,
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Sample/Sample-V1-SMP1"
    },
    "usd": {
     "raw": 6,
@@ -110,6 +110,7 @@
    },
    "cm": {
     "idProduct": 1,
+    "checkedAt": "2026-10-16T12:00:00Z",
     "guide": null,
     "listings": {
      "avg10": 4.2,
@@ -118,10 +119,9 @@
      "max": 5.04,
      "n": 10,
      "nl": null,
-     "fetchedAt": "2026-10-16T12:00:00Z",
-     "nlChecked": true
-    },
-    "checkedAt": "2026-10-16T12:00:00Z"
+     "nlChecked": false,
+     "fetchedAt": "2026-10-16T12:00:00Z"
+    }
    },
    "cmNote": null
   },
@@ -132,10 +132,11 @@
    "number": "94",
    "variant": null,
    "image": null,
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Sample/Sample-V1-SMP1"
    },
    "usd": {
     "raw": 40,
@@ -145,14 +146,14 @@
    },
    "cm": {
     "idProduct": 1,
+    "checkedAt": null,
     "guide": {
      "trend": 38.0,
      "low": 19.0,
      "avg30": 38.0,
      "trusted": true
     },
-    "listings": null,
-    "checkedAt": null
+    "listings": null
    },
    "cmNote": null
   },
@@ -163,10 +164,11 @@
    "number": "232",
    "variant": null,
    "image": null,
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Sample/Sample-V1-SMP1"
    },
    "usd": {
     "raw": 70,
@@ -176,6 +178,7 @@
    },
    "cm": {
     "idProduct": 1,
+    "checkedAt": "2026-10-16T12:00:00Z",
     "guide": null,
     "listings": {
      "avg10": 64.0,
@@ -184,10 +187,9 @@
      "max": 76.8,
      "n": 10,
      "nl": null,
-     "fetchedAt": "2026-10-16T12:00:00Z",
-     "nlChecked": true
-    },
-    "checkedAt": "2026-10-16T12:00:00Z"
+     "nlChecked": false,
+     "fetchedAt": "2026-10-16T12:00:00Z"
+    }
    },
    "cmNote": null
   },
@@ -198,10 +200,11 @@
    "number": "4",
    "variant": "1st Edition",
    "image": null,
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Sample/Sample-V1-SMP1"
    },
    "usd": {
     "raw": 300,
@@ -211,21 +214,18 @@
    },
    "cm": {
     "idProduct": 1,
+    "checkedAt": "2026-10-16T12:00:00Z",
     "guide": null,
     "listings": {
-     "avg10": 280.0,
-     "median": 280.0,
-     "min": 238.0,
-     "max": 336.0,
+     "avg10": 620.0,
+     "median": 620.0,
+     "min": 527.0,
+     "max": 744.0,
      "n": 10,
-     "nl": {
-      "avg": 299.0,
-      "n": 3
-     },
-     "fetchedAt": "2026-10-16T12:00:00Z",
-     "nlChecked": true
-    },
-    "checkedAt": "2026-10-16T12:00:00Z"
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-16T12:00:00Z"
+    }
    },
    "cmNote": null
   },
@@ -236,10 +236,11 @@
    "number": "186",
    "variant": null,
    "image": null,
+   "added": false,
    "salesPerYear": 365,
    "links": {
     "pricecharting": "https://www.pricecharting.com/",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products?idProduct=1"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Sample/Sample-V1-SMP1"
    },
    "usd": {
     "raw": 90,
@@ -249,14 +250,14 @@
    },
    "cm": {
     "idProduct": 1,
+    "checkedAt": null,
     "guide": {
      "trend": 900,
      "low": 450.0,
      "avg30": 900,
      "trusted": false
     },
-    "listings": null,
-    "checkedAt": null
+    "listings": null
    },
    "cmNote": null
   }

@@ -20,7 +20,12 @@ export const Contender = z.object({
   tcgplayerId: z.number().int().nullable(),
   /** PriceCharting product id, when PokeViews' image name carries one. */
   pricechartingId: z.number().int().nullable(),
-  pv: z.object({ raw: z.number(), psa10: z.number(), salesPerYear: z.number().int().nullable(), date: z.string() }),
+  /** PokeViews' own numbers; null for cards added by hand. */
+  pv: z.object({ raw: z.number(), psa10: z.number(), salesPerYear: z.number().int().nullable(), date: z.string() }).nullable(),
+  /** Added by hand through the app (an "Add card" issue). */
+  added: z.boolean().default(false),
+  /** Links given when the card was added, used instead of searching. */
+  hints: z.object({ pricecharting: z.url().optional(), cardmarket: z.url().optional() }).default({}),
 });
 export const ContendersFile = z.object({ fetchedAt: z.string(), source: z.string(), cards: z.array(Contender) });
 
@@ -43,6 +48,8 @@ export const TcgdexEntry = z.object({
   /** TCGplayer market price (USD), used to sanity-check the Cardmarket match. */
   tcgplayerMarket: z.number().nullable(),
   matchedBy: z.string(),
+  /** TCGdex image base URL (append "/high.webp"); used for cards without a PokeViews image. */
+  image: z.string().nullable().optional(),
 });
 export const TcgdexFile = z.record(z.string(), TcgdexEntry);
 
@@ -73,6 +80,7 @@ export const PATHS = {
   cardmarket: 'data/cardmarket.json',
   out: 'public/cards.json',
   img: 'public/img',
+  manual: 'data/manual.json',
 } as const;
 
 export async function readJson<T>(path: string, schema: z.ZodType<T>, fallback?: T): Promise<T> {
@@ -89,16 +97,7 @@ export async function writeJson(path: string, value: unknown): Promise<void> {
   await writeFile(path, `${JSON.stringify(value, null, 1)}\n`);
 }
 
-export function slug(...parts: (string | null | undefined)[]): string {
-  return parts
-    .filter(Boolean)
-    .join(' ')
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
+export { slug } from '../../shared/slug.ts';
 
 /** "Ditto (1st Edition)" → { name: "Ditto", variant: "1st Edition" } */
 export function splitVariant(fullName: string): { name: string; variant: string | null } {

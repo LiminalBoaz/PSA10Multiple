@@ -1,6 +1,6 @@
 // Step 1: the card list behind PokeViews' grading-opportunity heatmap.
 import { z } from 'zod';
-import { PATHS, slug, splitVariant, writeJson, type Contender } from './lib/files.ts';
+import { Contender as ContenderSchema, PATHS, readJson, slug, splitVariant, writeJson, type Contender } from './lib/files.ts';
 import { getText } from './lib/http.ts';
 
 const SOURCE = 'https://storage.googleapis.com/pokeviews-prod/grading/grading_opportunity.json.gz';
@@ -39,14 +39,20 @@ export function toContender(r: z.infer<typeof PvRow>): Contender {
     imageUrl: r.image_url,
     ...idsFromImage(r.image_url),
     pv: { raw: r.ungraded_price, psa10: r.psa_10_price, salesPerYear: r.annual_sales_volume, date: r.date },
+    added: false,
+    hints: {},
   };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const rows = z.array(PvRow).parse(JSON.parse(await getText(SOURCE, { maxAgeH: 6 })));
-  const cards = rows.map(toContender);
-  const dupes = cards.length - new Set(cards.map((c) => c.id)).size;
+  const fromPv = rows.map(toContender);
+  const dupes = fromPv.length - new Set(fromPv.map((c) => c.id)).size;
   if (dupes) throw new Error(`${dupes} duplicate card ids`);
+  // Cards added by hand stay on the list across refreshes (unless PokeViews lists them too).
+  const manual = await readJson(PATHS.manual, z.array(ContenderSchema), []);
+  const ids = new Set(fromPv.map((c) => c.id));
+  const cards = [...fromPv, ...manual.filter((c) => !ids.has(c.id))];
   await writeJson(PATHS.contenders, { fetchedAt: new Date().toISOString(), source: SOURCE, cards });
-  console.log(`${cards.length} contenders (PokeViews data of ${rows[0]?.date}) → ${PATHS.contenders}`);
+  console.log(`${fromPv.length} PokeViews cards (data of ${rows[0]?.date}) + ${cards.length - fromPv.length} added by hand → ${PATHS.contenders}`);
 }

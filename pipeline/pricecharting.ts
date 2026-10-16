@@ -47,9 +47,16 @@ export function parseProduct(html: string): { url: string | null; title: string;
   };
 }
 
-export function mismatch(usd: PcEntry['usd'], pv: Contender['pv']): number {
+export function mismatch(usd: PcEntry['usd'], pv: NonNullable<Contender['pv']>): number {
   const rel = (a: number | null, b: number) => (a == null ? 1 : Math.abs(a - b) / b);
   return (rel(usd.raw, pv.raw) + rel(usd.psa10, pv.psa10)) / 2;
+}
+
+/** "Umbreon VMAX #215 · Pokemon Evolving Skies" carries card number "215" (leading zeros ignored). */
+export function titleHasNumber(title: string, number: string | null): boolean {
+  if (!number) return true;
+  const n = number.replace(/^([A-Za-z]*)0*(\d)/, '$1$2');
+  return new RegExp(`#\\s*${n.replace(/\d+$/, '')}0*${n.match(/\d+$/)?.[0] ?? ''}\\b`, 'i').test(title);
 }
 
 const norm = (s: string) => s.toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').trim();
@@ -82,6 +89,11 @@ async function search(q: string): Promise<{ rows: SearchRow[]; direct: ReturnTyp
 }
 
 export async function findOnPriceCharting(c: Contender): Promise<PcEntry | null> {
+  // A link given when the card was added wins over searching.
+  if (c.hints.pricecharting) {
+    const prod = parseProduct(await getText(c.hints.pricecharting, { paceMs: 1500 }));
+    if (prod) return { url: prod.url ?? c.hints.pricecharting, title: prod.title, usd: prod.usd, mismatch: 0, fetchedAt: new Date().toISOString() };
+  }
   const queries = [
     [c.name, c.number, c.set === 'Promo' ? 'promo' : c.set],
     [c.name, c.variant, c.number],
@@ -95,7 +107,8 @@ export async function findOnPriceCharting(c: Contender): Promise<PcEntry | null>
     for (const p of pages) {
       const prod = parseProduct(await getText(p.url, { paceMs: 1500 }));
       if (!prod || !setMatches(prod.title, c)) continue;
-      const m = mismatch(prod.usd, c.pv);
+      // Without PokeViews' prices to compare, the set and card number must match exactly.
+      const m = c.pv ? mismatch(prod.usd, c.pv) : titleHasNumber(prod.title, c.number) ? 0 : 1;
       if (!best || m < best.mismatch) best = { url: prod.url ?? p.url, title: prod.title, usd: prod.usd, mismatch: Math.round(m * 1000) / 1000, fetchedAt: new Date().toISOString() };
       if (m < 0.05) return best;
     }

@@ -15,6 +15,10 @@ describe('parseCmUrl', () => {
       code: 'SVP053',
     });
   });
+  it('reads older URLs that end in the version', () => {
+    expect(parseCmUrl('https://www.cardmarket.com/en/Pokemon/Products/Singles/Evolving-Skies/Umbreon-VMAX-V3')).toMatchObject({ version: 3, code: '' });
+    expect(parseCmUrl('https://www.cardmarket.com/en/Pokemon/Products/Singles/Celebrations/Blastoise')).toMatchObject({ version: null, code: 'Blastoise' });
+  });
   it('rejects non-product URLs', () => {
     expect(parseCmUrl('https://www.cardmarket.com/en/Pokemon/Products/Search?searchString=mew')).toBeNull();
     expect(parseCmUrl('not a url')).toBeNull();
