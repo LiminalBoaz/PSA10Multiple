@@ -159,3 +159,30 @@ describe('titleHasNumber', () => {
     expect(titleHasNumber('Umbreon VMAX #2150 · X', '215')).toBe(false);
   });
 });
+
+describe('pcSetName (TCGdex set → PriceCharting set)', () => {
+  it('folds subsets into the main set and promos into "Promo"', async () => {
+    const { pcSetName } = await import('../shared/sets.ts');
+    expect(pcSetName('Silver Tempest Trainer Gallery')).toBe('Silver Tempest');
+    expect(pcSetName('Crown Zenith Galarian Gallery')).toBe('Crown Zenith');
+    expect(pcSetName('Celebrations Classic Collection')).toBe('Celebrations');
+    expect(pcSetName('Hidden Fates Shiny Vault')).toBe('Hidden Fates');
+    expect(pcSetName('SVP Black Star Promos')).toBe('Promo');
+    expect(pcSetName('Pokémon GO')).toBe('Go');
+    expect(pcSetName('Evolving Skies')).toBe('Evolving Skies');
+  });
+});
+
+describe('Add card requests from the app', () => {
+  it('reads the TCGdex id the app sends', async () => {
+    const { contenderFromForm, parseIssueForm } = await import('../pipeline/addcard.ts');
+    const { issueBody } = await import('../src/lib/github.ts');
+    const body = issueBody({ name: 'Umbreon VMAX', set: 'Evolving Skies', number: '215', tcgdex: 'swsh7-215' });
+    const c = contenderFromForm(parseIssueForm(body));
+    expect(c).toMatchObject({ id: 'umbreon-vmax-evolving-skies-215', number: '215', hints: { tcgdex: 'swsh7-215' } });
+  });
+  it('rejects a bad TCGdex id', async () => {
+    const { contenderFromForm } = await import('../pipeline/addcard.ts');
+    expect(() => contenderFromForm({ 'card name': 'Mew', set: 'X', 'tcgdex id': 'a b; c' })).toThrow();
+  });
+});

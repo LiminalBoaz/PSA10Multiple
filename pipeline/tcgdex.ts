@@ -90,6 +90,10 @@ async function entryFor(cardId: string, c: Contender): Promise<{ entry: TcgdexEn
  * 3. Any set, name and number → TCGplayer-id match only.
  */
 export async function matchTcgdex(c: Contender): Promise<TcgdexEntry | null> {
+  if (c.hints.tcgdex) {
+    const r = await entryFor(c.hints.tcgdex, c).catch(() => null);
+    if (r) return { ...r.entry, matchedBy: 'TCGdex id from the app' };
+  }
   const want = normName(c.name);
   const nameOk = (n: string) => normName(n).startsWith(want.slice(0, 5)) || want.startsWith(normName(n).slice(0, 5));
   const inSets: { id: string; localId: string; name: string }[] = [];

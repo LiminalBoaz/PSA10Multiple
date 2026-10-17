@@ -1,6 +1,7 @@
 // Step 5: merge PokeViews + PriceCharting + TCGdex/Cardmarket into public/cards.json, make thumbnails,
 // print a quality report, and refuse to publish data that is too thin to trust.
 import sharp from 'sharp';
+import { z } from 'zod';
 import { existsSync } from 'node:fs';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { DataFile, type Card } from '../shared/schema.ts';
@@ -124,7 +125,8 @@ function cardmarketPart(
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const { cards: contenders } = await readJson(PATHS.contenders, ContendersFile);
+  const excluded = new Set(await readJson(PATHS.excluded, z.array(z.string()), []));
+  const contenders = (await readJson(PATHS.contenders, ContendersFile)).cards.filter((c) => !excluded.has(c.id));
   const pc = await readJson(PATHS.pricecharting, PriceChartingFile, {});
   const td = await readJson(PATHS.tcgdex, TcgdexFile, {});
   const cm = await readJson(PATHS.cardmarket, CardmarketFile, {});
@@ -190,7 +192,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   ].join('\n');
   await writeFile('data/quality.md', `${md}\n`);
 
-  const data = DataFile.parse({ version: 3, generatedAt: new Date().toISOString(), fx, defaults: { gradingFeeEur: GRADING_FEE_EUR }, cards });
+    // The date shown in the app: when the oldest PriceCharting prices were fetched, not when this file was built.
+  const fetched = contenders.map((c) => pc[c.id]?.fetchedAt).filter((d): d is string => Boolean(d)).sort();
+  const data = DataFile.parse({ version: 3, generatedAt: fetched[0] ?? new Date().toISOString(), fx, defaults: { gradingFeeEur: GRADING_FEE_EUR }, cards });
   await writeJson(PATHS.out, data);
 
   const total = cards.length;

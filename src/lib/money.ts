@@ -2,13 +2,11 @@ import type { Card } from '../../shared/schema.ts';
 
 /** Price slots for the filter chips, on the raw price in euros. */
 export const BUCKETS = [
-  { id: '0-25', label: '€0–25', min: 0, max: 25 },
-  { id: '25-50', label: '€25–50', min: 25, max: 50 },
+  { id: '0-50', label: '€0–50', min: 0, max: 50 },
   { id: '50-100', label: '€50–100', min: 50, max: 100 },
   { id: '100-250', label: '€100–250', min: 100, max: 250 },
   { id: '250-500', label: '€250–500', min: 250, max: 500 },
-  { id: '500-1000', label: '€500–1000', min: 500, max: 1000 },
-  { id: '1000+', label: '€1000+', min: 1000, max: Number.POSITIVE_INFINITY },
+  { id: '500+', label: '€500+', min: 500, max: Number.POSITIVE_INFINITY },
 ] as const;
 
 export type BucketId = (typeof BUCKETS)[number]['id'];

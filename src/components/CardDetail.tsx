@@ -35,6 +35,7 @@ export function CardDetail({ row, data, myPrice, onSetMyPrice, onHide, onClose }
   const ref = useRef<HTMLDialogElement>(null);
   const scroller = useRef<HTMLDivElement>(null);
   const back = useRef<HTMLButtonElement>(null);
+  const drag = useRef<{ y: number; dy: number } | null>(null);
   const { card, a } = row;
   const cm = card.cm;
   const rate = data.fx.usdToEur;
@@ -44,10 +45,38 @@ export function CardDetail({ row, data, myPrice, onSetMyPrice, onHide, onClose }
   useEffect(() => {
     const d = ref.current;
     if (d && !d.open) d.showModal();
-    // Always open at the top, with focus on "back" (focusing a lower control would scroll the page down).
+    // Always open at the top, with focus on "Close" (focusing a lower control would scroll the sheet down).
     scroller.current?.scrollTo(0, 0);
     back.current?.focus({ preventScroll: true });
   }, [card.id]);
+
+  // Pull the sheet down from the top to close it.
+  const onTouchStart = (e: TouchEvent) => {
+    drag.current = (scroller.current?.scrollTop ?? 0) <= 0 ? { y: e.touches[0]!.clientY, dy: 0 } : null;
+  };
+  const onTouchMove = (e: TouchEvent) => {
+    const d = drag.current;
+    const sheet = ref.current;
+    if (!d || !sheet) return;
+    d.dy = e.touches[0]!.clientY - d.y;
+    if (d.dy > 0) {
+      e.preventDefault();
+      sheet.style.transition = 'none';
+      sheet.style.transform = `translateY(${d.dy}px)`;
+    } else {
+      sheet.style.transform = '';
+      drag.current = null;
+    }
+  };
+  const onTouchEnd = () => {
+    const d = drag.current;
+    const sheet = ref.current;
+    drag.current = null;
+    if (!sheet) return;
+    sheet.style.transition = '';
+    if (d && d.dy > 110) onClose();
+    else sheet.style.transform = '';
+  };
 
   const grades = [
     { label: 'Grade 8', eur: a.g8, usd: card.usd.g8, net: a.net8 },
@@ -64,14 +93,15 @@ export function CardDetail({ row, data, myPrice, onSetMyPrice, onHide, onClose }
         e.preventDefault();
         onClose();
       }}
+      onClick={(e) => {
+        if (e.target === ref.current) onClose();
+      }}
     >
-      <div class="detail-scroll" ref={scroller}>
+      <div class="detail-scroll" ref={scroller} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} onTouchCancel={onTouchEnd}>
         <header class="detail-bar glass">
+          <span class="grabber" aria-hidden="true" />
           <button type="button" class="back" ref={back} onClick={onClose}>
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-              <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            Cards
+            Close
           </button>
           <nav class="ext">
             <a href={cardmarketUrl(card.links.cardmarket, card.variant)} target="_blank" rel="noopener noreferrer">

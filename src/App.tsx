@@ -32,12 +32,15 @@ async function fetchData(): Promise<DataFile> {
 export function App() {
   const [load, setLoad] = useState<Load>({ status: 'loading' });
   const [query, setQuery] = useState('');
-  const [bucketList, setBucketList] = usePref<BucketId[]>('buckets', []);
+  const [savedBuckets, setBucketList] = usePref<BucketId[]>('buckets', []);
+  // Slots saved by an older version may no longer exist.
+  const bucketList = useMemo(() => savedBuckets.filter((b) => BUCKETS.some((x) => x.id === b)), [savedBuckets]);
   const [sort, setSort] = usePref<SortKey>('sort', 'profit');
   const [feeEur, setFeeEur] = usePref<number | null>('feeEur', null);
   const [hidden, setHidden] = usePref<string[]>('hidden', []);
   const [myPrices, setMyPrices] = usePref<Record<string, number>>('myPrices', {});
   const [pending, setPending] = usePref<PendingCard[]>('pending', []);
+  const [ghToken, setGhToken] = usePref<string | null>('ghToken', null);
   const [overlay, setOverlay] = useState<Overlay>(null);
   const [toast, setToast] = useState<ToastMsg | null>(null);
   const toastTimer = useRef<number>();
@@ -93,6 +96,7 @@ export function App() {
   const fee = feeEur ?? data?.defaults.gradingFeeEur ?? 25;
   const rate = data?.fx.usdToEur ?? 1;
   const hiddenSet = useMemo(() => new Set(hidden), [hidden]);
+  const knownIds = useMemo(() => new Set(data?.cards.map((c) => c.id) ?? []), [data]);
   const buckets = useMemo(() => new Set(bucketList), [bucketList]);
 
   const rows: Row[] = useMemo(
@@ -194,13 +198,7 @@ export function App() {
 
           <div class="toolbar">
             <span class="count">
-              {searching ? (
-                `${visible.length} found in all cards`
-              ) : (
-                <>
-                  {visible.length} cards<span class="legend"> · green = PSA 10 profit</span>
-                </>
-              )}
+              {searching ? `${visible.length} found in all cards` : `${visible.length} cards`}
             </span>
             <label class="sort">
               <span class="sr-only">Sort</span>
@@ -266,14 +264,22 @@ export function App() {
           onFee={(v) => setFeeEur(v === data.defaults.gradingFeeEur ? null : v)}
           onRestore={(id) => setHidden((h) => h.filter((x) => x !== id))}
           onClearPrices={() => setMyPrices({})}
+          token={ghToken}
+          onToken={setGhToken}
           onClose={close}
         />
       )}
       {overlay?.kind === 'add' && (
         <AddCardSheet
+          token={ghToken}
+          knownIds={knownIds}
           pending={pending}
-          onSubmitted={(p) => setPending((list) => [...list.filter((x) => x.id !== p.id), p])}
+          onRequested={(p) => {
+            setPending((list) => [...list.filter((x) => x.id !== p.id), p]);
+            showToast({ text: `Adding ${p.name}. Prices in about 5 minutes.` });
+          }}
           onForget={(id) => setPending((list) => list.filter((x) => x.id !== id))}
+          onOpenSettings={() => setOverlay({ kind: 'settings' })}
           onClose={close}
         />
       )}

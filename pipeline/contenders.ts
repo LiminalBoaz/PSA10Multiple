@@ -52,7 +52,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   // Cards added by hand stay on the list across refreshes (unless PokeViews lists them too).
   const manual = await readJson(PATHS.manual, z.array(ContenderSchema), []);
   const ids = new Set(fromPv.map((c) => c.id));
-  const cards = [...fromPv, ...manual.filter((c) => !ids.has(c.id))];
+  const excluded = new Set(await readJson(PATHS.excluded, z.array(z.string()), []));
+  const cards = [...fromPv, ...manual.filter((c) => !ids.has(c.id))].filter((c) => !excluded.has(c.id));
   await writeJson(PATHS.contenders, { fetchedAt: new Date().toISOString(), source: SOURCE, cards });
   console.log(`${fromPv.length} PokeViews cards (data of ${rows[0]?.date}) + ${cards.length - fromPv.length} added by hand → ${PATHS.contenders}`);
 }

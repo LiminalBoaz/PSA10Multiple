@@ -1,6 +1,6 @@
 {
  "version": 3,
- "generatedAt": "2026-10-16T23:14:13.083Z",
+ "generatedAt": "2026-10-16T21:54:27.101Z",
  "fx": {
   "usdToEur": 0.88865,
   "date": "2026-10-16"
@@ -1817,42 +1817,6 @@
     }
    },
    "cmNote": "Cardmarket is under half the US raw price: check the copies before buying."
-  },
-  {
-   "id": "umbreon-skyridge-h30",
-   "name": "Umbreon",
-   "set": "Skyridge",
-   "number": "H30",
-   "variant": null,
-   "image": "img/umbreon-skyridge-h30.webp",
-   "added": false,
-   "salesPerYear": 12,
-   "links": {
-    "pricecharting": "https://www.pricecharting.com/game/pokemon-skyridge/umbreon-h30",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Skyridge/Umbreon-V1-SKH30"
-   },
-   "usd": {
-    "raw": 1744.91,
-    "g8": 5509.37,
-    "g9": 12056.73,
-    "psa10": 56915.27
-   },
-   "cm": {
-    "idProduct": null,
-    "checkedAt": "2026-10-16T22:20:46.280Z",
-    "guide": null,
-    "listings": {
-     "avg10": 4499.5,
-     "median": 4499.5,
-     "min": 4000,
-     "max": 4999,
-     "n": 2,
-     "nl": null,
-     "nlChecked": false,
-     "fetchedAt": "2026-10-16T22:20:46.280Z"
-    }
-   },
-   "cmNote": "Cardmarket is 2.9× the US raw price: few copies are listed in Europe."
   },
   {
    "id": "mew-triumphant-97",

@@ -1,30 +1,34 @@
 name: Add card
 
-# Runs when the repository owner (or a collaborator) opens an "Add card: …" issue from the app.
-# Fetches PriceCharting and Cardmarket prices for that one card, commits them and redeploys.
+# Adds every open "Add card: …" request (from the app or the GitHub form) opened by the owner or a
+# collaborator: fetches PriceCharting, TCGdex and Cardmarket prices, commits, redeploys, closes the requests.
+# Runs never overlap; a run picks up every request still open, so nothing is lost when several arrive at once.
 on:
   issues:
     types: [opened]
+  workflow_dispatch:
 
 permissions:
   contents: write
   issues: write
 
 concurrency:
-  group: data
+  group: add-card
   cancel-in-progress: false
 
 jobs:
   add:
     if: >-
-      startsWith(github.event.issue.title, 'Add card') &&
-      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+      github.event_name == 'workflow_dispatch' ||
+      (startsWith(github.event.issue.title, 'Add card') &&
+       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association))
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
+    outputs:
+      count: ${{ steps.cards.outputs.count }}
     env:
       APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
       GH_TOKEN: ${{ github.token }}
-      ISSUE: ${{ github.event.issue.number }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -32,42 +36,50 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - name: Read the card from the issue
-        id: card
-        env:
-          ISSUE_BODY: ${{ github.event.issue.body }}
-        run: npx tsx pipeline/addcard.ts
-      - name: Fetch prices
-        env:
-          CARD: ${{ steps.card.outputs.id }}
+      - name: Read open requests
+        id: cards
         run: |
-          npx tsx pipeline/pricecharting.ts "$CARD"
-          npx tsx pipeline/tcgdex.ts "$CARD"
-          npx tsx pipeline/cmproducts.ts "$CARD"
-          if [ -n "$APIFY_TOKEN" ]; then npx tsx pipeline/cardmarket.ts "$CARD"; else echo "No APIFY_TOKEN secret: skipping live Cardmarket listings"; fi
-          npx tsx pipeline/build.ts | tee build.log
-      - name: Commit
+          gh api "repos/${{ github.repository }}/issues?state=open&per_page=100" > "$RUNNER_TEMP/issues.json"
+          npx tsx pipeline/addcard.ts "$RUNNER_TEMP/issues.json" "$RUNNER_TEMP/added.json"
+      - name: Fetch prices
+        if: steps.cards.outputs.ids != ''
         env:
-          NAME: ${{ steps.card.outputs.name }}
+          IDS: ${{ steps.cards.outputs.ids }}
+        run: |
+          # ids are slugs (a-z, 0-9, -), safe to split on spaces
+          npx tsx pipeline/pricecharting.ts $IDS
+          npx tsx pipeline/tcgdex.ts $IDS
+          npx tsx pipeline/cmproducts.ts $IDS
+          if [ -n "$APIFY_TOKEN" ]; then npx tsx pipeline/cardmarket.ts $IDS; else echo "No APIFY_TOKEN secret: skipping live Cardmarket listings"; fi
+          npx tsx pipeline/build.ts
+      - name: Commit
+        if: steps.cards.outputs.ids != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data public
-          git commit -q -m "Add card: $NAME" || echo "No changes"
-          git pull -q --rebase && git push -q
-      - name: Report back on the issue
-        if: always()
+          git commit -q -m "Add cards: $(jq -r '[.[] | select(.name) | .name] | join(", ")' "$RUNNER_TEMP/added.json")" || echo "No changes"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
+      - name: Report back
+        if: always() && steps.cards.outputs.count != '0' && steps.cards.outputs.count != ''
         env:
-          NAME: ${{ steps.card.outputs.name }}
           OUTCOME: ${{ job.status }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          if [ "$OUTCOME" = "success" ]; then
-            gh issue comment "$ISSUE" --body "Added **$NAME**. Prices will show in the app after the deploy finishes (about a minute)."
-            gh issue close "$ISSUE"
-          else
-            gh issue comment "$ISSUE" --body "Couldn't add this card. Check the card name, set and number, or paste the PriceCharting link, then open a new issue. Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          fi
+          jq -c '.[]' "$RUNNER_TEMP/added.json" | while read -r row; do
+            n=$(jq -r '.issue' <<<"$row"); name=$(jq -r '.name // empty' <<<"$row"); err=$(jq -r '.error // empty' <<<"$row")
+            if [ -n "$err" ]; then
+              gh issue comment "$n" --body "Couldn't add this card: $err Open a new request with the name, set and number."
+              gh issue close "$n"
+            elif [ "$OUTCOME" = "success" ]; then
+              gh issue comment "$n" --body "Added **$name**. It shows in the app after the deploy (about a minute)."
+              gh issue close "$n"
+            else
+              gh issue comment "$n" --body "Fetching prices failed; it will be retried with the next request. Details: $RUN_URL"
+            fi
+          done
 
   deploy:
     needs: add
+    if: needs.add.outputs.count != '0' && needs.add.outputs.count != ''
     uses: ./.github/workflows/deploy.yml

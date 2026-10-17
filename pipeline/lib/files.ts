@@ -25,7 +25,7 @@ export const Contender = z.object({
   /** Added by hand through the app (an "Add card" issue). */
   added: z.boolean().default(false),
   /** Links given when the card was added, used instead of searching. */
-  hints: z.object({ pricecharting: z.url().optional(), cardmarket: z.url().optional() }).default({}),
+  hints: z.object({ pricecharting: z.url().optional(), cardmarket: z.url().optional(), tcgdex: z.string().optional() }).default({}),
 });
 export const ContendersFile = z.object({ fetchedAt: z.string(), source: z.string(), cards: z.array(Contender) });
 
@@ -81,6 +81,8 @@ export const PATHS = {
   out: 'public/cards.json',
   img: 'public/img',
   manual: 'data/manual.json',
+  /** Card ids removed from the list for everyone (PokeViews keeps listing them). */
+  excluded: 'data/excluded.json',
 } as const;
 
 export async function readJson<T>(path: string, schema: z.ZodType<T>, fallback?: T): Promise<T> {

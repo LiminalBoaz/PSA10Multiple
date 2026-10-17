@@ -89,16 +89,16 @@ describe('raw price source', () => {
 
 describe('price slots', () => {
   it('match the agreed ranges, edges going up', () => {
-    expect([0, 24.99, 25, 49.99, 50, 100, 250, 499.99, 500, 999.99, 1000, 25000].map(bucketOf)).toEqual([
-      '0-25', '0-25', '25-50', '25-50', '50-100', '100-250', '250-500', '250-500', '500-1000', '500-1000', '1000+', '1000+',
+    expect([0, 24.99, 49.99, 50, 99.99, 100, 250, 499.99, 500, 25000].map(bucketOf)).toEqual([
+      '0-50', '0-50', '0-50', '50-100', '50-100', '100-250', '250-500', '250-500', '500+', '500+',
     ]);
     expect([null, Number.NaN, -1].map(bucketOf)).toEqual([null, null, null]);
   });
   it('select several; "All" clears', () => {
-    let s = toggleBucket(new Set(), '0-25');
-    s = toggleBucket(s, '25-50');
-    expect([...s].sort()).toEqual(['0-25', '25-50']);
-    expect([...toggleBucket(s, '0-25')]).toEqual(['25-50']);
+    let s = toggleBucket(new Set(), '0-50');
+    s = toggleBucket(s, '500+');
+    expect([...s].sort()).toEqual(['0-50', '500+']);
+    expect([...toggleBucket(s, '0-50')]).toEqual(['500+']);
     expect(toggleBucket(s, 'all').size).toBe(0);
   });
 });
@@ -111,8 +111,9 @@ describe('visibleRows', () => {
   const rows = [mk('a', 'Pikachu', 10), mk('b', 'Charizard ex', 30), mk('c', 'Mewtwo GX', 600)];
   const sel = (...ids: BucketId[]) => new Set(ids);
   it('shows everything with nothing selected', () => expect(visibleRows(rows, '', sel()).length).toBe(3));
-  it('combines selected slots', () => expect(visibleRows(rows, '', sel('0-25', '25-50')).map((r) => r.card.id)).toEqual(['a', 'b']));
-  it('search ignores the slots and looks at every card', () => expect(visibleRows(rows, 'mewtwo', sel('0-25')).map((r) => r.card.id)).toEqual(['c']));
+  it('combines selected slots', () => expect(visibleRows(rows, '', sel('0-50', '500+')).map((r) => r.card.id)).toEqual(['a', 'b', 'c']));
+  it('one slot', () => expect(visibleRows(rows, '', sel('500+')).map((r) => r.card.id)).toEqual(['c']));
+  it('search ignores the slots and looks at every card', () => expect(visibleRows(rows, 'mewtwo', sel('0-50')).map((r) => r.card.id)).toEqual(['c']));
 });
 
 describe('matchesQuery', () => {

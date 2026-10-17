@@ -9,7 +9,14 @@ Phone-first scanner for Pokémon cards worth grading, built for vendor booths. L
 
 ## Add a card
 
-Tap **+** in the app, fill in name, set and number (optionally paste the PriceCharting or Cardmarket link) and tap **Fetch prices**. GitHub opens with the card filled in; tap **Create**. The *Add card* workflow fetches PriceCharting, TCGdex and Cardmarket for that card, commits it and redeploys; the app shows it within about 5 minutes. Only the repository owner and collaborators can trigger it. Live Cardmarket listings need the `APIFY_TOKEN` repository secret.
+Tap **+**, search the card by name, tap the right one (results show the card image) and tap **Add**. Prices appear in the app in about 5 minutes. Can't find it? "Enter it yourself" takes name, set, number and optional PriceCharting/Cardmarket links.
+
+- **One-tap:** in Settings → *One-tap adding*, paste a fine-grained GitHub token with access to only this repository and **Issues: Read and write**. It is stored only on that phone. Without it, **Add on GitHub** opens the pre-filled form; tap *Create*.
+- Every add is an "Add card: …" issue. The *Add card* workflow picks up all open requests from the owner or collaborators, fetches PriceCharting, TCGdex and Cardmarket (live listings need the `APIFY_TOKEN` secret), commits, redeploys and closes the requests.
+
+## Remove a card for everyone
+
+Add its id to `data/excluded.json` (e.g. `"umbreon-skyridge-h30"`) and run `npm run data:build`. Removing a card in the app only hides it on that phone.
 
 ## Refresh prices
 

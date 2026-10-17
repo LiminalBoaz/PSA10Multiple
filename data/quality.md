@@ -1,4 +1,4 @@
-# Data quality (2026-10-16)
+# Data quality (2026-10-17)
 
 Raw = mean of up to 10 cheapest Near Mint English Cardmarket listings (slabs and damaged copies removed). Ratio = raw ÷ US raw (PriceCharting, converted to EUR).
 
@@ -55,7 +55,6 @@ Raw = mean of up to 10 cheapest Near Mint English Cardmarket listings (slabs and
 | [Rayquaza EX](https://www.cardmarket.com/en/Pokemon/Products/Singles/Dragons-Exalted/Rayquaza-EX-DRX85) | Dragons Exalted | 85 | 35.79 | listings | 10 | 24.22 | 1.48 | 222.16 | 3032.52 |  |
 | [Vaporeon](https://www.cardmarket.com/en/Pokemon/Products/Singles/Skyridge/Vaporeon-V1-SKH31) | Skyridge | H31 | 750.00 | listings | 1 | 384.87 | 1.95 | 1898.31 | 15757.03 |  |
 | [Kabutops](https://www.cardmarket.com/en/Pokemon/Products/Singles/Skyridge/Kabutops-V2-SK150) | Skyridge | 150 | 173.33 | listings | 3 | 513.98 | 0.34 | 3154.71 | 17363.21 | Cardmarket is under half the US raw price: check the copies before buying. |
-| [Umbreon](https://www.cardmarket.com/en/Pokemon/Products/Singles/Skyridge/Umbreon-V1-SKH30) | Skyridge | H30 | 4499.50 | listings | 2 | 1550.61 | 2.90 | 10714.21 | 50577.75 | Cardmarket is 2.9× the US raw price: few copies are listed in Europe. |
 | [Mew](https://www.cardmarket.com/en/Pokemon/Products/Singles/Triumphant/Mew-TM97) | Triumphant | 97 | 847.41 | listings | 1 | 289.85 | 2.92 | 1962.48 | 14952.41 | Cardmarket is 2.9× the US raw price: few copies are listed in Europe. |
 | [Dragonite](https://www.cardmarket.com/en/Pokemon/Products/Singles/Wizards-Black-Star-Promos/Dragonite-WP5) | Promo | 5 | 95.46 | listings | 8 | 35.55 | 2.69 | 179.95 | 1604.69 | Cardmarket is 2.7× the US raw price: few copies are listed in Europe. |
 | [Haunter (1st Edition)](https://www.cardmarket.com/en/Pokemon/Products/Singles/Fossil/Haunter-V1-FO6) | Fossil | 6 | 175.00 | listings | 2 | 75.72 | 2.31 | 444.33 | 3465.74 |  |

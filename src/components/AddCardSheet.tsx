@@ -1,33 +1,108 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
+import { pcSetName } from '../../shared/sets.ts';
 import { slug } from '../../shared/slug.ts';
+import { issueFormUrl, requestCard, type CardRequest } from '../lib/github.ts';
 import type { PendingCard } from '../lib/prefs.ts';
+import { searchCards, type FoundCard } from '../lib/tcgdex.ts';
 import { Sheet } from './Sheet.tsx';
 
-const REPO = import.meta.env.VITE_REPO || 'LiminalBoaz/PSA10Multiple';
-
 interface Props {
+  token: string | null;
+  knownIds: Set<string>;
   pending: PendingCard[];
-  onSubmitted: (p: PendingCard) => void;
+  onRequested: (p: PendingCard) => void;
   onForget: (id: string) => void;
+  onOpenSettings: () => void;
   onClose: () => void;
 }
 
-/** GitHub's "new issue" page with the Add card form already filled in. */
-export function issueUrl(f: { name: string; set: string; number: string; pricecharting: string; cardmarket: string }): string {
-  const q = new URLSearchParams({ template: 'add-card.yml', title: `Add card: ${f.name} (${f.set}${f.number ? ` ${f.number}` : ''})` });
-  for (const [k, v] of Object.entries(f)) if (v.trim()) q.set(k, v.trim());
-  return `https://github.com/${REPO}/issues/new?${q}`;
-}
+const requestId = (c: CardRequest) => slug(c.name, c.set, c.number.replace(/^#/, '') || null);
 
 function ago(ms: number): string {
   const m = Math.round((Date.now() - ms) / 60000);
   return m < 1 ? 'just now' : `${m} min ago`;
 }
 
-export function AddCardSheet({ pending, onSubmitted, onForget, onClose }: Props) {
-  const [f, setF] = useState({ name: '', set: '', number: '', pricecharting: '', cardmarket: '' });
-  const ready = f.name.trim().length > 1 && f.set.trim().length > 1;
-  const field = (key: keyof typeof f, label: string, placeholder: string, optional = false) => (
+export function AddCardSheet({ token, knownIds, pending, onRequested, onForget, onOpenSettings, onClose }: Props) {
+  const [q, setQ] = useState('');
+  const [results, setResults] = useState<FoundCard[] | null>(null);
+  const [searching, setSearching] = useState(false);
+  const [searchError, setSearchError] = useState('');
+  const [picked, setPicked] = useState<FoundCard | null>(null);
+  const [manual, setManual] = useState(false);
+  const [form, setForm] = useState({ name: '', set: '', number: '', pricecharting: '', cardmarket: '' });
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+
+  // Search as you type (after a short pause), cancelling the previous request.
+  useEffect(() => {
+    setPicked(null);
+    if (q.trim().length < 3) {
+      setResults(null);
+      return;
+    }
+    const ctrl = new AbortController();
+    const t = window.setTimeout(() => {
+      setSearching(true);
+      setSearchError('');
+      searchCards(q, ctrl.signal)
+        .then(setResults)
+        .catch((e) => !ctrl.signal.aborted && setSearchError(e instanceof Error ? 'Search is unavailable right now. Enter the card yourself below.' : String(e)))
+        .finally(() => !ctrl.signal.aborted && setSearching(false));
+    }, 300);
+    return () => {
+      ctrl.abort();
+      window.clearTimeout(t);
+    };
+  }, [q]);
+
+  const request: CardRequest | null = manual
+    ? form.name.trim().length > 1 && form.set.trim().length > 1
+      ? { name: form.name.trim(), set: form.set.trim(), number: form.number.trim(), pricecharting: form.pricecharting, cardmarket: form.cardmarket }
+      : null
+    : picked
+      ? { name: picked.name, set: pcSetName(picked.setName), number: picked.number, tcgdex: picked.id }
+      : null;
+  const id = request ? requestId(request) : '';
+  const already = Boolean(id && knownIds.has(id));
+  const waiting = Boolean(id && pending.some((p) => p.id === id));
+
+  const done = (r: CardRequest) => {
+    onRequested({ id: requestId(r), name: r.name, set: r.set, number: r.number, at: Date.now() });
+    setPicked(null);
+    setQ('');
+    setForm({ name: '', set: '', number: '', pricecharting: '', cardmarket: '' });
+  };
+
+  const add = async () => {
+    if (!request || !token) return;
+    setBusy(true);
+    setError('');
+    try {
+      await requestCard(token, request);
+      done(request);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const action = !request ? null : already ? (
+    <p class="hint">Already on your list.</p>
+  ) : waiting ? (
+    <p class="hint">Already being added.</p>
+  ) : token ? (
+    <button type="button" class="pill-btn primary wide" disabled={busy} onClick={add}>
+      {busy ? 'Adding…' : `Add ${request.name}`}
+    </button>
+  ) : (
+    <a class="pill-btn primary wide" href={issueFormUrl(request)} target="_blank" rel="noopener noreferrer" onClick={() => done(request)}>
+      Add on GitHub
+    </a>
+  );
+
+  const field = (key: keyof typeof form, label: string, placeholder: string, optional = false) => (
     <label class="field" for={`add-${key}`}>
       <span>
         {label}
@@ -37,46 +112,84 @@ export function AddCardSheet({ pending, onSubmitted, onForget, onClose }: Props)
         id={`add-${key}`}
         type={key === 'pricecharting' || key === 'cardmarket' ? 'url' : 'text'}
         autoComplete="off"
-        autoCapitalize={key === 'name' || key === 'set' ? 'words' : 'off'}
         placeholder={placeholder}
-        value={f[key]}
-        onInput={(e) => setF({ ...f, [key]: (e.currentTarget as HTMLInputElement).value })}
+        value={form[key]}
+        onInput={(e) => setForm({ ...form, [key]: (e.currentTarget as HTMLInputElement).value })}
       />
     </label>
   );
 
   return (
     <Sheet title="Add a card" onClose={onClose}>
-      <div class="panel form">
-        {field('name', 'Card name', 'e.g. Umbreon VMAX')}
-        {field('set', 'Set', 'e.g. Evolving Skies')}
-        {field('number', 'Card number', 'e.g. 215')}
-        {field('pricecharting', 'PriceCharting link', 'Paste a link', true)}
-        {field('cardmarket', 'Cardmarket link', 'Paste a link', true)}
-        {ready ? (
-          <a
-            class="pill-btn primary wide"
-            href={issueUrl(f)}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => {
-              onSubmitted({ id: slug(f.name.trim(), f.set.trim(), f.number.trim().replace(/^#/, '') || null), name: f.name.trim(), set: f.set.trim(), number: f.number.trim(), at: Date.now() });
-              setF({ name: '', set: '', number: '', pricecharting: '', cardmarket: '' });
-            }}
-          >
-            Fetch prices
-          </a>
-        ) : (
-          <button type="button" class="pill-btn primary wide" disabled>
-            Fetch prices
-          </button>
-        )}
-        <p class="hint">Opens GitHub with the card filled in. Tap “Create”, and the card shows up here with its prices in about 5 minutes.</p>
-      </div>
+      {!manual && (
+        <div class="panel">
+          <div class="search">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2" />
+              <path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <label for="add-q" class="sr-only">
+              Search any card
+            </label>
+            <input id="add-q" type="search" enterKeyHint="search" autoComplete="off" autoCorrect="off" spellcheck={false} placeholder="Search any card, e.g. umbreon vmax" value={q} onInput={(e) => setQ((e.currentTarget as HTMLInputElement).value)} />
+          </div>
+          {searching && <p class="hint">Searching…</p>}
+          {searchError && <p class="warn">{searchError}</p>}
+          {results && !searching && results.length === 0 && <p class="hint">No cards found. Check the spelling or enter it yourself below.</p>}
+          {results && results.length > 0 && (
+            <ul class="results" aria-label="Search results">
+              {results.map((r) => (
+                <li key={r.id}>
+                  <button type="button" class="result" aria-pressed={picked?.id === r.id} onClick={() => setPicked(picked?.id === r.id ? null : r)}>
+                    <span class="result-art">{r.image ? <img src={r.image} alt="" width={64} height={89} loading="lazy" /> : null}</span>
+                    <span class="result-text">
+                      <strong>{r.name}</strong>
+                      <small>
+                        {r.setName} · {r.number}
+                      </small>
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+
+      {manual && (
+        <div class="panel form">
+          {field('name', 'Card name', 'e.g. Ditto (1st Edition)')}
+          {field('set', 'Set', 'e.g. Fossil')}
+          {field('number', 'Card number', 'e.g. 3')}
+          {field('pricecharting', 'PriceCharting link', 'Paste a link', true)}
+          {field('cardmarket', 'Cardmarket link', 'Paste a link', true)}
+        </div>
+      )}
+
+      {(action || error) && (
+        <div class="add-action">
+          {action}
+          {error && <p class="warn">{error}</p>}
+          {request && !already && !waiting && (
+            <p class="hint">
+              {token ? 'Prices show up here in about 5 minutes.' : 'Opens GitHub with the card filled in; tap Create. '}
+              {!token && (
+                <button type="button" class="link" onClick={onOpenSettings}>
+                  Set up one-tap adding
+                </button>
+              )}
+            </p>
+          )}
+        </div>
+      )}
+
+      <button type="button" class="link center" onClick={() => setManual(!manual)}>
+        {manual ? 'Search for the card instead' : 'Not in the results? Enter it yourself'}
+      </button>
 
       {pending.length > 0 && (
         <section class="panel">
-          <h3 class="panel-title">Fetching prices</h3>
+          <h3 class="panel-title">Being added</h3>
           <ul class="list">
             {pending.map((p) => (
               <li key={p.id}>

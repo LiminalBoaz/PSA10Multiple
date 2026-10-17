@@ -23,6 +23,11 @@ body:
       label: Card number
       description: e.g. 215, TG05, GG10, SVP053.
   - type: input
+    id: tcgdex
+    attributes:
+      label: TCGdex id
+      description: Filled in by the app when you pick a card from its search. Leave empty otherwise.
+  - type: input
     id: pricecharting
     attributes:
       label: PriceCharting link
