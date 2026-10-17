@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/PSA10Multiple/sw.js', { scope: '/PSA10Multiple/' })})}
