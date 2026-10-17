@@ -375,9 +375,9 @@
   "via": "pokemontcg URL + TCGdex agree"
  },
  "reshiram-charizard-gx-unbroken-bonds-20": {
-  "url": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Unbroken-Bonds/Reshiram-Charizard-GX-V5-UNB20",
+  "url": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Unbroken-Bonds/Reshiram-Charizard-GX-V1-UNB20",
   "idProduct": null,
-  "via": "pokemontcg URL; TCGdex id 370729 not confirmed"
+  "via": "confirmed on Cardmarket (data/cm-urls.json)"
  },
  "magikarp-wailord-gx-team-up-161": {
   "url": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Team-Up/Magikarp-Wailord-GX-V2-TEU161",

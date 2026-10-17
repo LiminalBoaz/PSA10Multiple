@@ -183,14 +183,23 @@
    },
    "cm": {
     "idProduct": 817313,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:35:58.992Z",
     "guide": {
      "trend": 19.85,
      "low": 9,
      "avg30": 21.45,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 21.78,
+     "median": 21.99,
+     "min": 20.89,
+     "max": 22.01,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:35:58.992Z"
+    }
    },
    "cmNote": null
   },
@@ -215,14 +224,23 @@
    },
    "cm": {
     "idProduct": 720390,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:34:51.726Z",
     "guide": {
      "trend": 20.63,
      "low": 5.51,
      "avg30": 21.24,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 20.96,
+     "median": 21.74,
+     "min": 18,
+     "max": 22.19,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:34:51.726Z"
+    }
    },
    "cmNote": null
   },
@@ -1185,9 +1203,18 @@
    },
    "cm": {
     "idProduct": null,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:39:53.619Z",
     "guide": null,
-    "listings": null
+    "listings": {
+     "avg10": 60.4,
+     "median": 61.07,
+     "min": 56.2,
+     "max": 62,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:39:53.619Z"
+    }
    },
    "cmNote": null
   },
@@ -1212,9 +1239,18 @@
    },
    "cm": {
     "idProduct": null,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:40:35.619Z",
     "guide": null,
-    "listings": null
+    "listings": {
+     "avg10": 20.38,
+     "median": 20.25,
+     "min": 19,
+     "max": 21.85,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:40:35.619Z"
+    }
    },
    "cmNote": null
   },
@@ -1352,14 +1388,23 @@
    },
    "cm": {
     "idProduct": 836239,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:39:53.941Z",
     "guide": {
      "trend": 70.68,
      "low": 40,
      "avg30": 69.19,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 62.15,
+     "median": 63.87,
+     "min": 50,
+     "max": 65,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:39:53.941Z"
+    }
    },
    "cmNote": null
   },
@@ -1425,14 +1470,23 @@
    },
    "cm": {
     "idProduct": 396682,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:37:23.037Z",
     "guide": {
      "trend": 72.68,
      "low": 44.9,
      "avg30": 73.63,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 52.94,
+     "median": 53.25,
+     "min": 49,
+     "max": 55,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:37:23.037Z"
+    }
    },
    "cmNote": null
   },
@@ -1457,14 +1511,23 @@
    },
    "cm": {
     "idProduct": 381219,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:34:43.368Z",
     "guide": {
      "trend": 116.56,
      "low": 70,
      "avg30": 116,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 108.75,
+     "median": 110,
+     "min": 95,
+     "max": 115,
+     "n": 8,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:34:43.368Z"
+    }
    },
    "cmNote": null
   },
@@ -1489,14 +1552,23 @@
    },
    "cm": {
     "idProduct": 608755,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:36:49.628Z",
     "guide": {
      "trend": 64.82,
      "low": 23,
      "avg30": 78.99,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 72.1,
+     "median": 71.97,
+     "min": 66.7,
+     "max": 76.37,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:36:49.628Z"
+    }
    },
    "cmNote": null
   },
@@ -1562,14 +1634,23 @@
    },
    "cm": {
     "idProduct": 691922,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:40:02.406Z",
     "guide": {
      "trend": 45.3,
      "low": 14.9,
      "avg30": 42.15,
      "trusted": false
     },
-    "listings": null
+    "listings": {
+     "avg10": 29.6,
+     "median": 29.92,
+     "min": 28,
+     "max": 30,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:40:02.406Z"
+    }
    },
    "cmNote": null
   },
@@ -1630,14 +1711,23 @@
    },
    "cm": {
     "idProduct": 691915,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:37:56.537Z",
     "guide": {
      "trend": 81.57,
      "low": 45,
      "avg30": 78.13,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 74.58,
+     "median": 75,
+     "min": 69.92,
+     "max": 76.49,
+     "n": 9,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:37:56.537Z"
+    }
    },
    "cmNote": null
   },
@@ -1662,14 +1752,23 @@
    },
    "cm": {
     "idProduct": 482974,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:38:13.201Z",
     "guide": {
      "trend": 53.7,
      "low": 9.99,
      "avg30": 49.56,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 34.62,
+     "median": 35,
+     "min": 30,
+     "max": 36.9,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:38:13.201Z"
+    }
    },
    "cmNote": null
   },
@@ -1694,9 +1793,18 @@
    },
    "cm": {
     "idProduct": null,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:36:15.896Z",
     "guide": null,
-    "listings": null
+    "listings": {
+     "avg10": 59.79,
+     "median": 59.99,
+     "min": 58.98,
+     "max": 60,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:36:15.896Z"
+    }
    },
    "cmNote": null
   },
@@ -2286,9 +2394,18 @@
    },
    "cm": {
     "idProduct": null,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:37:31.454Z",
     "guide": null,
-    "listings": null
+    "listings": {
+     "avg10": 34.55,
+     "median": 34.92,
+     "min": 33.49,
+     "max": 34.95,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:37:31.454Z"
+    }
    },
    "cmNote": null
   },
@@ -2395,14 +2512,23 @@
    },
    "cm": {
     "idProduct": 850982,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:39:03.443Z",
     "guide": {
      "trend": 14.51,
      "low": 6.95,
      "avg30": 16.16,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 14.51,
+     "median": 14.66,
+     "min": 13.95,
+     "max": 14.66,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:39:03.443Z"
+    }
    },
    "cmNote": null
   },
@@ -2463,14 +2589,23 @@
    },
    "cm": {
     "idProduct": 733796,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:34:18.068Z",
     "guide": {
      "trend": 71.28,
      "low": 28,
      "avg30": 73.6,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 63.57,
+     "median": 65,
+     "min": 56.99,
+     "max": 66,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:34:18.068Z"
+    }
    },
    "cmNote": null
   },
@@ -2526,7 +2661,7 @@
    "salesPerYear": 730,
    "links": {
     "pricecharting": "https://www.pricecharting.com/game/pokemon-unbroken-bonds/reshiram-&-charizard-gx-20",
-    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Unbroken-Bonds/Reshiram-Charizard-GX-V5-UNB20"
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Unbroken-Bonds/Reshiram-Charizard-GX-V1-UNB20"
    },
    "usd": {
     "raw": 47.38,
@@ -2536,9 +2671,18 @@
    },
    "cm": {
     "idProduct": null,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:41:59.038Z",
     "guide": null,
-    "listings": null
+    "listings": {
+     "avg10": 62.79,
+     "median": 62.67,
+     "min": 50,
+     "max": 70,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:41:59.038Z"
+    }
    },
    "cmNote": null
   },
@@ -2727,14 +2871,23 @@
    },
    "cm": {
     "idProduct": 665290,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:34:09.749Z",
     "guide": {
      "trend": 49.12,
      "low": 22.14,
      "avg30": 54.75,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 51.44,
+     "median": 51.48,
+     "min": 49.5,
+     "max": 53,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:34:09.749Z"
+    }
    },
    "cmNote": null
   },
@@ -2759,14 +2912,23 @@
    },
    "cm": {
     "idProduct": 682293,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:36:57.791Z",
     "guide": {
      "trend": 17.94,
      "low": 11.89,
      "avg30": 20.36,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 24.17,
+     "median": 24.11,
+     "min": 23,
+     "max": 24.95,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:36:57.791Z"
+    }
    },
    "cmNote": null
   },
@@ -2791,14 +2953,23 @@
    },
    "cm": {
     "idProduct": 576785,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:34:34.765Z",
     "guide": {
      "trend": 137.3,
      "low": 93,
      "avg30": 144.82,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 108.03,
+     "median": 109.98,
+     "min": 100,
+     "max": 113.49,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:34:34.765Z"
+    }
    },
    "cmNote": null
   },
@@ -2927,14 +3098,23 @@
    },
    "cm": {
     "idProduct": 794576,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:37:22.793Z",
     "guide": {
      "trend": 30.49,
      "low": 10.99,
      "avg30": 32.62,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 34.36,
+     "median": 34.81,
+     "min": 30.04,
+     "max": 35.99,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:37:22.793Z"
+    }
    },
    "cmNote": null
   },
@@ -3410,14 +3590,23 @@
    },
    "cm": {
     "idProduct": 576771,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:39:11.801Z",
     "guide": {
      "trend": 23.74,
      "low": 9.9,
      "avg30": 21.41,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 15.49,
+     "median": 15.47,
+     "min": 14.99,
+     "max": 16,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:39:11.801Z"
+    }
    },
    "cmNote": null
   },
@@ -3442,14 +3631,23 @@
    },
    "cm": {
     "idProduct": 512400,
-    "checkedAt": null,
+    "checkedAt": "2026-10-17T07:35:34.154Z",
     "guide": {
      "trend": 32.9,
      "low": 14.9,
      "avg30": 34.03,
      "trusted": true
     },
-    "listings": null
+    "listings": {
+     "avg10": 29.36,
+     "median": 29.89,
+     "min": 27,
+     "max": 30,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:35:34.154Z"
+    }
    },
    "cmNote": null
   }
