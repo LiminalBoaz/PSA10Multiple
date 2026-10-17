@@ -10,7 +10,9 @@
    "avg30": 37.49
   },
   "tcgplayerMarket": 900,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/ecard/ecard3/149",
+  "released": "2003-05-12"
  },
  "mew-ex-promo-53": {
   "tcgdexId": "svp-053",
@@ -23,7 +25,9 @@
    "avg30": 92.98
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/svp/053",
+  "released": "2023-03-31"
  },
  "lugia-v-silver-tempest-138": {
   "tcgdexId": "swsh12-138",
@@ -36,7 +40,9 @@
    "avg30": 18.38
   },
   "tcgplayerMarket": 12.89,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/swsh/swsh12/138",
+  "released": "2022-11-11"
  },
  "ditto-1st-edition-fossil-3": {
   "tcgdexId": "base3-3",
@@ -45,7 +51,9 @@
   "idProduct": 273864,
   "guide": null,
   "tcgplayerMarket": 135.44,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/base/base3/3",
+  "released": "1999-10-10"
  },
  "mewtwo-v-go-72": {
   "tcgdexId": "swsh10.5-072",
@@ -58,7 +66,9 @@
    "avg30": 54.75
   },
   "tcgplayerMarket": 54.81,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/swsh/swsh10.5/072",
+  "released": "2022-07-01"
  },
  "rayquaza-vmax-silver-tempest-tg29": {
   "tcgdexId": "swsh12tg-TG29",
@@ -71,7 +81,9 @@
    "avg30": 20.36
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2022-11-11"
  },
  "blastoise-celebrations-2": {
   "tcgdexId": "cel25cc-CC001",
@@ -84,7 +96,9 @@
    "avg30": 21.41
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id (renumbered set)"
+  "matchedBy": "tcgplayer id (renumbered set)",
+  "image": null,
+  "released": "2021-10-08"
  },
  "mew-celebrations-25": {
   "tcgdexId": "cel25-25",
@@ -97,7 +111,9 @@
    "avg30": 83.26
   },
   "tcgplayerMarket": 64.09,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2021-10-08"
  },
  "umbreon-celebrations-17": {
   "tcgdexId": "cel25cc-CC015",
@@ -110,7 +126,9 @@
    "avg30": 144.82
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id (renumbered set)"
+  "matchedBy": "tcgplayer id (renumbered set)",
+  "image": null,
+  "released": "2021-10-08"
  },
  "mega-charizard-x-ex-phantasmal-flames-130": {
   "tcgdexId": "me02-130",
@@ -123,7 +141,9 @@
    "avg30": 257.93
   },
   "tcgplayerMarket": 205.11,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/me/me02/130",
+  "released": "2025-11-14"
  },
  "shining-raichu-1st-edition-neo-destiny-111": {
   "tcgdexId": "neo4-111",
@@ -132,7 +152,9 @@
   "idProduct": 274763,
   "guide": null,
   "tcgplayerMarket": 548.7,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/neo/neo4/111",
+  "released": "2002-02-28"
  },
  "articuno-journey-together-161": {
   "tcgdexId": "sv09-161",
@@ -145,7 +167,9 @@
    "avg30": 21.45
   },
   "tcgplayerMarket": 15.31,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv09/161",
+  "released": "2025-03-28"
  },
  "snorlax-promo-51": {
   "tcgdexId": "svp-051",
@@ -158,7 +182,9 @@
    "avg30": 21.24
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/svp/051",
+  "released": "2023-03-31"
  },
  "charmander-promo-44": {
   "tcgdexId": "svp-044",
@@ -171,7 +197,9 @@
    "avg30": 47.9
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sv/svp/044",
+  "released": "2023-03-31"
  },
  "mewtwo-promo-52": {
   "tcgdexId": "svp-052",
@@ -184,7 +212,9 @@
    "avg30": 71.21
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/svp/052",
+  "released": "2023-03-31"
  },
  "magikarp-paldea-evolved-203": {
   "tcgdexId": "sv02-203",
@@ -197,7 +227,9 @@
    "avg30": 384.07
   },
   "tcgplayerMarket": 352.72,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv02/203",
+  "released": "2023-06-09"
  },
  "sylveon-gx-guardians-rising-140": {
   "tcgdexId": "sm2-140",
@@ -210,7 +242,9 @@
    "avg30": 38.74
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm2/140",
+  "released": "2017-05-05"
  },
  "mewtwo-gx-shining-legends-78": {
   "tcgdexId": "sm3.5-78",
@@ -223,7 +257,9 @@
    "avg30": 7.46
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": null,
+  "released": "2017-10-06"
  },
  "pikachu-cosmic-eclipse-241": {
   "tcgdexId": "sm12-241",
@@ -236,7 +272,9 @@
    "avg30": 140.98
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm12/241",
+  "released": "2019-11-01"
  },
  "celebi-venusaur-gx-promo-sm167": {
   "tcgdexId": "smp-SM167",
@@ -249,7 +287,9 @@
    "avg30": 210.82
   },
   "tcgplayerMarket": 92.66,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2017-02-03"
  },
  "pikachu-zekrom-gx-team-up-33": {
   "tcgdexId": "sm9-33",
@@ -262,7 +302,9 @@
    "avg30": 52.43
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm9/33",
+  "released": "2019-01-31"
  },
  "shining-tyranitar-neo-destiny-113": {
   "tcgdexId": "neo4-113",
@@ -275,7 +317,9 @@
    "avg30": 831.76
   },
   "tcgplayerMarket": 345,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/neo/neo4/113",
+  "released": "2002-02-28"
  },
  "drowzee-scarlet-violet-210": {
   "tcgdexId": "sv01-210",
@@ -288,7 +332,9 @@
    "avg30": 46.3
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sv/sv01/210",
+  "released": "2023-03-31"
  },
  "charizard-gx-burning-shadows-20": {
   "tcgdexId": "sm3-20",
@@ -301,7 +347,9 @@
    "avg30": 21.68
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm3/20",
+  "released": "2017-08-04"
  },
  "mew-crown-zenith-gg10": {
   "tcgdexId": "swsh12.5gg-GG10",
@@ -314,7 +362,9 @@
    "avg30": 74.26
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2023-01-20"
  },
  "pikachu-lost-origin-tg05": {
   "tcgdexId": "swsh11tg-TG05",
@@ -327,7 +377,9 @@
    "avg30": 34.42
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2022-09-09"
  },
  "mewtwo-ex-evolutions-103": {
   "tcgdexId": "xy12-103",
@@ -340,7 +392,9 @@
    "avg30": 53.48
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/xy/xy12/103",
+  "released": "2016-11-02"
  },
  "gengar-ex-phantom-forces-34": {
   "tcgdexId": "xy4-34",
@@ -353,7 +407,9 @@
    "avg30": 76.95
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/xy/xy4/34",
+  "released": "2014-11-05"
  },
  "m-rayquaza-ex-ancient-origins-98": {
   "tcgdexId": "xy7-98",
@@ -366,7 +422,9 @@
    "avg30": 1121.71
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/xy/xy7/98",
+  "released": "2015-08-12"
  },
  "mega-absol-ex-mega-evolution-180": {
   "tcgdexId": "me01-180",
@@ -379,7 +437,9 @@
    "avg30": 63.33
   },
   "tcgplayerMarket": 48.73,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/me/me01/180",
+  "released": "2025-09-26"
  },
  "vulpix-mega-evolution-138": {
   "tcgdexId": "me01-138",
@@ -392,7 +452,9 @@
    "avg30": 17.65
   },
   "tcgplayerMarket": 18.01,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/me/me01/138",
+  "released": "2025-09-26"
  },
  "mega-charizard-x-ex-phantasmal-flames-125": {
   "tcgdexId": "me02-125",
@@ -405,7 +467,9 @@
    "avg30": 731.09
   },
   "tcgplayerMarket": 623.2,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/me/me02/125",
+  "released": "2025-11-14"
  },
  "pikachu-with-grey-felt-hat-promo-85": {
   "tcgdexId": "svp-085",
@@ -418,7 +482,9 @@
    "avg30": 751.45
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2023-03-31"
  },
  "kyurem-ex-black-bolt-165": {
   "tcgdexId": "sv10.5b-165",
@@ -431,7 +497,9 @@
    "avg30": 69.19
   },
   "tcgplayerMarket": 69.05,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv10.5b/165",
+  "released": "2025-07-17"
  },
  "charizard-ex-paldean-fates-234": {
   "tcgdexId": "sv04.5-234",
@@ -444,7 +512,9 @@
    "avg30": 262.12
   },
   "tcgplayerMarket": 256.92,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv04.5/234",
+  "released": "2024-01-26"
  },
  "jessie-james-hidden-fates-68": {
   "tcgdexId": "sm115-68",
@@ -457,7 +527,9 @@
    "avg30": 73.63
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm115/68",
+  "released": "2019-08-23"
  },
  "moltres-zapdos-articuno-gx-promo-sm210": {
   "tcgdexId": "smp-SM210",
@@ -470,7 +542,9 @@
    "avg30": 116
   },
   "tcgplayerMarket": 156.58,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sm/smp/SM210",
+  "released": "2017-02-03"
  },
  "umbreon-vmax-brilliant-stars-tg23": {
   "tcgdexId": "swsh9tg-TG23",
@@ -483,7 +557,9 @@
    "avg30": 78.99
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2022-02-25"
  },
  "umbreon-v-evolving-skies-189": {
   "tcgdexId": "swsh7-189",
@@ -496,7 +572,9 @@
    "avg30": 305.77
   },
   "tcgplayerMarket": 378.95,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/swsh/swsh7/189",
+  "released": "2021-08-27"
  },
  "zeraora-vmax-crown-zenith-gg42": {
   "tcgdexId": "swsh12.5gg-GG42",
@@ -509,7 +587,9 @@
    "avg30": 42.15
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2023-01-20"
  },
  "dragonite-v-evolving-skies-192": {
   "tcgdexId": "swsh7-192",
@@ -522,7 +602,9 @@
    "avg30": 422.13
   },
   "tcgplayerMarket": 505.93,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/swsh/swsh7/192",
+  "released": "2021-08-27"
  },
  "leafeon-vstar-crown-zenith-gg35": {
   "tcgdexId": "swsh12.5gg-GG35",
@@ -535,7 +617,9 @@
    "avg30": 78.13
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2023-01-20"
  },
  "charizard-vmax-darkness-ablaze-20": {
   "tcgdexId": "swsh3-20",
@@ -548,7 +632,9 @@
    "avg30": 49.56
   },
   "tcgplayerMarket": 38.55,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/swsh/swsh3/20",
+  "released": "2020-08-14"
  },
  "vaporeon-skyridge-h31": {
   "tcgdexId": "ecard3-H31",
@@ -561,7 +647,9 @@
    "avg30": 549.8
   },
   "tcgplayerMarket": 423,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": null,
+  "released": "2003-05-12"
  },
  "kabutops-skyridge-150": {
   "tcgdexId": "ecard3-150",
@@ -574,7 +662,9 @@
    "avg30": 17.83
   },
   "tcgplayerMarket": 1000,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/ecard/ecard3/150",
+  "released": "2003-05-12"
  },
  "umbreon-skyridge-h30": {
   "tcgdexId": "ecard3-H30",
@@ -587,7 +677,9 @@
    "avg30": 148.31
   },
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2003-05-12"
  },
  "mew-triumphant-97": {
   "tcgdexId": "hgss4-97",
@@ -600,7 +692,9 @@
    "avg30": 162.68
   },
   "tcgplayerMarket": 394.47,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/hgss/hgss4/97",
+  "released": "2010-11-03"
  },
  "haunter-1st-edition-fossil-6": {
   "tcgdexId": "base3-6",
@@ -609,7 +703,9 @@
   "idProduct": 273867,
   "guide": null,
   "tcgplayerMarket": 175.73,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/base/base3/6",
+  "released": "1999-10-10"
  },
  "pikachu-shadowless-red-cheeks-base-set-58": {
   "tcgdexId": "base1-58",
@@ -618,7 +714,9 @@
   "idProduct": 660170,
   "guide": null,
   "tcgplayerMarket": null,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/base/base1/58",
+  "released": "1999-01-09"
  },
  "dark-charizard-1st-edition-team-rocket-4": {
   "tcgdexId": "base5-4",
@@ -627,7 +725,9 @@
   "idProduct": 274057,
   "guide": null,
   "tcgplayerMarket": 62.35,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/base/base5/4",
+  "released": "2000-04-24"
  },
  "bulbasaur-stamped-mega-evolution-133": {
   "tcgdexId": "me01-133",
@@ -640,7 +740,9 @@
    "avg30": 24.32
   },
   "tcgplayerMarket": 17.19,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/me/me01/133",
+  "released": "2025-09-26"
  },
  "umbreon-darkrai-gx-promo-sm241": {
   "tcgdexId": "smp-SM241",
@@ -653,7 +755,9 @@
    "avg30": 257
   },
   "tcgplayerMarket": 237.24,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2017-02-03"
  },
  "rayquaza-gx-celestial-storm-109": {
   "tcgdexId": "sm7-109",
@@ -666,7 +770,9 @@
    "avg30": 18.22
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm7/109",
+  "released": "2018-08-03"
  },
  "alakazam-ex-fates-collide-125": {
   "tcgdexId": "xy10-125",
@@ -679,7 +785,9 @@
    "avg30": 188.71
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/xy/xy10/125",
+  "released": "2016-05-02"
  },
  "espeon-ex-breakpoint-117": {
   "tcgdexId": "xy9-117",
@@ -692,7 +800,9 @@
    "avg30": 134.72
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/xy/xy9/117",
+  "released": "2016-02-03"
  },
  "umbreon-ex-fates-collide-119": {
   "tcgdexId": "xy10-119",
@@ -705,7 +815,9 @@
    "avg30": 150.34
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/xy/xy10/119",
+  "released": "2016-05-02"
  },
  "mega-charizard-x-ex-promo-23": {
   "tcgdexId": "mep-023",
@@ -718,7 +830,9 @@
    "avg30": 47.35
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": null,
+  "released": "2025-09-26"
  },
  "zapdos-ex-scarlet-violet-151-202": {
   "tcgdexId": "sv03.5-202",
@@ -731,7 +845,9 @@
    "avg30": 120.39
   },
   "tcgplayerMarket": 82.74,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv03.5/202",
+  "released": "2023-09-22"
  },
  "blastoise-ex-scarlet-violet-151-200": {
   "tcgdexId": "sv03.5-200",
@@ -744,7 +860,9 @@
    "avg30": 141.91
   },
   "tcgplayerMarket": 114,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv03.5/200",
+  "released": "2023-09-22"
  },
  "espeon-ex-promo-175": {
   "tcgdexId": "svp-175",
@@ -757,7 +875,9 @@
    "avg30": 16.16
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": null,
+  "released": "2023-03-31"
  },
  "vaporeon-ex-prismatic-evolutions-149": {
   "tcgdexId": "sv08.5-149",
@@ -770,7 +890,9 @@
    "avg30": 186.23
   },
   "tcgplayerMarket": 254.24,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv08.5/149",
+  "released": "2025-01-17"
  },
  "alakazam-ex-scarlet-violet-151-201": {
   "tcgdexId": "sv03.5-201",
@@ -783,7 +905,9 @@
    "avg30": 73.6
   },
   "tcgplayerMarket": 58.08,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv03.5/201",
+  "released": "2023-09-22"
  },
  "mewtwo-mew-gx-promo-sm191": {
   "tcgdexId": "smp-SM191",
@@ -796,7 +920,9 @@
    "avg30": 381.28
   },
   "tcgplayerMarket": 356.82,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2017-02-03"
  },
  "reshiram-charizard-gx-unbroken-bonds-20": {
   "tcgdexId": "sm10-20",
@@ -809,7 +935,9 @@
    "avg30": 62.8
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm10/20",
+  "released": "2019-05-03"
  },
  "gengar-mimikyu-gx-team-up-186": {
   "tcgdexId": "sm9-186",
@@ -822,7 +950,9 @@
    "avg30": 196.87
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm9/186",
+  "released": "2019-01-31"
  },
  "magikarp-wailord-gx-team-up-161": {
   "tcgdexId": "sm9-161",
@@ -835,7 +965,9 @@
    "avg30": 840.61
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm9/161",
+  "released": "2019-01-31"
  },
  "latias-latios-gx-team-up-170": {
   "tcgdexId": "sm9-170",
@@ -848,7 +980,9 @@
    "avg30": 2467.57
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm9/170",
+  "released": "2019-01-31"
  },
  "giratina-v-lost-origin-186": {
   "tcgdexId": "swsh11-186",
@@ -861,7 +995,9 @@
    "avg30": 1311.77
   },
   "tcgplayerMarket": 851.13,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/swsh/swsh11/186",
+  "released": "2022-09-09"
  },
  "mew-v-fusion-strike-251": {
   "tcgdexId": "swsh8-251",
@@ -874,7 +1010,9 @@
    "avg30": 114.35
   },
   "tcgplayerMarket": 102.81,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/swsh/swsh8/251",
+  "released": "2021-11-12"
  },
  "shining-noctowl-1st-edition-neo-destiny-110": {
   "tcgdexId": "neo4-110",
@@ -883,7 +1021,9 @@
   "idProduct": 274762,
   "guide": null,
   "tcgplayerMarket": 474.97,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/neo/neo4/110",
+  "released": "2002-02-28"
  },
  "misty-s-psyduck-destined-rivals-193": {
   "tcgdexId": "sv10-193",
@@ -896,7 +1036,9 @@
    "avg30": 46.56
   },
   "tcgplayerMarket": 47.22,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv10/193",
+  "released": "2025-05-30"
  },
  "latios-surging-sparks-203": {
   "tcgdexId": "sv08-203",
@@ -909,7 +1051,9 @@
    "avg30": 32.62
   },
   "tcgplayerMarket": 28.68,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv08/203",
+  "released": "2024-11-08"
  },
  "pikachu-scarlet-violet-151-173": {
   "tcgdexId": "sv03.5-173",
@@ -922,7 +1066,9 @@
    "avg30": 75
   },
   "tcgplayerMarket": 65.99,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv03.5/173",
+  "released": "2023-09-22"
  },
  "gengar-ex-temporal-forces-193": {
   "tcgdexId": "sv05-193",
@@ -935,7 +1081,9 @@
    "avg30": 29.49
   },
   "tcgplayerMarket": 50.39,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv05/193",
+  "released": "2024-03-22"
  },
  "charizard-ex-obsidian-flames-223": {
   "tcgdexId": "sv03-223",
@@ -948,7 +1096,9 @@
    "avg30": 83.97
   },
   "tcgplayerMarket": 93.92,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/sv/sv03/223",
+  "released": "2023-08-11"
  },
  "gengar-mimikyu-gx-team-up-165": {
   "tcgdexId": "sm9-165",
@@ -961,7 +1111,9 @@
    "avg30": 958.83
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm9/165",
+  "released": "2019-01-31"
  },
  "arceus-dialga-palkia-gx-cosmic-eclipse-221": {
   "tcgdexId": "sm12-221",
@@ -974,7 +1126,9 @@
    "avg30": 468.51
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm12/221",
+  "released": "2019-11-01"
  },
  "latias-latios-gx-team-up-169": {
   "tcgdexId": "sm9-169",
@@ -987,7 +1141,9 @@
    "avg30": 167.71
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm9/169",
+  "released": "2019-01-31"
  },
  "garchomp-giratina-gx-promo-sm193": {
   "tcgdexId": "smp-SM193",
@@ -1000,7 +1156,9 @@
    "avg30": 208.98
   },
   "tcgplayerMarket": 108.08,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2017-02-03"
  },
  "gengar-mimikyu-gx-team-up-53": {
   "tcgdexId": "sm9-53",
@@ -1013,7 +1171,9 @@
    "avg30": 218.9
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm9/53",
+  "released": "2019-01-31"
  },
  "pikachu-zekrom-gx-promo-sm168": {
   "tcgdexId": "smp-SM168",
@@ -1026,7 +1186,9 @@
    "avg30": 476.74
   },
   "tcgplayerMarket": 219.86,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": null,
+  "released": "2017-02-03"
  },
  "solgaleo-lunala-gx-cosmic-eclipse-216": {
   "tcgdexId": "sm12-216",
@@ -1039,7 +1201,9 @@
    "avg30": 331.35
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm12/216",
+  "released": "2019-11-01"
  },
  "blastoise-piplup-gx-cosmic-eclipse-215": {
   "tcgdexId": "sm12-215",
@@ -1052,7 +1216,9 @@
    "avg30": 311.16
   },
   "tcgplayerMarket": null,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/sm/sm12/215",
+  "released": "2019-11-01"
  },
  "rayquaza-vivid-voltage-138": {
   "tcgdexId": "swsh4-138",
@@ -1065,7 +1231,9 @@
    "avg30": 34.03
   },
   "tcgplayerMarket": 21.99,
-  "matchedBy": "tcgplayer id"
+  "matchedBy": "tcgplayer id",
+  "image": "https://assets.tcgdex.net/en/swsh/swsh4/138",
+  "released": "2020-11-13"
  },
  "giovanni-1st-edition-gym-challenge-18": {
   "tcgdexId": "gym2-18",
@@ -1074,7 +1242,9 @@
   "idProduct": 274286,
   "guide": null,
   "tcgplayerMarket": 125,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/gym/gym2/18",
+  "released": "2000-10-16"
  },
  "blaine-s-charizard-1st-edition-gym-challenge-2": {
   "tcgdexId": "gym2-2",
@@ -1083,7 +1253,9 @@
   "idProduct": 274270,
   "guide": null,
   "tcgplayerMarket": 699.99,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/gym/gym2/2",
+  "released": "2000-10-16"
  },
  "rocket-s-zapdos-1st-edition-gym-challenge-15": {
   "tcgdexId": "gym2-15",
@@ -1092,7 +1264,9 @@
   "idProduct": 274283,
   "guide": null,
   "tcgplayerMarket": 226.11,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/gym/gym2/15",
+  "released": "2000-10-16"
  },
  "misty-s-gyarados-1st-edition-gym-challenge-13": {
   "tcgdexId": "gym2-13",
@@ -1101,6 +1275,23 @@
   "idProduct": 274281,
   "guide": null,
   "tcgplayerMarket": 425,
-  "matchedBy": "set + number (1 candidate)"
+  "matchedBy": "set + number (1 candidate)",
+  "image": "https://assets.tcgdex.net/en/gym/gym2/13",
+  "released": "2000-10-16"
+ },
+ "raichu-paldea-evolved-211": {
+  "tcgdexId": "sv02-211",
+  "setName": "Paldea Evolved",
+  "setCode": "PAL",
+  "idProduct": 715686,
+  "guide": {
+   "trend": 117.93,
+   "low": 23.99,
+   "avg30": 81.25
+  },
+  "tcgplayerMarket": 96.45,
+  "matchedBy": "TCGdex id from the app",
+  "image": "https://assets.tcgdex.net/en/sv/sv02/211",
+  "released": "2023-06-09"
  }
 }

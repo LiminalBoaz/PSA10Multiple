@@ -8,10 +8,19 @@ async function open(page: Page) {
   await page.route('**/cards.json', (r) => r.fulfill({ body: sample, contentType: 'application/json' }));
   await page.route('https://github.com/**', (r) => r.fulfill({ body: 'github', contentType: 'text/plain' }));
   // Card search (TCGdex) for "Add a card", sample answers only.
-  await page.route('https://api.tcgdex.net/v2/en/sets', (r) => r.fulfill({ json: [{ id: 'swsh7', name: 'Evolving Skies' }] }));
-  await page.route('https://api.tcgdex.net/v2/en/cards?**', (r) =>
-    r.fulfill({ json: [{ id: 'swsh7-215', localId: '215', name: 'Umbreon VMAX', image: 'https://assets.tcgdex.net/en/swsh/swsh7/215' }] }),
+  await page.route('https://api.tcgdex.net/v2/en/sets', (r) =>
+    r.fulfill({ json: [{ id: 'swsh7', name: 'Evolving Skies' }, { id: 'sv02', name: 'Paldea Evolved' }] }),
   );
+  const tcgdexCards: Record<string, object[]> = {
+    umbreon: [{ id: 'swsh7-215', localId: '215', name: 'Umbreon VMAX', image: 'https://assets.tcgdex.net/en/swsh/swsh7/215' }],
+    'umbreon vmax': [{ id: 'swsh7-215', localId: '215', name: 'Umbreon VMAX', image: 'https://assets.tcgdex.net/en/swsh/swsh7/215' }],
+    raichu: [
+      { id: 'sv02-63', localId: '063', name: 'Raichu' },
+      { id: 'sv02-211', localId: '211', name: 'Raichu' },
+      { id: 'swsh7-50', localId: '050', name: 'Raichu' },
+    ],
+  };
+  await page.route('https://api.tcgdex.net/v2/en/cards?**', (r) => r.fulfill({ json: tcgdexCards[new URL(r.request().url()).searchParams.get('name') ?? ''] ?? [] }));
   await page.route('https://assets.tcgdex.net/**', (r) => r.fulfill({ status: 404 }));
   await page.goto('/');
   await expect(page.locator('.tile').first()).toBeVisible();
@@ -22,6 +31,10 @@ const chip = (page: Page, label: RegExp) => page.locator('.chip').filter({ hasTe
 test('no horizontal scroll at phone width', async ({ page }) => {
   await open(page);
   expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
+  for (const sel of ['#q', '.toolbar', '.brand']) {
+    const box = (await page.locator(sel).boundingBox())!;
+    expect(box.x + box.width, sel).toBeLessThanOrEqual(390);
+  }
 });
 
 test('price slots: select several, "All" resets', async ({ page }) => {
@@ -147,9 +160,9 @@ test('add a card: search, pick, and open the filled-in GitHub form', async ({ pa
   await open(page);
   await page.getByRole('button', { name: 'Add a card' }).click();
   const sheet = page.getByRole('dialog');
-  await sheet.getByPlaceholder(/Search any card/).fill('umbreon vmax');
+  await sheet.getByPlaceholder(/e.g. raichu 211/).fill('umbreon vmax');
   await sheet.getByRole('button', { name: /Umbreon VMAX/ }).click();
-  const link = sheet.getByRole('link', { name: 'Add on GitHub' });
+  const link = sheet.getByRole('link', { name: 'Continue on GitHub' });
   const href = (await link.getAttribute('href'))!;
   expect(href).toContain('/issues/new?');
   expect(href).toContain('template=add-card.yml');
@@ -162,6 +175,29 @@ test('add a card: search, pick, and open the filled-in GitHub form', async ({ pa
   await expect(sheet.locator('.list')).toContainText('Umbreon VMAX');
 });
 
+test('add search understands name + number: "raichu 211"', async ({ page }) => {
+  await open(page);
+  await page.getByRole('button', { name: 'Add a card' }).click();
+  const sheet = page.getByRole('dialog');
+  await sheet.getByPlaceholder(/e.g. raichu 211/).fill('raichu 211');
+  await expect(sheet.locator('.result')).toHaveCount(1);
+  await expect(sheet.locator('.result')).toContainText('Paldea Evolved · 211');
+  await sheet.getByPlaceholder(/e.g. raichu 211/).fill('raichu paldea');
+  await expect(sheet.locator('.result')).toHaveCount(2);
+});
+
+test('modern toggle shows only cards from the last six years and is remembered', async ({ page }) => {
+  await open(page);
+  const toggle = page.getByRole('button', { name: /Modern/ });
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+  await toggle.click();
+  await expect(page.locator('.tile')).toHaveCount(4);
+  await expect(page.locator('.count')).toHaveText('4 cards');
+  await page.reload();
+  await expect(page.getByRole('button', { name: /Modern/ })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.tile')).toHaveCount(4);
+});
+
 test('one-tap add with a saved GitHub token', async ({ page }) => {
   let body = '';
   await page.addInitScript(() => localStorage.setItem('slab-scout:ghToken', JSON.stringify('test-token')));
@@ -172,7 +208,7 @@ test('one-tap add with a saved GitHub token', async ({ page }) => {
   await open(page);
   await page.getByRole('button', { name: 'Add a card' }).click();
   const sheet = page.getByRole('dialog');
-  await sheet.getByPlaceholder(/Search any card/).fill('umbreon');
+  await sheet.getByPlaceholder(/e.g. raichu 211/).fill('umbreon');
   await sheet.getByRole('button', { name: /Umbreon VMAX/ }).click();
   await page.screenshot({ path: 'test-results/add-sheet.png' });
   await sheet.getByRole('button', { name: 'Add Umbreon VMAX' }).click();

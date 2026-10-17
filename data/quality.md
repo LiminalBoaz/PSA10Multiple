@@ -99,5 +99,6 @@ Raw = mean of up to 10 cheapest Near Mint English Cardmarket listings (slabs and
 | [Blastoise & Piplup GX](https://www.cardmarket.com/en/Pokemon/Products/Singles/Cosmic-Eclipse/Blastoise-Piplup-GX-V3-CEC215) | Cosmic Eclipse | 215 | 460.13 | listings | 6 | 335.47 | 1.37 | 449.67 | 2606.29 |  |
 | [Blastoise](https://www.cardmarket.com/en/Pokemon/Products/Singles/Celebrations/Blastoise) | Celebrations | 2 | 15.49 | listings | 10 | 13.90 | 1.11 | 35.99 | 100.76 |  |
 | [Rayquaza](https://www.cardmarket.com/en/Pokemon/Products/Singles/Vivid-Voltage/Rayquaza-VIV138) | Vivid Voltage | 138 | 29.36 | listings | 10 | 20.44 | 1.44 | 41.04 | 155.74 |  |
+| [Raichu](https://www.cardmarket.com/en/Pokemon/Products/Singles/Paldea-Evolved/Raichu-V2-PAL211) | Paldea Evolved | 211 | 68.69 | listings | 10 | 78.60 | 0.87 | 95.31 | 764.24 |  |
 
 

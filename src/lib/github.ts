@@ -1,5 +1,5 @@
 /** Talks to GitHub with the personal token saved on this phone (only used to open "Add card" requests). */
-export const REPO = import.meta.env.VITE_REPO || 'LiminalBoaz/PSA10Multiple';
+export const REPO = import.meta.env?.VITE_REPO || 'LiminalBoaz/PSA10Multiple';
 
 export interface CardRequest {
   name: string;
@@ -24,6 +24,18 @@ export function issueFormUrl(c: CardRequest): string {
   const fields: Record<string, string | undefined> = { name: c.name, set: c.set, number: c.number, tcgdex: c.tcgdex, pricecharting: c.pricecharting, cardmarket: c.cardmarket };
   for (const [k, v] of Object.entries(fields)) if (v?.trim()) q.set(k, v.trim());
   return `https://github.com/${REPO}/issues/new?${q}`;
+}
+
+/** GitHub's token page with name, owner, expiry and the single permission (Issues) filled in. */
+export function tokenTemplateUrl(): string {
+  const q = new URLSearchParams({
+    name: 'Slab Scout',
+    description: 'Lets the Slab Scout app on my phone open "Add card" requests.',
+    target_name: REPO.split('/')[0]!,
+    expires_in: '366',
+    issues: 'write',
+  });
+  return `https://github.com/settings/personal-access-tokens/new?${q}`;
 }
 
 const headers = (token: string) => ({ authorization: `Bearer ${token}`, accept: 'application/vnd.github+json', 'content-type': 'application/json' });

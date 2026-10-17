@@ -1,1 +1,19 @@
-[]
+[
+ {
+  "id": "raichu-paldea-evolved-211",
+  "name": "Raichu",
+  "fullName": "Raichu",
+  "variant": null,
+  "set": "Paldea Evolved",
+  "series": "",
+  "number": "211",
+  "imageUrl": null,
+  "tcgplayerId": null,
+  "pricechartingId": null,
+  "pv": null,
+  "added": true,
+  "hints": {
+   "tcgdex": "sv02-211"
+  }
+ }
+]

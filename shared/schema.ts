@@ -54,6 +54,8 @@ export const Card = z.object({
   variant: z.string().nullable(),
   /** Path relative to the site root, e.g. "img/lugia-v-138.webp". */
   image: z.string().nullable(),
+  /** Release date of the card's set (YYYY-MM-DD), for the "Modern" filter. null when unknown. */
+  released: z.string().nullable(),
   /** Added by hand (through the app's "Add card"), not from the PokeViews list. */
   added: z.boolean(),
   /** PriceCharting sales in the last year, as reported by PokeViews. */

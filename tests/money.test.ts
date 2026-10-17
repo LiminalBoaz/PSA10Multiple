@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Card } from '../shared/schema.ts';
-import { analyze, bucketOf, matchesQuery, sortRows, toEur, toggleBucket, visibleRows, type BucketId, type Row } from '../src/lib/money.ts';
+import { analyze, bucketOf, isModern, matchesQuery, modernSince, sortRows, toEur, toggleBucket, visibleRows, type BucketId, type Row } from '../src/lib/money.ts';
 import { eur, signedEur, times } from '../src/lib/format.ts';
 import { parseEuroInput } from '../src/lib/parse.ts';
 
@@ -21,6 +21,7 @@ function card(over: Partial<Card> & { id: string }): Card {
     number: '1',
     variant: null,
     image: null,
+    released: '2023-06-09',
     added: false,
     salesPerYear: 100,
     links: { pricecharting: 'https://www.pricecharting.com/game/x/y', cardmarket: 'https://www.cardmarket.com/en/Pokemon/Products/Singles/X/Y' },
@@ -100,6 +101,16 @@ describe('price slots', () => {
     expect([...s].sort()).toEqual(['0-50', '500+']);
     expect([...toggleBucket(s, '0-50')]).toEqual(['500+']);
     expect(toggleBucket(s, 'all').size).toBe(0);
+  });
+});
+
+describe('modern filter', () => {
+  it('counts back six years from today', () => expect(modernSince(new Date('2026-10-17T12:00:00Z'))).toBe('2020-10-17'));
+  it('keeps sets released on or after the cutoff; unknown dates count as older', () => {
+    expect(isModern('2023-06-09', '2020-10-17')).toBe(true);
+    expect(isModern('2020-10-17', '2020-10-17')).toBe(true);
+    expect(isModern('2020-08-14', '2020-10-17')).toBe(false);
+    expect(isModern(null, '2020-10-17')).toBe(false);
   });
 });
 

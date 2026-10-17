@@ -88,8 +88,8 @@ export function analyze(card: Card, usdToEur: number, feeEur: number, myPrice?: 
 export type SortKey = 'profit' | 'multiplier' | 'cheapest';
 
 export const SORTS: { id: SortKey; label: string }[] = [
-  { id: 'profit', label: 'Biggest PSA 10 profit' },
-  { id: 'multiplier', label: 'Highest multiplier' },
+  { id: 'profit', label: 'PSA 10 profit' },
+  { id: 'multiplier', label: 'Multiplier' },
   { id: 'cheapest', label: 'Lowest price' },
 ];
 
@@ -137,6 +137,18 @@ export function visibleRows(rows: Row[], query: string, buckets: ReadonlySet<Buc
   if (query.trim()) return rows.filter((r) => matchesQuery(r.card, query));
   if (buckets.size === 0) return rows;
   return rows.filter((r) => r.a.bucket != null && buckets.has(r.a.bucket));
+}
+
+/** First day that counts as "modern": the same date six years ago. */
+export function modernSince(now = new Date()): string {
+  const d = new Date(now);
+  d.setFullYear(d.getFullYear() - 6);
+  return d.toISOString().slice(0, 10);
+}
+
+/** Cards from sets released on or after the cutoff; cards without a known date count as older. */
+export function isModern(released: string | null, since: string): boolean {
+  return released != null && released >= since;
 }
 
 /** Tapping "All" clears the selection; tapping a slot toggles it. */

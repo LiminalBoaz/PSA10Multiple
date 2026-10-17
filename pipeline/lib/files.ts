@@ -50,6 +50,8 @@ export const TcgdexEntry = z.object({
   matchedBy: z.string(),
   /** TCGdex image base URL (append "/high.webp"); used for cards without a PokeViews image. */
   image: z.string().nullable().optional(),
+  /** Release date of the card's set (YYYY-MM-DD). */
+  released: z.string().nullable().optional(),
 });
 export const TcgdexFile = z.record(z.string(), TcgdexEntry);
 

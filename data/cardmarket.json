@@ -3839,8 +3839,8 @@
    }
   ],
   "nlListings": [],
-  "nlFetchedAt": null,
   "fetchedAt": "2026-10-17T07:41:59.038Z",
+  "nlFetchedAt": null,
   "cardName": "Reshiram Charizard GX UNB #20"
  },
  "rayquaza-vivid-voltage-138": {
@@ -4786,5 +4786,64 @@
   "fetchedAt": "2026-10-17T07:40:35.619Z",
   "nlFetchedAt": null,
   "cardName": "Vulpix MEG #138"
+ },
+ "raichu-paldea-evolved-211": {
+  "productUrl": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Paldea-Evolved/Raichu-V2-PAL211",
+  "listings": [
+   {
+    "price": 59,
+    "country": null,
+    "comment": "OK copy - see pictures"
+   },
+   {
+    "price": 65,
+    "country": null,
+    "comment": null
+   },
+   {
+    "price": 68,
+    "country": null,
+    "comment": null
+   },
+   {
+    "price": 68.99,
+    "country": null,
+    "comment": null
+   },
+   {
+    "price": 69.99,
+    "country": null,
+    "comment": "Booster to sleeve / Toploader ( good shape )"
+   },
+   {
+    "price": 70,
+    "country": null,
+    "comment": "Professional seller"
+   },
+   {
+    "price": 70,
+    "country": null,
+    "comment": null
+   },
+   {
+    "price": 71.95,
+    "country": null,
+    "comment": "More PAL available // S0"
+   },
+   {
+    "price": 71.95,
+    "country": null,
+    "comment": "Fast shipping!"
+   },
+   {
+    "price": 72,
+    "country": null,
+    "comment": null
+   }
+  ],
+  "nlListings": [],
+  "nlFetchedAt": null,
+  "fetchedAt": "2026-10-17T07:48:21.455Z",
+  "cardName": "Raichu PAL #211"
  }
 }

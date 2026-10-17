@@ -161,6 +161,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       variant: c.variant,
       image,
       added: c.added,
+      released: td[c.id]?.released ?? null,
       salesPerYear: c.pv?.salesPerYear ?? null,
       links: {
         pricecharting: p?.url ?? null,

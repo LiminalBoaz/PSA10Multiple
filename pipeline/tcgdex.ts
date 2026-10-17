@@ -6,7 +6,7 @@ import { getJson } from './lib/http.ts';
 const API = 'https://api.tcgdex.net/v2/en';
 
 interface SetBrief { id: string; name: string }
-interface SetFull extends SetBrief { abbreviation?: { official?: string }; cards: { id: string; localId: string; name: string }[] }
+interface SetFull extends SetBrief { abbreviation?: { official?: string }; releaseDate?: string; cards: { id: string; localId: string; name: string }[] }
 interface CmPrice { idProduct?: number; trend?: number | null; low?: number | null; avg30?: number | null; 'trend-holo'?: number | null; 'low-holo'?: number | null; 'avg30-holo'?: number | null }
 interface Variant { type: string; thirdParty?: { cardmarket?: number; tcgplayer?: number }; pricing?: { cardmarket?: CmPrice; tcgplayer?: Record<string, { productId?: number; marketPrice?: number | null } | string> } }
 interface CardFull { id: string; localId: string; name: string; image?: string; set: SetBrief; variants_detailed?: Variant[]; pricing?: { cardmarket?: CmPrice } }
@@ -80,6 +80,7 @@ async function entryFor(cardId: string, c: Contender): Promise<{ entry: TcgdexEn
       tcgplayerMarket: tcgplayerMarket(v),
       matchedBy: '',
       image: card.image ?? null,
+      released: set?.releaseDate ?? null,
     },
   };
 }

@@ -51,7 +51,8 @@
      "fetchedAt": "2026-10-16T12:00:00Z"
     }
    },
-   "cmNote": null
+   "cmNote": null,
+   "released": "2023-08-11"
   },
   {
    "id": "sample-2",
@@ -87,7 +88,8 @@
      "fetchedAt": "2026-10-16T12:00:00Z"
     }
    },
-   "cmNote": null
+   "cmNote": null,
+   "released": "2021-08-27"
   },
   {
    "id": "sample-3",
@@ -123,7 +125,8 @@
      "fetchedAt": "2026-10-16T12:00:00Z"
     }
    },
-   "cmNote": null
+   "cmNote": null,
+   "released": "1999-01-09"
   },
   {
    "id": "sample-4",
@@ -155,7 +158,8 @@
     },
     "listings": null
    },
-   "cmNote": null
+   "cmNote": null,
+   "released": "2016-02-03"
   },
   {
    "id": "sample-5",
@@ -191,7 +195,8 @@
      "fetchedAt": "2026-10-16T12:00:00Z"
     }
    },
-   "cmNote": null
+   "cmNote": null,
+   "released": "2024-01-26"
   },
   {
    "id": "sample-6",
@@ -227,7 +232,8 @@
      "fetchedAt": "2026-10-16T12:00:00Z"
     }
    },
-   "cmNote": null
+   "cmNote": null,
+   "released": "2000-04-24"
   },
   {
    "id": "sample-7",
@@ -259,7 +265,8 @@
     },
     "listings": null
    },
-   "cmNote": null
+   "cmNote": null,
+   "released": "2022-11-11"
   }
  ]
 }

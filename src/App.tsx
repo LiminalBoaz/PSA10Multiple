@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import type { DataFile } from '../shared/schema.ts';
-import { analyze, BUCKETS, SORTS, sortRows, toggleBucket, visibleRows, type BucketId, type Row, type SortKey } from './lib/money.ts';
+import { analyze, BUCKETS, isModern, modernSince, SORTS, sortRows, toggleBucket, visibleRows, type BucketId, type Row, type SortKey } from './lib/money.ts';
 import { usePref, type PendingCard } from './lib/prefs.ts';
 import { dayMonth, eurPlain } from './lib/format.ts';
 import { CardGrid } from './components/CardGrid.tsx';
@@ -41,6 +41,8 @@ export function App() {
   const [myPrices, setMyPrices] = usePref<Record<string, number>>('myPrices', {});
   const [pending, setPending] = usePref<PendingCard[]>('pending', []);
   const [ghToken, setGhToken] = usePref<string | null>('ghToken', null);
+  const [modernOnly, setModernOnly] = usePref<boolean>('modern', false);
+  const since = useMemo(() => modernSince(), []);
   const [overlay, setOverlay] = useState<Overlay>(null);
   const [toast, setToast] = useState<ToastMsg | null>(null);
   const toastTimer = useRef<number>();
@@ -100,8 +102,13 @@ export function App() {
   const buckets = useMemo(() => new Set(bucketList), [bucketList]);
 
   const rows: Row[] = useMemo(
-    () => (data ? data.cards.filter((c) => !hiddenSet.has(c.id)).map((card) => ({ card, a: analyze(card, rate, fee, myPrices[card.id]) })) : []),
-    [data, rate, fee, myPrices, hiddenSet],
+    () =>
+      data
+        ? data.cards
+            .filter((c) => !hiddenSet.has(c.id) && (!modernOnly || isModern(c.released, since)))
+            .map((card) => ({ card, a: analyze(card, rate, fee, myPrices[card.id]) }))
+        : [],
+    [data, rate, fee, myPrices, hiddenSet, modernOnly, since],
   );
   const counts = useMemo(() => {
     const c: Record<string, number> = {};
@@ -119,7 +126,7 @@ export function App() {
       return;
     }
     window.scrollTo({ top: 0 });
-  }, [query, bucketList, sort]);
+  }, [query, bucketList, sort, modernOnly]);
 
   const selected = overlay?.kind === 'card' ? rows.find((r) => r.card.id === overlay.id) ?? null : null;
 
@@ -200,6 +207,10 @@ export function App() {
             <span class="count">
               {searching ? `${visible.length} found in all cards` : `${visible.length} cards`}
             </span>
+            <button type="button" class="toggle" aria-pressed={modernOnly} onClick={() => setModernOnly(!modernOnly)} title={`Only cards from sets released since ${since}`}>
+              <span class="toggle-dot" aria-hidden="true" />
+              Modern {since.slice(0, 4)}+
+            </button>
             <label class="sort">
               <span class="sr-only">Sort</span>
               <select id="sort" value={sort} onChange={(e) => setSort((e.currentTarget as HTMLSelectElement).value as SortKey)}>

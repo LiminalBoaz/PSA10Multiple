@@ -1150,5 +1150,17 @@
   },
   "mismatch": 0.028,
   "fetchedAt": "2026-10-16T21:54:47.690Z"
+ },
+ "raichu-paldea-evolved-211": {
+  "url": "https://www.pricecharting.com/game/pokemon-paldea-evolved/raichu-211",
+  "title": "Raichu #211 · Pokemon Paldea Evolved",
+  "usd": {
+   "raw": 88.45,
+   "g8": 87.5,
+   "g9": 107.25,
+   "psa10": 860
+  },
+  "mismatch": 0,
+  "fetchedAt": "2026-10-17T07:47:15.164Z"
  }
 }

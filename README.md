@@ -5,13 +5,14 @@ Phone-first scanner for Pokémon cards worth grading, built for vendor booths. L
 - **Raw price:** average of the 10 cheapest Near Mint English copies on Cardmarket. "est." = Cardmarket's own estimate (until live listings are fetched); "yours" = a price you entered.
 - **Graded prices:** PriceCharting (US) Grade 8, Grade 9 and PSA 10, in euros.
 - **Max buy:** the most you can pay and still break even if the card grades 9.
+- **Modern 2020+ toggle:** only cards from sets released in the last six years.
 - **On your phone:** grading fee (in €), removed cards and your own prices are saved on the device. Works offline after the first visit; add it to the home screen.
 
 ## Add a card
 
-Tap **+**, search the card by name, tap the right one (results show the card image) and tap **Add**. Prices appear in the app in about 5 minutes. Can't find it? "Enter it yourself" takes name, set, number and optional PriceCharting/Cardmarket links.
+Tap **+**, search by name and number (e.g. `raichu 211`) or name and set (`raichu paldea`), tap the right card (results show the image) and tap **Add**. Prices appear in the app in about 5 minutes. Can't find it? "Enter it yourself" takes name, set, number and optional PriceCharting/Cardmarket links.
 
-- **One-tap:** in Settings → *One-tap adding*, paste a fine-grained GitHub token with access to only this repository and **Issues: Read and write**. It is stored only on that phone. Without it, **Add on GitHub** opens the pre-filled form; tap *Create*.
+- **One-tap:** in Settings → *One-tap adding*, follow the pre-filled link to create a fine-grained GitHub token (Issues: Read and write, only this repository) and paste it. It is stored only on that phone. Without it, **Continue on GitHub** opens the pre-filled form; tap *Create*.
 - Every add is an "Add card: …" issue. The *Add card* workflow picks up all open requests from the owner or collaborators, fetches PriceCharting, TCGdex and Cardmarket (live listings need the `APIFY_TOKEN` secret), commits, redeploys and closes the requests.
 
 ## Remove a card for everyone

@@ -16,6 +16,7 @@
    "number": "149",
    "variant": "Reverse Holo",
    "image": "img/ho-oh-reverse-holo-skyridge-149.webp",
+   "released": "2003-05-12",
    "added": false,
    "salesPerYear": 4,
    "links": {
@@ -43,6 +44,7 @@
    "number": "113",
    "variant": "Gold Star",
    "image": "img/entei-gold-star-unseen-forces-113.webp",
+   "released": null,
    "added": false,
    "salesPerYear": 24,
    "links": {
@@ -70,6 +72,7 @@
    "number": "130",
    "variant": null,
    "image": "img/mega-charizard-x-ex-phantasmal-flames-130.webp",
+   "released": "2025-11-14",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -106,6 +109,7 @@
    "number": "111",
    "variant": "1st Edition",
    "image": "img/shining-raichu-1st-edition-neo-destiny-111.webp",
+   "released": "2002-02-28",
    "added": false,
    "salesPerYear": 12,
    "links": {
@@ -133,6 +137,7 @@
    "number": "18",
    "variant": "1st Edition",
    "image": "img/giovanni-1st-edition-gym-challenge-18.webp",
+   "released": "2000-10-16",
    "added": false,
    "salesPerYear": 52,
    "links": {
@@ -169,6 +174,7 @@
    "number": "161",
    "variant": null,
    "image": "img/articuno-journey-together-161.webp",
+   "released": "2025-03-28",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -210,6 +216,7 @@
    "number": "51",
    "variant": null,
    "image": "img/snorlax-promo-51.webp",
+   "released": "2023-03-31",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -251,6 +258,7 @@
    "number": "44",
    "variant": null,
    "image": "img/charmander-promo-44.webp",
+   "released": "2023-03-31",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -292,6 +300,7 @@
    "number": "52",
    "variant": null,
    "image": "img/mewtwo-promo-52.webp",
+   "released": "2023-03-31",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -333,6 +342,7 @@
    "number": "53",
    "variant": null,
    "image": "img/mew-ex-promo-53.webp",
+   "released": "2023-03-31",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -374,6 +384,7 @@
    "number": "203",
    "variant": null,
    "image": "img/magikarp-paldea-evolved-203.webp",
+   "released": "2023-06-09",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -415,6 +426,7 @@
    "number": "140",
    "variant": null,
    "image": "img/sylveon-gx-guardians-rising-140.webp",
+   "released": "2017-05-05",
    "added": false,
    "salesPerYear": 52,
    "links": {
@@ -456,6 +468,7 @@
    "number": "78",
    "variant": null,
    "image": "img/mewtwo-gx-shining-legends-78.webp",
+   "released": "2017-10-06",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -492,6 +505,7 @@
    "number": "241",
    "variant": null,
    "image": "img/pikachu-cosmic-eclipse-241.webp",
+   "released": "2019-11-01",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -528,6 +542,7 @@
    "number": "SM167",
    "variant": null,
    "image": "img/celebi-venusaur-gx-promo-sm167.webp",
+   "released": "2017-02-03",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -569,6 +584,7 @@
    "number": "33",
    "variant": null,
    "image": "img/pikachu-zekrom-gx-team-up-33.webp",
+   "released": "2019-01-31",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -610,6 +626,7 @@
    "number": "114",
    "variant": "Gold Star",
    "image": "img/raikou-gold-star-unseen-forces-114.webp",
+   "released": null,
    "added": false,
    "salesPerYear": 52,
    "links": {
@@ -637,6 +654,7 @@
    "number": "113",
    "variant": null,
    "image": "img/shining-tyranitar-neo-destiny-113.webp",
+   "released": "2002-02-28",
    "added": false,
    "salesPerYear": 24,
    "links": {
@@ -678,6 +696,7 @@
    "number": "2",
    "variant": "1st Edition",
    "image": "img/blaine-s-charizard-1st-edition-gym-challenge-2.webp",
+   "released": "2000-10-16",
    "added": false,
    "salesPerYear": 52,
    "links": {
@@ -705,6 +724,7 @@
    "number": "15",
    "variant": "1st Edition",
    "image": "img/rocket-s-zapdos-1st-edition-gym-challenge-15.webp",
+   "released": "2000-10-16",
    "added": false,
    "salesPerYear": 52,
    "links": {
@@ -732,6 +752,7 @@
    "number": "13",
    "variant": "1st Edition",
    "image": "img/misty-s-gyarados-1st-edition-gym-challenge-13.webp",
+   "released": "2000-10-16",
    "added": false,
    "salesPerYear": 52,
    "links": {
@@ -768,6 +789,7 @@
    "number": null,
    "variant": null,
    "image": "img/ancient-mew-promo.webp",
+   "released": null,
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -804,6 +826,7 @@
    "number": "210",
    "variant": null,
    "image": "img/drowzee-scarlet-violet-210.webp",
+   "released": "2023-03-31",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -845,6 +868,7 @@
    "number": "20",
    "variant": null,
    "image": "img/charizard-gx-burning-shadows-20.webp",
+   "released": "2017-08-04",
    "added": false,
    "salesPerYear": 156,
    "links": {
@@ -886,6 +910,7 @@
    "number": "138",
    "variant": null,
    "image": "img/lugia-v-silver-tempest-138.webp",
+   "released": "2022-11-11",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -927,6 +952,7 @@
    "number": "GG10",
    "variant": null,
    "image": "img/mew-crown-zenith-gg10.webp",
+   "released": "2023-01-20",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -968,6 +994,7 @@
    "number": "TG05",
    "variant": null,
    "image": "img/pikachu-lost-origin-tg05.webp",
+   "released": "2022-09-09",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -1004,6 +1031,7 @@
    "number": "115",
    "variant": null,
    "image": "img/m-gyarados-ex-breakpoint-115.webp",
+   "released": null,
    "added": false,
    "salesPerYear": 156,
    "links": {
@@ -1040,6 +1068,7 @@
    "number": "103",
    "variant": null,
    "image": "img/mewtwo-ex-evolutions-103.webp",
+   "released": "2016-11-02",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -1081,6 +1110,7 @@
    "number": "34",
    "variant": null,
    "image": "img/gengar-ex-phantom-forces-34.webp",
+   "released": "2014-11-05",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -1117,6 +1147,7 @@
    "number": "69",
    "variant": null,
    "image": "img/m-charizard-ex-flashfire-69.webp",
+   "released": null,
    "added": false,
    "salesPerYear": 104,
    "links": {
@@ -1153,6 +1184,7 @@
    "number": "98",
    "variant": null,
    "image": "img/m-rayquaza-ex-ancient-origins-98.webp",
+   "released": "2015-08-12",
    "added": false,
    "salesPerYear": 156,
    "links": {
@@ -1189,6 +1221,7 @@
    "number": "180",
    "variant": null,
    "image": "img/mega-absol-ex-mega-evolution-180.webp",
+   "released": "2025-09-26",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -1225,6 +1258,7 @@
    "number": "138",
    "variant": null,
    "image": "img/vulpix-mega-evolution-138.webp",
+   "released": "2025-09-26",
    "added": false,
    "salesPerYear": 1460,
    "links": {
@@ -1261,6 +1295,7 @@
    "number": "125",
    "variant": null,
    "image": "img/mega-charizard-x-ex-phantasmal-flames-125.webp",
+   "released": "2025-11-14",
    "added": false,
    "salesPerYear": 1460,
    "links": {
@@ -1297,6 +1332,7 @@
    "number": "40",
    "variant": null,
    "image": "img/pokemon-center-promo-40.webp",
+   "released": null,
    "added": false,
    "salesPerYear": 12,
    "links": {
@@ -1333,6 +1369,7 @@
    "number": "85",
    "variant": null,
    "image": "img/pikachu-with-grey-felt-hat-promo-85.webp",
+   "released": "2023-03-31",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -1374,6 +1411,7 @@
    "number": "165",
    "variant": null,
    "image": "img/kyurem-ex-black-bolt-165.webp",
+   "released": "2025-07-17",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -1415,6 +1453,7 @@
    "number": "234",
    "variant": null,
    "image": "img/charizard-ex-paldean-fates-234.webp",
+   "released": "2024-01-26",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -1456,6 +1495,7 @@
    "number": "68",
    "variant": null,
    "image": "img/jessie-james-hidden-fates-68.webp",
+   "released": "2019-08-23",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -1497,6 +1537,7 @@
    "number": "SM210",
    "variant": null,
    "image": "img/moltres-zapdos-articuno-gx-promo-sm210.webp",
+   "released": "2017-02-03",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -1538,6 +1579,7 @@
    "number": "TG23",
    "variant": null,
    "image": "img/umbreon-vmax-brilliant-stars-tg23.webp",
+   "released": "2022-02-25",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -1579,6 +1621,7 @@
    "number": "189",
    "variant": null,
    "image": "img/umbreon-v-evolving-skies-189.webp",
+   "released": "2021-08-27",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -1620,6 +1663,7 @@
    "number": "GG42",
    "variant": null,
    "image": "img/zeraora-vmax-crown-zenith-gg42.webp",
+   "released": "2023-01-20",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -1661,6 +1705,7 @@
    "number": "192",
    "variant": null,
    "image": "img/dragonite-v-evolving-skies-192.webp",
+   "released": "2021-08-27",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -1697,6 +1742,7 @@
    "number": "GG35",
    "variant": null,
    "image": "img/leafeon-vstar-crown-zenith-gg35.webp",
+   "released": "2023-01-20",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -1738,6 +1784,7 @@
    "number": "20",
    "variant": null,
    "image": "img/charizard-vmax-darkness-ablaze-20.webp",
+   "released": "2020-08-14",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -1779,6 +1826,7 @@
    "number": "25",
    "variant": null,
    "image": "img/mew-celebrations-25.webp",
+   "released": "2021-10-08",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -1815,6 +1863,7 @@
    "number": "85",
    "variant": null,
    "image": "img/rayquaza-ex-dragons-exalted-85.webp",
+   "released": null,
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -1851,6 +1900,7 @@
    "number": "H31",
    "variant": null,
    "image": "img/vaporeon-skyridge-h31.webp",
+   "released": "2003-05-12",
    "added": false,
    "salesPerYear": 12,
    "links": {
@@ -1892,6 +1942,7 @@
    "number": "150",
    "variant": null,
    "image": "img/kabutops-skyridge-150.webp",
+   "released": "2003-05-12",
    "added": false,
    "salesPerYear": 24,
    "links": {
@@ -1933,6 +1984,7 @@
    "number": "97",
    "variant": null,
    "image": "img/mew-triumphant-97.webp",
+   "released": "2010-11-03",
    "added": false,
    "salesPerYear": 24,
    "links": {
@@ -1974,6 +2026,7 @@
    "number": "5",
    "variant": null,
    "image": "img/dragonite-promo-5.webp",
+   "released": null,
    "added": false,
    "salesPerYear": 104,
    "links": {
@@ -2010,6 +2063,7 @@
    "number": "6",
    "variant": "1st Edition",
    "image": "img/haunter-1st-edition-fossil-6.webp",
+   "released": "1999-10-10",
    "added": false,
    "salesPerYear": 52,
    "links": {
@@ -2046,6 +2100,7 @@
    "number": "3",
    "variant": "1st Edition",
    "image": "img/ditto-1st-edition-fossil-3.webp",
+   "released": "1999-10-10",
    "added": false,
    "salesPerYear": 52,
    "links": {
@@ -2082,6 +2137,7 @@
    "number": "58",
    "variant": "Shadowless Red Cheeks",
    "image": "img/pikachu-shadowless-red-cheeks-base-set-58.webp",
+   "released": "1999-01-09",
    "added": false,
    "salesPerYear": 52,
    "links": {
@@ -2118,6 +2174,7 @@
    "number": "4",
    "variant": "1st Edition",
    "image": "img/dark-charizard-1st-edition-team-rocket-4.webp",
+   "released": "2000-04-24",
    "added": false,
    "salesPerYear": 52,
    "links": {
@@ -2154,6 +2211,7 @@
    "number": "133",
    "variant": "Stamped",
    "image": "img/bulbasaur-stamped-mega-evolution-133.webp",
+   "released": "2025-09-26",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -2190,6 +2248,7 @@
    "number": "SM241",
    "variant": null,
    "image": "img/umbreon-darkrai-gx-promo-sm241.webp",
+   "released": "2017-02-03",
    "added": false,
    "salesPerYear": 156,
    "links": {
@@ -2226,6 +2285,7 @@
    "number": "109",
    "variant": null,
    "image": "img/rayquaza-gx-celestial-storm-109.webp",
+   "released": "2018-08-03",
    "added": false,
    "salesPerYear": 156,
    "links": {
@@ -2267,6 +2327,7 @@
    "number": "125",
    "variant": null,
    "image": "img/alakazam-ex-fates-collide-125.webp",
+   "released": "2016-05-02",
    "added": false,
    "salesPerYear": 156,
    "links": {
@@ -2308,6 +2369,7 @@
    "number": "117",
    "variant": null,
    "image": "img/espeon-ex-breakpoint-117.webp",
+   "released": "2016-02-03",
    "added": false,
    "salesPerYear": 104,
    "links": {
@@ -2344,6 +2406,7 @@
    "number": "119",
    "variant": null,
    "image": "img/umbreon-ex-fates-collide-119.webp",
+   "released": "2016-05-02",
    "added": false,
    "salesPerYear": 104,
    "links": {
@@ -2380,6 +2443,7 @@
    "number": "23",
    "variant": null,
    "image": "img/mega-charizard-x-ex-promo-23.webp",
+   "released": "2025-09-26",
    "added": false,
    "salesPerYear": 2190,
    "links": {
@@ -2416,6 +2480,7 @@
    "number": "202",
    "variant": null,
    "image": "img/zapdos-ex-scarlet-violet-151-202.webp",
+   "released": "2023-09-22",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -2457,6 +2522,7 @@
    "number": "200",
    "variant": null,
    "image": "img/blastoise-ex-scarlet-violet-151-200.webp",
+   "released": "2023-09-22",
    "added": false,
    "salesPerYear": 1460,
    "links": {
@@ -2498,6 +2564,7 @@
    "number": "175",
    "variant": null,
    "image": "img/espeon-ex-promo-175.webp",
+   "released": "2023-03-31",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -2539,6 +2606,7 @@
    "number": "149",
    "variant": null,
    "image": "img/vaporeon-ex-prismatic-evolutions-149.webp",
+   "released": "2025-01-17",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -2575,6 +2643,7 @@
    "number": "201",
    "variant": null,
    "image": "img/alakazam-ex-scarlet-violet-151-201.webp",
+   "released": "2023-09-22",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -2616,6 +2685,7 @@
    "number": "SM191",
    "variant": null,
    "image": "img/mewtwo-mew-gx-promo-sm191.webp",
+   "released": "2017-02-03",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -2657,6 +2727,7 @@
    "number": "20",
    "variant": null,
    "image": "img/reshiram-charizard-gx-unbroken-bonds-20.webp",
+   "released": "2019-05-03",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -2693,6 +2764,7 @@
    "number": "186",
    "variant": null,
    "image": "img/gengar-mimikyu-gx-team-up-186.webp",
+   "released": "2019-01-31",
    "added": false,
    "salesPerYear": 104,
    "links": {
@@ -2734,6 +2806,7 @@
    "number": "161",
    "variant": null,
    "image": "img/magikarp-wailord-gx-team-up-161.webp",
+   "released": "2019-01-31",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -2775,6 +2848,7 @@
    "number": "170",
    "variant": null,
    "image": "img/latias-latios-gx-team-up-170.webp",
+   "released": "2019-01-31",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -2816,6 +2890,7 @@
    "number": "186",
    "variant": null,
    "image": "img/giratina-v-lost-origin-186.webp",
+   "released": "2022-09-09",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -2857,6 +2932,7 @@
    "number": "72",
    "variant": null,
    "image": "img/mewtwo-v-go-72.webp",
+   "released": "2022-07-01",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -2898,6 +2974,7 @@
    "number": "TG29",
    "variant": null,
    "image": "img/rayquaza-vmax-silver-tempest-tg29.webp",
+   "released": "2022-11-11",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -2939,6 +3016,7 @@
    "number": "17",
    "variant": null,
    "image": "img/umbreon-celebrations-17.webp",
+   "released": "2021-10-08",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -2980,6 +3058,7 @@
    "number": "251",
    "variant": null,
    "image": "img/mew-v-fusion-strike-251.webp",
+   "released": "2021-11-12",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -3016,6 +3095,7 @@
    "number": "110",
    "variant": "1st Edition",
    "image": "img/shining-noctowl-1st-edition-neo-destiny-110.webp",
+   "released": "2002-02-28",
    "added": false,
    "salesPerYear": 12,
    "links": {
@@ -3043,6 +3123,7 @@
    "number": "193",
    "variant": null,
    "image": "img/misty-s-psyduck-destined-rivals-193.webp",
+   "released": "2025-05-30",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -3084,6 +3165,7 @@
    "number": "203",
    "variant": null,
    "image": "img/latios-surging-sparks-203.webp",
+   "released": "2024-11-08",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -3125,6 +3207,7 @@
    "number": "173",
    "variant": null,
    "image": "img/pikachu-scarlet-violet-151-173.webp",
+   "released": "2023-09-22",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -3166,6 +3249,7 @@
    "number": "193",
    "variant": null,
    "image": "img/gengar-ex-temporal-forces-193.webp",
+   "released": "2024-03-22",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -3207,6 +3291,7 @@
    "number": "223",
    "variant": null,
    "image": "img/charizard-ex-obsidian-flames-223.webp",
+   "released": "2023-08-11",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -3248,6 +3333,7 @@
    "number": "165",
    "variant": null,
    "image": "img/gengar-mimikyu-gx-team-up-165.webp",
+   "released": "2019-01-31",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -3289,6 +3375,7 @@
    "number": "221",
    "variant": null,
    "image": "img/arceus-dialga-palkia-gx-cosmic-eclipse-221.webp",
+   "released": "2019-11-01",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -3330,6 +3417,7 @@
    "number": "169",
    "variant": null,
    "image": "img/latias-latios-gx-team-up-169.webp",
+   "released": "2019-01-31",
    "added": false,
    "salesPerYear": 104,
    "links": {
@@ -3371,6 +3459,7 @@
    "number": "SM193",
    "variant": null,
    "image": "img/garchomp-giratina-gx-promo-sm193.webp",
+   "released": "2017-02-03",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -3412,6 +3501,7 @@
    "number": "53",
    "variant": null,
    "image": "img/gengar-mimikyu-gx-team-up-53.webp",
+   "released": "2019-01-31",
    "added": false,
    "salesPerYear": 365,
    "links": {
@@ -3453,6 +3543,7 @@
    "number": "SM168",
    "variant": null,
    "image": "img/pikachu-zekrom-gx-promo-sm168.webp",
+   "released": "2017-02-03",
    "added": false,
    "salesPerYear": 730,
    "links": {
@@ -3494,6 +3585,7 @@
    "number": "216",
    "variant": null,
    "image": "img/solgaleo-lunala-gx-cosmic-eclipse-216.webp",
+   "released": "2019-11-01",
    "added": false,
    "salesPerYear": 156,
    "links": {
@@ -3535,6 +3627,7 @@
    "number": "215",
    "variant": null,
    "image": "img/blastoise-piplup-gx-cosmic-eclipse-215.webp",
+   "released": "2019-11-01",
    "added": false,
    "salesPerYear": 156,
    "links": {
@@ -3576,6 +3669,7 @@
    "number": "2",
    "variant": null,
    "image": "img/blastoise-celebrations-2.webp",
+   "released": "2021-10-08",
    "added": false,
    "salesPerYear": 1825,
    "links": {
@@ -3617,6 +3711,7 @@
    "number": "138",
    "variant": null,
    "image": "img/rayquaza-vivid-voltage-138.webp",
+   "released": "2020-11-13",
    "added": false,
    "salesPerYear": 1095,
    "links": {
@@ -3647,6 +3742,48 @@
      "nl": null,
      "nlChecked": false,
      "fetchedAt": "2026-10-17T07:35:34.154Z"
+    }
+   },
+   "cmNote": null
+  },
+  {
+   "id": "raichu-paldea-evolved-211",
+   "name": "Raichu",
+   "set": "Paldea Evolved",
+   "number": "211",
+   "variant": null,
+   "image": "img/raichu-paldea-evolved-211.webp",
+   "released": "2023-06-09",
+   "added": true,
+   "salesPerYear": null,
+   "links": {
+    "pricecharting": "https://www.pricecharting.com/game/pokemon-paldea-evolved/raichu-211",
+    "cardmarket": "https://www.cardmarket.com/en/Pokemon/Products/Singles/Paldea-Evolved/Raichu-V2-PAL211"
+   },
+   "usd": {
+    "raw": 88.45,
+    "g8": 87.5,
+    "g9": 107.25,
+    "psa10": 860
+   },
+   "cm": {
+    "idProduct": 715686,
+    "checkedAt": "2026-10-17T07:48:21.455Z",
+    "guide": {
+     "trend": 117.93,
+     "low": 23.99,
+     "avg30": 81.25,
+     "trusted": true
+    },
+    "listings": {
+     "avg10": 68.69,
+     "median": 70,
+     "min": 59,
+     "max": 72,
+     "n": 10,
+     "nl": null,
+     "nlChecked": false,
+     "fetchedAt": "2026-10-17T07:48:21.455Z"
     }
    },
    "cmNote": null

@@ -2,7 +2,7 @@ import { useState } from 'preact/hooks';
 import type { Card } from '../../shared/schema.ts';
 import { eur } from '../lib/format.ts';
 import { parseEuroInput } from '../lib/parse.ts';
-import { checkToken, REPO } from '../lib/github.ts';
+import { checkToken, REPO, tokenTemplateUrl } from '../lib/github.ts';
 import { Sheet } from './Sheet.tsx';
 
 interface Props {
@@ -52,13 +52,19 @@ function TokenPanel({ token, onToken }: { token: string | null; onToken: (t: str
       <label for="gh-token" class="panel-title">
         One-tap adding
       </label>
-      <p class="hint">
-        Add cards without leaving the app. Once: create a{' '}
-        <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">
-          GitHub token
-        </a>{' '}
-        with access to only <b>{REPO.split('/')[1]}</b> and <b>Issues: Read and write</b>, then paste it here. It stays on this phone.
-      </p>
+      <ol class="steps">
+        <li>
+          <a href={tokenTemplateUrl()} target="_blank" rel="noopener noreferrer">
+            Create the token on GitHub
+          </a>{' '}
+          (name, expiry and permission are filled in).
+        </li>
+        <li>
+          Under <b>Repository access</b> pick <b>Only select repositories</b> → <b>{REPO.split('/')[1]}</b>, then <b>Generate token</b>.
+        </li>
+        <li>Copy the token and paste it here.</li>
+      </ol>
+      <p class="hint">The token can only open and close card requests in this one repository. It stays on this phone; revoke it on GitHub any time.</p>
       <div class="row">
         <input id="gh-token" type="password" autoComplete="off" placeholder="github_pat_…" value={draft} onInput={(e) => setDraft((e.currentTarget as HTMLInputElement).value)} />
         <button type="submit" class="pill-btn primary" disabled={!draft.trim() || state === 'checking'}>

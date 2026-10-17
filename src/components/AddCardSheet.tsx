@@ -98,7 +98,7 @@ export function AddCardSheet({ token, knownIds, pending, onRequested, onForget, 
     </button>
   ) : (
     <a class="pill-btn primary wide" href={issueFormUrl(request)} target="_blank" rel="noopener noreferrer" onClick={() => done(request)}>
-      Add on GitHub
+      Continue on GitHub
     </a>
   );
 
@@ -131,8 +131,9 @@ export function AddCardSheet({ token, knownIds, pending, onRequested, onForget, 
             <label for="add-q" class="sr-only">
               Search any card
             </label>
-            <input id="add-q" type="search" enterKeyHint="search" autoComplete="off" autoCorrect="off" spellcheck={false} placeholder="Search any card, e.g. umbreon vmax" value={q} onInput={(e) => setQ((e.currentTarget as HTMLInputElement).value)} />
+            <input id="add-q" type="search" enterKeyHint="search" autoComplete="off" autoCorrect="off" spellcheck={false} placeholder="Name and number, e.g. raichu 211" value={q} onInput={(e) => setQ((e.currentTarget as HTMLInputElement).value)} />
           </div>
+          {!results && !searching && <p class="hint">Type the card name, then its number or set to narrow it down.</p>}
           {searching && <p class="hint">Searching…</p>}
           {searchError && <p class="warn">{searchError}</p>}
           {results && !searching && results.length === 0 && <p class="hint">No cards found. Check the spelling or enter it yourself below.</p>}
@@ -172,10 +173,12 @@ export function AddCardSheet({ token, knownIds, pending, onRequested, onForget, 
           {error && <p class="warn">{error}</p>}
           {request && !already && !waiting && (
             <p class="hint">
-              {token ? 'Prices show up here in about 5 minutes.' : 'Opens GitHub with the card filled in; tap Create. '}
+              {token
+                ? 'Prices show up here in about 5 minutes.'
+                : 'GitHub runs the price lookup for the app. This opens GitHub with the card filled in: log in if asked and tap Create. '}
               {!token && (
                 <button type="button" class="link" onClick={onOpenSettings}>
-                  Set up one-tap adding
+                  Skip this step: set up one-tap adding (once)
                 </button>
               )}
             </p>
